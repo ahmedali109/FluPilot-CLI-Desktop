@@ -1,0 +1,32 @@
+{
+  "name": "Red Alert Test Theme",
+  "type": "dark",
+  "version": "0.1.1-dev",
+  "description": "A development theme with a strong red background for testing visual contrast.",
+  "colors": {
+    "background": "#ff0000",
+    "foreground": "#ffffff",
+    "cursor": "#000000",
+    "black": "#330000",
+    "red": "#ff4d4d",
+    "green": "#33ff99",
+    "yellow": "#ffff66",
+    "blue": "#3399ff",
+    "magenta": "#ff66cc",
+    "cyan": "#66ffff",
+    "white": "#f2f2f2",
+    "brightBlack": "#660000",
+    "brightRed": "#ff6666",
+    "brightGreen": "#66ffcc",
+    "brightYellow": "#ffff99",
+    "brightBlue": "#66b3ff",
+    "brightMagenta": "#ff99dd",
+    "brightCyan": "#99ffff",
+    "brightWhite": "#ffffff"
+  },
+  "metadata": {
+    "author": "Theme Tester",
+    "license": "MIT",
+    "createdAt": "2025-06-23T12:00:00Z"
+  }
+}

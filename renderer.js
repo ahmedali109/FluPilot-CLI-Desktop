@@ -1322,24 +1322,159 @@ class SettingsManager {
     reader.onload = e => {
       try {
         const themeData = JSON.parse(e.target.result);
+
         if (this.validateTheme(themeData)) {
-          this.currentSettings.customTheme = themeData;
-          document.getElementById('theme-select').value = 'custom';
-          this.updatePreview();
-          this.showNotification('Theme uploaded successfully!', 'success');
+          // Convert theme to expected format if necessary
+          const convertedTheme = this.convertThemeFormat(themeData);
+
+          if (convertedTheme) {
+            this.currentSettings.customTheme = convertedTheme;
+            document.getElementById('theme-select').value = 'custom';
+            this.updatePreview();
+            this.showNotification(
+              'Theme uploaded and converted successfully!',
+              'success'
+            );
+          } else {
+            this.showNotification('Failed to convert theme format!', 'error');
+          }
         } else {
-          this.showNotification('Invalid theme format!', 'error');
+          this.showNotification(
+            'Invalid theme format! Please ensure your theme has either "terminalTheme" and "appTheme" properties, or a "colors" object with at least "background" and "foreground" colors.',
+            'error'
+          );
         }
       } catch (error) {
-        this.showNotification('Failed to parse theme file!', 'error');
+        console.error('Theme parsing error:', error);
+        this.showNotification(
+          'Failed to parse theme file! Please check that your JSON is valid.',
+          'error'
+        );
       }
     };
     reader.readAsText(file);
   }
 
+  convertThemeFormat(theme) {
+    // If already in expected format, return as is
+    if (theme.terminalTheme && theme.appTheme) {
+      return theme;
+    }
+
+    // Convert from colors format to expected format
+    if (theme.colors) {
+      const colors = theme.colors;
+
+      const convertedTheme = {
+        name: theme.name || 'Custom Theme',
+        version: theme.version || '1.0.0',
+        author: theme.metadata?.author || theme.author || 'Unknown',
+        description: theme.description || 'Custom uploaded theme',
+        terminalTheme: {
+          background: colors.background || '#000000',
+          foreground: colors.foreground || '#ffffff',
+          cursor: colors.cursor || colors.foreground || '#ffffff',
+          selection: colors.selection || colors.background || '#000000',
+          black: colors.black || '#000000',
+          red: colors.red || '#ff0000',
+          green: colors.green || '#00ff00',
+          yellow: colors.yellow || '#ffff00',
+          blue: colors.blue || '#0000ff',
+          magenta: colors.magenta || '#ff00ff',
+          cyan: colors.cyan || '#00ffff',
+          white: colors.white || '#ffffff',
+          brightBlack: colors.brightBlack || colors.black || '#000000',
+          brightRed: colors.brightRed || colors.red || '#ff0000',
+          brightGreen: colors.brightGreen || colors.green || '#00ff00',
+          brightYellow: colors.brightYellow || colors.yellow || '#ffff00',
+          brightBlue: colors.brightBlue || colors.blue || '#0000ff',
+          brightMagenta: colors.brightMagenta || colors.magenta || '#ff00ff',
+          brightCyan: colors.brightCyan || colors.cyan || '#00ffff',
+          brightWhite: colors.brightWhite || colors.white || '#ffffff',
+        },
+        appTheme: {
+          bgPrimary: colors.background || '#000000',
+          bgSecondary: this.adjustBrightness(
+            colors.background || '#000000',
+            0.1
+          ),
+          bgTertiary: this.adjustBrightness(
+            colors.background || '#000000',
+            0.2
+          ),
+          bgQuaternary: this.adjustBrightness(
+            colors.background || '#000000',
+            0.3
+          ),
+          textPrimary: colors.foreground || '#ffffff',
+          textSecondary: this.adjustBrightness(
+            colors.foreground || '#ffffff',
+            -0.1
+          ),
+          textTertiary: this.adjustBrightness(
+            colors.foreground || '#ffffff',
+            -0.2
+          ),
+          accentPrimary: colors.blue || colors.cyan || '#0099ff',
+          accentSecondary: colors.magenta || colors.brightBlue || '#9966ff',
+          borderPrimary: this.adjustBrightness(
+            colors.background || '#000000',
+            0.2
+          ),
+          borderSecondary: this.adjustBrightness(
+            colors.background || '#000000',
+            0.3
+          ),
+          successColor: colors.green || '#00ff00',
+          errorColor: colors.red || '#ff0000',
+          warningColor: colors.yellow || '#ffff00',
+        },
+      };
+
+      return convertedTheme;
+    }
+
+    return null;
+  }
+
+  adjustBrightness(color, amount) {
+    // Simple function to adjust color brightness
+    // Remove # if present
+    color = color.replace(/^#/, '');
+
+    // Parse RGB components
+    const num = parseInt(color, 16);
+    const r = (num >> 16) + Math.round(255 * amount);
+    const g = ((num >> 8) & 0x00ff) + Math.round(255 * amount);
+    const b = (num & 0x0000ff) + Math.round(255 * amount);
+
+    // Clamp values between 0 and 255
+    const clamp = val => Math.max(0, Math.min(255, val));
+
+    return (
+      '#' +
+      ((1 << 24) + (clamp(r) << 16) + (clamp(g) << 8) + clamp(b))
+        .toString(16)
+        .slice(1)
+    );
+  }
+
   validateTheme(theme) {
-    const requiredProps = ['terminalTheme', 'appTheme'];
-    return requiredProps.every(prop => theme.hasOwnProperty(prop));
+    // Check for the expected format (terminalTheme + appTheme)
+    const expectedFormat = ['terminalTheme', 'appTheme'];
+    if (expectedFormat.every(prop => theme.hasOwnProperty(prop))) {
+      return true;
+    }
+
+    // Check for alternative format (colors object with terminal color names)
+    if (theme.colors && typeof theme.colors === 'object') {
+      const requiredTerminalColors = ['background', 'foreground'];
+      return requiredTerminalColors.every(color =>
+        theme.colors.hasOwnProperty(color)
+      );
+    }
+
+    return false;
   }
 
   exportTheme() {
