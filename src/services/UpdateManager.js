@@ -13,9 +13,10 @@ class UpdateManager {
   constructor(settingsManager) {
     this.logger = new Logger('UpdateManager');
     this.settingsManager = settingsManager;
-    // Set to null or a valid repository URL
-    this.updateCheckUrl = null; // Disable updates for now - set to 'https://api.github.com/repos/your-username/your-repo/releases/latest' when ready
-    this.repositoryConfigured = false;
+    // Configure your GitHub repository
+    this.githubRepo = 'ahmedali109/FluPilot-CLI-Desktop';
+    this.updateCheckUrl = `https://api.github.com/repos/${this.githubRepo}/releases/latest`;
+    this.repositoryConfigured = true;
     this.currentVersion = app.getVersion();
     this.isChecking = false;
     this.autoCheckInterval = null;
@@ -30,7 +31,10 @@ class UpdateManager {
       this.configureRepository(settings.general.updateRepository);
     }
 
-    if (settings.general.autoCheckUpdates && this.repositoryConfigured) {
+    // Enable auto-updates by default if they haven't been explicitly disabled
+    const autoCheckEnabled = settings.general.autoCheckUpdates !== false;
+
+    if (autoCheckEnabled && this.repositoryConfigured) {
       this.startAutoCheck();
     }
 
@@ -38,7 +42,7 @@ class UpdateManager {
       `Update manager initialized (current version: ${
         this.currentVersion
       }, repository: ${
-        this.repositoryConfigured ? 'configured' : 'not configured'
+        this.repositoryConfigured ? this.githubRepo : 'not configured'
       })`
     );
   }
@@ -152,8 +156,9 @@ class UpdateManager {
         path: url.pathname,
         method: 'GET',
         headers: {
-          'User-Agent': `FluPilot-CLI/${this.currentVersion}`,
+          'User-Agent': `FluPilot-CLI/${this.currentVersion} (${process.platform}; ${process.arch})`,
           Accept: 'application/vnd.github.v3+json',
+          'X-GitHub-Api-Version': '2022-11-28',
         },
       };
 
@@ -182,29 +187,54 @@ class UpdateManager {
                 return;
               }
 
+              this.logger.debug(
+                `Found release: ${release.tag_name} with ${release.assets.length} assets`
+              );
               resolve(release);
             } else if (res.statusCode === 404) {
               reject(
-                new Error('Repository not found or no releases available')
+                new Error(
+                  'Repository not found or no releases available. Please ensure releases are published on GitHub.'
+                )
               );
             } else if (res.statusCode === 403) {
-              reject(new Error('Rate limit exceeded or access denied'));
+              const rateLimitReset = res.headers['x-ratelimit-reset'];
+              const resetTime = rateLimitReset
+                ? new Date(rateLimitReset * 1000)
+                : 'unknown';
+              reject(
+                new Error(
+                  `GitHub API rate limit exceeded. Try again after ${resetTime}`
+                )
+              );
             } else {
-              reject(new Error(`HTTP ${res.statusCode}: ${data}`));
+              reject(
+                new Error(`GitHub API error (${res.statusCode}): ${data}`)
+              );
             }
           } catch (error) {
-            reject(new Error(`Failed to parse response: ${error.message}`));
+            reject(
+              new Error(`Failed to parse GitHub API response: ${error.message}`)
+            );
           }
         });
       });
 
       req.on('error', error => {
-        reject(error);
+        reject(
+          new Error(
+            `Network error while checking for updates: ${error.message}`
+          )
+        );
       });
 
-      req.setTimeout(10000, () => {
+      req.setTimeout(15000, () => {
         req.destroy();
-        reject(new Error('Request timeout'));
+        reject(
+          new Error(
+            'Update check timed out. Please check your internet connection.'
+          )
+        );
       });
 
       req.end();
@@ -213,28 +243,56 @@ class UpdateManager {
 
   // Show update available dialog
   async _showUpdateDialog(release) {
+    const assets = release.assets || [];
+    const platformAsset = this._findAssetForPlatform(assets, process.platform);
+
+    let downloadInfo = '';
+    if (platformAsset) {
+      downloadInfo = `\n\nDownload: ${platformAsset.name} (${this._formatBytes(
+        platformAsset.size
+      )})`;
+    } else {
+      downloadInfo =
+        '\n\nNo installer available for your platform. You can download manually from the release page.';
+    }
+
     const result = await dialog.showMessageBox({
       type: 'info',
       title: 'Update Available',
       message: `FluPilot CLI ${release.tag_name} is available`,
       detail: `You are currently running version ${
         this.currentVersion
-      }.\n\nRelease Notes:\n${release.body || 'No release notes available.'}`,
-      buttons: ['Download Update', 'View Release Page', 'Remind Me Later'],
+      }.${downloadInfo}\n\nRelease Notes:\n${
+        release.body || 'No release notes available.'
+      }`,
+      buttons: platformAsset
+        ? ['Download Update', 'View Release Page', 'Remind Me Later']
+        : ['View Release Page', 'Remind Me Later'],
       defaultId: 0,
-      cancelId: 2,
+      cancelId: platformAsset ? 2 : 1,
     });
 
-    switch (result.response) {
-      case 0: // Download Update
-        await this._downloadUpdate(release);
-        break;
-      case 1: // View Release Page
-        shell.openExternal(release.html_url);
-        break;
-      case 2: // Remind Me Later
-        // Do nothing
-        break;
+    if (platformAsset) {
+      switch (result.response) {
+        case 0: // Download Update
+          await this._downloadUpdate(release);
+          break;
+        case 1: // View Release Page
+          shell.openExternal(release.html_url);
+          break;
+        case 2: // Remind Me Later
+          // Do nothing
+          break;
+      }
+    } else {
+      switch (result.response) {
+        case 0: // View Release Page
+          shell.openExternal(release.html_url);
+          break;
+        case 1: // Remind Me Later
+          // Do nothing
+          break;
+      }
     }
   }
 
@@ -413,6 +471,68 @@ class UpdateManager {
   // Cleanup
   cleanup() {
     this.stopAutoCheck();
+  }
+
+  // Manual check for updates (called from UI)
+  async manualCheckForUpdates() {
+    return await this.checkForUpdates(true);
+  }
+
+  // Get latest release information without showing dialogs
+  async getLatestReleaseInfo() {
+    try {
+      const latestRelease = await this._fetchLatestRelease();
+      const latestVersion = latestRelease.tag_name.replace(/^v/, '');
+
+      return {
+        currentVersion: this.currentVersion,
+        latestVersion: latestVersion,
+        hasUpdate: semver.gt(latestVersion, this.currentVersion),
+        releaseUrl: latestRelease.html_url,
+        releaseNotes: latestRelease.body || 'No release notes available.',
+        publishedAt: latestRelease.published_at,
+        assets: latestRelease.assets.map(asset => ({
+          name: asset.name,
+          size: asset.size,
+          downloadUrl: asset.browser_download_url,
+          contentType: asset.content_type,
+        })),
+      };
+    } catch (error) {
+      this.logger.error('Failed to get release info', error);
+      throw error;
+    }
+  }
+
+  // Download and install update automatically (for future enhancement)
+  async downloadAndInstallUpdate() {
+    try {
+      const releaseInfo = await this.getLatestReleaseInfo();
+
+      if (!releaseInfo.hasUpdate) {
+        throw new Error('No update available');
+      }
+
+      const platform = process.platform;
+      const asset = this._findAssetForPlatform(releaseInfo.assets, platform);
+
+      if (!asset) {
+        throw new Error(`No installer available for platform: ${platform}`);
+      }
+
+      // For now, just open the download URL
+      // In the future, you could implement actual download and installation
+      shell.openExternal(asset.downloadUrl);
+
+      return {
+        success: true,
+        message: 'Download started in browser',
+        asset: asset,
+      };
+    } catch (error) {
+      this.logger.error('Failed to download update', error);
+      throw error;
+    }
   }
 }
 
