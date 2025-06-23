@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:;"
+    />
+    <title>Electron Terminal</title>
+    <link rel="stylesheet" href="node_modules/xterm/css/xterm.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="custom-titlebar">
+        <div class="titlebar-content">
+          <div class="titlebar-nav">
+            <button id="terminal-nav" class="nav-button active">
+              Terminal
+            </button>
+            <button id="flutterCode-nav" class="nav-button">UI Kit</button>
+          </div>
+          <div class="titlebar-title">FluPilot CLI</div>
+          <div class="titlebar-controls">
+            <button id="new-terminal" class="control-btn">New Terminal</button>
+            <button id="kill-terminal" class="control-btn">Kill</button>
+          </div>
+        </div>
+      </div>
+      <div class="main-content">
+        <div id="terminal-container">
+          <div class="status-bar">
+            <div class="status-left">
+              <span
+                class="status-item git-status"
+                id="git-status"
+                style="display: none"
+              >
+                <svg
+                  class="status-icon"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M21.62 11.108l-8.731-8.729a1.292 1.292 0 0 0-1.823 0L9.257 4.114l2.299 2.3a1.532 1.532 0 0 1 1.939 1.95l2.214 2.217a1.53 1.53 0 0 1 1.583 2.531c-.599.6-1.566.6-2.166 0a1.536 1.536 0 0 1-.337-1.662l-2.074-2.063V14.9a1.532 1.532 0 0 1 .384 2.946c-.599.6-1.566.6-2.166 0-.6-.6-.6-1.566 0-2.166a1.532 1.532 0 0 1 .434-.334V9.426a1.532 1.532 0 0 1-.434-.334c-.6-.6-.6-1.566 0-2.166L8.73 4.729 2.38 11.108a1.292 1.292 0 0 0 0 1.823l8.731 8.729a1.292 1.292 0 0 0 1.823 0l8.686-8.729a1.292 1.292 0 0 0 0-1.823"
+                  />
+                </svg>
+                <span id="git-branch">main</span>
+              </span>
+            </div>
+            <div class="status-right">
+              <span class="status-item">
+                <svg
+                  class="status-icon"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                  />
+                </svg>
+                <span id="connection-status">Connected</span>
+              </span>
+            </div>
+          </div>
+          <div class="terminal-wrapper">
+            <div id="terminal"></div>
+          </div>
+        </div>
+
+        <div class="sidebar">
+          <div class="sidebar-section">
+            <h3>Toolbar</h3>
+            <button class="toolbar-btn github-signin" id="github-signin">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                />
+              </svg>
+              GitHub CLI Auth
+            </button>
+            <div class="git-dropdown-container">
+              <button class="toolbar-btn git-commands" id="git-commands">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M21.62 11.108l-8.731-8.729a1.292 1.292 0 0 0-1.823 0L9.257 4.114l2.299 2.3a1.532 1.532 0 0 1 1.939 1.95l2.214 2.217a1.53 1.53 0 0 1 1.583 2.531c-.599.6-1.566.6-2.166 0a1.536 1.536 0 0 1-.337-1.662l-2.074-2.063V14.9a1.532 1.532 0 0 1 .384 2.946c-.599.6-1.566.6-2.166 0-.6-.6-.6-1.566 0-2.166a1.532 1.532 0 0 1 .434-.334V9.426a1.532 1.532 0 0 1-.434-.334c-.6-.6-.6-1.566 0-2.166L8.73 4.729 2.38 11.108a1.292 1.292 0 0 0 0 1.823l8.731 8.729a1.292 1.292 0 0 0 1.823 0l8.686-8.729a1.292 1.292 0 0 0 0-1.823"
+                  />
+                </svg>
+                Git Commands
+                <svg
+                  class="dropdown-icon"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M7 10l5 5 5-5z" />
+                </svg>
+              </button>
+
+              <div class="git-dropdown" id="git-dropdown">
+                <div class="dropdown-section">
+                  <h4>Basic Git Commands</h4>
+                  <button class="dropdown-item" data-cmd="git init">
+                    git init
+                  </button>
+                  <button class="dropdown-item" data-cmd="git add .">
+                    git add .
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd='git commit -m "initial commit"'
+                  >
+                    git commit -m "initial commit"
+                  </button>
+                  <button class="dropdown-item" data-cmd="git push">
+                    git push
+                  </button>
+                  <button class="dropdown-item" data-cmd="git pull">
+                    git pull
+                  </button>
+                  <button class="dropdown-item" data-cmd="git status">
+                    git status
+                  </button>
+                  <button class="dropdown-item" data-cmd="git log --oneline">
+                    git log --oneline
+                  </button>
+                  <button class="dropdown-item" data-cmd="git branch">
+                    git branch
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="git checkout "
+                    data-prompt="Enter branch name:"
+                  >
+                    git checkout [branch]
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="git checkout -b "
+                    data-prompt="Enter branch name:"
+                  >
+                    git checkout -b [branch]
+                  </button>
+                </div>
+
+                <div class="dropdown-section">
+                  <h4>GitHub CLI Commands</h4>
+                  <button class="dropdown-item" data-cmd="gh auth status">
+                    gh auth status
+                  </button>
+                  <button class="dropdown-item" data-cmd="gh repo list">
+                    gh repo list
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="gh repo create --public"
+                  >
+                    gh repo create --public
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="gh repo create --private"
+                  >
+                    gh repo create --private
+                  </button>
+                  <button class="dropdown-item" data-cmd="gh issue list">
+                    gh issue list
+                  </button>
+                  <button class="dropdown-item" data-cmd="gh pr list">
+                    gh pr list
+                  </button>
+                  <button class="dropdown-item" data-cmd="gh pr create">
+                    gh pr create
+                  </button>
+                </div>
+
+                <div class="dropdown-section">
+                  <h4>Advanced Git Commands</h4>
+                  <button class="dropdown-item" data-cmd="git stash">
+                    git stash
+                  </button>
+                  <button class="dropdown-item" data-cmd="git stash pop">
+                    git stash pop
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="git reset --soft HEAD~1"
+                  >
+                    git reset --soft HEAD~1
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="git reset --hard HEAD~1"
+                  >
+                    git reset --hard HEAD~1
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="git merge "
+                    data-prompt="Enter branch to merge:"
+                  >
+                    git merge [branch]
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="git rebase "
+                    data-prompt="Enter branch to rebase onto:"
+                  >
+                    git rebase [branch]
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="git cherry-pick "
+                    data-prompt="Enter commit hash:"
+                  >
+                    git cherry-pick [commit]
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <h3>FluPilot CLI</h3>
+            <button class="quick-cmd" id="flu-pilot" data-cmd="./scripts/helper/check_and_install_deps.sh">
+              FluPilot CLI
+            </button>
+
+            <div class="flupilot-dropdown-container">
+              <button
+                class="toolbar-btn flupilot-commands"
+                id="flupilot-commands"
+              >
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M4 17h16v2H4v-2zm0-12h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2v10h16V7H4zm2.5 2.5l2.5 2.5-2.5 2.5 1.42 1.42L10.84 12l-2.92-2.92L6.5 9.5zm5.5 5h4v-2h-4v2z"
+                  />
+                </svg>
+                FluPilot Commands
+                <svg
+                  class="dropdown-icon"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M7 10l5 5 5-5z" />
+                </svg>
+              </button>
+
+              <div class="flupilot-dropdown" id="flupilot-dropdown">
+                <div class="dropdown-section">
+                  <h4> 🛠️ FluPilot CLI</h4>
+
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/setup/init_flutter.sh"
+                    title="Initialize a new Flutter project with removing uncessary platforms"
+                  >
+                    create flutter project
+                  </button>
+
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/setup/add_selected_packages_yaml.sh"
+                    title="Add preferred selected packages into pubspec.yaml"
+                  >
+                    Add Packages
+                  </button>
+                </div>
+                <!-- App Setup & Branding -->
+                <div class="dropdown-section">
+                  <h4>📱 App Setup & Branding</h4>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh flutter_launcher_icons"
+                    title="Create your app icon instead of default one"
+                  >
+                    Create app icon
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh flutter_native_splash"
+                    title="Create your splash screen instead of default one"
+                  >
+                    Create splash screen
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh introduction_screen"
+                    title="Create your introduction screen"
+                  >
+                    Create introduction screen
+                  </button>
+                </div>
+
+                <!-- UI Components & Widgets -->
+                <div class="dropdown-section">
+                  <h4>🎨 UI Components & Widgets</h4>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh flutter_slidable"
+                    title="Create slidable widget"
+                  >
+                    Create slidable widget
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh liquid_pull_to_refresh"
+                    title="Create liquid pull to refresh widget"
+                  >
+                    Create liquid pull to refresh widget
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh action_slider"
+                    title="Create action slider widget"
+                  >
+                    Create action slider widget
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh google_nav_bar"
+                    title="Create Google Bottom Navigation Bar"
+                  >
+                    Create Google Bottom Navigation Bar
+                  </button>
+                </div>
+
+                <!-- Media & Assets -->
+                <div class="dropdown-section">
+                  <h4>📸 Media & Assets</h4>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh image_picker"
+                    title="Picker your images and videos assets"
+                  >
+                    Pick Images/Videos
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh audioplayers"
+                    title="Picker your audio files assets"
+                  >
+                    Pick Audio Files
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh video_player"
+                    title="Play videos from your assets/network"
+                  >
+                    Play Video Files
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh cached_network_image"
+                    title="Cache and display network images efficiently"
+                  >
+                    Cached Network Image
+                  </button>
+                </div>
+
+                <!-- Navigation & State Management -->
+                <div class="dropdown-section">
+                  <h4>🧭 Navigation & State Management</h4>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh go_router"
+                    title="Navigate between screens with Go Router"
+                  >
+                    Navigate with Go Router
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh flutter_bloc"
+                    title="State Management with Flutter Bloc"
+                  >
+                    State Management with Flutter Bloc
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh get_it"
+                    title="Simple service locator for dependency injection"
+                  >
+                    Get It (Dependency Injection)
+                  </button>
+                </div>
+
+                <!-- Networking & API -->
+                <div class="dropdown-section">
+                  <h4>🌐 Networking & API</h4>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh http"
+                    title="request an api call with http"
+                  >
+                    network request with http
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh dio"
+                    title="request an api call with dio"
+                  >
+                    network request with dio
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh retrofit"
+                    title="Add Retrofit package for type-safe HTTP networking"
+                  >
+                    Retrofit (HTTP networking)
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh connectivity_plus"
+                    title="Check network connectivity status"
+                  >
+                    Connectivity Plus
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh internet_connection_checker"
+                    title="Check internet connection availability"
+                  >
+                    Internet Connection Checker
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh internet_connection_checker_plus"
+                    title="Enhanced internet connection monitoring"
+                  >
+                    Internet Connection Checker Plus
+                  </button>
+                </div>
+
+                <!-- Code Generation & Serialization -->
+                <div class="dropdown-section">
+                  <h4>⚙️ Code Generation & Serialization</h4>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh json_serializable"
+                    title="Generate JSON serialization code"
+                  >
+                    JSON Serializable
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh freezed"
+                    title="Generate immutable data classes"
+                  >
+                    Freezed (Immutable Classes)
+                  </button>
+                </div>
+
+                <!-- Storage & Data -->
+                <div class="dropdown-section">
+                  <h4>💾 Storage & Data</h4>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh shared_preferences"
+                    title="Store simple data in local storage"
+                  >
+                    Shared Preferences
+                  </button>
+                </div>
+
+                <!-- Firebase Services -->
+                <div class="dropdown-section">
+                  <h4>🔥 Firebase Services</h4>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh firebase_core"
+                    title="Initialize Firebase services"
+                  >
+                    Firebase Core
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh firebase_auth"
+                    title="Firebase authentication services"
+                  >
+                    Firebase Auth
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh cloud_firestore"
+                    title="Firebase Cloud Firestore database"
+                  >
+                    Cloud Firestore
+                  </button>
+                </div>
+
+                <!-- Authentication -->
+                <div class="dropdown-section">
+                  <h4>🔐 Authentication</h4>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh google_sign_in"
+                    title="Google Sign-In authentication"
+                  >
+                    Google Sign In
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh local_auth"
+                    title="Local biometric and pin authentication"
+                  >
+                    Local Auth (Biometric)
+                  </button>
+                </div>
+
+                <!-- Backend Services -->
+                <div class="dropdown-section">
+                  <h4>☁️ Backend Services</h4>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh supabase_flutter"
+                    title="Supabase backend services"
+                  >
+                    Supabase Flutter
+                  </button>
+                </div>
+
+                <!-- Localization & Notifications -->
+                <div class="dropdown-section">
+                  <h4>🌍 Localization & Notifications</h4>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh easy_localization"
+                    title="Easy app localization and internationalization"
+                  >
+                    Easy Localization
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/main_template.sh flutter_local_notifications"
+                    title="Local push notifications"
+                  >
+                    Flutter Local Notifications
+                  </button>
+                </div>
+
+                <div class="dropdown-section">
+                  <h4>Generated Assistant Files</h4>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/templates/create_helpers.sh"
+                    title="Generate assistant files for your project (e.g., app_regex, extensions , spacing , app_strings , theme )"
+                  >
+                    Assistant Files
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <h3>Quick Commands</h3>
+            <button class="quick-cmd" data-cmd="ls -la">List Files</button>
+            <button class="quick-cmd" data-cmd="pwd">Current Directory</button>
+            <button class="quick-cmd" data-cmd="date">Show Date</button>
+            <button class="quick-cmd" data-cmd="whoami">Current User</button>
+            <button class="quick-cmd" data-cmd="clear">Clear Terminal</button>
+          </div>
+
+          <div class="sidebar-section">
+            <h3>System Info</h3>
+            <button class="quick-cmd" data-cmd="uname -a">System Info</button>
+            <button class="quick-cmd" data-cmd="df -h">Disk Usage</button>
+            <button class="quick-cmd" data-cmd="ps aux | head -10">
+              Running Processes
+            </button>
+          </div>
+
+          <div class="sidebar-section">
+            <h3>Settings</h3>
+            <button
+              class="quick-cmd settings-shortcut"
+              id="sidebar-settings-btn"
+            >
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11.03L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.22,8.95 2.27,9.22 2.46,9.37L4.57,11.03C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.22,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.68 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"
+                />
+              </svg>
+              Open Settings
+            </button>
+            <div class="settings-info">
+              <small>Themes • Fonts • Behavior • Shortcuts</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Input Modal for Git Commands -->
+        <div id="input-modal" class="modal-overlay" style="display: none">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 id="modal-title">Enter Value</h3>
+              <button id="modal-close" class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+              <p id="modal-prompt">Please enter a value:</p>
+              <input
+                type="text"
+                id="modal-input"
+                placeholder="Enter value..."
+              />
+            </div>
+            <div class="modal-footer">
+              <button id="modal-cancel" class="modal-btn modal-btn-cancel">
+                Cancel
+              </button>
+              <button id="modal-confirm" class="modal-btn modal-btn-confirm">
+                Confirm
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Settings Modal -->
+        <div id="settings-modal" class="modal-overlay" style="display: none">
+          <div class="modal-content settings-modal-content">
+            <div class="modal-header">
+              <h3 id="settings-modal-title">
+                <svg class="modal-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11.03L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.22,8.95 2.27,9.22 2.46,9.37L4.57,11.03C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.22,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.68 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"
+                  />
+                </svg>
+                Settings
+              </h3>
+              <button id="settings-modal-close" class="modal-close">
+                &times;
+              </button>
+            </div>
+            <div class="modal-body settings-modal-body">
+              <div class="settings-tabs">
+                <button class="settings-tab active" data-tab="appearance">
+                  <svg class="tab-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12,18.5A6.5,6.5 0 0,1 5.5,12A6.5,6.5 0 0,1 12,5.5A6.5,6.5 0 0,1 18.5,12A6.5,6.5 0 0,1 12,18.5M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"
+                    />
+                  </svg>
+                  Appearance
+                </button>
+                <button class="settings-tab" data-tab="terminal">
+                  <svg class="tab-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M20,19V7H4V19H20M20,3A2,2 0 0,1 22,5V19A2,2 0 0,1 20,21H4A2,2 0 0,1 2,19V5C2,5 2,3 4,3H20M13,17V15H18V17H13M9.58,13L5.57,9H8.4L11.7,12.3C12.09,12.69 12.09,13.33 11.7,13.72L8.42,17H5.59L9.58,13Z"
+                    />
+                  </svg>
+                  Terminal
+                </button>
+                <button class="settings-tab" data-tab="behavior">
+                  <svg class="tab-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,16.5L18,9.5L16.59,8.09L11,13.67L7.91,10.59L6.5,12L11,16.5Z"
+                    />
+                  </svg>
+                  Behavior
+                </button>
+              </div>
+
+              <div class="settings-content">
+                <!-- Appearance Tab -->
+                <div class="settings-tab-content active" id="appearance-tab">
+                  <div class="settings-section">
+                    <h4>Theme</h4>
+                    <div class="setting-row">
+                      <label for="theme-select">Select Theme:</label>
+                      <select id="theme-select" class="setting-input">
+                        <option value="dark">Dark</option>
+                        <option value="light">Light</option>
+                        <option value="dracula">Dracula</option>
+                        <option value="monokai">Monokai</option>
+                        <option value="solarized-dark">Solarized Dark</option>
+                        <option value="one-dark">One Dark</option>
+                        <option value="nord">Nord</option>
+                        <option value="gruvbox-dark">Gruvbox Dark</option>
+                        <option value="palenight">Palenight</option>
+                        <option value="tokyo-night">Tokyo Night</option>
+                        <option value="catppuccin-mocha">
+                          Catppuccin Mocha
+                        </option>
+                        <option value="custom">Custom</option>
+                      </select>
+                    </div>
+
+                    <div class="setting-row">
+                      <label for="theme-upload">Upload Custom Theme:</label>
+                      <div class="file-upload-container">
+                        <input
+                          type="file"
+                          id="theme-upload"
+                          accept=".json"
+                          class="file-input"
+                        />
+                        <button class="file-upload-btn">
+                          <svg
+                            class="upload-icon"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                          >
+                            <path
+                              d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"
+                            />
+                          </svg>
+                          Choose JSON File
+                        </button>
+                        <span class="file-name" id="theme-file-name"
+                          >No file selected</span
+                        >
+                      </div>
+                    </div>
+
+                    <div class="setting-row">
+                      <button id="export-theme-btn" class="action-btn">
+                        <svg
+                          class="btn-icon"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path
+                            d="M23,12L19,8V11H10V13H19V16M1,18V6C1,4.89 1.89,4 3,4H15A2,2 0 0,1 17,6V9H15V6H3V18H15V15H17V18A2,2 0 0,1 15,20H3A2,2 0 0,1 1,18Z"
+                          />
+                        </svg>
+                        Export Current Theme
+                      </button>
+                    </div>
+
+                    <div class="theme-preview">
+                      <h5>Theme Preview</h5>
+                      <div class="preview-container">
+                        <div class="preview-titlebar">
+                          <span class="preview-title">Terminal Preview</span>
+                        </div>
+                        <div class="preview-terminal">
+                          <div class="preview-line">$ echo "Hello World"</div>
+                          <div class="preview-line preview-output">
+                            Hello World
+                          </div>
+                          <div class="preview-line">$ ls -la</div>
+                          <div class="preview-cursor">█</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Terminal Tab -->
+                <div class="settings-tab-content" id="terminal-tab">
+                  <div class="settings-section">
+                    <h4>Font Settings</h4>
+                    <div class="setting-row">
+                      <label for="font-family">Font Family:</label>
+                      <select id="font-family" class="setting-input">
+                        <option value="Menlo, Monaco, 'Courier New', monospace">
+                          Menlo (Default)
+                        </option>
+                        <option
+                          value="'SF Mono', Monaco, 'Roboto Mono', monospace"
+                        >
+                          SF Mono
+                        </option>
+                        <option
+                          value="'JetBrains Mono', 'Courier New', monospace"
+                        >
+                          JetBrains Mono
+                        </option>
+                        <option value="'Fira Code', 'Courier New', monospace">
+                          Fira Code
+                        </option>
+                        <option
+                          value="'Source Code Pro', 'Courier New', monospace"
+                        >
+                          Source Code Pro
+                        </option>
+                      </select>
+                    </div>
+
+                    <div class="setting-row">
+                      <label for="font-size">Font Size:</label>
+                      <input
+                        type="range"
+                        id="font-size"
+                        min="10"
+                        max="24"
+                        value="14"
+                        class="range-input"
+                      />
+                      <span id="font-size-value">14px</span>
+                    </div>
+
+                    <div class="setting-row">
+                      <label for="line-height">Line Height:</label>
+                      <input
+                        type="range"
+                        id="line-height"
+                        min="1.0"
+                        max="2.0"
+                        step="0.1"
+                        value="1.2"
+                        class="range-input"
+                      />
+                      <span id="line-height-value">1.2</span>
+                    </div>
+                  </div>
+
+                  <div class="settings-section">
+                    <h4>Cursor Settings</h4>
+                    <div class="setting-row">
+                      <label for="cursor-style">Cursor Style:</label>
+                      <select id="cursor-style" class="setting-input">
+                        <option value="block">Block</option>
+                        <option value="underline">Underline</option>
+                        <option value="bar">Bar</option>
+                      </select>
+                    </div>
+
+                    <div class="setting-row">
+                      <label for="cursor-blink">
+                        <input type="checkbox" id="cursor-blink" checked />
+                        Cursor Blink
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Behavior Tab -->
+                <div class="settings-tab-content" id="behavior-tab">
+                  <div class="settings-section">
+                    <h4>Terminal Behavior</h4>
+                    <div class="setting-row">
+                      <label for="scrollback">Scrollback Lines:</label>
+                      <input
+                        type="number"
+                        id="scrollback"
+                        min="100"
+                        max="10000"
+                        value="1000"
+                        class="setting-input"
+                      />
+                    </div>
+
+                    <div class="setting-row">
+                      <label for="convert-eol">
+                        <input type="checkbox" id="convert-eol" checked />
+                        Convert End of Line
+                      </label>
+                    </div>
+
+                    <div class="setting-row">
+                      <label for="web-links">
+                        <input type="checkbox" id="web-links" checked />
+                        Enable Web Links
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="settings-section">
+                    <h4>Application Behavior</h4>
+                    <div class="setting-row">
+                      <label for="auto-focus">
+                        <input type="checkbox" id="auto-focus" checked />
+                        Auto Focus Terminal
+                      </label>
+                    </div>
+
+                    <div class="setting-row">
+                      <label for="save-session">
+                        <input type="checkbox" id="save-session" />
+                        Save Session on Exit
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button id="settings-reset" class="modal-btn modal-btn-secondary">
+                Reset to Defaults
+              </button>
+              <button id="settings-cancel" class="modal-btn modal-btn-cancel">
+                Cancel
+              </button>
+              <button id="settings-apply" class="modal-btn modal-btn-confirm">
+                Apply Settings
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="node_modules/xterm/lib/xterm.js"></script>
+    <script src="node_modules/xterm-addon-fit/lib/xterm-addon-fit.js"></script>
+    <script src="node_modules/xterm-addon-web-links/lib/xterm-addon-web-links.js"></script>
+    <script src="renderer.js"></script>
+    <script src="application-menu-ipc-handler.js"></script>
+    <script type="module" src="./shared_logic.js"></script>
+    <script src="shortcuts.js"></script>
+  </body>
+</html>

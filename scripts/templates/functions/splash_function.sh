@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Get the absolute path to the real script location, resolving symlinks
+# If SCRIPT_DIR is already set (from parent script), use that instead
+if [ -z "$SCRIPT_DIR" ]; then
+  SOURCE="${BASH_SOURCE[0]}"
+  while [ -h "$SOURCE" ]; do
+    DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
+    SOURCE="$(readlink "$SOURCE")"
+    [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+  done
+  SCRIPT_DIR="$(cd -P "$(dirname "$SOURCE")/../../.." && pwd)"
+fi
+
+source "scripts/templates/helper/create_default_splash_yaml.sh"
+source "scripts/pickers/pick_directory.sh"
+function splash_function(){
+  DEST_DIR="${FLUTTER_PROJECT_DIR-$(pick_dir)}"
+  cd "$DEST_DIR" || exit 1
+  echo "🛠️ Generating splash screen using flutter_native_splash..."
+  echo "✅ flutter_native_splash found in pubspec.yaml."
+  echo "📂 Creating flutter_native_splash.yaml in $DEST_DIR..."
+  touch "$DEST_DIR/flutter_native_splash.yaml"
+  echo "🔧 Configuring splash screen in flutter_native_splash.yaml..."
+  create_default_splash_yaml
+  echo "📄 Configured flutter_native_splash.yaml with default settings."
+
+  if [ $? -eq 0 ]; then
+    (cd "$DEST_DIR" && flutter pub get && dart run flutter_native_splash:create --path=flutter_native_splash.yaml) && echo "🎉 Splash screen created successfully!"
+  else
+    echo "❌ Failed to generate splash screen. Please check your pubspec.yaml configuration."
+    exit 1
+  fi
+
+  # Navigate back to the original directory
+  echo "🔙 Returning to the original directory..."
+  echo
+  echo
+  cd - >/dev/null || exit 1
+}

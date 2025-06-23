@@ -1,0 +1,91 @@
+{
+  "name": "flupilot-cli",
+  "version": "1.0.0",
+  "description": "A terminal application built with Electron, node-pty, and xterm.js",
+  "main": "main.js",
+  "scripts": {
+    "electron": "ELECTRON_ENABLE_LOGGING=false electron .",
+    "electron-dev": "NODE_ENV=development ELECTRON_ENABLE_LOGGING=false electron .",
+    "start-quiet": "electron . --disable-gpu-sandbox --disable-software-rasterizer --log-level=3",
+    "build": "electron-builder",
+    "postinstall": "electron-builder install-app-deps",
+    "build-mac": "electron-builder --mac",
+    "build-mac-intel": "electron-builder --mac --x64",
+    "build-win": "electron-builder --win",
+    "build-linux": "electron-builder --linux",
+    "dist": "npm run build"
+  },
+  "keywords": [
+    "electron",
+    "terminal",
+    "xterm",
+    "node-pty"
+  ],
+  "author": "Ahmed Ali",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^36.5.0",
+    "electron-builder": "^26.0.12"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.10",
+    "auto-launch": "^5.0.6",
+    "fuse.js": "^7.1.0",
+    "lodash.debounce": "^4.0.8",
+    "node-pty": "^1.0.0",
+    "semver": "^7.7.2",
+    "tailwindcss": "^4.1.10",
+    "xterm": "^5.3.0",
+    "xterm-addon-fit": "^0.8.0",
+    "xterm-addon-web-links": "^0.9.0"
+  },
+  "build": {
+    "appId": "com.FLupilot-cli.app",
+    "productName": "FLupilot-cli",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!node_modules/node-pty/build/Release/obj/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "dir",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "assets/Icon.icns"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    }
+  }
+}

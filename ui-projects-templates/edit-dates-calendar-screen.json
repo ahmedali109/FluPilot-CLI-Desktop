@@ -1,0 +1,2228 @@
+{
+  "flutter": {
+    "EditDatesCalendarScreen.dart": {
+      "lines": [
+        {
+          "content": "import 'package:flutter_animate/flutter_animate.dart';",
+          "tokens": [
+            { "text": "import", "type": "keyword" },
+            { "text": " " },
+            { "text": "'package:flutter_animate/flutter_animate.dart'", "type": "string" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "import 'package:table_calendar/table_calendar.dart';",
+          "tokens": [
+            { "text": "import", "type": "keyword" },
+            { "text": " " },
+            { "text": "'package:table_calendar/table_calendar.dart'", "type": "string" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "import '../../../shared/exports/export_boiler_plate.dart';",
+          "tokens": [
+            { "text": "import", "type": "keyword" },
+            { "text": " " },
+            { "text": "'../../../shared/exports/export_boiler_plate.dart'", "type": "string" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "import '../../app/shared/fonts.dart';",
+          "tokens": [
+            { "text": "import", "type": "keyword" },
+            { "text": " " },
+            { "text": "'../../app/shared/fonts.dart'", "type": "string" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "class EditDatesCalendarScreen extends StatefulWidget {",
+          "tokens": [
+            { "text": "class", "type": "keyword" },
+            { "text": " " },
+            { "text": "EditDatesCalendarScreen", "type": "class" },
+            { "text": " " },
+            { "text": "extends", "type": "keyword" },
+            { "text": " " },
+            { "text": "StatefulWidget", "type": "widget" },
+            { "text": " {" }
+          ]
+        },
+        {
+          "content": "  const EditDatesCalendarScreen({Key? key}) : super(key: key);",
+          "tokens": [
+            { "text": "  const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EditDatesCalendarScreen", "type": "method" },
+            { "text": "(" },
+            { "text": "{" },
+            { "text": "Key", "type": "widget" },
+            { "text": "? key}) : " },
+            { "text": "super", "type": "keyword" },
+            { "text": "(key: key);" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  ", "type": "text" },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  _EditDatesCalendarScreenState createState() =>",
+          "tokens": [
+            { "text": "  " },
+            { "text": "_EditDatesCalendarScreenState", "type": "method" },
+            { "text": " " },
+            { "text": "createState", "type": "method" },
+            { "text": "() =>" }
+          ]
+        },
+        {
+          "content": "      _EditDatesCalendarScreenState();",
+          "tokens": [
+            { "text": "      " },
+            { "text": "_EditDatesCalendarScreenState", "type": "method" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "}",
+          "tokens": [{ "text": "}" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "class _EditDatesCalendarScreenState extends State<EditDatesCalendarScreen> {",
+          "tokens": [
+            { "text": "class", "type": "keyword" },
+            { "text": " " },
+            { "text": "_EditDatesCalendarScreenState", "type": "class" },
+            { "text": " " },
+            { "text": "extends", "type": "keyword" },
+            { "text": " " },
+            { "text": "State", "type": "widget" },
+            { "text": "<" },
+            { "text": "EditDatesCalendarScreen", "type": "class" },
+            { "text": "> {" }
+          ]
+        },
+        {
+          "content": "  DateTime _focusedDay = DateTime.now();",
+          "tokens": [
+            { "text": "  DateTime", "type": "class" },
+            { "text": " " },
+            { "text": "_focusedDay", "type": "property" },
+            { "text": " = " },
+            { "text": "DateTime", "type": "class" },
+            { "text": "." },
+            { "text": "now", "type": "method" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "  DateTime? _rangeStart;",
+          "tokens": [
+            { "text": "  DateTime", "type": "class" },
+            { "text": "? _rangeStart", "type": "property" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "  DateTime? _rangeEnd;",
+          "tokens": [
+            { "text": "  DateTime", "type": "class" },
+            { "text": "? _rangeEnd", "type": "property" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "  bool _isFlexible = false;",
+          "tokens": [
+            { "text": "  bool", "type": "keyword" },
+            { "text": " " },
+            { "text": "_isFlexible", "type": "property" },
+            { "text": " = " },
+            { "text": "false", "type": "keyword" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  ", "type": "text" },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  Widget build(BuildContext context) {",
+          "tokens": [
+            { "text": "  Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "build", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    return Scaffold(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Scaffold", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      backgroundColor: KConstantColors.whiteColor,",
+          "tokens": [
+            { "text": "      backgroundColor: " },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "whiteColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      body: SafeArea(",
+          "tokens": [
+            { "text": "      body: " },
+            { "text": "SafeArea", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        child: Column(",
+          "tokens": [
+            { "text": "        child: " },
+            { "text": "Column", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          children: [",
+          "tokens": [{ "text": "          children: [" }]
+        },
+        {
+          "content": "            _buildHeader(context),",
+          "tokens": [
+            { "text": "            " },
+            { "text": "_buildHeader", "type": "method" },
+            { "text": "(context)," }
+          ]
+        },
+        {
+          "content": "            _buildSelectedDateRange(context),",
+          "tokens": [
+            { "text": "            " },
+            { "text": "_buildSelectedDateRange", "type": "method" },
+            { "text": "(context)," }
+          ]
+        },
+        {
+          "content": "            Expanded(",
+          "tokens": [
+            { "text": "            " },
+            { "text": "Expanded", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              child: _buildCalendar(context),",
+          "tokens": [
+            { "text": "              child: " },
+            { "text": "_buildCalendar", "type": "method" },
+            { "text": "(context)," }
+          ]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "            _buildFlexibleToggle(context),",
+          "tokens": [
+            { "text": "            " },
+            { "text": "_buildFlexibleToggle", "type": "method" },
+            { "text": "(context)," }
+          ]
+        },
+        {
+          "content": "            _buildFooter(context),",
+          "tokens": [
+            { "text": "            " },
+            { "text": "_buildFooter", "type": "method" },
+            { "text": "(context)," }
+          ]
+        },
+        {
+          "content": "          ],",
+          "tokens": [{ "text": "          ]," }]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        )," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "    );",
+          "tokens": [{ "text": "    );" }]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget _buildHeader(BuildContext context) {",
+          "tokens": [
+            { "text": "  Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "_buildHeader", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    return Padding(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Padding", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      padding: const EdgeInsets.all(16.0),",
+          "tokens": [
+            { "text": "      padding: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "." },
+            { "text": "all", "type": "method" },
+            { "text": "(" },
+            { "text": "16.0", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "      child: Row(",
+          "tokens": [
+            { "text": "      child: " },
+            { "text": "Row", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        children: [",
+          "tokens": [{ "text": "        children: [" }]
+        },
+        {
+          "content": "          IconButton(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "IconButton", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            icon: const Icon(Icons.arrow_back),",
+          "tokens": [
+            { "text": "            icon: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Icon", "type": "widget" },
+            { "text": "(" },
+            { "text": "Icons", "type": "widget" },
+            { "text": "." },
+            { "text": "arrow_back", "type": "property" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "            onPressed: () => Navigator.pop(context),",
+          "tokens": [
+            { "text": "            onPressed: () => " },
+            { "text": "Navigator", "type": "widget" },
+            { "text": "." },
+            { "text": "pop", "type": "method" },
+            { "text": "(context)," }
+          ]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "          Text(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            'Edit dates',",
+          "tokens": [
+            { "text": "            'Edit dates'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            style: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "            style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              context,",
+          "tokens": [
+            { "text": "              context," }
+          ]
+        },
+        {
+          "content": "              FontSize.kMedium,",
+          "tokens": [
+            { "text": "              FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              KConstantColors.blackColor,",
+          "tokens": [
+            { "text": "              KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "blackColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              KConstantFonts.geistMedium,",
+          "tokens": [
+            { "text": "              KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "geistMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "        ],",
+          "tokens": [{ "text": "        ]," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "    ).animate().fadeIn(duration: 300.ms);",
+          "tokens": [
+            { "text": "    ).", "type": "text" },
+            { "text": "animate", "type": "method" },
+            { "text": "().", "type": "text" },
+            { "text": "fadeIn", "type": "method" },
+            { "text": "(", "type": "text" },
+            { "text": "duration", "type": "property" },
+            { "text": ": ", "type": "text" },
+            { "text": "300", "type": "number" },
+            { "text": ".", "type": "text" },
+            { "text": "ms", "type": "property" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget _buildSelectedDateRange(BuildContext context) {",
+          "tokens": [
+            { "text": "  Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "_buildSelectedDateRange", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    return Padding(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Padding", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      padding: const EdgeInsets.symmetric(horizontal: 16),",
+          "tokens": [
+            { "text": "      padding: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "." },
+            { "text": "symmetric", "type": "method" },
+            { "text": "(" },
+            { "text": "horizontal", "type": "property" },
+            { "text": ": " },
+            { "text": "16", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "      child: Text(",
+          "tokens": [
+            { "text": "      child: " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        _rangeStart != null && _rangeEnd != null",
+          "tokens": [
+            { "text": "        _rangeStart", "type": "property" },
+            { "text": " != " },
+            { "text": "null", "type": "keyword" },
+            { "text": " && _rangeEnd != " },
+            { "text": "null", "type": "keyword" }
+          ]
+        },
+        {
+          "content": "            ? '${_formatDate(_rangeStart!)} - ${_formatDate(_rangeEnd!)}'",
+          "tokens": [
+            { "text": "            ? '${_formatDate(_rangeStart!)} - ${_formatDate(_rangeEnd!)}'", "type": "string" }
+          ]
+        },
+        {
+          "content": "            : 'Select dates',",
+          "tokens": [
+            { "text": "            : " },
+            { "text": "'Select dates'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        textAlign: TextAlign.left,",
+          "tokens": [
+            { "text": "        textAlign: " },
+            { "text": "TextAlign", "type": "widget" },
+            { "text": "." },
+            { "text": "left", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        style: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "        style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          context,",
+          "tokens": [
+            { "text": "          context," }
+          ]
+        },
+        {
+          "content": "          FontSize.kMedium,",
+          "tokens": [
+            { "text": "          FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          KConstantColors.blackColor,",
+          "tokens": [
+            { "text": "          KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "blackColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          KConstantFonts.geistMedium,",
+          "tokens": [
+            { "text": "          KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "geistMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        )," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "    ).animate().fadeIn(duration: 300.ms);",
+          "tokens": [
+            { "text": "    ).", "type": "text" },
+            { "text": "animate", "type": "method" },
+            { "text": "().", "type": "text" },
+            { "text": "fadeIn", "type": "method" },
+            { "text": "(", "type": "text" },
+            { "text": "duration", "type": "property" },
+            { "text": ": ", "type": "text" },
+            { "text": "300", "type": "number" },
+            { "text": ".", "type": "text" },
+            { "text": "ms", "type": "property" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget _buildCalendar(BuildContext context) {",
+          "tokens": [
+            { "text": "  Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "_buildCalendar", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    return TableCalendar(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "TableCalendar", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      firstDay: DateTime.now(),",
+          "tokens": [
+            { "text": "      firstDay: " },
+            { "text": "DateTime", "type": "class" },
+            { "text": "." },
+            { "text": "now", "type": "method" },
+            { "text": "()," }
+          ]
+        },
+        {
+          "content": "      lastDay: DateTime.now().add(const Duration(days: 365)),",
+          "tokens": [
+            { "text": "      lastDay: " },
+            { "text": "DateTime", "type": "class" },
+            { "text": "." },
+            { "text": "now", "type": "method" },
+            { "text": "().", "type": "text" },
+            { "text": "add", "type": "method" },
+            { "text": "(", "type": "text" },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Duration", "type": "class" },
+            { "text": "(", "type": "text" },
+            { "text": "days", "type": "property" },
+            { "text": ": ", "type": "text" },
+            { "text": "365", "type": "number" },
+            { "text": "))," }
+          ]
+        },
+        {
+          "content": "      focusedDay: _focusedDay,",
+          "tokens": [
+            { "text": "      focusedDay: _focusedDay," }
+          ]
+        },
+        {
+          "content": "      rangeStartDay: _rangeStart,",
+          "tokens": [
+            { "text": "      rangeStartDay: _rangeStart," }
+          ]
+        },
+        {
+          "content": "      rangeEndDay: _rangeEnd,",
+          "tokens": [
+            { "text": "      rangeEndDay: _rangeEnd," }
+          ]
+        },
+        {
+          "content": "      calendarFormat: CalendarFormat.month,",
+          "tokens": [
+            { "text": "      calendarFormat: " },
+            { "text": "CalendarFormat", "type": "class" },
+            { "text": "." },
+            { "text": "month", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      rangeSelectionMode: RangeSelectionMode.enforced,",
+          "tokens": [
+            { "text": "      rangeSelectionMode: " },
+            { "text": "RangeSelectionMode", "type": "class" },
+            { "text": "." },
+            { "text": "enforced", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      headerStyle: HeaderStyle(",
+          "tokens": [
+            { "text": "      headerStyle: " },
+            { "text": "HeaderStyle", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        titleTextStyle: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "        titleTextStyle: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          context,",
+          "tokens": [
+            { "text": "          context," }
+          ]
+        },
+        {
+          "content": "          FontSize.kMedium,",
+          "tokens": [
+            { "text": "          FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          KConstantColors.blackColor,",
+          "tokens": [
+            { "text": "          KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "blackColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          KConstantFonts.geistMedium,",
+          "tokens": [
+            { "text": "          KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "geistMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        )," }]
+        },
+        {
+          "content": "        formatButtonVisible: false,",
+          "tokens": [
+            { "text": "        formatButtonVisible: " },
+            { "text": "false", "type": "keyword" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "      calendarStyle: CalendarStyle(",
+          "tokens": [
+            { "text": "      calendarStyle: " },
+            { "text": "CalendarStyle", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        rangeStartDecoration: const BoxDecoration(",
+          "tokens": [
+            { "text": "        rangeStartDecoration: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "BoxDecoration", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          color: KConstantColors.blackColor,",
+          "tokens": [
+            { "text": "          color: " },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "blackColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          shape: BoxShape.circle,",
+          "tokens": [
+            { "text": "          shape: " },
+            { "text": "BoxShape", "type": "widget" },
+            { "text": "." },
+            { "text": "circle", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        )," }]
+        },
+        {
+          "content": "        rangeEndDecoration: const BoxDecoration(",
+          "tokens": [
+            { "text": "        rangeEndDecoration: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "BoxDecoration", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          color: KConstantColors.blackColor,",
+          "tokens": [
+            { "text": "          color: " },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "blackColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          shape: BoxShape.circle,",
+          "tokens": [
+            { "text": "          shape: " },
+            { "text": "BoxShape", "type": "widget" },
+            { "text": "." },
+            { "text": "circle", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        )," }]
+        },
+        {
+          "content": "        selectedTextStyle: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "        selectedTextStyle: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          context,",
+          "tokens": [
+            { "text": "          context," }
+          ]
+        },
+        {
+          "content": "          FontSize.kMedium,",
+          "tokens": [
+            { "text": "          FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          Colors.white,",
+          "tokens": [
+            { "text": "          Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "white", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          KConstantFonts.geistMedium,",
+          "tokens": [
+            { "text": "          KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "geistMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        )," }]
+        },
+        {
+          "content": "        todayDecoration: BoxDecoration(",
+          "tokens": [
+            { "text": "        todayDecoration: " },
+            { "text": "BoxDecoration", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          color: Colors.transparent,",
+          "tokens": [
+            { "text": "          color: " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "transparent", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          shape: BoxShape.circle,",
+          "tokens": [
+            { "text": "          shape: " },
+            { "text": "BoxShape", "type": "widget" },
+            { "text": "." },
+            { "text": "circle", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          border: Border.all(color: KConstantColors.blackColor, width: 1),",
+          "tokens": [
+            { "text": "          border: " },
+            { "text": "Border", "type": "class" },
+            { "text": "." },
+            { "text": "all", "type": "method" },
+            { "text": "(" },
+            { "text": "color", "type": "property" },
+            { "text": ": " },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "blackColor", "type": "property" },
+            { "text": ", " },
+            { "text": "width", "type": "property" },
+            { "text": ": " },
+            { "text": "1", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        )," }]
+        },
+        {
+          "content": "        todayTextStyle: const TextStyle(color: KConstantColors.blackColor),",
+          "tokens": [
+            { "text": "        todayTextStyle: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "TextStyle", "type": "widget" },
+            { "text": "(", "type": "text" },
+            { "text": "color", "type": "property" },
+            { "text": ": ", "type": "text" },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "blackColor", "type": "property" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "        rangeHighlightColor: Colors.blue.withOpacity(0.2),",
+          "tokens": [
+            { "text": "        rangeHighlightColor: " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "blue", "type": "property" },
+            { "text": "." },
+            { "text": "withOpacity", "type": "method" },
+            { "text": "(", "type": "text" },
+            { "text": "0.2", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "        outsideDaysVisible: false,",
+          "tokens": [
+            { "text": "        outsideDaysVisible: " },
+            { "text": "false", "type": "keyword" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "      onRangeSelected: (start, end, focusedDay) {",
+          "tokens": [
+            { "text": "      onRangeSelected: (", "type": "property" },
+            { "text": "start", "type": "property" },
+            { "text": ", " },
+            { "text": "end", "type": "property" },
+            { "text": ", " },
+            { "text": "focusedDay", "type": "property" },
+            { "text": ") {" }
+          ]
+        },
+        {
+          "content": "        setState(() {",
+          "tokens": [
+            { "text": "        setState(() {" }
+          ]
+        },
+        {
+          "content": "          _rangeStart = start;",
+          "tokens": [
+            { "text": "          _rangeStart", "type": "property" },
+            { "text": " = " },
+            { "text": "start", "type": "property" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "          _rangeEnd = end;",
+          "tokens": [
+            { "text": "          _rangeEnd", "type": "property" },
+            { "text": " = " },
+            { "text": "end", "type": "property" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "          _focusedDay = focusedDay;",
+          "tokens": [
+            { "text": "          _focusedDay", "type": "property" },
+            { "text": " = " },
+            { "text": "focusedDay", "type": "property" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "        });",
+          "tokens": [{ "text": "        });" }]
+        },
+        {
+          "content": "      },",
+          "tokens": [{ "text": "      }," }]
+        },
+        {
+          "content": "    ).animate().fadeIn(duration: 300.ms);",
+          "tokens": [
+            { "text": "    ).", "type": "text" },
+            { "text": "animate", "type": "method" },
+            { "text": "().", "type": "text" },
+            { "text": "fadeIn", "type": "method" },
+            { "text": "(", "type": "text" },
+            { "text": "duration", "type": "property" },
+            { "text": ": ", "type": "text" },
+            { "text": "300", "type": "number" },
+            { "text": ".", "type": "text" },
+            { "text": "ms", "type": "property" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget _buildFlexibleToggle(BuildContext context) {",
+          "tokens": [
+            { "text": "  Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "_buildFlexibleToggle", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    return Padding(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Padding", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      padding: const EdgeInsets.all(16.0),",
+          "tokens": [
+            { "text": "      padding: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "." },
+            { "text": "all", "type": "method" },
+            { "text": "(" },
+            { "text": "16.0", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "      child: Row(",
+          "tokens": [
+            { "text": "      child: " },
+            { "text": "Row", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        children: [",
+          "tokens": [{ "text": "        children: [" }]
+        },
+        {
+          "content": "          _buildModernToggle(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "_buildModernToggle", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            value: _isFlexible,",
+          "tokens": [
+            { "text": "            value: _isFlexible," }
+          ]
+        },
+        {
+          "content": "            onChanged: (value) {",
+          "tokens": [
+            { "text": "            onChanged: (", "type": "property" },
+            { "text": "value", "type": "property" },
+            { "text": ") {" }
+          ]
+        },
+        {
+          "content": "              setState(() {",
+          "tokens": [
+            { "text": "              setState(() {" }
+          ]
+        },
+        {
+          "content": "                _isFlexible = value;",
+          "tokens": [
+            { "text": "                _isFlexible", "type": "property" },
+            { "text": " = " },
+            { "text": "value", "type": "property" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "              });",
+          "tokens": [{ "text": "              });" }]
+        },
+        {
+          "content": "            },",
+          "tokens": [{ "text": "            }," }]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "          const SizedBox(width: 8),",
+          "tokens": [
+            { "text": "          const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SizedBox", "type": "widget" },
+            { "text": "(width: " },
+            { "text": "8", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "          Text(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            'My dates are flexible',",
+          "tokens": [
+            { "text": "            'My dates are flexible'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            style: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "            style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              context,",
+          "tokens": [
+            { "text": "              context," }
+          ]
+        },
+        {
+          "content": "              FontSize.kMedium,",
+          "tokens": [
+            { "text": "              FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              KConstantColors.blackColor,",
+          "tokens": [
+            { "text": "              KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "blackColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              KConstantFonts.geistMedium,",
+          "tokens": [
+            { "text": "              KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "geistMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "        ],",
+          "tokens": [{ "text": "        ]," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "    ).animate().fadeIn(duration: 300.ms);",
+          "tokens": [
+            { "text": "    ).", "type": "text" },
+            { "text": "animate", "type": "method" },
+            { "text": "().", "type": "text" },
+            { "text": "fadeIn", "type": "method" },
+            { "text": "(", "type": "text" },
+            { "text": "duration", "type": "property" },
+            { "text": ": ", "type": "text" },
+            { "text": "300", "type": "number" },
+            { "text": ".", "type": "text" },
+            { "text": "ms", "type": "property" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget _buildModernToggle(",
+          "tokens": [
+            { "text": "  Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "_buildModernToggle", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      {required bool value, required ValueChanged<bool> onChanged}) {",
+          "tokens": [
+            { "text": "      {required", "type": "keyword" },
+            { "text": " bool value, required", "type": "keyword" },
+            { "text": " " },
+            { "text": "ValueChanged", "type": "class" },
+            { "text": "<" },
+            { "text": "bool", "type": "keyword" },
+            { "text": "> onChanged}) {" }
+          ]
+        },
+        {
+          "content": "    return GestureDetector(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "GestureDetector", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      onTap: () => onChanged(!value),",
+          "tokens": [
+            { "text": "      onTap: () => onChanged(!value)," }
+          ]
+        },
+        {
+          "content": "      child: Container(",
+          "tokens": [
+            { "text": "      child: " },
+            { "text": "Container", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        width: 50,",
+          "tokens": [
+            { "text": "        width: " },
+            { "text": "50", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        height: 30,",
+          "tokens": [
+            { "text": "        height: " },
+            { "text": "30", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        decoration: BoxDecoration(",
+          "tokens": [
+            { "text": "        decoration: " },
+            { "text": "BoxDecoration", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          borderRadius: BorderRadius.circular(15),",
+          "tokens": [
+            { "text": "          borderRadius: " },
+            { "text": "BorderRadius", "type": "widget" },
+            { "text": "." },
+            { "text": "circular", "type": "method" },
+            { "text": "(" },
+            { "text": "15", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "          color: value ? KConstantColors.blackColor : Colors.grey[300],",
+          "tokens": [
+            { "text": "          color: value ? " },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "blackColor", "type": "property" },
+            { "text": " : " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "grey", "type": "property" },
+            { "text": "[" },
+            { "text": "300", "type": "number" },
+            { "text": "]," }
+          ]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        )," }]
+        },
+        {
+          "content": "        child: AnimatedAlign(",
+          "tokens": [
+            { "text": "        child: " },
+            { "text": "AnimatedAlign", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          duration: const Duration(milliseconds: 200),",
+          "tokens": [
+            { "text": "          duration: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Duration", "type": "class" },
+            { "text": "(" },
+            { "text": "milliseconds", "type": "property" },
+            { "text": ": " },
+            { "text": "200", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "          alignment: value ? Alignment.centerRight : Alignment.centerLeft,",
+          "tokens": [
+            { "text": "          alignment: value ? " },
+            { "text": "Alignment", "type": "widget" },
+            { "text": "." },
+            { "text": "centerRight", "type": "property" },
+            { "text": " : " },
+            { "text": "Alignment", "type": "widget" },
+            { "text": "." },
+            { "text": "centerLeft", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          child: Container(",
+          "tokens": [
+            { "text": "          child: " },
+            { "text": "Container", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            width: 26,",
+          "tokens": [
+            { "text": "            width: " },
+            { "text": "26", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            height: 26,",
+          "tokens": [
+            { "text": "            height: " },
+            { "text": "26", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            margin: const EdgeInsets.symmetric(horizontal: 2),",
+          "tokens": [
+            { "text": "            margin: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "." },
+            { "text": "symmetric", "type": "method" },
+            { "text": "(" },
+            { "text": "horizontal", "type": "property" },
+            { "text": ": " },
+            { "text": "2", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "            decoration: const BoxDecoration(",
+          "tokens": [
+            { "text": "            decoration: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "BoxDecoration", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              shape: BoxShape.circle,",
+          "tokens": [
+            { "text": "              shape: " },
+            { "text": "BoxShape", "type": "widget" },
+            { "text": "." },
+            { "text": "circle", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              color: Colors.white,",
+          "tokens": [
+            { "text": "              color: " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "white", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        )," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "    );",
+          "tokens": [{ "text": "    );" }]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget _buildFooter(BuildContext context) {",
+          "tokens": [
+            { "text": "  Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "_buildFooter", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    return Padding(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Padding", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      padding: const EdgeInsets.all(16.0),",
+          "tokens": [
+            { "text": "      padding: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "." },
+            { "text": "all", "type": "method" },
+            { "text": "(" },
+            { "text": "16.0", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "      child: Row(",
+          "tokens": [
+            { "text": "      child: " },
+            { "text": "Row", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        children: [",
+          "tokens": [{ "text": "        children: [" }]
+        },
+        {
+          "content": "          if (_rangeStart != null || _rangeEnd != null)",
+          "tokens": [
+            { "text": "          if", "type": "keyword" },
+            { "text": " (_rangeStart != " },
+            { "text": "null", "type": "keyword" },
+            { "text": " || _rangeEnd != " },
+            { "text": "null", "type": "keyword" },
+            { "text": ")" }
+          ]
+        },
+        {
+          "content": "            Expanded(",
+          "tokens": [
+            { "text": "            " },
+            { "text": "Expanded", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              child: _buildModernButton(",
+          "tokens": [
+            { "text": "              child: " },
+            { "text": "_buildModernButton", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                onPressed: () {",
+          "tokens": [
+            { "text": "                onPressed: () {" }
+          ]
+        },
+        {
+          "content": "                  setState(() {",
+          "tokens": [
+            { "text": "                  setState(() {" }
+          ]
+        },
+        {
+          "content": "                    _rangeStart = null;",
+          "tokens": [
+            { "text": "                    _rangeStart", "type": "property" },
+            { "text": " = " },
+            { "text": "null", "type": "keyword" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "                    _rangeEnd = null;",
+          "tokens": [
+            { "text": "                    _rangeEnd", "type": "property" },
+            { "text": " = " },
+            { "text": "null", "type": "keyword" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "                  });",
+          "tokens": [{ "text": "                  });" }]
+        },
+        {
+          "content": "                },",
+          "tokens": [{ "text": "                }," }]
+        },
+        {
+          "content": "                child: Text(",
+          "tokens": [
+            { "text": "                child: " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  'Clear',",
+          "tokens": [
+            { "text": "                  'Clear'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  style: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "                  style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                    context,",
+          "tokens": [
+            { "text": "                    context," }
+          ]
+        },
+        {
+          "content": "                    FontSize.kMedium,",
+          "tokens": [
+            { "text": "                    FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    KConstantColors.blackColor,",
+          "tokens": [
+            { "text": "                    KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "blackColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    KConstantFonts.geistMedium,",
+          "tokens": [
+            { "text": "                    KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "geistMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  ),",
+          "tokens": [{ "text": "                  )," }]
+        },
+        {
+          "content": "                ),",
+          "tokens": [{ "text": "                )," }]
+        },
+        {
+          "content": "                backgroundColor: Colors.grey[200]!,",
+          "tokens": [
+            { "text": "                backgroundColor: " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "grey", "type": "property" },
+            { "text": "[" },
+            { "text": "200", "type": "number" },
+            { "text": "]!," }
+          ]
+        },
+        {
+          "content": "              ),",
+          "tokens": [{ "text": "              )," }]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "          if (_rangeStart != null || _rangeEnd != null)",
+          "tokens": [
+            { "text": "          if", "type": "keyword" },
+            { "text": " (_rangeStart != " },
+            { "text": "null", "type": "keyword" },
+            { "text": " || _rangeEnd != " },
+            { "text": "null", "type": "keyword" },
+            { "text": ")" }
+          ]
+        },
+        {
+          "content": "            const SizedBox(width: 16),",
+          "tokens": [
+            { "text": "            const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SizedBox", "type": "widget" },
+            { "text": "(width: " },
+            { "text": "16", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "          Expanded(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "Expanded", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            child: _buildModernButton(",
+          "tokens": [
+            { "text": "            child: " },
+            { "text": "_buildModernButton", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              onPressed:",
+          "tokens": [
+            { "text": "              onPressed:", "type": "property" }
+          ]
+        },
+        {
+          "content": "                  _rangeStart != null && _rangeEnd != null ? () {} : null,",
+          "tokens": [
+            { "text": "                  _rangeStart", "type": "property" },
+            { "text": " != " },
+            { "text": "null", "type": "keyword" },
+            { "text": " && _rangeEnd != " },
+            { "text": "null", "type": "keyword" },
+            { "text": " ? () {} : " },
+            { "text": "null", "type": "keyword" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              child: Text(",
+          "tokens": [
+            { "text": "              child: " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                _rangeStart != null && _rangeEnd != null ? 'Next' : 'Continue',",
+          "tokens": [
+            { "text": "                _rangeStart", "type": "property" },
+            { "text": " != " },
+            { "text": "null", "type": "keyword" },
+            { "text": " && _rangeEnd != " },
+            { "text": "null", "type": "keyword" },
+            { "text": " ? " },
+            { "text": "'Next'", "type": "string" },
+            { "text": " : " },
+            { "text": "'Continue'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                style: KCustomTextStyle.kBold(",
+          "tokens": [
+            { "text": "                style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kBold", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  context,",
+          "tokens": [
+            { "text": "                  context," }
+          ]
+        },
+        {
+          "content": "                  FontSize.kMedium,",
+          "tokens": [
+            { "text": "                  FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  Colors.white,",
+          "tokens": [
+            { "text": "                  Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "white", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  KConstantFonts.geistBold,",
+          "tokens": [
+            { "text": "                  KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "geistBold", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                ),",
+          "tokens": [{ "text": "                )," }]
+        },
+        {
+          "content": "              ),",
+          "tokens": [{ "text": "              )," }]
+        },
+        {
+          "content": "              backgroundColor: KConstantColors.blackColor,",
+          "tokens": [
+            { "text": "              backgroundColor: " },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "blackColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "        ],",
+          "tokens": [{ "text": "        ]," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "    ).animate().fadeIn(duration: 300.ms).slideY(begin: 0.2, end: 0);",
+          "tokens": [
+            { "text": "    ).", "type": "text" },
+            { "text": "animate", "type": "method" },
+            { "text": "().", "type": "text" },
+            { "text": "fadeIn", "type": "method" },
+            { "text": "(", "type": "text" },
+            { "text": "duration", "type": "property" },
+            { "text": ": ", "type": "text" },
+            { "text": "300", "type": "number" },
+            { "text": ".", "type": "text" },
+            { "text": "ms", "type": "property" },
+            { "text": ").", "type": "text" },
+            { "text": "slideY", "type": "method" },
+            { "text": "(", "type": "text" },
+            { "text": "begin", "type": "property" },
+            { "text": ": ", "type": "text" },
+            { "text": "0.2", "type": "number" },
+            { "text": ", " },
+            { "text": "end", "type": "property" },
+            { "text": ": " },
+            { "text": "0", "type": "number" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget _buildModernButton({",
+          "tokens": [
+            { "text": "  Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "_buildModernButton", "type": "method" },
+            { "text": "({" }
+          ]
+        },
+        {
+          "content": "    required VoidCallback? onPressed,",
+          "tokens": [
+            { "text": "    required", "type": "keyword" },
+            { "text": " " },
+            { "text": "VoidCallback", "type": "class" },
+            { "text": "? onPressed," }
+          ]
+        },
+        {
+          "content": "    required Widget child,",
+          "tokens": [
+            { "text": "    required", "type": "keyword" },
+            { "text": " " },
+            { "text": "Widget", "type": "widget" },
+            { "text": " child," }
+          ]
+        },
+        {
+          "content": "    required Color backgroundColor,",
+          "tokens": [
+            { "text": "    required", "type": "keyword" },
+            { "text": " " },
+            { "text": "Color", "type": "class" },
+            { "text": " backgroundColor," }
+          ]
+        },
+        {
+          "content": "  }) {",
+          "tokens": [{ "text": "  }) {" }]
+        },
+        {
+          "content": "    return ElevatedButton(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "ElevatedButton", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      onPressed: onPressed,",
+          "tokens": [
+            { "text": "      onPressed: onPressed," }
+          ]
+        },
+        {
+          "content": "      style: ElevatedButton.styleFrom(",
+          "tokens": [
+            { "text": "      style: " },
+            { "text": "ElevatedButton", "type": "widget" },
+            { "text": "." },
+            { "text": "styleFrom", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        backgroundColor: backgroundColor,",
+          "tokens": [
+            { "text": "        backgroundColor: backgroundColor," }
+          ]
+        },
+        {
+          "content": "        foregroundColor: Colors.white,",
+          "tokens": [
+            { "text": "        foregroundColor: " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "white", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        elevation: 0,",
+          "tokens": [
+            { "text": "        elevation: " },
+            { "text": "0", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        shape: RoundedRectangleBorder(",
+          "tokens": [
+            { "text": "        shape: " },
+            { "text": "RoundedRectangleBorder", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          borderRadius: BorderRadius.circular(8),",
+          "tokens": [
+            { "text": "          borderRadius: " },
+            { "text": "BorderRadius", "type": "widget" },
+            { "text": "." },
+            { "text": "circular", "type": "method" },
+            { "text": "(" },
+            { "text": "8", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        )," }]
+        },
+        {
+          "content": "        padding: const EdgeInsets.symmetric(vertical: 16),",
+          "tokens": [
+            { "text": "        padding: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "." },
+            { "text": "symmetric", "type": "method" },
+            { "text": "(" },
+            { "text": "vertical", "type": "property" },
+            { "text": ": " },
+            { "text": "16", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "      child: child,",
+          "tokens": [
+            { "text": "      child: child," }
+          ]
+        },
+        {
+          "content": "    );",
+          "tokens": [{ "text": "    );" }]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  String _formatDate(DateTime date) {",
+          "tokens": [
+            { "text": "  String", "type": "class" },
+            { "text": " " },
+            { "text": "_formatDate", "type": "method" },
+            { "text": "(" },
+            { "text": "DateTime", "type": "class" },
+            { "text": " date) {" }
+          ]
+        },
+        {
+          "content": "    return '${date.day} ${_getMonthName(date.month)}';",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "'${date.day} ${_getMonthName(date.month)}'", "type": "string" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  String _getMonthName(int month) {",
+          "tokens": [
+            { "text": "  String", "type": "class" },
+            { "text": " " },
+            { "text": "_getMonthName", "type": "method" },
+            { "text": "(" },
+            { "text": "int", "type": "class" },
+            { "text": " month) {" }
+          ]
+        },
+        {
+          "content": "    const months = [",
+          "tokens": [
+            { "text": "    const", "type": "keyword" },
+            { "text": " months = [" }
+          ]
+        },
+        {
+          "content": "      'Jan',",
+          "tokens": [
+            { "text": "      'Jan'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'Feb',",
+          "tokens": [
+            { "text": "      'Feb'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'Mar',",
+          "tokens": [
+            { "text": "      'Mar'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'Apr',",
+          "tokens": [
+            { "text": "      'Apr'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'May',",
+          "tokens": [
+            { "text": "      'May'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'Jun',",
+          "tokens": [
+            { "text": "      'Jun'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'Jul',",
+          "tokens": [
+            { "text": "      'Jul'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'Aug',",
+          "tokens": [
+            { "text": "      'Aug'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'Sep',",
+          "tokens": [
+            { "text": "      'Sep'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'Oct',",
+          "tokens": [
+            { "text": "      'Oct'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'Nov',",
+          "tokens": [
+            { "text": "      'Nov'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'Dec'",
+          "tokens": [
+            { "text": "      'Dec'", "type": "string" }
+          ]
+        },
+        {
+          "content": "    ];",
+          "tokens": [{ "text": "    ];" }]
+        },
+        {
+          "content": "    return months[month - 1];",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " months[month - " },
+            { "text": "1", "type": "number" },
+            { "text": "];" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "}",
+          "tokens": [{ "text": "}" }]
+        }
+      ]
+    }
+  },
+  "tokenTypes": {
+    "keyword": "text-purple-400",
+    "string": "text-green-400",
+    "widget": "text-blue-400",
+    "class": "text-yellow-400",
+    "method": "text-green-400",
+    "property": "text-yellow-400",
+    "number": "text-orange-400",
+    "annotation": "text-gray-500",
+    "comment": "text-gray-400"
+  }
+}

@@ -1,0 +1,333 @@
+/* Code Editor Specific Styles */
+.code-editor {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas,
+    monospace;
+  white-space: pre;
+  line-height: 1.5;
+  box-sizing: border-box;
+  height: calc(100vh - 3rem); /* Adjusted for the new smaller tab bar */
+  overflow: auto;
+}
+.line-numbers {
+  counter-reset: line;
+}
+.line-numbers .line::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 3rem;
+  text-align: right;
+  margin-right: 1rem;
+  color: #565f89;
+  user-select: none;
+}
+.line {
+  white-space: pre;
+  min-height: 1.5em;
+  position: relative;
+}
+
+/* Ensure proper spacing and alignment */
+.code-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/* Better code editor container */
+.code-editor.line-numbers {
+  flex: 1;
+  min-height: 100%;
+  padding-bottom: 2rem; /* Add some bottom padding for better scrolling */
+}
+
+/* Improve line number alignment */
+.line-numbers .line {
+  display: block;
+  width: 100%;
+}
+
+/* Fix for code wrapping in small windows */
+@media (max-width: 768px) {
+  .code-editor {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+}
+
+/* Night Owl theme syntax colors - specific to code highlighting */
+.syntax-purple {
+  color: #bb9af7;
+} /* keywords */
+.syntax-green {
+  color: #9ece6a;
+} /* strings, methods */
+.syntax-blue {
+  color: #7aa2f7;
+} /* widgets, types */
+.syntax-yellow {
+  color: #e0af68;
+} /* classes, properties */
+.syntax-orange {
+  color: #ff9e64;
+} /* numbers */
+.syntax-gray {
+  color: #565f89;
+} /* annotations, comments */
+.syntax-cyan {
+  color: #7dcfff;
+} /* functions */
+.syntax-red {
+  color: #f7768e;
+} /* errors, special */
+
+/* Hamburger Menu Button Styles */
+button[title='Open Projects Menu'],
+button[title='Close Menu'] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  border: none;
+  background: transparent;
+  outline: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+/* Button hover states */
+button[title='Open Projects Menu']:hover,
+button[title='Close Menu']:hover {
+  background-color: rgba(55, 65, 81, 0.8) !important;
+  color: white !important;
+}
+
+button[title='Open Projects Menu']:active,
+button[title='Close Menu']:active {
+  background-color: rgba(75, 85, 99, 0.9) !important;
+  transform: scale(0.95);
+}
+
+/* SVG inside hamburger button */
+button[title='Open Projects Menu'] svg,
+button[title='Close Menu'] svg {
+  pointer-events: none;
+  cursor: inherit;
+  transition: all 0.2s ease;
+  display: block;
+  position: relative;
+}
+
+/* SVG hover effects */
+button[title='Open Projects Menu']:hover svg,
+button[title='Close Menu']:hover svg {
+  transform: scale(1.1);
+  color: white;
+  filter: brightness(1.2);
+}
+
+/* SVG paths inherit pointer events from parent */
+button[title='Open Projects Menu'] svg path,
+button[title='Close Menu'] svg path {
+  pointer-events: none;
+  cursor: inherit;
+}
+
+/* Focus states for accessibility */
+button[title='Open Projects Menu']:focus,
+button[title='Close Menu']:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Hamburger button smooth transitions */
+button[title='Open Projects Menu'] {
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s ease !important;
+  transform-origin: center;
+}
+
+/* Ensure smooth hiding/showing of hamburger button */
+button[title='Open Projects Menu'][style*='opacity: 0'] {
+  pointer-events: none !important;
+}
+
+button[title='Open Projects Menu'][style*='opacity: 1'] {
+  pointer-events: auto !important;
+}
+
+/* Navigation Button Styles */
+#terminal-nav,
+#flutterCode-nav {
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 100;
+  user-select: none;
+}
+
+#terminal-nav:hover,
+#flutterCode-nav:hover {
+  background-color: rgba(59, 130, 246, 0.1) !important;
+  color: #3b82f6 !important;
+}
+
+#terminal-nav:active,
+#flutterCode-nav:active {
+  background-color: rgba(59, 130, 246, 0.2) !important;
+  transform: scale(0.95);
+}
+
+#terminal-nav.active,
+#flutterCode-nav.active {
+  background-color: #3b82f6 !important;
+  color: white !important;
+}
+
+/* Responsive Layout Styles */
+@media (max-width: 768px) {
+  /* Hide the iPhone preview on smaller screens */
+  .preview-panel {
+    display: none !important;
+  }
+
+  /* Make sidebar smaller on mobile */
+  .sidebar {
+    width: clamp(150px, 20vw, 200px) !important;
+  }
+
+  /* Reduce padding in tab bar */
+  .tab-bar {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
+  /* Stack navigation buttons vertically on very small screens */
+  @media (max-width: 480px) {
+    .nav-buttons {
+      flex-direction: column !important;
+      gap: 0.25rem !important;
+    }
+  }
+}
+
+/* Ensure proper flex behavior */
+.main-content {
+  min-height: 0;
+  flex: 1;
+}
+
+.code-editor-panel {
+  min-width: 0;
+  flex: 1;
+}
+
+/* Better text truncation */
+.truncate-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+/* Responsive hamburger menu */
+#menu-panel {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Overlay for menu when open */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 40;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Better button sizing for touch devices */
+@media (max-width: 768px) {
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Exception for inline buttons */
+  .inline-button {
+    min-height: auto;
+    min-width: auto;
+  }
+}
+
+/* Fix for very small windows */
+@media (max-width: 640px) {
+  .code-editor {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .line-numbers .line::before {
+    width: 2rem;
+  }
+}
+
+/* Window Drag Functionality */
+.drag-region {
+  -webkit-app-region: drag;
+}
+
+/* Tab bar drag styling */
+.bg-dark-surface {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Interactive elements in tab bar */
+.bg-dark-surface button,
+.bg-dark-surface input {
+  cursor: pointer;
+}
+
+.bg-dark-surface input {
+  cursor: text;
+}
+
+/* Ensure drag functionality works properly */
+[style*='-webkit-app-region: drag'] {
+  -webkit-app-region: drag !important;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+[style*='-webkit-app-region: no-drag'] {
+  -webkit-app-region: no-drag !important;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* Ensure buttons in the tab bar are clickable */
+.bg-dark-surface button {
+  -webkit-app-region: no-drag !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Make sure all interactive elements in tab bar work */
+.bg-dark-surface button,
+.bg-dark-surface input,
+.bg-dark-surface select,
+.bg-dark-surface textarea {
+  -webkit-app-region: no-drag !important;
+}

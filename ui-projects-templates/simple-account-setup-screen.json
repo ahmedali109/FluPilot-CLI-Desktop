@@ -1,0 +1,1673 @@
+{
+  "flutter": {
+    "simple_account_setup_screen.dart": {
+      "lines": [
+        {
+          "content": "import 'package:flutter_animate/flutter_animate.dart';",
+          "tokens": [
+            { "text": "import", "type": "keyword" },
+            { "text": " " },
+            {
+              "text": "'package:flutter_animate/flutter_animate.dart'",
+              "type": "string"
+            },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "import '../../app/shared/fonts.dart';",
+          "tokens": [
+            { "text": "import", "type": "keyword" },
+            { "text": " " },
+            { "text": "'../../app/shared/fonts.dart'", "type": "string" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "import '../../shared/exports/export_boiler_plate.dart';",
+          "tokens": [
+            { "text": "import", "type": "keyword" },
+            { "text": " " },
+            {
+              "text": "'../../shared/exports/export_boiler_plate.dart'",
+              "type": "string"
+            },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "class SimpleAccountSetupScreen extends StatefulWidget {",
+          "tokens": [
+            { "text": "class", "type": "keyword" },
+            { "text": " " },
+            { "text": "SimpleAccountSetupScreen", "type": "class" },
+            { "text": " " },
+            { "text": "extends", "type": "keyword" },
+            { "text": " " },
+            { "text": "StatefulWidget", "type": "class" },
+            { "text": " " },
+            { "text": "{" }
+          ]
+        },
+        {
+          "content": "  const SimpleAccountSetupScreen({Key? key, required BuildContext context})",
+          "tokens": [
+            { "text": "  " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SimpleAccountSetupScreen", "type": "class" },
+            { "text": "(" },
+            { "text": "{" },
+            { "text": "Key", "type": "class" },
+            { "text": "?" },
+            { "text": " " },
+            { "text": "key", "type": "parameter" },
+            { "text": "," },
+            { "text": " " },
+            { "text": "required", "type": "keyword" },
+            { "text": " " },
+            { "text": "BuildContext", "type": "class" },
+            { "text": " " },
+            { "text": "context", "type": "parameter" },
+            { "text": "}" },
+            { "text": ")" }
+          ]
+        },
+        {
+          "content": "      : super(key: key);",
+          "tokens": [
+            { "text": "      " },
+            { "text": ":", "type": "operator" },
+            { "text": " " },
+            { "text": "super", "type": "keyword" },
+            { "text": "(" },
+            { "text": "key", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "key", "type": "parameter" },
+            { "text": ")" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  _SimpleAccountSetupScreenState createState() =>",
+          "tokens": [
+            { "text": "  " },
+            { "text": "_SimpleAccountSetupScreenState", "type": "class" },
+            { "text": " " },
+            { "text": "createState", "type": "method" },
+            { "text": "()" },
+            { "text": " " },
+            { "text": "=>", "type": "operator" }
+          ]
+        },
+        {
+          "content": "      _SimpleAccountSetupScreenState();",
+          "tokens": [
+            { "text": "      " },
+            { "text": "_SimpleAccountSetupScreenState", "type": "class" },
+            { "text": "()" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "}",
+          "tokens": [{ "text": "}" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "class _SimpleAccountSetupScreenState extends State<SimpleAccountSetupScreen> {",
+          "tokens": [
+            { "text": "class", "type": "keyword" },
+            { "text": " " },
+            { "text": "_SimpleAccountSetupScreenState", "type": "class" },
+            { "text": " " },
+            { "text": "extends", "type": "keyword" },
+            { "text": " " },
+            { "text": "State", "type": "class" },
+            { "text": "<" },
+            { "text": "SimpleAccountSetupScreen", "type": "class" },
+            { "text": ">" },
+            { "text": " " },
+            { "text": "{" }
+          ]
+        },
+        {
+          "content": "  bool _isAgeVerified = false;",
+          "tokens": [
+            { "text": "  " },
+            { "text": "bool", "type": "type" },
+            { "text": " " },
+            { "text": "_isAgeVerified", "type": "variable" },
+            { "text": " " },
+            { "text": "=", "type": "operator" },
+            { "text": " " },
+            { "text": "false", "type": "keyword" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "  bool _isTermsAccepted = false;",
+          "tokens": [
+            { "text": "  " },
+            { "text": "bool", "type": "type" },
+            { "text": " " },
+            { "text": "_isTermsAccepted", "type": "variable" },
+            { "text": " " },
+            { "text": "=", "type": "operator" },
+            { "text": " " },
+            { "text": "false", "type": "keyword" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "  int _currentStep = 0;",
+          "tokens": [
+            { "text": "  " },
+            { "text": "int", "type": "type" },
+            { "text": " " },
+            { "text": "_currentStep", "type": "variable" },
+            { "text": " " },
+            { "text": "=", "type": "operator" },
+            { "text": " " },
+            { "text": "0", "type": "number" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget _buildHeader(BuildContext context) {",
+          "tokens": [
+            { "text": "  " },
+            { "text": "Widget", "type": "class" },
+            { "text": " " },
+            { "text": "_buildHeader", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "class" },
+            { "text": " " },
+            { "text": "context", "type": "parameter" },
+            { "text": ")" },
+            { "text": " " },
+            { "text": "{" }
+          ]
+        },
+        {
+          "content": "    return Padding(",
+          "tokens": [
+            { "text": "    " },
+            { "text": "return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Padding", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      padding: const EdgeInsets.all(24),",
+          "tokens": [
+            { "text": "      " },
+            { "text": "padding", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "class" },
+            { "text": "." },
+            { "text": "all", "type": "method" },
+            { "text": "(" },
+            { "text": "24", "type": "number" },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      child: Column(",
+          "tokens": [
+            { "text": "      " },
+            { "text": "child", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "Column", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        crossAxisAlignment: CrossAxisAlignment.start,",
+          "tokens": [
+            { "text": "        " },
+            { "text": "crossAxisAlignment", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "CrossAxisAlignment", "type": "class" },
+            { "text": "." },
+            { "text": "start", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        children: [",
+          "tokens": [
+            { "text": "        " },
+            { "text": "children", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "[" }
+          ]
+        },
+        {
+          "content": "          Row(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "Row", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            mainAxisAlignment: MainAxisAlignment.spaceBetween,",
+          "tokens": [
+            { "text": "            " },
+            { "text": "mainAxisAlignment", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "MainAxisAlignment", "type": "class" },
+            { "text": "." },
+            { "text": "spaceBetween", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            children: [",
+          "tokens": [
+            { "text": "            " },
+            { "text": "children", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "[" }
+          ]
+        },
+        {
+          "content": "              IconButton(",
+          "tokens": [
+            { "text": "              " },
+            { "text": "IconButton", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                icon: const Icon(Icons.close),",
+          "tokens": [
+            { "text": "                " },
+            { "text": "icon", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Icon", "type": "class" },
+            { "text": "(" },
+            { "text": "Icons", "type": "class" },
+            { "text": "." },
+            { "text": "close", "type": "property" },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                onPressed: () => Navigator.pop(context),",
+          "tokens": [
+            { "text": "                " },
+            { "text": "onPressed", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "()" },
+            { "text": " " },
+            { "text": "=>", "type": "operator" },
+            { "text": " " },
+            { "text": "Navigator", "type": "class" },
+            { "text": "." },
+            { "text": "pop", "type": "method" },
+            { "text": "(" },
+            { "text": "context", "type": "parameter" },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              ),",
+          "tokens": [
+            { "text": "              " },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              Row(",
+          "tokens": [
+            { "text": "              " },
+            { "text": "Row", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                children: [",
+          "tokens": [
+            { "text": "                " },
+            { "text": "children", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "[" }
+          ]
+        },
+        {
+          "content": "                  Container(",
+          "tokens": [
+            { "text": "                  " },
+            { "text": "Container", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                    width: 32,",
+          "tokens": [
+            { "text": "                    " },
+            { "text": "width", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "32", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    height: 32,",
+          "tokens": [
+            { "text": "                    " },
+            { "text": "height", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "32", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    decoration: const BoxDecoration(",
+          "tokens": [
+            { "text": "                    " },
+            { "text": "decoration", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "BoxDecoration", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                      color: Colors.amber,",
+          "tokens": [
+            { "text": "                      " },
+            { "text": "color", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "Colors", "type": "class" },
+            { "text": "." },
+            { "text": "amber", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                      shape: BoxShape.circle,",
+          "tokens": [
+            { "text": "                      " },
+            { "text": "shape", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "BoxShape", "type": "class" },
+            { "text": "." },
+            { "text": "circle", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    ),",
+          "tokens": [
+            { "text": "                    " },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  ),",
+          "tokens": [
+            { "text": "                  " },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  // Additional containers would follow same pattern...",
+          "tokens": [
+            { "text": "                  " },
+            {
+              "text": "// Additional containers would follow same pattern...",
+              "type": "comment"
+            }
+          ]
+        },
+        {
+          "content": "                ],",
+          "tokens": [{ "text": "                " }, { "text": "]," }]
+        },
+        {
+          "content": "              ),",
+          "tokens": [
+            { "text": "              " },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            ],",
+          "tokens": [{ "text": "            " }, { "text": "]," }]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          " }, { "text": ")" }, { "text": "," }]
+        },
+        {
+          "content": "          const SizedBox(height: 24),",
+          "tokens": [
+            { "text": "          " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SizedBox", "type": "class" },
+            { "text": "(" },
+            { "text": "height", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "24", "type": "number" },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          Text(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "Text", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            'Complete personal\\naccount setup',",
+          "tokens": [
+            { "text": "            " },
+            { "text": "'Complete personal\\naccount setup'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            style: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "            " },
+            { "text": "style", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              context,",
+          "tokens": [
+            { "text": "              " },
+            { "text": "context", "type": "parameter" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              FontSize.kLarge,",
+          "tokens": [
+            { "text": "              " },
+            { "text": "FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kLarge", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              KConstantColors.bgColor,",
+          "tokens": [
+            { "text": "              " },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "bgColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              KConstantFonts.geistMedium,",
+          "tokens": [
+            { "text": "              " },
+            { "text": "KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "geistMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            ),",
+          "tokens": [
+            { "text": "            " },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          " }, { "text": ")" }, { "text": "," }]
+        },
+        {
+          "content": "          const SizedBox(height: 8),",
+          "tokens": [
+            { "text": "          " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SizedBox", "type": "class" },
+            { "text": "(" },
+            { "text": "height", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "8", "type": "number" },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          RichText(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "RichText", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            text: TextSpan(",
+          "tokens": [
+            { "text": "            " },
+            { "text": "text", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "TextSpan", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              children: [",
+          "tokens": [
+            { "text": "              " },
+            { "text": "children", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "[" }
+          ]
+        },
+        {
+          "content": "                TextSpan(",
+          "tokens": [
+            { "text": "                " },
+            { "text": "TextSpan", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  text: 'Regulations',",
+          "tokens": [
+            { "text": "                  " },
+            { "text": "text", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "'Regulations'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  style: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "                  " },
+            { "text": "style", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                    context,",
+          "tokens": [
+            { "text": "                    " },
+            { "text": "context", "type": "parameter" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    FontSize.kMedium,",
+          "tokens": [
+            { "text": "                    " },
+            { "text": "FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    Colors.blue,",
+          "tokens": [
+            { "text": "                    " },
+            { "text": "Colors", "type": "class" },
+            { "text": "." },
+            { "text": "blue", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    KConstantFonts.geistMedium,",
+          "tokens": [
+            { "text": "                    " },
+            { "text": "KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "geistMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  ),",
+          "tokens": [
+            { "text": "                  " },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                ),",
+          "tokens": [
+            { "text": "                " },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                // Additional TextSpan would follow...",
+          "tokens": [
+            { "text": "                " },
+            {
+              "text": "// Additional TextSpan would follow...",
+              "type": "comment"
+            }
+          ]
+        },
+        {
+          "content": "              ],",
+          "tokens": [{ "text": "              " }, { "text": "]," }]
+        },
+        {
+          "content": "            ),",
+          "tokens": [
+            { "text": "            " },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          " }, { "text": ")" }, { "text": "," }]
+        },
+        {
+          "content": "        ],",
+          "tokens": [{ "text": "        " }, { "text": "]," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      " }, { "text": ")" }, { "text": "," }]
+        },
+        {
+          "content": "    ).animate().fadeIn(duration: 500.ms).slideY(begin: -0.2, end: 0);",
+          "tokens": [
+            { "text": "    " },
+            { "text": ")" },
+            { "text": "." },
+            { "text": "animate", "type": "method" },
+            { "text": "()" },
+            { "text": "." },
+            { "text": "fadeIn", "type": "method" },
+            { "text": "(" },
+            { "text": "duration", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "500", "type": "number" },
+            { "text": "." },
+            { "text": "ms", "type": "property" },
+            { "text": ")" },
+            { "text": "." },
+            { "text": "slideY", "type": "method" },
+            { "text": "(" },
+            { "text": "begin", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "-0.2", "type": "number" },
+            { "text": "," },
+            { "text": " " },
+            { "text": "end", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "0", "type": "number" },
+            { "text": ")" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  " }, { "text": "}" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget _buildStepper(BuildContext context) {",
+          "tokens": [
+            { "text": "  " },
+            { "text": "Widget", "type": "class" },
+            { "text": " " },
+            { "text": "_buildStepper", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "class" },
+            { "text": " " },
+            { "text": "context", "type": "parameter" },
+            { "text": ")" },
+            { "text": " " },
+            { "text": "{" }
+          ]
+        },
+        {
+          "content": "    return Stepper(",
+          "tokens": [
+            { "text": "    " },
+            { "text": "return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Stepper", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      currentStep: _currentStep,",
+          "tokens": [
+            { "text": "      " },
+            { "text": "currentStep", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "_currentStep", "type": "variable" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      onStepTapped: (step) => setState(() => _currentStep = step),",
+          "tokens": [
+            { "text": "      " },
+            { "text": "onStepTapped", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "(" },
+            { "text": "step", "type": "parameter" },
+            { "text": ")" },
+            { "text": " " },
+            { "text": "=>", "type": "operator" },
+            { "text": " " },
+            { "text": "setState", "type": "method" },
+            { "text": "(" },
+            { "text": "()" },
+            { "text": " " },
+            { "text": "=>", "type": "operator" },
+            { "text": " " },
+            { "text": "_currentStep", "type": "variable" },
+            { "text": " " },
+            { "text": "=", "type": "operator" },
+            { "text": " " },
+            { "text": "step", "type": "parameter" },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      controlsBuilder: (context, details) => Container(),",
+          "tokens": [
+            { "text": "      " },
+            { "text": "controlsBuilder", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "(" },
+            { "text": "context", "type": "parameter" },
+            { "text": "," },
+            { "text": " " },
+            { "text": "details", "type": "parameter" },
+            { "text": ")" },
+            { "text": " " },
+            { "text": "=>", "type": "operator" },
+            { "text": " " },
+            { "text": "Container", "type": "class" },
+            { "text": "()" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      steps: [",
+          "tokens": [
+            { "text": "      " },
+            { "text": "steps", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "[" }
+          ]
+        },
+        {
+          "content": "        Step(",
+          "tokens": [
+            { "text": "        " },
+            { "text": "Step", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          title: Text(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "title", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "Text", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            'Create your account',",
+          "tokens": [
+            { "text": "            " },
+            { "text": "'Create your account'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            style: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "            " },
+            { "text": "style", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              context,",
+          "tokens": [
+            { "text": "              " },
+            { "text": "context", "type": "parameter" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              FontSize.kMedium,",
+          "tokens": [
+            { "text": "              " },
+            { "text": "FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              KConstantColors.bgColor,",
+          "tokens": [
+            { "text": "              " },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "bgColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              KConstantFonts.geistMedium,",
+          "tokens": [
+            { "text": "              " },
+            { "text": "KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "geistMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            ),",
+          "tokens": [
+            { "text": "            " },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          " }, { "text": ")" }, { "text": "," }]
+        },
+        {
+          "content": "          content: Text(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "content", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "Text", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            'Add a password and secure your account',",
+          "tokens": [
+            { "text": "            " },
+            {
+              "text": "'Add a password and secure your account'",
+              "type": "string"
+            },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            // ... style would follow same pattern",
+          "tokens": [
+            { "text": "            " },
+            {
+              "text": "// ... style would follow same pattern",
+              "type": "comment"
+            }
+          ]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          " }, { "text": ")" }, { "text": "," }]
+        },
+        {
+          "content": "          isActive: _currentStep >= 0,",
+          "tokens": [
+            { "text": "          " },
+            { "text": "isActive", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "_currentStep", "type": "variable" },
+            { "text": " " },
+            { "text": ">=", "type": "operator" },
+            { "text": " " },
+            { "text": "0", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          state: _currentStep > 0 ? StepState.complete : StepState.indexed,",
+          "tokens": [
+            { "text": "          " },
+            { "text": "state", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "_currentStep", "type": "variable" },
+            { "text": " " },
+            { "text": ">", "type": "operator" },
+            { "text": " " },
+            { "text": "0", "type": "number" },
+            { "text": " " },
+            { "text": "?", "type": "operator" },
+            { "text": " " },
+            { "text": "StepState", "type": "class" },
+            { "text": "." },
+            { "text": "complete", "type": "property" },
+            { "text": " " },
+            { "text": ":", "type": "operator" },
+            { "text": " " },
+            { "text": "StepState", "type": "class" },
+            { "text": "." },
+            { "text": "indexed", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        " }, { "text": ")" }, { "text": "," }]
+        },
+        {
+          "content": "        // Additional steps would follow same pattern...",
+          "tokens": [
+            { "text": "        " },
+            {
+              "text": "// Additional steps would follow same pattern...",
+              "type": "comment"
+            }
+          ]
+        },
+        {
+          "content": "      ],",
+          "tokens": [{ "text": "      " }, { "text": "]," }]
+        },
+        {
+          "content": "    ).animate().fadeIn(duration: 500.ms).slideY(begin: 0.2, end: 0);",
+          "tokens": [
+            { "text": "    " },
+            { "text": ")" },
+            { "text": "." },
+            { "text": "animate", "type": "method" },
+            { "text": "()" },
+            { "text": "." },
+            { "text": "fadeIn", "type": "method" },
+            { "text": "(" },
+            { "text": "duration", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "500", "type": "number" },
+            { "text": "." },
+            { "text": "ms", "type": "property" },
+            { "text": ")" },
+            { "text": "." },
+            { "text": "slideY", "type": "method" },
+            { "text": "(" },
+            { "text": "begin", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "0.2", "type": "number" },
+            { "text": "," },
+            { "text": " " },
+            { "text": "end", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "0", "type": "number" },
+            { "text": ")" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  " }, { "text": "}" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  Widget build(BuildContext context) {",
+          "tokens": [
+            { "text": "  " },
+            { "text": "Widget", "type": "class" },
+            { "text": " " },
+            { "text": "build", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "class" },
+            { "text": " " },
+            { "text": "context", "type": "parameter" },
+            { "text": ")" },
+            { "text": " " },
+            { "text": "{" }
+          ]
+        },
+        {
+          "content": "    return Scaffold(",
+          "tokens": [
+            { "text": "    " },
+            { "text": "return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Scaffold", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      backgroundColor: Colors.white,",
+          "tokens": [
+            { "text": "      " },
+            { "text": "backgroundColor", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "Colors", "type": "class" },
+            { "text": "." },
+            { "text": "white", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      body: SafeArea(",
+          "tokens": [
+            { "text": "      " },
+            { "text": "body", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "SafeArea", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        child: Column(",
+          "tokens": [
+            { "text": "        " },
+            { "text": "child", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "Column", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          children: [",
+          "tokens": [
+            { "text": "          " },
+            { "text": "children", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "[" }
+          ]
+        },
+        {
+          "content": "            _buildHeader(context),",
+          "tokens": [
+            { "text": "            " },
+            { "text": "_buildHeader", "type": "method" },
+            { "text": "(" },
+            { "text": "context", "type": "parameter" },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            Expanded(",
+          "tokens": [
+            { "text": "            " },
+            { "text": "Expanded", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              child: SingleChildScrollView(",
+          "tokens": [
+            { "text": "              " },
+            { "text": "child", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "SingleChildScrollView", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                padding: const EdgeInsets.all(24),",
+          "tokens": [
+            { "text": "                " },
+            { "text": "padding", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "class" },
+            { "text": "." },
+            { "text": "all", "type": "method" },
+            { "text": "(" },
+            { "text": "24", "type": "number" },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                child: Column(",
+          "tokens": [
+            { "text": "                " },
+            { "text": "child", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "Column", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  children: [",
+          "tokens": [
+            { "text": "                  " },
+            { "text": "children", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "[" }
+          ]
+        },
+        {
+          "content": "                    _buildStepper(context),",
+          "tokens": [
+            { "text": "                    " },
+            { "text": "_buildStepper", "type": "method" },
+            { "text": "(" },
+            { "text": "context", "type": "parameter" },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    _buildVerifyIdentity(context),",
+          "tokens": [
+            { "text": "                    " },
+            { "text": "_buildVerifyIdentity", "type": "method" },
+            { "text": "(" },
+            { "text": "context", "type": "parameter" },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    const SizedBox(height: 24),",
+          "tokens": [
+            { "text": "                    " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SizedBox", "type": "class" },
+            { "text": "(" },
+            { "text": "height", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "24", "type": "number" },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    _buildTerms(context),",
+          "tokens": [
+            { "text": "                    " },
+            { "text": "_buildTerms", "type": "method" },
+            { "text": "(" },
+            { "text": "context", "type": "parameter" },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  ],",
+          "tokens": [{ "text": "                  " }, { "text": "]," }]
+        },
+        {
+          "content": "                ),",
+          "tokens": [
+            { "text": "                " },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              ),",
+          "tokens": [
+            { "text": "              " },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            ),",
+          "tokens": [
+            { "text": "            " },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            Padding(",
+          "tokens": [
+            { "text": "            " },
+            { "text": "Padding", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              padding: const EdgeInsets.all(24),",
+          "tokens": [
+            { "text": "              " },
+            { "text": "padding", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "class" },
+            { "text": "." },
+            { "text": "all", "type": "method" },
+            { "text": "(" },
+            { "text": "24", "type": "number" },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              child: ElevatedButton(",
+          "tokens": [
+            { "text": "              " },
+            { "text": "child", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "ElevatedButton", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                onPressed: _isAgeVerified && _isTermsAccepted ? () {} : null,",
+          "tokens": [
+            { "text": "                " },
+            { "text": "onPressed", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "_isAgeVerified", "type": "variable" },
+            { "text": " " },
+            { "text": "&&", "type": "operator" },
+            { "text": " " },
+            { "text": "_isTermsAccepted", "type": "variable" },
+            { "text": " " },
+            { "text": "?", "type": "operator" },
+            { "text": " " },
+            { "text": "()" },
+            { "text": " " },
+            { "text": "{}" },
+            { "text": " " },
+            { "text": ":", "type": "operator" },
+            { "text": " " },
+            { "text": "null", "type": "keyword" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                style: ElevatedButton.styleFrom(",
+          "tokens": [
+            { "text": "                " },
+            { "text": "style", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "ElevatedButton", "type": "class" },
+            { "text": "." },
+            { "text": "styleFrom", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  backgroundColor: Colors.blue,",
+          "tokens": [
+            { "text": "                  " },
+            { "text": "backgroundColor", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "Colors", "type": "class" },
+            { "text": "." },
+            { "text": "blue", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  minimumSize: const Size(double.infinity, 56),",
+          "tokens": [
+            { "text": "                  " },
+            { "text": "minimumSize", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Size", "type": "class" },
+            { "text": "(" },
+            { "text": "double", "type": "type" },
+            { "text": "." },
+            { "text": "infinity", "type": "property" },
+            { "text": "," },
+            { "text": " " },
+            { "text": "56", "type": "number" },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  shape: RoundedRectangleBorder(",
+          "tokens": [
+            { "text": "                  " },
+            { "text": "shape", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "RoundedRectangleBorder", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                    borderRadius: BorderRadius.circular(28),",
+          "tokens": [
+            { "text": "                    " },
+            { "text": "borderRadius", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "BorderRadius", "type": "class" },
+            { "text": "." },
+            { "text": "circular", "type": "method" },
+            { "text": "(" },
+            { "text": "28", "type": "number" },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  ),",
+          "tokens": [
+            { "text": "                  " },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                ),",
+          "tokens": [
+            { "text": "                " },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                child: Text(",
+          "tokens": [
+            { "text": "                " },
+            { "text": "child", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "Text", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  'Submit',",
+          "tokens": [
+            { "text": "                  " },
+            { "text": "'Submit'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  style: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "                  " },
+            { "text": "style", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                    context,",
+          "tokens": [
+            { "text": "                    " },
+            { "text": "context", "type": "parameter" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    FontSize.kMedium,",
+          "tokens": [
+            { "text": "                    " },
+            { "text": "FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    Colors.white,",
+          "tokens": [
+            { "text": "                    " },
+            { "text": "Colors", "type": "class" },
+            { "text": "." },
+            { "text": "white", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    KConstantFonts.geistMedium,",
+          "tokens": [
+            { "text": "                    " },
+            { "text": "KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "geistMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  ),",
+          "tokens": [
+            { "text": "                  " },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                ),",
+          "tokens": [
+            { "text": "                " },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              ),",
+          "tokens": [
+            { "text": "              " },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            ).animate().fadeIn(duration: 500.ms).slideY(begin: 0.2, end: 0),",
+          "tokens": [
+            { "text": "            " },
+            { "text": ")" },
+            { "text": "." },
+            { "text": "animate", "type": "method" },
+            { "text": "()" },
+            { "text": "." },
+            { "text": "fadeIn", "type": "method" },
+            { "text": "(" },
+            { "text": "duration", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "500", "type": "number" },
+            { "text": "." },
+            { "text": "ms", "type": "property" },
+            { "text": ")" },
+            { "text": "." },
+            { "text": "slideY", "type": "method" },
+            { "text": "(" },
+            { "text": "begin", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "0.2", "type": "number" },
+            { "text": "," },
+            { "text": " " },
+            { "text": "end", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "0", "type": "number" },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          ],",
+          "tokens": [{ "text": "          " }, { "text": "]," }]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        " }, { "text": ")" }, { "text": "," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      " }, { "text": ")" }, { "text": "," }]
+        },
+        {
+          "content": "    );",
+          "tokens": [{ "text": "    " }, { "text": ")" }, { "text": ";" }]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  " }, { "text": "}" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  // Additional methods like _buildVerifyIdentity and _buildTerms would follow...",
+          "tokens": [
+            { "text": "  " },
+            {
+              "text": "// Additional methods like _buildVerifyIdentity and _buildTerms would follow...",
+              "type": "comment"
+            }
+          ]
+        },
+        {
+          "content": "}",
+          "tokens": [{ "text": "}" }]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1859 @@
+{
+  "flutter": {
+    "SubwayOrderScreen.dart": {
+      "lines": [
+        {
+          "content": "import '../../app/shared/fonts.dart';",
+          "tokens": [
+            { "text": "import", "type": "keyword" },
+            { "text": " " },
+            { "text": "'../../app/shared/fonts.dart'", "type": "string" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "import '../../shared/exports/export_boiler_plate.dart';",
+          "tokens": [
+            { "text": "import", "type": "keyword" },
+            { "text": " " },
+            {
+              "text": "'../../shared/exports/export_boiler_plate.dart'",
+              "type": "string"
+            },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "class SubwayOrderScreen extends StatelessWidget {",
+          "tokens": [
+            { "text": "class", "type": "keyword" },
+            { "text": " " },
+            { "text": "SubwayOrderScreen", "type": "class" },
+            { "text": " " },
+            { "text": "extends", "type": "keyword" },
+            { "text": " " },
+            { "text": "StatelessWidget", "type": "widget" },
+            { "text": " {" }
+          ]
+        },
+        {
+          "content": "  const SubwayOrderScreen({super.key});",
+          "tokens": [
+            { "text": "  const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SubwayOrderScreen", "type": "method" },
+            { "text": "({" },
+            { "text": "super", "type": "keyword" },
+            { "text": ".key});" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  ", "type": "text" },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  Widget build(BuildContext context) {",
+          "tokens": [
+            { "text": "  Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "build", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    return Scaffold(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Scaffold", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      backgroundColor: KConstantColors.whiteColor,",
+          "tokens": [
+            { "text": "      backgroundColor: " },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "whiteColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      appBar: AppBar(",
+          "tokens": [
+            { "text": "      appBar: " },
+            { "text": "AppBar", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        backgroundColor: KConstantColors.whiteColor,",
+          "tokens": [
+            { "text": "        backgroundColor: " },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "whiteColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        title: Text(",
+          "tokens": [
+            { "text": "        title: " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          'Subway - West Mall - We...',",
+          "tokens": [
+            {
+              "text": "          'Subway - West Mall - We...'",
+              "type": "string"
+            },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          style: KCustomTextStyle.kBold(",
+          "tokens": [
+            { "text": "          style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kBold", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            context,",
+          "tokens": [{ "text": "            context," }]
+        },
+        {
+          "content": "            FontSize.kMedium,",
+          "tokens": [
+            { "text": "            FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            KConstantColors.bgColor,",
+          "tokens": [
+            { "text": "            KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "bgColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            KConstantFonts.haskoyBold,",
+          "tokens": [
+            { "text": "            KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "haskoyBold", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        )," }]
+        },
+        {
+          "content": "        actions: [",
+          "tokens": [{ "text": "        actions: [" }]
+        },
+        {
+          "content": "          IconButton(icon: const Icon(Icons.favorite_border), onPressed: () {}),",
+          "tokens": [
+            { "text": "          IconButton(icon: const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Icon", "type": "widget" },
+            { "text": "(", "type": "text" },
+            { "text": "Icons", "type": "widget" },
+            { "text": "." },
+            { "text": "favorite_border", "type": "property" },
+            { "text": "), onPressed: () {})," }
+          ]
+        },
+        {
+          "content": "          IconButton(icon: const Icon(Iconsax.send), onPressed: () {}),",
+          "tokens": [
+            { "text": "          IconButton(icon: const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Icon", "type": "widget" },
+            { "text": "(", "type": "text" },
+            { "text": "Iconsax", "type": "class" },
+            { "text": "." },
+            { "text": "send", "type": "property" },
+            { "text": "), onPressed: () {})," }
+          ]
+        },
+        {
+          "content": "          IconButton(icon: const Icon(Icons.search), onPressed: () {}),",
+          "tokens": [
+            { "text": "          IconButton(icon: const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Icon", "type": "widget" },
+            { "text": "(", "type": "text" },
+            { "text": "Icons", "type": "widget" },
+            { "text": "." },
+            { "text": "search", "type": "property" },
+            { "text": "), onPressed: () {})," }
+          ]
+        },
+        {
+          "content": "        ],",
+          "tokens": [{ "text": "        ]," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "      body: Column(",
+          "tokens": [
+            { "text": "      body: " },
+            { "text": "Column", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        children: [",
+          "tokens": [{ "text": "        children: [" }]
+        },
+        {
+          "content": "          buildDeliveryTime(context),",
+          "tokens": [
+            { "text": "          buildDeliveryTime", "type": "method" },
+            { "text": "(context)," }
+          ]
+        },
+        {
+          "content": "          Expanded(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "Expanded", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            child: ListView(",
+          "tokens": [
+            { "text": "            child: " },
+            { "text": "ListView", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              children: [",
+          "tokens": [{ "text": "              children: [" }]
+        },
+        {
+          "content": "                buildMenuItem(",
+          "tokens": [
+            { "text": "                buildMenuItem", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  context,",
+          "tokens": [{ "text": "                  context," }]
+        },
+        {
+          "content": "                  'Tandoori Chicken (Ala Carte)',",
+          "tokens": [
+            {
+              "text": "                  'Tandoori Chicken (Ala Carte)'",
+              "type": "string"
+            },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  '\\$9.00',",
+          "tokens": [
+            { "text": "                  '\\$9.00'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  'https://cdn.cosmos.so/5d5e1cfa-4bd5-4f21-bc7a-86b385274389?format=jpeg',",
+          "tokens": [
+            {
+              "text": "                  'https://cdn.cosmos.so/5d5e1cfa-4bd5-4f21-bc7a-86b385274389?format=jpeg'",
+              "type": "string"
+            },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  description:",
+          "tokens": [
+            { "text": "                  description:", "type": "property" }
+          ]
+        },
+        {
+          "content": "                      'Awesome tandoori chicken with a hint of spiciness. Served with lettuce, tomato, onion, and our signature tandoori sauce.',",
+          "tokens": [
+            {
+              "text": "                      'Awesome tandoori chicken with a hint of spiciness. Served with lettuce, tomato, onion, and our signature tandoori sauce.'",
+              "type": "string"
+            },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                ),",
+          "tokens": [{ "text": "                )," }]
+        },
+        {
+          "content": "                buildMenuItem(",
+          "tokens": [
+            { "text": "                buildMenuItem", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  context,",
+          "tokens": [{ "text": "                  context," }]
+        },
+        {
+          "content": "                  'Tandoori Chicken (Cookie Meal)',",
+          "tokens": [
+            {
+              "text": "                  'Tandoori Chicken (Cookie Meal)'",
+              "type": "string"
+            },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  '\\$12.90',",
+          "tokens": [
+            { "text": "                  '\\$12.90'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  'https://cdn.cosmos.so/15fb85bc-1bdd-426a-8b2e-ac7a78622a5c?format=jpeg',",
+          "tokens": [
+            {
+              "text": "                  'https://cdn.cosmos.so/15fb85bc-1bdd-426a-8b2e-ac7a78622a5c?format=jpeg'",
+              "type": "string"
+            },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  description:",
+          "tokens": [
+            { "text": "                  description:", "type": "property" }
+          ]
+        },
+        {
+          "content": "                      'Comes with Tandoori Chicken Sub, 2 pieces of cookies and 1 drink.',",
+          "tokens": [
+            {
+              "text": "                      'Comes with Tandoori Chicken Sub, 2 pieces of cookies and 1 drink.'",
+              "type": "string"
+            },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                ),",
+          "tokens": [{ "text": "                )," }]
+        },
+        {
+          "content": "                buildMenuItem(",
+          "tokens": [
+            { "text": "                buildMenuItem", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  context,",
+          "tokens": [{ "text": "                  context," }]
+        },
+        {
+          "content": "                  'Tandoori Chicken (Chips Meal)',",
+          "tokens": [
+            {
+              "text": "                  'Tandoori Chicken (Chips Meal)'",
+              "type": "string"
+            },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  '\\$12.90',",
+          "tokens": [
+            { "text": "                  '\\$12.90'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  'https://cdn.cosmos.so/9c8ce3e7-34a5-4718-afff-07fc26009360?format=jpeg',",
+          "tokens": [
+            {
+              "text": "                  'https://cdn.cosmos.so/9c8ce3e7-34a5-4718-afff-07fc26009360?format=jpeg'",
+              "type": "string"
+            },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  description:",
+          "tokens": [
+            { "text": "                  description:", "type": "property" }
+          ]
+        },
+        {
+          "content": "                      'Comes with Tandoori Chicken Sub, 1 chips and 1 drink.',",
+          "tokens": [
+            {
+              "text": "                      'Comes with Tandoori Chicken Sub, 1 chips and 1 drink.'",
+              "type": "string"
+            },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                ),",
+          "tokens": [{ "text": "                )," }]
+        },
+        {
+          "content": "                buildMenuItem(",
+          "tokens": [
+            { "text": "                buildMenuItem", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  context,",
+          "tokens": [{ "text": "                  context," }]
+        },
+        {
+          "content": "                  'Bandung Cookies (3 pcs)',",
+          "tokens": [
+            {
+              "text": "                  'Bandung Cookies (3 pcs)'",
+              "type": "string"
+            },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  '\\$3.50',",
+          "tokens": [
+            { "text": "                  '\\$3.50'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  'https://cdn.cosmos.so/60325b9a-d477-4c1c-b373-30a2c11bbd89?format=jpeg',",
+          "tokens": [
+            {
+              "text": "                  'https://cdn.cosmos.so/60325b9a-d477-4c1c-b373-30a2c11bbd89?format=jpeg'",
+              "type": "string"
+            },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  description:",
+          "tokens": [
+            { "text": "                  description:", "type": "property" }
+          ]
+        },
+        {
+          "content": "                      \"Soft and chewy cookies with a unique Bandung flavor.\",",
+          "tokens": [
+            {
+              "text": "                      \"Soft and chewy cookies with a unique Bandung flavor.\"",
+              "type": "string"
+            },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                ),",
+          "tokens": [{ "text": "                )," }]
+        },
+        {
+          "content": "              ],",
+          "tokens": [{ "text": "              ]," }]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "          buildBasketSection(context),",
+          "tokens": [
+            { "text": "          buildBasketSection", "type": "method" },
+            { "text": "(context)," }
+          ]
+        },
+        {
+          "content": "        ],",
+          "tokens": [{ "text": "        ]," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "    );",
+          "tokens": [{ "text": "    );" }]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget buildDeliveryTime(BuildContext context) {",
+          "tokens": [
+            { "text": "  Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "buildDeliveryTime", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    return Container(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Container", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      padding: const EdgeInsets.all(16),",
+          "tokens": [
+            { "text": "      padding: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "." },
+            { "text": "all", "type": "method" },
+            { "text": "(" },
+            { "text": "16", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "      child: Row(",
+          "tokens": [
+            { "text": "      child: " },
+            { "text": "Row", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        mainAxisAlignment: MainAxisAlignment.spaceBetween,",
+          "tokens": [
+            { "text": "        mainAxisAlignment: " },
+            { "text": "MainAxisAlignment", "type": "widget" },
+            { "text": "." },
+            { "text": "spaceBetween", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        children: [",
+          "tokens": [{ "text": "        children: [" }]
+        },
+        {
+          "content": "          Row(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "Row", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            children: [",
+          "tokens": [{ "text": "            children: [" }]
+        },
+        {
+          "content": "              const CircleAvatar(",
+          "tokens": [
+            { "text": "              const", "type": "keyword" },
+            { "text": " " },
+            { "text": "CircleAvatar", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                backgroundColor: KConstantColors.bgColor,",
+          "tokens": [
+            { "text": "                backgroundColor: " },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "bgColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                child: Icon(",
+          "tokens": [
+            { "text": "                child: " },
+            { "text": "Icon", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  Iconsax.clock,",
+          "tokens": [
+            { "text": "                  Iconsax", "type": "class" },
+            { "text": "." },
+            { "text": "clock", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  color: KConstantColors.whiteColor,",
+          "tokens": [
+            { "text": "                  color: " },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "whiteColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                ),",
+          "tokens": [{ "text": "                )," }]
+        },
+        {
+          "content": "              ),",
+          "tokens": [{ "text": "              )," }]
+        },
+        {
+          "content": "              const SizedBox(width: 8),",
+          "tokens": [
+            { "text": "              const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SizedBox", "type": "widget" },
+            { "text": "(width: " },
+            { "text": "8", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "              Text(",
+          "tokens": [
+            { "text": "              " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                'Deliver from 12:00 - 12:30',",
+          "tokens": [
+            {
+              "text": "                'Deliver from 12:00 - 12:30'",
+              "type": "string"
+            },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                style: KCustomTextStyle.kBold(",
+          "tokens": [
+            { "text": "                style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kBold", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  context,",
+          "tokens": [{ "text": "                  context," }]
+        },
+        {
+          "content": "                  FontSize.kMedium,",
+          "tokens": [
+            { "text": "                  FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  KConstantColors.faintBgColor,",
+          "tokens": [
+            { "text": "                  KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "faintBgColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  KConstantFonts.haskoyBold,",
+          "tokens": [
+            { "text": "                  KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "haskoyBold", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                ),",
+          "tokens": [{ "text": "                )," }]
+        },
+        {
+          "content": "              ),",
+          "tokens": [{ "text": "              )," }]
+        },
+        {
+          "content": "            ],",
+          "tokens": [{ "text": "            ]," }]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "          TextButton(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "TextButton", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            onPressed: () {},",
+          "tokens": [{ "text": "            onPressed: () {}," }]
+        },
+        {
+          "content": "            child: Text(",
+          "tokens": [
+            { "text": "            child: " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              'Change',",
+          "tokens": [
+            { "text": "              'Change'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              style: KCustomTextStyle.kBold(",
+          "tokens": [
+            { "text": "              style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kBold", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                context,",
+          "tokens": [{ "text": "                context," }]
+        },
+        {
+          "content": "                FontSize.kMedium,",
+          "tokens": [
+            { "text": "                FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                KConstantColors.faintBgColor,",
+          "tokens": [
+            { "text": "                KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "faintBgColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                KConstantFonts.haskoyBold,",
+          "tokens": [
+            { "text": "                KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "haskoyBold", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              ),",
+          "tokens": [{ "text": "              )," }]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "        ],",
+          "tokens": [{ "text": "        ]," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "    );",
+          "tokens": [{ "text": "    );" }]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget buildMenuItem(",
+          "tokens": [
+            { "text": "  Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "buildMenuItem", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "    BuildContext context,",
+          "tokens": [
+            { "text": "    BuildContext", "type": "widget" },
+            { "text": " context," }
+          ]
+        },
+        {
+          "content": "    String title,",
+          "tokens": [
+            { "text": "    String", "type": "class" },
+            { "text": " title," }
+          ]
+        },
+        {
+          "content": "    String price,",
+          "tokens": [
+            { "text": "    String", "type": "class" },
+            { "text": " price," }
+          ]
+        },
+        {
+          "content": "    String imageUrl, {",
+          "tokens": [
+            { "text": "    String", "type": "class" },
+            { "text": " imageUrl, {" }
+          ]
+        },
+        {
+          "content": "    String? description,",
+          "tokens": [
+            { "text": "    String", "type": "class" },
+            { "text": "? description," }
+          ]
+        },
+        {
+          "content": "    String? quantity,",
+          "tokens": [
+            { "text": "    String", "type": "class" },
+            { "text": "? quantity," }
+          ]
+        },
+        {
+          "content": "  }) {",
+          "tokens": [{ "text": "  }) {" }]
+        },
+        {
+          "content": "    return Container(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Container", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      padding: const EdgeInsets.all(16),",
+          "tokens": [
+            { "text": "      padding: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "." },
+            { "text": "all", "type": "method" },
+            { "text": "(" },
+            { "text": "16", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "      child: Row(",
+          "tokens": [
+            { "text": "      child: " },
+            { "text": "Row", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        crossAxisAlignment: CrossAxisAlignment.start,",
+          "tokens": [
+            { "text": "        crossAxisAlignment: " },
+            { "text": "CrossAxisAlignment", "type": "widget" },
+            { "text": "." },
+            { "text": "start", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        children: [",
+          "tokens": [{ "text": "        children: [" }]
+        },
+        {
+          "content": "          if (quantity != null)",
+          "tokens": [
+            { "text": "          if", "type": "keyword" },
+            { "text": " (quantity != " },
+            { "text": "null", "type": "keyword" },
+            { "text": ")" }
+          ]
+        },
+        {
+          "content": "            Padding(",
+          "tokens": [
+            { "text": "            " },
+            { "text": "Padding", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              padding: const EdgeInsets.only(right: 8),",
+          "tokens": [
+            { "text": "              padding: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "." },
+            { "text": "only", "type": "method" },
+            { "text": "(" },
+            { "text": "right", "type": "property" },
+            { "text": ": " },
+            { "text": "8", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "              child: Text(quantity, style: TextStyle(color: Colors.grey[600])),",
+          "tokens": [
+            { "text": "              child: " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(quantity, style: " },
+            { "text": "TextStyle", "type": "widget" },
+            { "text": "(", "type": "text" },
+            { "text": "color", "type": "property" },
+            { "text": ": ", "type": "text" },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "grey", "type": "property" },
+            { "text": "[", "type": "text" },
+            { "text": "600", "type": "number" },
+            { "text": "]))," }
+          ]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "          Expanded(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "Expanded", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            child: Column(",
+          "tokens": [
+            { "text": "            child: " },
+            { "text": "Column", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              crossAxisAlignment: CrossAxisAlignment.start,",
+          "tokens": [
+            { "text": "              crossAxisAlignment: " },
+            { "text": "CrossAxisAlignment", "type": "widget" },
+            { "text": "." },
+            { "text": "start", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              children: [",
+          "tokens": [{ "text": "              children: [" }]
+        },
+        {
+          "content": "                Text(",
+          "tokens": [
+            { "text": "                " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  title,",
+          "tokens": [{ "text": "                  title,", "type": "property" }]
+        },
+        {
+          "content": "                  style: KCustomTextStyle.kBold(",
+          "tokens": [
+            { "text": "                  style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kBold", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                    context,",
+          "tokens": [{ "text": "                    context," }]
+        },
+        {
+          "content": "                    FontSize.kMedium,",
+          "tokens": [
+            { "text": "                    FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    KConstantColors.bgColor,",
+          "tokens": [
+            { "text": "                    KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "bgColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    KConstantFonts.haskoyBold,",
+          "tokens": [
+            { "text": "                    KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "haskoyBold", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  ),",
+          "tokens": [{ "text": "                  )," }]
+        },
+        {
+          "content": "                ),",
+          "tokens": [{ "text": "                )," }]
+        },
+        {
+          "content": "                if (description != null)",
+          "tokens": [
+            { "text": "                if", "type": "keyword" },
+            { "text": " (description != " },
+            { "text": "null", "type": "keyword" },
+            { "text": ")" }
+          ]
+        },
+        {
+          "content": "                  Padding(",
+          "tokens": [
+            { "text": "                  " },
+            { "text": "Padding", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                    padding: const EdgeInsets.only(top: 4),",
+          "tokens": [
+            { "text": "                    padding: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "." },
+            { "text": "only", "type": "method" },
+            { "text": "(" },
+            { "text": "top", "type": "property" },
+            { "text": ": " },
+            { "text": "4", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "                    child: Text(",
+          "tokens": [
+            { "text": "                    child: " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                      description,",
+          "tokens": [
+            { "text": "                      description,", "type": "property" }
+          ]
+        },
+        {
+          "content": "                      style: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "                      style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                        context,",
+          "tokens": [{ "text": "                        context," }]
+        },
+        {
+          "content": "                        FontSize.kMedium,",
+          "tokens": [
+            { "text": "                        FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                        KConstantColors.faintBgColor,",
+          "tokens": [
+            {
+              "text": "                        KConstantColors",
+              "type": "class"
+            },
+            { "text": "." },
+            { "text": "faintBgColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                        KConstantFonts.haskoyMedium,",
+          "tokens": [
+            {
+              "text": "                        KConstantFonts",
+              "type": "class"
+            },
+            { "text": "." },
+            { "text": "haskoyMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                      ),",
+          "tokens": [{ "text": "                      )," }]
+        },
+        {
+          "content": "                    ),",
+          "tokens": [{ "text": "                    )," }]
+        },
+        {
+          "content": "                  ),",
+          "tokens": [{ "text": "                  )," }]
+        },
+        {
+          "content": "                const SizedBox(height: 4),",
+          "tokens": [
+            { "text": "                const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SizedBox", "type": "widget" },
+            { "text": "(height: " },
+            { "text": "4", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "                Text(",
+          "tokens": [
+            { "text": "                " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  price,",
+          "tokens": [{ "text": "                  price,", "type": "property" }]
+        },
+        {
+          "content": "                  style: KCustomTextStyle.kBold(",
+          "tokens": [
+            { "text": "                  style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kBold", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                    context,",
+          "tokens": [{ "text": "                    context," }]
+        },
+        {
+          "content": "                    FontSize.kMedium,",
+          "tokens": [
+            { "text": "                    FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    KConstantColors.bgColor,",
+          "tokens": [
+            { "text": "                    KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "bgColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    KConstantFonts.haskoyBold,",
+          "tokens": [
+            { "text": "                    KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "haskoyBold", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  ),",
+          "tokens": [{ "text": "                  )," }]
+        },
+        {
+          "content": "                ),",
+          "tokens": [{ "text": "                )," }]
+        },
+        {
+          "content": "              ],",
+          "tokens": [{ "text": "              ]," }]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "          const SizedBox(width: 16),",
+          "tokens": [
+            { "text": "          const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SizedBox", "type": "widget" },
+            { "text": "(width: " },
+            { "text": "16", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "          ClipRRect(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "ClipRRect", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            borderRadius: BorderRadius.circular(8),",
+          "tokens": [
+            { "text": "            borderRadius: " },
+            { "text": "BorderRadius", "type": "widget" },
+            { "text": "." },
+            { "text": "circular", "type": "method" },
+            { "text": "(" },
+            { "text": "8", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "            child: Image.network(",
+          "tokens": [
+            { "text": "            child: " },
+            { "text": "Image", "type": "widget" },
+            { "text": "." },
+            { "text": "network", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              imageUrl,",
+          "tokens": [{ "text": "              imageUrl,", "type": "property" }]
+        },
+        {
+          "content": "              width: 120,",
+          "tokens": [
+            { "text": "              width: " },
+            { "text": "120", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              height: 120,",
+          "tokens": [
+            { "text": "              height: " },
+            { "text": "120", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              fit: BoxFit.cover,",
+          "tokens": [
+            { "text": "              fit: " },
+            { "text": "BoxFit", "type": "widget" },
+            { "text": "." },
+            { "text": "cover", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "        ],",
+          "tokens": [{ "text": "        ]," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "    );",
+          "tokens": [{ "text": "    );" }]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget buildBasketSection(BuildContext context) {",
+          "tokens": [
+            { "text": "  Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "buildBasketSection", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    return Container(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Container", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      padding: const EdgeInsets.all(16),",
+          "tokens": [
+            { "text": "      padding: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "." },
+            { "text": "all", "type": "method" },
+            { "text": "(" },
+            { "text": "16", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "      child: Column(",
+          "tokens": [
+            { "text": "      child: " },
+            { "text": "Column", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        children: [",
+          "tokens": [{ "text": "        children: [" }]
+        },
+        {
+          "content": "          Text(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            'Add \\$3.50 to get free delivery',",
+          "tokens": [
+            {
+              "text": "            'Add \\$3.50 to get free delivery'",
+              "type": "string"
+            },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            style: KCustomTextStyle.kBold(",
+          "tokens": [
+            { "text": "            style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kBold", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              context,",
+          "tokens": [{ "text": "              context," }]
+        },
+        {
+          "content": "              FontSize.kMedium,",
+          "tokens": [
+            { "text": "              FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              KConstantColors.faintBgColor,",
+          "tokens": [
+            { "text": "              KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "faintBgColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              KConstantFonts.haskoyBold,",
+          "tokens": [
+            { "text": "              KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "haskoyBold", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "          const SizedBox(height: 8),",
+          "tokens": [
+            { "text": "          const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SizedBox", "type": "widget" },
+            { "text": "(height: " },
+            { "text": "8", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "          Container(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "Container", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            padding: const EdgeInsets.symmetric(vertical: 16),",
+          "tokens": [
+            { "text": "            padding: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "." },
+            { "text": "symmetric", "type": "method" },
+            { "text": "(" },
+            { "text": "vertical", "type": "property" },
+            { "text": ": " },
+            { "text": "16", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "            width: double.infinity,",
+          "tokens": [
+            { "text": "            width: " },
+            { "text": "double", "type": "class" },
+            { "text": "." },
+            { "text": "infinity", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            decoration: BoxDecoration(",
+          "tokens": [
+            { "text": "            decoration: " },
+            { "text": "BoxDecoration", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              color: Colors.teal[100],",
+          "tokens": [
+            { "text": "              color: " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "teal", "type": "property" },
+            { "text": "[" },
+            { "text": "100", "type": "number" },
+            { "text": "]," }
+          ]
+        },
+        {
+          "content": "              borderRadius: BorderRadius.circular(8),",
+          "tokens": [
+            { "text": "              borderRadius: " },
+            { "text": "BorderRadius", "type": "widget" },
+            { "text": "." },
+            { "text": "circular", "type": "method" },
+            { "text": "(" },
+            { "text": "8", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "            child: Row(",
+          "tokens": [
+            { "text": "            child: " },
+            { "text": "Row", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              mainAxisAlignment: MainAxisAlignment.center,",
+          "tokens": [
+            { "text": "              mainAxisAlignment: " },
+            { "text": "MainAxisAlignment", "type": "widget" },
+            { "text": "." },
+            { "text": "center", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              children: [",
+          "tokens": [{ "text": "              children: [" }]
+        },
+        {
+          "content": "                Text(",
+          "tokens": [
+            { "text": "                " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  '1',",
+          "tokens": [
+            { "text": "                  '1'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  style: KCustomTextStyle.kBold(",
+          "tokens": [
+            { "text": "                  style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kBold", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                    context,",
+          "tokens": [{ "text": "                    context," }]
+        },
+        {
+          "content": "                    FontSize.kMedium,",
+          "tokens": [
+            { "text": "                    FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    KConstantColors.bgColor,",
+          "tokens": [
+            { "text": "                    KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "bgColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    KConstantFonts.haskoyBold,",
+          "tokens": [
+            { "text": "                    KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "haskoyBold", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  ),",
+          "tokens": [{ "text": "                  )," }]
+        },
+        {
+          "content": "                ),",
+          "tokens": [{ "text": "                )," }]
+        },
+        {
+          "content": "                const SizedBox(width: 8),",
+          "tokens": [
+            { "text": "                const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SizedBox", "type": "widget" },
+            { "text": "(width: " },
+            { "text": "8", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "                Text(",
+          "tokens": [
+            { "text": "                " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  'View Basket',",
+          "tokens": [
+            { "text": "                  'View Basket'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  style: KCustomTextStyle.kBold(",
+          "tokens": [
+            { "text": "                  style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kBold", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                    context,",
+          "tokens": [{ "text": "                    context," }]
+        },
+        {
+          "content": "                    FontSize.kMedium,",
+          "tokens": [
+            { "text": "                    FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    KConstantColors.bgColor,",
+          "tokens": [
+            { "text": "                    KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "bgColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    KConstantFonts.haskoyBold,",
+          "tokens": [
+            { "text": "                    KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "haskoyBold", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  ),",
+          "tokens": [{ "text": "                  )," }]
+        },
+        {
+          "content": "                ),",
+          "tokens": [{ "text": "                )," }]
+        },
+        {
+          "content": "                const SizedBox(width: 8),",
+          "tokens": [
+            { "text": "                const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SizedBox", "type": "widget" },
+            { "text": "(width: " },
+            { "text": "8", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "                Text(",
+          "tokens": [
+            { "text": "                " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  '\\$14.50',",
+          "tokens": [
+            { "text": "                  '\\$14.50'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  style: KCustomTextStyle.kBold(",
+          "tokens": [
+            { "text": "                  style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kBold", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                    context,",
+          "tokens": [{ "text": "                    context," }]
+        },
+        {
+          "content": "                    FontSize.kMedium,",
+          "tokens": [
+            { "text": "                    FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    KConstantColors.bgColor,",
+          "tokens": [
+            { "text": "                    KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "bgColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    KConstantFonts.haskoyBold,",
+          "tokens": [
+            { "text": "                    KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "haskoyBold", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  ),",
+          "tokens": [{ "text": "                  )," }]
+        },
+        {
+          "content": "                ),",
+          "tokens": [{ "text": "                )," }]
+        },
+        {
+          "content": "              ],",
+          "tokens": [{ "text": "              ]," }]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "        ],",
+          "tokens": [{ "text": "        ]," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "    );",
+          "tokens": [{ "text": "    );" }]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "}",
+          "tokens": [{ "text": "}" }]
+        }
+      ]
+    }
+  },
+  "tokenTypes": {
+    "keyword": "text-purple-400",
+    "string": "text-green-400",
+    "widget": "text-blue-400",
+    "class": "text-yellow-400",
+    "method": "text-green-400",
+    "property": "text-yellow-400",
+    "number": "text-orange-400",
+    "annotation": "text-gray-500"
+  }
+}

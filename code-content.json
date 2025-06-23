@@ -1,0 +1,391 @@
+{
+  "flutter": {
+    "todoist_login_screen.dart": {
+      "lines": [
+        {
+          "content": "import 'package:flutter/gestures.dart';",
+          "tokens": [
+            { "text": "import", "type": "keyword" },
+            { "text": " " },
+            { "text": "'package:flutter/gestures.dart'", "type": "string" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "import '../../app/shared/fonts.dart';",
+          "tokens": [
+            { "text": "import", "type": "keyword" },
+            { "text": " " },
+            { "text": "'../../app/shared/fonts.dart'", "type": "string" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "import '../../shared/exports/export_boiler_plate.dart';",
+          "tokens": [
+            { "text": "import", "type": "keyword" },
+            { "text": " " },
+            {
+              "text": "'../../shared/exports/export_boiler_plate.dart'",
+              "type": "string"
+            },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "class TodoistLoginScreen extends StatelessWidget {",
+          "tokens": [
+            { "text": "class", "type": "keyword" },
+            { "text": " " },
+            { "text": "TodoistLoginScreen", "type": "class" },
+            { "text": " " },
+            { "text": "extends", "type": "keyword" },
+            { "text": " " },
+            { "text": "StatelessWidget", "type": "widget" },
+            { "text": " {" }
+          ]
+        },
+        {
+          "content": "  const TodoistLoginScreen({Key? key}) : super(key: key);",
+          "tokens": [
+            { "text": "  " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "TodoistLoginScreen", "type": "method" },
+            { "text": "({" },
+            { "text": "Key", "type": "widget" },
+            { "text": "? key}) : " },
+            { "text": "super", "type": "keyword" },
+            { "text": "(key: key);" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  Widget build(BuildContext context) {",
+          "tokens": [
+            { "text": "  " },
+            { "text": "Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "build", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    return Scaffold(",
+          "tokens": [
+            { "text": "    " },
+            { "text": "return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Scaffold", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      backgroundColor: Colors.white,",
+          "tokens": [
+            { "text": "      backgroundColor: " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "white", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      body: SafeArea(",
+          "tokens": [
+            { "text": "      body: " },
+            { "text": "SafeArea", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        child: Padding(",
+          "tokens": [
+            { "text": "        child: " },
+            { "text": "Padding", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          padding: const EdgeInsets.all(24),",
+          "tokens": [
+            { "text": "          padding: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "." },
+            { "text": "all", "type": "method" },
+            { "text": "(" },
+            { "text": "24", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "          child: Column(",
+          "tokens": [
+            { "text": "          child: " },
+            { "text": "Column", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            mainAxisAlignment: MainAxisAlignment.center,",
+          "tokens": [
+            { "text": "            mainAxisAlignment: " },
+            { "text": "MainAxisAlignment", "type": "widget" },
+            { "text": "." },
+            { "text": "center", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            children: [",
+          "tokens": [{ "text": "            children: [" }]
+        },
+        {
+          "content": "              Stack(",
+          "tokens": [
+            { "text": "              " },
+            { "text": "Stack", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                children: [",
+          "tokens": [{ "text": "                children: [" }]
+        },
+        {
+          "content": "                  Container(",
+          "tokens": [
+            { "text": "                  " },
+            { "text": "Container", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                    height: 30.h,",
+          "tokens": [
+            { "text": "                    height: " },
+            { "text": "30", "type": "number" },
+            { "text": "." },
+            { "text": "h", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    decoration: BoxDecoration(",
+          "tokens": [
+            { "text": "                    decoration: " },
+            { "text": "BoxDecoration", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                      image: DecorationImage(",
+          "tokens": [
+            { "text": "                      image: " },
+            { "text": "DecorationImage", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                        image: AssetImage('assets/room.png'),",
+          "tokens": [
+            { "text": "                        image: " },
+            { "text": "AssetImage", "type": "widget" },
+            { "text": "(" },
+            { "text": "'assets/room.png'", "type": "string" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "                        fit: BoxFit.cover,",
+          "tokens": [
+            { "text": "                        fit: " },
+            { "text": "BoxFit", "type": "widget" },
+            { "text": "." },
+            { "text": "cover", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                      ),",
+          "tokens": [{ "text": "                      )," }]
+        },
+        {
+          "content": "                    ),",
+          "tokens": [{ "text": "                    )," }]
+        },
+        {
+          "content": "                  ),",
+          "tokens": [{ "text": "                  )," }]
+        },
+        {
+          "content": "                ],",
+          "tokens": [{ "text": "                ]," }]
+        },
+        {
+          "content": "              ),",
+          "tokens": [{ "text": "              )," }]
+        },
+        {
+          "content": "              SizedBox(height: 40),",
+          "tokens": [
+            { "text": "              " },
+            { "text": "SizedBox", "type": "widget" },
+            { "text": "(height: " },
+            { "text": "40", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "              Text(",
+          "tokens": [
+            { "text": "              " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                'Organize your work and\\nlife, finally.',",
+          "tokens": [
+            { "text": "                " },
+            {
+              "text": "'Organize your work and\\nlife, finally.'",
+              "type": "string"
+            },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                style: TextStyle(",
+          "tokens": [
+            { "text": "                style: " },
+            { "text": "TextStyle", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  fontSize: 28,",
+          "tokens": [
+            { "text": "                  fontSize: " },
+            { "text": "28", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  fontWeight: FontWeight.w600,",
+          "tokens": [
+            { "text": "                  fontWeight: " },
+            { "text": "FontWeight", "type": "widget" },
+            { "text": "." },
+            { "text": "w600", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  color: Colors.black87,",
+          "tokens": [
+            { "text": "                  color: " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "black87", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                ),",
+          "tokens": [{ "text": "                )," }]
+        },
+        {
+          "content": "                textAlign: TextAlign.center,",
+          "tokens": [
+            { "text": "                textAlign: " },
+            { "text": "TextAlign", "type": "widget" },
+            { "text": "." },
+            { "text": "center", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              ),",
+          "tokens": [{ "text": "              )," }]
+        },
+        {
+          "content": "              Spacer(),",
+          "tokens": [
+            { "text": "              " },
+            { "text": "Spacer", "type": "widget" },
+            { "text": "()," }
+          ]
+        },
+        {
+          "content": "              _buildContinueButtons(),",
+          "tokens": [
+            { "text": "              " },
+            { "text": "_buildContinueButtons", "type": "method" },
+            { "text": "()," }
+          ]
+        },
+        {
+          "content": "            ],",
+          "tokens": [{ "text": "            ]," }]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        )," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "    );",
+          "tokens": [{ "text": "    );" }]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "}",
+          "tokens": [{ "text": "}" }]
+        }
+      ]
+    }
+  },
+  "tokenTypes": {
+    "keyword": "text-purple-400",
+    "string": "text-green-400",
+    "widget": "text-blue-400",
+    "class": "text-yellow-400",
+    "method": "text-green-400",
+    "property": "text-yellow-400",
+    "number": "text-orange-400",
+    "annotation": "text-gray-500"
+  }
+}

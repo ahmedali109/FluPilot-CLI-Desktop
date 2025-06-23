@@ -1,0 +1,3712 @@
+{
+  "flutter": {
+    "ForYouFeed.dart": {
+      "lines": [
+        {
+          "content": "import 'dart:async';",
+          "tokens": [
+            { "text": "import", "type": "keyword" },
+            { "text": " " },
+            { "text": "'dart:async'", "type": "string" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "import 'package:flutter_animate/flutter_animate.dart';",
+          "tokens": [
+            { "text": "import", "type": "keyword" },
+            { "text": " " },
+            { "text": "'package:flutter_animate/flutter_animate.dart'", "type": "string" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "import '../../../shared/exports/export_boiler_plate.dart';",
+          "tokens": [
+            { "text": "import", "type": "keyword" },
+            { "text": " " },
+            { "text": "'../../../shared/exports/export_boiler_plate.dart'", "type": "string" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "import '../../app/shared/fonts.dart';",
+          "tokens": [
+            { "text": "import", "type": "keyword" },
+            { "text": " " },
+            { "text": "'../../app/shared/fonts.dart'", "type": "string" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "class ForYouFeed extends StatefulWidget {",
+          "tokens": [
+            { "text": "class", "type": "keyword" },
+            { "text": " " },
+            { "text": "ForYouFeed", "type": "class" },
+            { "text": " " },
+            { "text": "extends", "type": "keyword" },
+            { "text": " " },
+            { "text": "StatefulWidget", "type": "widget" },
+            { "text": " {" }
+          ]
+        },
+        {
+          "content": "  const ForYouFeed({Key? key}) : super(key: key);",
+          "tokens": [
+            { "text": "  const", "type": "keyword" },
+            { "text": " " },
+            { "text": "ForYouFeed", "type": "method" },
+            { "text": "(" },
+            { "text": "{" },
+            { "text": "Key", "type": "widget" },
+            { "text": "? key}) : " },
+            { "text": "super", "type": "keyword" },
+            { "text": "(key: key);" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  ", "type": "text" },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  _ForYouFeedState createState() => _ForYouFeedState();",
+          "tokens": [
+            { "text": "  _ForYouFeedState", "type": "method" },
+            { "text": " " },
+            { "text": "createState", "type": "method" },
+            { "text": "() => " },
+            { "text": "_ForYouFeedState", "type": "method" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "}",
+          "tokens": [{ "text": "}" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "class _ForYouFeedState extends State<ForYouFeed> {",
+          "tokens": [
+            { "text": "class", "type": "keyword" },
+            { "text": " " },
+            { "text": "_ForYouFeedState", "type": "class" },
+            { "text": " " },
+            { "text": "extends", "type": "keyword" },
+            { "text": " " },
+            { "text": "State", "type": "widget" },
+            { "text": "<" },
+            { "text": "ForYouFeed", "type": "class" },
+            { "text": "> {" }
+          ]
+        },
+        {
+          "content": "  final List<String> _categories = [",
+          "tokens": [
+            { "text": "  final", "type": "keyword" },
+            { "text": " " },
+            { "text": "List", "type": "class" },
+            { "text": "<" },
+            { "text": "String", "type": "class" },
+            { "text": "> _categories", "type": "property" },
+            { "text": " = [" }
+          ]
+        },
+        {
+          "content": "    'For You',",
+          "tokens": [
+            { "text": "    'For You'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "    'U.S. Politics',",
+          "tokens": [
+            { "text": "    'U.S. Politics'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "    'Tech Cos',",
+          "tokens": [
+            { "text": "    'Tech Cos'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "    'Celebrities'",
+          "tokens": [
+            { "text": "    'Celebrities'", "type": "string" }
+          ]
+        },
+        {
+          "content": "  ];",
+          "tokens": [{ "text": "  ];" }]
+        },
+        {
+          "content": "  final TextEditingController _searchController = TextEditingController();",
+          "tokens": [
+            { "text": "  final", "type": "keyword" },
+            { "text": " " },
+            { "text": "TextEditingController", "type": "class" },
+            { "text": " _searchController", "type": "property" },
+            { "text": " = " },
+            { "text": "TextEditingController", "type": "class" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "  List<Map<String, dynamic>> _allNews = [];",
+          "tokens": [
+            { "text": "  List", "type": "class" },
+            { "text": "<" },
+            { "text": "Map", "type": "class" },
+            { "text": "<" },
+            { "text": "String", "type": "class" },
+            { "text": ", " },
+            { "text": "dynamic", "type": "keyword" },
+            { "text": ">> _allNews", "type": "property" },
+            { "text": " = [];" }
+          ]
+        },
+        {
+          "content": "  List<Map<String, dynamic>> _filteredNews = [];",
+          "tokens": [
+            { "text": "  List", "type": "class" },
+            { "text": "<" },
+            { "text": "Map", "type": "class" },
+            { "text": "<" },
+            { "text": "String", "type": "class" },
+            { "text": ", " },
+            { "text": "dynamic", "type": "keyword" },
+            { "text": ">> _filteredNews", "type": "property" },
+            { "text": " = [];" }
+          ]
+        },
+        {
+          "content": "  bool _isSearching = false;",
+          "tokens": [
+            { "text": "  bool", "type": "keyword" },
+            { "text": " _isSearching", "type": "property" },
+            { "text": " = " },
+            { "text": "false", "type": "keyword" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "  Timer? _debounce;",
+          "tokens": [
+            { "text": "  Timer", "type": "class" },
+            { "text": "? _debounce", "type": "property" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "  int _selectedCategoryIndex = 0;",
+          "tokens": [
+            { "text": "  int", "type": "class" },
+            { "text": " _selectedCategoryIndex", "type": "property" },
+            { "text": " = " },
+            { "text": "0", "type": "number" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  ", "type": "text" },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  void initState() {",
+          "tokens": [
+            { "text": "  void", "type": "keyword" },
+            { "text": " " },
+            { "text": "initState", "type": "method" },
+            { "text": "() {" }
+          ]
+        },
+        {
+          "content": "    super.initState();",
+          "tokens": [
+            { "text": "    super", "type": "keyword" },
+            { "text": "." },
+            { "text": "initState", "type": "method" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "    _loadMockData();",
+          "tokens": [
+            { "text": "    _loadMockData", "type": "method" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "    _searchController.addListener(_onSearchChanged);",
+          "tokens": [
+            { "text": "    _searchController", "type": "property" },
+            { "text": "." },
+            { "text": "addListener", "type": "method" },
+            { "text": "(_onSearchChanged);" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  ", "type": "text" },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  void dispose() {",
+          "tokens": [
+            { "text": "  void", "type": "keyword" },
+            { "text": " " },
+            { "text": "dispose", "type": "method" },
+            { "text": "() {" }
+          ]
+        },
+        {
+          "content": "    _searchController.dispose();",
+          "tokens": [
+            { "text": "    _searchController", "type": "property" },
+            { "text": "." },
+            { "text": "dispose", "type": "method" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "    _debounce?.cancel();",
+          "tokens": [
+            { "text": "    _debounce", "type": "property" },
+            { "text": "?.", "type": "operator" },
+            { "text": "cancel", "type": "method" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "    super.dispose();",
+          "tokens": [
+            { "text": "    super", "type": "keyword" },
+            { "text": "." },
+            { "text": "dispose", "type": "method" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  void _loadMockData() {",
+          "tokens": [
+            { "text": "  void", "type": "keyword" },
+            { "text": " " },
+            { "text": "_loadMockData", "type": "method" },
+            { "text": "() {" }
+          ]
+        },
+        {
+          "content": "    _allNews = [",
+          "tokens": [
+            { "text": "    _allNews", "type": "property" },
+            { "text": " = [" }
+          ]
+        },
+        {
+          "content": "      {",
+          "tokens": [{ "text": "      {" }]
+        },
+        {
+          "content": "        'source': 'BuzzFeed',",
+          "tokens": [
+            { "text": "        'source'", "type": "string" },
+            { "text": ": " },
+            { "text": "'BuzzFeed'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'time': '11h',",
+          "tokens": [
+            { "text": "        'time'", "type": "string" },
+            { "text": ": " },
+            { "text": "'11h'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'title':",
+          "tokens": [
+            { "text": "        'title'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'Florence Pugh Wore An, Um, Interesting Dress To The Oscars, And Everyone\\'s Making The Same Joke',",
+          "tokens": [
+            { "text": "            'Florence Pugh Wore An, Um, Interesting Dress To The Oscars, And Everyone\\'s Making The Same Joke'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'reads': '503 reads',",
+          "tokens": [
+            { "text": "        'reads'", "type": "string" },
+            { "text": ": " },
+            { "text": "'503 reads'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'image':",
+          "tokens": [
+            { "text": "        'image'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png',",
+          "tokens": [
+            { "text": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'category': 'Celebrities',",
+          "tokens": [
+            { "text": "        'category'", "type": "string" },
+            { "text": ": " },
+            { "text": "'Celebrities'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      },",
+          "tokens": [{ "text": "      }," }]
+        },
+        {
+          "content": "      {",
+          "tokens": [{ "text": "      {" }]
+        },
+        {
+          "content": "        'source': 'BGR',",
+          "tokens": [
+            { "text": "        'source'", "type": "string" },
+            { "text": ": " },
+            { "text": "'BGR'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'time': '9h',",
+          "tokens": [
+            { "text": "        'time'", "type": "string" },
+            { "text": ": " },
+            { "text": "'9h'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'title':",
+          "tokens": [
+            { "text": "        'title'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'Two of the latest Netflix series with perfect 100% scores on Rotten Tomatoes',",
+          "tokens": [
+            { "text": "            'Two of the latest Netflix series with perfect 100% scores on Rotten Tomatoes'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'reads': '1286 reads',",
+          "tokens": [
+            { "text": "        'reads'", "type": "string" },
+            { "text": ": " },
+            { "text": "'1286 reads'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'image':",
+          "tokens": [
+            { "text": "        'image'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png',",
+          "tokens": [
+            { "text": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'category': 'For You',",
+          "tokens": [
+            { "text": "        'category'", "type": "string" },
+            { "text": ": " },
+            { "text": "'For You'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      },",
+          "tokens": [{ "text": "      }," }]
+        },
+        {
+          "content": "      {",
+          "tokens": [{ "text": "      {" }]
+        },
+        {
+          "content": "        'source': 'Apartment Therapy',",
+          "tokens": [
+            { "text": "        'source'", "type": "string" },
+            { "text": ": " },
+            { "text": "'Apartment Therapy'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'time': '1w',",
+          "tokens": [
+            { "text": "        'time'", "type": "string" },
+            { "text": ": " },
+            { "text": "'1w'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'title':",
+          "tokens": [
+            { "text": "        'title'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'If You\\'re Not Shopping for This Product at IKEA, You\\'re Missing Out',",
+          "tokens": [
+            { "text": "            'If You\\'re Not Shopping for This Product at IKEA, You\\'re Missing Out'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'reads': '',",
+          "tokens": [
+            { "text": "        'reads'", "type": "string" },
+            { "text": ": " },
+            { "text": "''", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'image':",
+          "tokens": [
+            { "text": "        'image'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png',",
+          "tokens": [
+            { "text": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'category': 'For You',",
+          "tokens": [
+            { "text": "        'category'", "type": "string" },
+            { "text": ": " },
+            { "text": "'For You'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      },",
+          "tokens": [{ "text": "      }," }]
+        },
+        {
+          "content": "      {",
+          "tokens": [{ "text": "      {" }]
+        },
+        {
+          "content": "        'source': 'TechCrunch',",
+          "tokens": [
+            { "text": "        'source'", "type": "string" },
+            { "text": ": " },
+            { "text": "'TechCrunch'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'time': '3h',",
+          "tokens": [
+            { "text": "        'time'", "type": "string" },
+            { "text": ": " },
+            { "text": "'3h'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'title': 'Apple unveils new AI-powered features for iOS 18',",
+          "tokens": [
+            { "text": "        'title'", "type": "string" },
+            { "text": ": " },
+            { "text": "'Apple unveils new AI-powered features for iOS 18'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'reads': '2345 reads',",
+          "tokens": [
+            { "text": "        'reads'", "type": "string" },
+            { "text": ": " },
+            { "text": "'2345 reads'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'image':",
+          "tokens": [
+            { "text": "        'image'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png',",
+          "tokens": [
+            { "text": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'category': 'Tech Cos',",
+          "tokens": [
+            { "text": "        'category'", "type": "string" },
+            { "text": ": " },
+            { "text": "'Tech Cos'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      },",
+          "tokens": [{ "text": "      }," }]
+        },
+        {
+          "content": "      {",
+          "tokens": [{ "text": "      {" }]
+        },
+        {
+          "content": "        'source': 'The Washington Post',",
+          "tokens": [
+            { "text": "        'source'", "type": "string" },
+            { "text": ": " },
+            { "text": "'The Washington Post'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'time': '5h',",
+          "tokens": [
+            { "text": "        'time'", "type": "string" },
+            { "text": ": " },
+            { "text": "'5h'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'title':",
+          "tokens": [
+            { "text": "        'title'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'Senate passes bipartisan infrastructure bill, setting stage for House vote',",
+          "tokens": [
+            { "text": "            'Senate passes bipartisan infrastructure bill, setting stage for House vote'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'reads': '1789 reads',",
+          "tokens": [
+            { "text": "        'reads'", "type": "string" },
+            { "text": ": " },
+            { "text": "'1789 reads'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'image':",
+          "tokens": [
+            { "text": "        'image'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png',",
+          "tokens": [
+            { "text": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'category': 'U.S. Politics',",
+          "tokens": [
+            { "text": "        'category'", "type": "string" },
+            { "text": ": " },
+            { "text": "'U.S. Politics'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      },",
+          "tokens": [{ "text": "      }," }]
+        },
+        {
+          "content": "      {",
+          "tokens": [{ "text": "      {" }]
+        },
+        {
+          "content": "        'source': 'Variety',",
+          "tokens": [
+            { "text": "        'source'", "type": "string" },
+            { "text": ": " },
+            { "text": "'Variety'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'time': '2h',",
+          "tokens": [
+            { "text": "        'time'", "type": "string" },
+            { "text": ": " },
+            { "text": "'2h'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'title':",
+          "tokens": [
+            { "text": "        'title'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'Marvel\\'s \"Fantastic Four\" cast revealed, sparking fan excitement',",
+          "tokens": [
+            { "text": "            'Marvel\\'s \"Fantastic Four\" cast revealed, sparking fan excitement'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'reads': '3012 reads',",
+          "tokens": [
+            { "text": "        'reads'", "type": "string" },
+            { "text": ": " },
+            { "text": "'3012 reads'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'image':",
+          "tokens": [
+            { "text": "        'image'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png',",
+          "tokens": [
+            { "text": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'category': 'Celebrities',",
+          "tokens": [
+            { "text": "        'category'", "type": "string" },
+            { "text": ": " },
+            { "text": "'Celebrities'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      },",
+          "tokens": [{ "text": "      }," }]
+        },
+        {
+          "content": "      {",
+          "tokens": [{ "text": "      {" }]
+        },
+        {
+          "content": "        'source': 'The Verge',",
+          "tokens": [
+            { "text": "        'source'", "type": "string" },
+            { "text": ": " },
+            { "text": "'The Verge'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'time': '4h',",
+          "tokens": [
+            { "text": "        'time'", "type": "string" },
+            { "text": ": " },
+            { "text": "'4h'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'title':",
+          "tokens": [
+            { "text": "        'title'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'Google\\'s new AI model can generate music from text descriptions',",
+          "tokens": [
+            { "text": "            'Google\\'s new AI model can generate music from text descriptions'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'reads': '1879 reads',",
+          "tokens": [
+            { "text": "        'reads'", "type": "string" },
+            { "text": ": " },
+            { "text": "'1879 reads'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'image':",
+          "tokens": [
+            { "text": "        'image'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png',",
+          "tokens": [
+            { "text": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'category': 'For You',",
+          "tokens": [
+            { "text": "        'category'", "type": "string" },
+            { "text": ": " },
+            { "text": "'For You'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      },",
+          "tokens": [{ "text": "      }," }]
+        },
+        {
+          "content": "      {",
+          "tokens": [{ "text": "      {" }]
+        },
+        {
+          "content": "        'source': 'ESPN',",
+          "tokens": [
+            { "text": "        'source'", "type": "string" },
+            { "text": ": " },
+            { "text": "'ESPN'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'time': '2h',",
+          "tokens": [
+            { "text": "        'time'", "type": "string" },
+            { "text": ": " },
+            { "text": "'2h'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'title': 'Underdog team makes historic upset in March Madness',",
+          "tokens": [
+            { "text": "        'title'", "type": "string" },
+            { "text": ": " },
+            { "text": "'Underdog team makes historic upset in March Madness'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'reads': '2456 reads',",
+          "tokens": [
+            { "text": "        'reads'", "type": "string" },
+            { "text": ": " },
+            { "text": "'2456 reads'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'image':",
+          "tokens": [
+            { "text": "        'image'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png',",
+          "tokens": [
+            { "text": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'category': 'For You',",
+          "tokens": [
+            { "text": "        'category'", "type": "string" },
+            { "text": ": " },
+            { "text": "'For You'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      },",
+          "tokens": [{ "text": "      }," }]
+        },
+        {
+          "content": "      {",
+          "tokens": [{ "text": "      {" }]
+        },
+        {
+          "content": "        'source': 'National Geographic',",
+          "tokens": [
+            { "text": "        'source'", "type": "string" },
+            { "text": ": " },
+            { "text": "'National Geographic'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'time': '6h',",
+          "tokens": [
+            { "text": "        'time'", "type": "string" },
+            { "text": ": " },
+            { "text": "'6h'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'title':",
+          "tokens": [
+            { "text": "        'title'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'Scientists discover new species of deep-sea creature in Mariana Trench',",
+          "tokens": [
+            { "text": "            'Scientists discover new species of deep-sea creature in Mariana Trench'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'reads': '1567 reads',",
+          "tokens": [
+            { "text": "        'reads'", "type": "string" },
+            { "text": ": " },
+            { "text": "'1567 reads'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'image':",
+          "tokens": [
+            { "text": "        'image'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png',",
+          "tokens": [
+            { "text": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'category': 'For You',",
+          "tokens": [
+            { "text": "        'category'", "type": "string" },
+            { "text": ": " },
+            { "text": "'For You'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      },",
+          "tokens": [{ "text": "      }," }]
+        },
+        {
+          "content": "      {",
+          "tokens": [{ "text": "      {" }]
+        },
+        {
+          "content": "        'source': 'The New York Times',",
+          "tokens": [
+            { "text": "        'source'", "type": "string" },
+            { "text": ": " },
+            { "text": "'The New York Times'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'time': '1h',",
+          "tokens": [
+            { "text": "        'time'", "type": "string" },
+            { "text": ": " },
+            { "text": "'1h'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'title':",
+          "tokens": [
+            { "text": "        'title'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'Global leaders agree on ambitious climate action plan at UN summit',",
+          "tokens": [
+            { "text": "            'Global leaders agree on ambitious climate action plan at UN summit'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'reads': '3012 reads',",
+          "tokens": [
+            { "text": "        'reads'", "type": "string" },
+            { "text": ": " },
+            { "text": "'3012 reads'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'image':",
+          "tokens": [
+            { "text": "        'image'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png',",
+          "tokens": [
+            { "text": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'category': 'For You',",
+          "tokens": [
+            { "text": "        'category'", "type": "string" },
+            { "text": ": " },
+            { "text": "'For You'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      },",
+          "tokens": [{ "text": "      }," }]
+        },
+        {
+          "content": "      {",
+          "tokens": [{ "text": "      {" }]
+        },
+        {
+          "content": "        'source': 'TechRadar',",
+          "tokens": [
+            { "text": "        'source'", "type": "string" },
+            { "text": ": " },
+            { "text": "'TechRadar'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'time': '3h',",
+          "tokens": [
+            { "text": "        'time'", "type": "string" },
+            { "text": ": " },
+            { "text": "'3h'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'title':",
+          "tokens": [
+            { "text": "        'title'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'Samsung unveils revolutionary foldable smartphone with expandable screen',",
+          "tokens": [
+            { "text": "            'Samsung unveils revolutionary foldable smartphone with expandable screen'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'reads': '2134 reads',",
+          "tokens": [
+            { "text": "        'reads'", "type": "string" },
+            { "text": ": " },
+            { "text": "'2134 reads'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'image':",
+          "tokens": [
+            { "text": "        'image'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png',",
+          "tokens": [
+            { "text": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'category': 'For You',",
+          "tokens": [
+            { "text": "        'category'", "type": "string" },
+            { "text": ": " },
+            { "text": "'For You'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      },",
+          "tokens": [{ "text": "      }," }]
+        },
+        {
+          "content": "      {",
+          "tokens": [{ "text": "      {" }]
+        },
+        {
+          "content": "        'source': 'The Guardian',",
+          "tokens": [
+            { "text": "        'source'", "type": "string" },
+            { "text": ": " },
+            { "text": "'The Guardian'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'time': '5h',",
+          "tokens": [
+            { "text": "        'time'", "type": "string" },
+            { "text": ": " },
+            { "text": "'5h'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'title':",
+          "tokens": [
+            { "text": "        'title'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'Breakthrough in renewable energy: New solar panel design doubles efficiency',",
+          "tokens": [
+            { "text": "            'Breakthrough in renewable energy: New solar panel design doubles efficiency'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'reads': '1890 reads',",
+          "tokens": [
+            { "text": "        'reads'", "type": "string" },
+            { "text": ": " },
+            { "text": "'1890 reads'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'image':",
+          "tokens": [
+            { "text": "        'image'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png',",
+          "tokens": [
+            { "text": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'category': 'For You',",
+          "tokens": [
+            { "text": "        'category'", "type": "string" },
+            { "text": ": " },
+            { "text": "'For You'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      },",
+          "tokens": [{ "text": "      }," }]
+        },
+        {
+          "content": "      {",
+          "tokens": [{ "text": "      {" }]
+        },
+        {
+          "content": "        'source': 'Forbes',",
+          "tokens": [
+            { "text": "        'source'", "type": "string" },
+            { "text": ": " },
+            { "text": "'Forbes'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'time': '7h',",
+          "tokens": [
+            { "text": "        'time'", "type": "string" },
+            { "text": ": " },
+            { "text": "'7h'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'title':",
+          "tokens": [
+            { "text": "        'title'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'Startup revolutionizes urban farming with AI-powered vertical gardens',",
+          "tokens": [
+            { "text": "            'Startup revolutionizes urban farming with AI-powered vertical gardens'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'reads': '1456 reads',",
+          "tokens": [
+            { "text": "        'reads'", "type": "string" },
+            { "text": ": " },
+            { "text": "'1456 reads'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'image':",
+          "tokens": [
+            { "text": "        'image'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png',",
+          "tokens": [
+            { "text": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'category': 'For You',",
+          "tokens": [
+            { "text": "        'category'", "type": "string" },
+            { "text": ": " },
+            { "text": "'For You'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      },",
+          "tokens": [{ "text": "      }," }]
+        },
+        {
+          "content": "      {",
+          "tokens": [{ "text": "      {" }]
+        },
+        {
+          "content": "        'source': 'BBC News',",
+          "tokens": [
+            { "text": "        'source'", "type": "string" },
+            { "text": ": " },
+            { "text": "'BBC News'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'time': '2h',",
+          "tokens": [
+            { "text": "        'time'", "type": "string" },
+            { "text": ": " },
+            { "text": "'2h'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'title':",
+          "tokens": [
+            { "text": "        'title'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'Historic peace agreement signed in long-standing regional conflict',",
+          "tokens": [
+            { "text": "            'Historic peace agreement signed in long-standing regional conflict'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'reads': '2789 reads',",
+          "tokens": [
+            { "text": "        'reads'", "type": "string" },
+            { "text": ": " },
+            { "text": "'2789 reads'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'image':",
+          "tokens": [
+            { "text": "        'image'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png',",
+          "tokens": [
+            { "text": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'category': 'For You',",
+          "tokens": [
+            { "text": "        'category'", "type": "string" },
+            { "text": ": " },
+            { "text": "'For You'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      },",
+          "tokens": [{ "text": "      }," }]
+        },
+        {
+          "content": "      {",
+          "tokens": [{ "text": "      {" }]
+        },
+        {
+          "content": "        'source': 'WIRED',",
+          "tokens": [
+            { "text": "        'source'", "type": "string" },
+            { "text": ": " },
+            { "text": "'WIRED'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'time': '4h',",
+          "tokens": [
+            { "text": "        'time'", "type": "string" },
+            { "text": ": " },
+            { "text": "'4h'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'title':",
+          "tokens": [
+            { "text": "        'title'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'Quantum computing breakthrough paves way for practical applications',",
+          "tokens": [
+            { "text": "            'Quantum computing breakthrough paves way for practical applications'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'reads': '2001 reads',",
+          "tokens": [
+            { "text": "        'reads'", "type": "string" },
+            { "text": ": " },
+            { "text": "'2001 reads'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'image':",
+          "tokens": [
+            { "text": "        'image'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png',",
+          "tokens": [
+            { "text": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'category': 'For You',",
+          "tokens": [
+            { "text": "        'category'", "type": "string" },
+            { "text": ": " },
+            { "text": "'For You'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      },",
+          "tokens": [{ "text": "      }," }]
+        },
+        {
+          "content": "      {",
+          "tokens": [{ "text": "      {" }]
+        },
+        {
+          "content": "        'source': 'The Hollywood Reporter',",
+          "tokens": [
+            { "text": "        'source'", "type": "string" },
+            { "text": ": " },
+            { "text": "'The Hollywood Reporter'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'time': '1h',",
+          "tokens": [
+            { "text": "        'time'", "type": "string" },
+            { "text": ": " },
+            { "text": "'1h'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'title': 'Indie film takes top honors at Sundance, sparking Oscar buzz',",
+          "tokens": [
+            { "text": "        'title'", "type": "string" },
+            { "text": ": " },
+            { "text": "'Indie film takes top honors at Sundance, sparking Oscar buzz'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'reads': '1678 reads',",
+          "tokens": [
+            { "text": "        'reads'", "type": "string" },
+            { "text": ": " },
+            { "text": "'1678 reads'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'image':",
+          "tokens": [
+            { "text": "        'image'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png',",
+          "tokens": [
+            { "text": "            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-30%20at%2010.33.07%E2%80%AFAM-ZXGyc0UakLBrqFNyZN1x2wfihb1VfN.png'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        'category': 'For You',",
+          "tokens": [
+            { "text": "        'category'", "type": "string" },
+            { "text": ": " },
+            { "text": "'For You'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      },",
+          "tokens": [{ "text": "      }," }]
+        },
+        {
+          "content": "    ];",
+          "tokens": [{ "text": "    ];" }]
+        },
+        {
+          "content": "    _filterNews();",
+          "tokens": [
+            { "text": "    _filterNews", "type": "method" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  void _onSearchChanged() {",
+          "tokens": [
+            { "text": "  void", "type": "keyword" },
+            { "text": " " },
+            { "text": "_onSearchChanged", "type": "method" },
+            { "text": "() {" }
+          ]
+        },
+        {
+          "content": "    if (_debounce?.isActive ?? false) _debounce!.cancel();",
+          "tokens": [
+            { "text": "    if", "type": "keyword" },
+            { "text": " (_debounce", "type": "property" },
+            { "text": "?.", "type": "operator" },
+            { "text": "isActive", "type": "property" },
+            { "text": " ?? " },
+            { "text": "false", "type": "keyword" },
+            { "text": ") _debounce!.", "type": "text" },
+            { "text": "cancel", "type": "method" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "    _debounce = Timer(const Duration(milliseconds: 500), () {",
+          "tokens": [
+            { "text": "    _debounce", "type": "property" },
+            { "text": " = " },
+            { "text": "Timer", "type": "class" },
+            { "text": "(const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Duration", "type": "class" },
+            { "text": "(", "type": "text" },
+            { "text": "milliseconds", "type": "property" },
+            { "text": ": ", "type": "text" },
+            { "text": "500", "type": "number" },
+            { "text": "), () {" }
+          ]
+        },
+        {
+          "content": "      setState(() {",
+          "tokens": [
+            { "text": "      setState(() {" }
+          ]
+        },
+        {
+          "content": "        _filterNews();",
+          "tokens": [
+            { "text": "        _filterNews", "type": "method" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "      });",
+          "tokens": [{ "text": "      });" }]
+        },
+        {
+          "content": "    });",
+          "tokens": [{ "text": "    });" }]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  void _filterNews() {",
+          "tokens": [
+            { "text": "  void", "type": "keyword" },
+            { "text": " " },
+            { "text": "_filterNews", "type": "method" },
+            { "text": "() {" }
+          ]
+        },
+        {
+          "content": "    final currentCategory = _categories[_selectedCategoryIndex];",
+          "tokens": [
+            { "text": "    final", "type": "keyword" },
+            { "text": " currentCategory", "type": "property" },
+            { "text": " = _categories[_selectedCategoryIndex];" }
+          ]
+        },
+        {
+          "content": "    if (_searchController.text.isEmpty) {",
+          "tokens": [
+            { "text": "    if", "type": "keyword" },
+            { "text": " (_searchController.text.isEmpty) {" }
+          ]
+        },
+        {
+          "content": "      _filteredNews = _allNews",
+          "tokens": [
+            { "text": "      _filteredNews", "type": "property" },
+            { "text": " = _allNews" }
+          ]
+        },
+        {
+          "content": "          .where((news) => news['category'] == currentCategory)",
+          "tokens": [
+            { "text": "          .where((", "type": "property" },
+            { "text": "news", "type": "property" },
+            { "text": ") => news['category'] == currentCategory)" }
+          ]
+        },
+        {
+          "content": "          .toList();",
+          "tokens": [
+            { "text": "          .toList();" }
+          ]
+        },
+        {
+          "content": "    } else {",
+          "tokens": [
+            { "text": "    } else", "type": "keyword" },
+            { "text": " {" }
+          ]
+        },
+        {
+          "content": "      _filteredNews = _allNews.where((news) {",
+          "tokens": [
+            { "text": "      _filteredNews", "type": "property" },
+            { "text": " = _allNews.where((", "type": "property" },
+            { "text": "news", "type": "property" },
+            { "text": ") {" }
+          ]
+        },
+        {
+          "content": "        return news['category'] == currentCategory &&",
+          "tokens": [
+            { "text": "        return", "type": "keyword" },
+            { "text": " news['category'] == currentCategory &&" }
+          ]
+        },
+        {
+          "content": "            (news['title']",
+          "tokens": [
+            { "text": "            (news['title']" }
+          ]
+        },
+        {
+          "content": "                    .toLowerCase()",
+          "tokens": [
+            { "text": "                    .toLowerCase", "type": "method" },
+            { "text": "()" }
+          ]
+        },
+        {
+          "content": "                    .contains(_searchController.text.toLowerCase()) ||",
+          "tokens": [
+            { "text": "                    .contains(_searchController.text.toLowerCase()) ||" }
+          ]
+        },
+        {
+          "content": "                news['source']",
+          "tokens": [
+            { "text": "                news['source']" }
+          ]
+        },
+        {
+          "content": "                    .toLowerCase()",
+          "tokens": [
+            { "text": "                    .toLowerCase", "type": "method" },
+            { "text": "()" }
+          ]
+        },
+        {
+          "content": "                    .contains(_searchController.text.toLowerCase()));",
+          "tokens": [
+            { "text": "                    .contains(_searchController.text.toLowerCase()));" }
+          ]
+        },
+        {
+          "content": "      }).toList();",
+          "tokens": [
+            { "text": "      }).toList();" }
+          ]
+        },
+        {
+          "content": "    }",
+          "tokens": [{ "text": "    }" }]
+        },
+        {
+          "content": "    _isSearching = _searchController.text.isNotEmpty;",
+          "tokens": [
+            { "text": "    _isSearching", "type": "property" },
+            { "text": " = _searchController.text.isNotEmpty;" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  ", "type": "text" },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  Widget build(BuildContext context) {",
+          "tokens": [
+            { "text": "  Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "build", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    return Scaffold(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Scaffold", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      backgroundColor: KConstantColors.whiteColor,",
+          "tokens": [
+            { "text": "      backgroundColor: " },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "whiteColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      body: SafeArea(",
+          "tokens": [
+            { "text": "      body: " },
+            { "text": "SafeArea", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        child: Column(",
+          "tokens": [
+            { "text": "        child: " },
+            { "text": "Column", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          children: [",
+          "tokens": [{ "text": "          children: [" }]
+        },
+        {
+          "content": "            _buildHeader(context),",
+          "tokens": [
+            { "text": "            " },
+            { "text": "_buildHeader", "type": "method" },
+            { "text": "(context)," }
+          ]
+        },
+        {
+          "content": "            _buildCategories(context),",
+          "tokens": [
+            { "text": "            " },
+            { "text": "_buildCategories", "type": "method" },
+            { "text": "(context)," }
+          ]
+        },
+        {
+          "content": "            Expanded(",
+          "tokens": [
+            { "text": "            " },
+            { "text": "Expanded", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              child: _buildNewsFeed(context),",
+          "tokens": [
+            { "text": "              child: " },
+            { "text": "_buildNewsFeed", "type": "method" },
+            { "text": "(context)," }
+          ]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "            _buildBottomNav(context),",
+          "tokens": [
+            { "text": "            " },
+            { "text": "_buildBottomNav", "type": "method" },
+            { "text": "(context)," }
+          ]
+        },
+        {
+          "content": "          ],",
+          "tokens": [{ "text": "          ]," }]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        )," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "    );",
+          "tokens": [{ "text": "    );" }]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget _buildHeader(BuildContext context) {",
+          "tokens": [
+            { "text": "  Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "_buildHeader", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    return Padding(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Padding", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      padding: const EdgeInsets.all(16.0),",
+          "tokens": [
+            { "text": "      padding: const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "(", "type": "text" },
+            { "text": "16.0", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "      child: Row(",
+          "tokens": [
+            { "text": "      child: " },
+            { "text": "Row", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        mainAxisAlignment: MainAxisAlignment.spaceBetween,",
+          "tokens": [
+            { "text": "        mainAxisAlignment: " },
+            { "text": "MainAxisAlignment", "type": "widget" },
+            { "text": "." },
+            { "text": "spaceBetween", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        children: [",
+          "tokens": [{ "text": "        children: [" }]
+        },
+        {
+          "content": "          Expanded(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "Expanded", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            child: Container(",
+          "tokens": [
+            { "text": "            child: " },
+            { "text": "Container", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),",
+          "tokens": [
+            { "text": "              padding: const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "(", "type": "text" },
+            { "text": "horizontal", "type": "property" },
+            { "text": ": ", "type": "text" },
+            { "text": "16", "type": "number" },
+            { "text": ", " },
+            { "text": "vertical", "type": "property" },
+            { "text": ": ", "type": "text" },
+            { "text": "8", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "              decoration: BoxDecoration(",
+          "tokens": [
+            { "text": "              decoration: " },
+            { "text": "BoxDecoration", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                color: Colors.grey[200],",
+          "tokens": [
+            { "text": "                color: " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "grey", "type": "property" },
+            { "text": "[", "type": "text" },
+            { "text": "200", "type": "number" },
+            { "text": "]," }
+          ]
+        },
+        {
+          "content": "                borderRadius: BorderRadius.circular(20),",
+          "tokens": [
+            { "text": "                borderRadius: " },
+            { "text": "BorderRadius", "type": "widget" },
+            { "text": "." },
+            { "text": "circular", "type": "method" },
+            { "text": "(", "type": "text" },
+            { "text": "20", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "              ),",
+          "tokens": [{ "text": "              )," }]
+        },
+        {
+          "content": "              child: Row(",
+          "tokens": [
+            { "text": "              child: " },
+            { "text": "Row", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                children: [",
+          "tokens": [{ "text": "                children: [" }]
+        },
+        {
+          "content": "                  Icon(Icons.search, color: Colors.grey[600]),",
+          "tokens": [
+            { "text": "                  Icon", "type": "widget" },
+            { "text": "(", "type": "text" },
+            { "text": "Icons", "type": "widget" },
+            { "text": "." },
+            { "text": "search", "type": "property" },
+            { "text": ", " },
+            { "text": "color", "type": "property" },
+            { "text": ": ", "type": "text" },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "grey", "type": "property" },
+            { "text": "[", "type": "text" },
+            { "text": "600", "type": "number" },
+            { "text": "])," }
+          ]
+        },
+        {
+          "content": "                  const SizedBox(width: 8),",
+          "tokens": [
+            { "text": "                  const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SizedBox", "type": "widget" },
+            { "text": "(width: " },
+            { "text": "8", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "                  Expanded(",
+          "tokens": [
+            { "text": "                  " },
+            { "text": "Expanded", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                    child: TextField(",
+          "tokens": [
+            { "text": "                    child: " },
+            { "text": "TextField", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                      controller: _searchController,",
+          "tokens": [
+            { "text": "                      controller: _searchController," }
+          ]
+        },
+        {
+          "content": "                      decoration: InputDecoration(",
+          "tokens": [
+            { "text": "                      decoration: " },
+            { "text": "InputDecoration", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                        hintText: 'Search',",
+          "tokens": [
+            { "text": "                        hintText: " },
+            { "text": "'Search'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                        hintStyle: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "                        hintStyle: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                          context,",
+          "tokens": [
+            { "text": "                          context," }
+          ]
+        },
+        {
+          "content": "                          FontSize.kMedium,",
+          "tokens": [
+            { "text": "                          FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                          Colors.grey[600]!,",
+          "tokens": [
+            { "text": "                          Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "grey", "type": "property" },
+            { "text": "[" },
+            { "text": "600", "type": "number" },
+            { "text": "]!," }
+          ]
+        },
+        {
+          "content": "                          KConstantFonts.geistMedium,",
+          "tokens": [
+            { "text": "                          KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "geistMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                        ),",
+          "tokens": [{ "text": "                        )," }]
+        },
+        {
+          "content": "                        border: InputBorder.none,",
+          "tokens": [
+            { "text": "                        border: " },
+            { "text": "InputBorder", "type": "class" },
+            { "text": "." },
+            { "text": "none", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                      ),",
+          "tokens": [{ "text": "                      )," }]
+        },
+        {
+          "content": "                    ),",
+          "tokens": [{ "text": "                    )," }]
+        },
+        {
+          "content": "                  ),",
+          "tokens": [{ "text": "                  )," }]
+        },
+        {
+          "content": "                  if (_isSearching)",
+          "tokens": [
+            { "text": "                  if", "type": "keyword" },
+            { "text": " (_isSearching)" }
+          ]
+        },
+        {
+          "content": "                    GestureDetector(",
+          "tokens": [
+            { "text": "                    " },
+            { "text": "GestureDetector", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                      onTap: () {",
+          "tokens": [
+            { "text": "                      onTap: () {" }
+          ]
+        },
+        {
+          "content": "                        setState(() {",
+          "tokens": [
+            { "text": "                        setState(() {" }
+          ]
+        },
+        {
+          "content": "                          _searchController.clear();",
+          "tokens": [
+            { "text": "                          _searchController", "type": "property" },
+            { "text": "." },
+            { "text": "clear", "type": "method" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "                          _filterNews();",
+          "tokens": [
+            { "text": "                          _filterNews", "type": "method" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "                        });",
+          "tokens": [{ "text": "                        });" }]
+        },
+        {
+          "content": "                      },",
+          "tokens": [{ "text": "                      }," }]
+        },
+        {
+          "content": "                      child: Icon(Icons.close, color: Colors.grey[600]),",
+          "tokens": [
+            { "text": "                      child: " },
+            { "text": "Icon", "type": "widget" },
+            { "text": "(", "type": "text" },
+            { "text": "Icons", "type": "widget" },
+            { "text": "." },
+            { "text": "close", "type": "property" },
+            { "text": ", " },
+            { "text": "color", "type": "property" },
+            { "text": ": ", "type": "text" },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "grey", "type": "property" },
+            { "text": "[", "type": "text" },
+            { "text": "600", "type": "number" },
+            { "text": "])," }
+          ]
+        },
+        {
+          "content": "                    ),",
+          "tokens": [{ "text": "                    )," }]
+        },
+        {
+          "content": "                ],",
+          "tokens": [{ "text": "                ]," }]
+        },
+        {
+          "content": "              ),",
+          "tokens": [{ "text": "              )," }]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "          const SizedBox(width: 16),",
+          "tokens": [
+            { "text": "          const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SizedBox", "type": "widget" },
+            { "text": "(width: " },
+            { "text": "16", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "          Icon(Icons.notifications_none, color: Colors.grey[600]),",
+          "tokens": [
+            { "text": "          Icon", "type": "widget" },
+            { "text": "(", "type": "text" },
+            { "text": "Icons", "type": "widget" },
+            { "text": "." },
+            { "text": "notifications_none", "type": "property" },
+            { "text": ", " },
+            { "text": "color", "type": "property" },
+            { "text": ": ", "type": "text" },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "grey", "type": "property" },
+            { "text": "[", "type": "text" },
+            { "text": "600", "type": "number" },
+            { "text": "])," }
+          ]
+        },
+        {
+          "content": "        ],",
+          "tokens": [{ "text": "        ]," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "    ).animate().fadeIn(duration: 300.ms);",
+          "tokens": [
+            { "text": "    ).", "type": "text" },
+            { "text": "animate", "type": "method" },
+            { "text": "().", "type": "text" },
+            { "text": "fadeIn", "type": "method" },
+            { "text": "(", "type": "text" },
+            { "text": "duration", "type": "property" },
+            { "text": ": ", "type": "text" },
+            { "text": "300", "type": "number" },
+            { "text": ".", "type": "text" },
+            { "text": "ms", "type": "property" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget _buildCategories(BuildContext context) {",
+          "tokens": [
+            { "text": "  Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "_buildCategories", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    return Container(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Container", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      height: 40,",
+          "tokens": [
+            { "text": "      height: " },
+            { "text": "40", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      margin: const EdgeInsets.only(bottom: 16),",
+          "tokens": [
+            { "text": "      margin: const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "(", "type": "text" },
+            { "text": "only", "type": "method" },
+            { "text": "(", "type": "text" },
+            { "text": "bottom", "type": "property" },
+            { "text": ": ", "type": "text" },
+            { "text": "16", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "      child: ListView.builder(",
+          "tokens": [
+            { "text": "      child: " },
+            { "text": "ListView", "type": "widget" },
+            { "text": "." },
+            { "text": "builder", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        scrollDirection: Axis.horizontal,",
+          "tokens": [
+            { "text": "        scrollDirection: " },
+            { "text": "Axis", "type": "widget" },
+            { "text": "." },
+            { "text": "horizontal", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        itemCount: _categories.length,",
+          "tokens": [
+            { "text": "        itemCount: _categories.length," }
+          ]
+        },
+        {
+          "content": "        itemBuilder: (context, index) {",
+          "tokens": [
+            { "text": "        itemBuilder: (", "type": "property" },
+            { "text": "context", "type": "property" },
+            { "text": ", " },
+            { "text": "index", "type": "property" },
+            { "text": ") {" }
+          ]
+        },
+        {
+          "content": "          return GestureDetector(",
+          "tokens": [
+            { "text": "          return", "type": "keyword" },
+            { "text": " " },
+            { "text": "GestureDetector", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            onTap: () {",
+          "tokens": [
+            { "text": "            onTap: () {" }
+          ]
+        },
+        {
+          "content": "              setState(() {",
+          "tokens": [
+            { "text": "              setState(() {" }
+          ]
+        },
+        {
+          "content": "                _selectedCategoryIndex = index;",
+          "tokens": [
+            { "text": "                _selectedCategoryIndex", "type": "property" },
+            { "text": " = index;" }
+          ]
+        },
+        {
+          "content": "                _filterNews();",
+          "tokens": [
+            { "text": "                _filterNews", "type": "method" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "              });",
+          "tokens": [{ "text": "              });" }]
+        },
+        {
+          "content": "            },",
+          "tokens": [{ "text": "            }," }]
+        },
+        {
+          "content": "            child: Container(",
+          "tokens": [
+            { "text": "            child: " },
+            { "text": "Container", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              margin: EdgeInsets.only(",
+          "tokens": [
+            { "text": "              margin: " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "." },
+            { "text": "only", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  left: index == 0 ? 16 : 8,",
+          "tokens": [
+            { "text": "                  left: index == " },
+            { "text": "0", "type": "number" },
+            { "text": " ? " },
+            { "text": "16", "type": "number" },
+            { "text": " : " },
+            { "text": "8", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  right: index == _categories.length - 1 ? 16 : 0),",
+          "tokens": [
+            { "text": "                  right: index == _categories.length - " },
+            { "text": "1", "type": "number" },
+            { "text": " ? " },
+            { "text": "16", "type": "number" },
+            { "text": " : " },
+            { "text": "0", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "              child: Chip(",
+          "tokens": [
+            { "text": "              child: " },
+            { "text": "Chip", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                label: Text(",
+          "tokens": [
+            { "text": "                label: " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  _categories[index],",
+          "tokens": [
+            { "text": "                  _categories[index]," }
+          ]
+        },
+        {
+          "content": "                  style: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "                  style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                    context,",
+          "tokens": [
+            { "text": "                    context," }
+          ]
+        },
+        {
+          "content": "                    FontSize.kMedium,",
+          "tokens": [
+            { "text": "                    FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    index == _selectedCategoryIndex",
+          "tokens": [
+            { "text": "                    index == _selectedCategoryIndex" }
+          ]
+        },
+        {
+          "content": "                        ? KConstantColors.blackColor",
+          "tokens": [
+            { "text": "                        ? " },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "blackColor", "type": "property" }
+          ]
+        },
+        {
+          "content": "                        : Colors.grey[600]!,",
+          "tokens": [
+            { "text": "                        : " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "grey", "type": "property" },
+            { "text": "[" },
+            { "text": "600", "type": "number" },
+            { "text": "]!," }
+          ]
+        },
+        {
+          "content": "                    KConstantFonts.geistMedium,",
+          "tokens": [
+            { "text": "                    KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "geistMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  ),",
+          "tokens": [{ "text": "                  )," }]
+        },
+        {
+          "content": "                ),",
+          "tokens": [{ "text": "                )," }]
+        },
+        {
+          "content": "                backgroundColor: index == _selectedCategoryIndex",
+          "tokens": [
+            { "text": "                backgroundColor: index == _selectedCategoryIndex" }
+          ]
+        },
+        {
+          "content": "                    ? Colors.grey[200]",
+          "tokens": [
+            { "text": "                    ? " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "grey", "type": "property" },
+            { "text": "[" },
+            { "text": "200", "type": "number" },
+            { "text": "]" }
+          ]
+        },
+        {
+          "content": "                    : Colors.transparent,",
+          "tokens": [
+            { "text": "                    : " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "transparent", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                shape: RoundedRectangleBorder(",
+          "tokens": [
+            { "text": "                shape: " },
+            { "text": "RoundedRectangleBorder", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  borderRadius: BorderRadius.circular(20),",
+          "tokens": [
+            { "text": "                  borderRadius: " },
+            { "text": "BorderRadius", "type": "widget" },
+            { "text": "." },
+            { "text": "circular", "type": "method" },
+            { "text": "(", "type": "text" },
+            { "text": "20", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "                  side: BorderSide(",
+          "tokens": [
+            { "text": "                  side: " },
+            { "text": "BorderSide", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                    color: index == _selectedCategoryIndex",
+          "tokens": [
+            { "text": "                    color: index == _selectedCategoryIndex" }
+          ]
+        },
+        {
+          "content": "                        ? Colors.grey[400]!",
+          "tokens": [
+            { "text": "                        ? " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "grey", "type": "property" },
+            { "text": "[" },
+            { "text": "400", "type": "number" },
+            { "text": "]!" }
+          ]
+        },
+        {
+          "content": "                        : Colors.transparent,",
+          "tokens": [
+            { "text": "                        : " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "transparent", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  ),",
+          "tokens": [{ "text": "                  )," }]
+        },
+        {
+          "content": "                ),",
+          "tokens": [{ "text": "                )," }]
+        },
+        {
+          "content": "              ),",
+          "tokens": [{ "text": "              )," }]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "          );",
+          "tokens": [{ "text": "          );" }]
+        },
+        {
+          "content": "        },",
+          "tokens": [{ "text": "        }," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "    ).animate().slideX(begin: -0.1, end: 0, duration: 300.ms);",
+          "tokens": [
+            { "text": "    ).", "type": "text" },
+            { "text": "animate", "type": "method" },
+            { "text": "().", "type": "text" },
+            { "text": "slideX", "type": "method" },
+            { "text": "(", "type": "text" },
+            { "text": "begin", "type": "property" },
+            { "text": ": ", "type": "text" },
+            { "text": "-0.1", "type": "number" },
+            { "text": ", " },
+            { "text": "end", "type": "property" },
+            { "text": ": " },
+            { "text": "0", "type": "number" },
+            { "text": ", " },
+            { "text": "duration", "type": "property" },
+            { "text": ": ", "type": "text" },
+            { "text": "300", "type": "number" },
+            { "text": ".", "type": "text" },
+            { "text": "ms", "type": "property" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget _buildNewsFeed(BuildContext context) {",
+          "tokens": [
+            { "text": "  Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "_buildNewsFeed", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    if (_filteredNews.isEmpty) {",
+          "tokens": [
+            { "text": "    if", "type": "keyword" },
+            { "text": " (_filteredNews.isEmpty) {" }
+          ]
+        },
+        {
+          "content": "      return Center(",
+          "tokens": [
+            { "text": "      return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Center", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        child: Text(",
+          "tokens": [
+            { "text": "        child: " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          'No news found',",
+          "tokens": [
+            { "text": "          'No news found'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          style: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "          style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            context,",
+          "tokens": [
+            { "text": "            context," }
+          ]
+        },
+        {
+          "content": "            FontSize.kLarge,",
+          "tokens": [
+            { "text": "            FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kLarge", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            Colors.grey[600]!,",
+          "tokens": [
+            { "text": "            Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "grey", "type": "property" },
+            { "text": "[" },
+            { "text": "600", "type": "number" },
+            { "text": "]!," }
+          ]
+        },
+        {
+          "content": "            KConstantFonts.geistMedium,",
+          "tokens": [
+            { "text": "            KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "geistMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        )," }]
+        },
+        {
+          "content": "      ).animate().fadeIn(duration: 300.ms);",
+          "tokens": [
+            { "text": "      ).", "type": "text" },
+            { "text": "animate", "type": "method" },
+            { "text": "().", "type": "text" },
+            { "text": "fadeIn", "type": "method" },
+            { "text": "(", "type": "text" },
+            { "text": "duration", "type": "property" },
+            { "text": ": ", "type": "text" },
+            { "text": "300", "type": "number" },
+            { "text": ".", "type": "text" },
+            { "text": "ms", "type": "property" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "    }",
+          "tokens": [{ "text": "    }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "    return ListView.builder(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "ListView", "type": "widget" },
+            { "text": "." },
+            { "text": "builder", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      padding: const EdgeInsets.symmetric(horizontal: 16),",
+          "tokens": [
+            { "text": "      padding: const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "(", "type": "text" },
+            { "text": "horizontal", "type": "property" },
+            { "text": ": ", "type": "text" },
+            { "text": "16", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "      itemCount: _filteredNews.length,",
+          "tokens": [
+            { "text": "      itemCount: _filteredNews.length," }
+          ]
+        },
+        {
+          "content": "      itemBuilder: (context, index) {",
+          "tokens": [
+            { "text": "      itemBuilder: (", "type": "property" },
+            { "text": "context", "type": "property" },
+            { "text": ", " },
+            { "text": "index", "type": "property" },
+            { "text": ") {" }
+          ]
+        },
+        {
+          "content": "        final news = _filteredNews[index];",
+          "tokens": [
+            { "text": "        final", "type": "keyword" },
+            { "text": " news", "type": "property" },
+            { "text": " = _filteredNews[index];" }
+          ]
+        },
+        {
+          "content": "        return _buildNewsItem(",
+          "tokens": [
+            { "text": "        return", "type": "keyword" },
+            { "text": " " },
+            { "text": "_buildNewsItem", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          context,",
+          "tokens": [
+            { "text": "          context," }
+          ]
+        },
+        {
+          "content": "          news['source'],",
+          "tokens": [
+            { "text": "          news['source']," }
+          ]
+        },
+        {
+          "content": "          news['time'],",
+          "tokens": [
+            { "text": "          news['time']," }
+          ]
+        },
+        {
+          "content": "          news['title'],",
+          "tokens": [
+            { "text": "          news['title']," }
+          ]
+        },
+        {
+          "content": "          news['reads'],",
+          "tokens": [
+            { "text": "          news['reads']," }
+          ]
+        },
+        {
+          "content": "          news['image'],",
+          "tokens": [
+            { "text": "          news['image']," }
+          ]
+        },
+        {
+          "content": "        );",
+          "tokens": [{ "text": "        );" }]
+        },
+        {
+          "content": "      },",
+          "tokens": [{ "text": "      }," }]
+        },
+        {
+          "content": "    ).animate().fadeIn(duration: 300.ms);",
+          "tokens": [
+            { "text": "    ).", "type": "text" },
+            { "text": "animate", "type": "method" },
+            { "text": "().", "type": "text" },
+            { "text": "fadeIn", "type": "method" },
+            { "text": "(", "type": "text" },
+            { "text": "duration", "type": "property" },
+            { "text": ": ", "type": "text" },
+            { "text": "300", "type": "number" },
+            { "text": ".", "type": "text" },
+            { "text": "ms", "type": "property" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget _buildNewsItem(BuildContext context, String source, String time,",
+          "tokens": [
+            { "text": "  Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "_buildNewsItem", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context, " },
+            { "text": "String", "type": "class" },
+            { "text": " source, " },
+            { "text": "String", "type": "class" },
+            { "text": " time," }
+          ]
+        },
+        {
+          "content": "      String title, String reads, String imageUrl) {",
+          "tokens": [
+            { "text": "      String", "type": "class" },
+            { "text": " title, " },
+            { "text": "String", "type": "class" },
+            { "text": " reads, " },
+            { "text": "String", "type": "class" },
+            { "text": " imageUrl) {" }
+          ]
+        },
+        {
+          "content": "    return Container(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Container", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      margin: const EdgeInsets.only(bottom: 16),",
+          "tokens": [
+            { "text": "      margin: const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "(", "type": "text" },
+            { "text": "only", "type": "method" },
+            { "text": "(", "type": "text" },
+            { "text": "bottom", "type": "property" },
+            { "text": ": ", "type": "text" },
+            { "text": "16", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "      child: Row(",
+          "tokens": [
+            { "text": "      child: " },
+            { "text": "Row", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        crossAxisAlignment: CrossAxisAlignment.start,",
+          "tokens": [
+            { "text": "        crossAxisAlignment: " },
+            { "text": "CrossAxisAlignment", "type": "widget" },
+            { "text": "." },
+            { "text": "start", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        children: [",
+          "tokens": [{ "text": "        children: [" }]
+        },
+        {
+          "content": "          Expanded(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "Expanded", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            child: Column(",
+          "tokens": [
+            { "text": "            child: " },
+            { "text": "Column", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              crossAxisAlignment: CrossAxisAlignment.start,",
+          "tokens": [
+            { "text": "              crossAxisAlignment: " },
+            { "text": "CrossAxisAlignment", "type": "widget" },
+            { "text": "." },
+            { "text": "start", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              children: [",
+          "tokens": [{ "text": "              children: [" }]
+        },
+        {
+          "content": "                Row(",
+          "tokens": [
+            { "text": "                " },
+            { "text": "Row", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  children: [",
+          "tokens": [{ "text": "                  children: [" }]
+        },
+        {
+          "content": "                    Text(",
+          "tokens": [
+            { "text": "                    " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                      source,",
+          "tokens": [
+            { "text": "                      source,", "type": "property" }
+          ]
+        },
+        {
+          "content": "                      style: KCustomTextStyle.kBold(",
+          "tokens": [
+            { "text": "                      style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kBold", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                        context,",
+          "tokens": [
+            { "text": "                        context," }
+          ]
+        },
+        {
+          "content": "                        FontSize.kMedium,",
+          "tokens": [
+            { "text": "                        FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                        KConstantColors.blackColor,",
+          "tokens": [
+            { "text": "                        KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "blackColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                        KConstantFonts.geistBold,",
+          "tokens": [
+            { "text": "                        KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "geistBold", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                      ),",
+          "tokens": [{ "text": "                      )," }]
+        },
+        {
+          "content": "                    ),",
+          "tokens": [{ "text": "                    )," }]
+        },
+        {
+          "content": "                    const SizedBox(width: 8),",
+          "tokens": [
+            { "text": "                    const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SizedBox", "type": "widget" },
+            { "text": "(width: " },
+            { "text": "8", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "                    Text(",
+          "tokens": [
+            { "text": "                    " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                      time,",
+          "tokens": [
+            { "text": "                      time,", "type": "property" }
+          ]
+        },
+        {
+          "content": "                      style: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "                      style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                        context,",
+          "tokens": [
+            { "text": "                        context," }
+          ]
+        },
+        {
+          "content": "                        FontSize.kSmall,",
+          "tokens": [
+            { "text": "                        FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kSmall", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                        Colors.grey[600]!,",
+          "tokens": [
+            { "text": "                        Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "grey", "type": "property" },
+            { "text": "[" },
+            { "text": "600", "type": "number" },
+            { "text": "]!," }
+          ]
+        },
+        {
+          "content": "                        KConstantFonts.geistMedium,",
+          "tokens": [
+            { "text": "                        KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "geistMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                      ),",
+          "tokens": [{ "text": "                      )," }]
+        },
+        {
+          "content": "                    ),",
+          "tokens": [{ "text": "                    )," }]
+        },
+        {
+          "content": "                  ],",
+          "tokens": [{ "text": "                  ]," }]
+        },
+        {
+          "content": "                ),",
+          "tokens": [{ "text": "                )," }]
+        },
+        {
+          "content": "                const SizedBox(height: 8),",
+          "tokens": [
+            { "text": "                const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SizedBox", "type": "widget" },
+            { "text": "(height: " },
+            { "text": "8", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "                Text(",
+          "tokens": [
+            { "text": "                " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  title,",
+          "tokens": [
+            { "text": "                  title,", "type": "property" }
+          ]
+        },
+        {
+          "content": "                  style: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "                  style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                    context,",
+          "tokens": [
+            { "text": "                    context," }
+          ]
+        },
+        {
+          "content": "                    FontSize.kMedium,",
+          "tokens": [
+            { "text": "                    FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    KConstantColors.blackColor,",
+          "tokens": [
+            { "text": "                    KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "blackColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    KConstantFonts.geistMedium,",
+          "tokens": [
+            { "text": "                    KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "geistMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  ),",
+          "tokens": [{ "text": "                  )," }]
+        },
+        {
+          "content": "                ),",
+          "tokens": [{ "text": "                )," }]
+        },
+        {
+          "content": "                if (reads.isNotEmpty) ...[",
+          "tokens": [
+            { "text": "                if", "type": "keyword" },
+            { "text": " (reads.isNotEmpty) ...[" }
+          ]
+        },
+        {
+          "content": "                  const SizedBox(height: 4),",
+          "tokens": [
+            { "text": "                  const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SizedBox", "type": "widget" },
+            { "text": "(height: " },
+            { "text": "4", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "                  Text(",
+          "tokens": [
+            { "text": "                  " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                    reads,",
+          "tokens": [
+            { "text": "                    reads,", "type": "property" }
+          ]
+        },
+        {
+          "content": "                    style: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "                    style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                      context,",
+          "tokens": [
+            { "text": "                      context," }
+          ]
+        },
+        {
+          "content": "                      FontSize.kSmall,",
+          "tokens": [
+            { "text": "                      FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kSmall", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                      Colors.grey[600]!,",
+          "tokens": [
+            { "text": "                      Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "grey", "type": "property" },
+            { "text": "[" },
+            { "text": "600", "type": "number" },
+            { "text": "]!," }
+          ]
+        },
+        {
+          "content": "                      KConstantFonts.geistMedium,",
+          "tokens": [
+            { "text": "                      KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "geistMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    ),",
+          "tokens": [{ "text": "                    )," }]
+        },
+        {
+          "content": "                  ),",
+          "tokens": [{ "text": "                  )," }]
+        },
+        {
+          "content": "                ],",
+          "tokens": [{ "text": "                ]," }]
+        },
+        {
+          "content": "              ],",
+          "tokens": [{ "text": "              ]," }]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "          // const SizedBox(width: 16),",
+          "tokens": [
+            { "text": "          // const SizedBox(width: 16),", "type": "comment" }
+          ]
+        },
+        {
+          "content": "          // ClipRRect(",
+          "tokens": [
+            { "text": "          // ClipRRect(", "type": "comment" }
+          ]
+        },
+        {
+          "content": "          //    borderRadius: BorderRadius.circular(8),",
+          "tokens": [
+            { "text": "          //    borderRadius: BorderRadius.circular(8),", "type": "comment" }
+          ]
+        },
+        {
+          "content": "          //    child: Image.network(",
+          "tokens": [
+            { "text": "          //    child: Image.network(", "type": "comment" }
+          ]
+        },
+        {
+          "content": "          //      imageUrl,",
+          "tokens": [
+            { "text": "          //      imageUrl,", "type": "comment" }
+          ]
+        },
+        {
+          "content": "          //      width: 80,",
+          "tokens": [
+            { "text": "          //      width: 80,", "type": "comment" }
+          ]
+        },
+        {
+          "content": "          //      height: 80,",
+          "tokens": [
+            { "text": "          //      height: 80,", "type": "comment" }
+          ]
+        },
+        {
+          "content": "          //      fit: BoxFit.cover,",
+          "tokens": [
+            { "text": "          //      fit: BoxFit.cover,", "type": "comment" }
+          ]
+        },
+        {
+          "content": "          //    ),",
+          "tokens": [
+            { "text": "          //    ),", "type": "comment" }
+          ]
+        },
+        {
+          "content": "          // ),",
+          "tokens": [
+            { "text": "          // ),", "type": "comment" }
+          ]
+        },
+        {
+          "content": "        ],",
+          "tokens": [{ "text": "        ]," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "    ).animate().slideX(begin: 0.1, end: 0, duration: 300.ms);",
+          "tokens": [
+            { "text": "    ).", "type": "text" },
+            { "text": "animate", "type": "method" },
+            { "text": "().", "type": "text" },
+            { "text": "slideX", "type": "method" },
+            { "text": "(", "type": "text" },
+            { "text": "begin", "type": "property" },
+            { "text": ": ", "type": "text" },
+            { "text": "0.1", "type": "number" },
+            { "text": ", " },
+            { "text": "end", "type": "property" },
+            { "text": ": " },
+            { "text": "0", "type": "number" },
+            { "text": ", " },
+            { "text": "duration", "type": "property" },
+            { "text": ": ", "type": "text" },
+            { "text": "300", "type": "number" },
+            { "text": ".", "type": "text" },
+            { "text": "ms", "type": "property" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget _buildBottomNav(BuildContext context) {",
+          "tokens": [
+            { "text": "  Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "_buildBottomNav", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    return Container(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Container", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      padding: const EdgeInsets.symmetric(vertical: 8),",
+          "tokens": [
+            { "text": "      padding: const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "(", "type": "text" },
+            { "text": "vertical", "type": "property" },
+            { "text": ": ", "type": "text" },
+            { "text": "8", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "      decoration: BoxDecoration(",
+          "tokens": [
+            { "text": "      decoration: " },
+            { "text": "BoxDecoration", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        color: KConstantColors.whiteColor,",
+          "tokens": [
+            { "text": "        color: " },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "whiteColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        boxShadow: [",
+          "tokens": [{ "text": "        boxShadow: [" }]
+        },
+        {
+          "content": "          BoxShadow(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "BoxShadow", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            color: Colors.black.withOpacity(0.05),",
+          "tokens": [
+            { "text": "            color: " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "black", "type": "property" },
+            { "text": "." },
+            { "text": "withOpacity", "type": "method" },
+            { "text": "(", "type": "text" },
+            { "text": "0.05", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "            blurRadius: 10,",
+          "tokens": [
+            { "text": "            blurRadius: " },
+            { "text": "10", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            offset: const Offset(0, -5),",
+          "tokens": [
+            { "text": "            offset: const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Offset", "type": "widget" },
+            { "text": "(", "type": "text" },
+            { "text": "0", "type": "number" },
+            { "text": ", " },
+            { "text": "-5", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "        ],",
+          "tokens": [{ "text": "        ]," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "      child: Row(",
+          "tokens": [
+            { "text": "      child: " },
+            { "text": "Row", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        mainAxisAlignment: MainAxisAlignment.spaceAround,",
+          "tokens": [
+            { "text": "        mainAxisAlignment: " },
+            { "text": "MainAxisAlignment", "type": "widget" },
+            { "text": "." },
+            { "text": "spaceAround", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        children: [",
+          "tokens": [{ "text": "        children: [" }]
+        },
+        {
+          "content": "          _buildNavItem(context, Iconsax.home, isSelected: true),",
+          "tokens": [
+            { "text": "          _buildNavItem", "type": "method" },
+            { "text": "(context, " },
+            { "text": "Iconsax", "type": "class" },
+            { "text": "." },
+            { "text": "home", "type": "property" },
+            { "text": ", " },
+            { "text": "isSelected", "type": "property" },
+            { "text": ": " },
+            { "text": "true", "type": "keyword" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "          _buildNavItem(context, Iconsax.global),",
+          "tokens": [
+            { "text": "          _buildNavItem", "type": "method" },
+            { "text": "(context, " },
+            { "text": "Iconsax", "type": "class" },
+            { "text": "." },
+            { "text": "global", "type": "property" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "          _buildNavItem(context, Iconsax.user),",
+          "tokens": [
+            { "text": "          _buildNavItem", "type": "method" },
+            { "text": "(context, " },
+            { "text": "Iconsax", "type": "class" },
+            { "text": "." },
+            { "text": "user", "type": "property" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "        ],",
+          "tokens": [{ "text": "        ]," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "    );",
+          "tokens": [{ "text": "    );" }]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget _buildNavItem(BuildContext context, IconData icon,",
+          "tokens": [
+            { "text": "  Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "_buildNavItem", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context, " },
+            { "text": "IconData", "type": "class" },
+            { "text": " icon," }
+          ]
+        },
+        {
+          "content": "      {bool isSelected = false}) {",
+          "tokens": [
+            { "text": "      {bool isSelected = false}) {" }
+          ]
+        },
+        {
+          "content": "    return Icon(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Icon", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      icon,",
+          "tokens": [
+            { "text": "      icon,", "type": "property" }
+          ]
+        },
+        {
+          "content": "      color: isSelected ? KConstantColors.blackColor : Colors.grey[400],",
+          "tokens": [
+            { "text": "      color: isSelected ? " },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "blackColor", "type": "property" },
+            { "text": " : " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "grey", "type": "property" },
+            { "text": "[" },
+            { "text": "400", "type": "number" },
+            { "text": "]," }
+          ]
+        },
+        {
+          "content": "    );",
+          "tokens": [{ "text": "    );" }]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "}",
+          "tokens": [{ "text": "}" }]
+        }
+      ]
+    }
+  },
+  "tokenTypes": {
+    "keyword": "text-purple-400",
+    "string": "text-green-400",
+    "widget": "text-blue-400",
+    "class": "text-yellow-400",
+    "method": "text-green-400",
+    "property": "text-yellow-400",
+    "number": "text-orange-400",
+    "annotation": "text-gray-500",
+    "comment": "text-gray-400"
+  }
+}

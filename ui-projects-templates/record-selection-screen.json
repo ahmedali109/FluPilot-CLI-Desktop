@@ -1,0 +1,1106 @@
+{
+  "flutter": {
+    "record_selection_screen.dart": {
+      "lines": [
+        {
+          "content": "import '../../app/shared/fonts.dart';",
+          "tokens": [
+            { "text": "import", "type": "keyword" },
+            { "text": " " },
+            { "text": "'../../app/shared/fonts.dart'", "type": "string" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "import '../../shared/exports/export_boiler_plate.dart';",
+          "tokens": [
+            { "text": "import", "type": "keyword" },
+            { "text": " " },
+            {
+              "text": "'../../shared/exports/export_boiler_plate.dart'",
+              "type": "string"
+            },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "class RecordSelectionScreen extends StatefulWidget {",
+          "tokens": [
+            { "text": "class", "type": "keyword" },
+            { "text": " " },
+            { "text": "RecordSelectionScreen", "type": "class" },
+            { "text": " " },
+            { "text": "extends", "type": "keyword" },
+            { "text": " " },
+            { "text": "StatefulWidget", "type": "class" },
+            { "text": " " },
+            { "text": "{" }
+          ]
+        },
+        {
+          "content": "  const RecordSelectionScreen({Key? key}) : super(key: key);",
+          "tokens": [
+            { "text": "  " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "RecordSelectionScreen", "type": "class" },
+            { "text": "(" },
+            { "text": "{" },
+            { "text": "Key", "type": "class" },
+            { "text": "?" },
+            { "text": " " },
+            { "text": "key", "type": "parameter" },
+            { "text": "}" },
+            { "text": ")" },
+            { "text": " " },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "super", "type": "keyword" },
+            { "text": "(" },
+            { "text": "key", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "key", "type": "parameter" },
+            { "text": ")" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  _RecordSelectionScreenState createState() => _RecordSelectionScreenState();",
+          "tokens": [
+            { "text": "  " },
+            { "text": "_RecordSelectionScreenState", "type": "class" },
+            { "text": " " },
+            { "text": "createState", "type": "method" },
+            { "text": "()" },
+            { "text": " " },
+            { "text": "=>", "type": "operator" },
+            { "text": " " },
+            { "text": "_RecordSelectionScreenState", "type": "class" },
+            { "text": "()" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "}",
+          "tokens": [{ "text": "}" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "class _RecordSelectionScreenState extends State<RecordSelectionScreen>",
+          "tokens": [
+            { "text": "class", "type": "keyword" },
+            { "text": " " },
+            { "text": "_RecordSelectionScreenState", "type": "class" },
+            { "text": " " },
+            { "text": "extends", "type": "keyword" },
+            { "text": " " },
+            { "text": "State", "type": "class" },
+            { "text": "<" },
+            { "text": "RecordSelectionScreen", "type": "class" },
+            { "text": ">" }
+          ]
+        },
+        {
+          "content": "    with SingleTickerProviderStateMixin {",
+          "tokens": [
+            { "text": "    " },
+            { "text": "with", "type": "keyword" },
+            { "text": " " },
+            { "text": "SingleTickerProviderStateMixin", "type": "class" },
+            { "text": " " },
+            { "text": "{" }
+          ]
+        },
+        {
+          "content": "  late AnimationController _controller;",
+          "tokens": [
+            { "text": "  " },
+            { "text": "late", "type": "keyword" },
+            { "text": " " },
+            { "text": "AnimationController", "type": "class" },
+            { "text": " " },
+            { "text": "_controller", "type": "variable" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "  late Animation<double> _animation;",
+          "tokens": [
+            { "text": "  " },
+            { "text": "late", "type": "keyword" },
+            { "text": " " },
+            { "text": "Animation", "type": "class" },
+            { "text": "<" },
+            { "text": "double", "type": "type" },
+            { "text": ">" },
+            { "text": " " },
+            { "text": "_animation", "type": "variable" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "  bool _isSearchVisible = false;",
+          "tokens": [
+            { "text": "  " },
+            { "text": "bool", "type": "type" },
+            { "text": " " },
+            { "text": "_isSearchVisible", "type": "variable" },
+            { "text": " " },
+            { "text": "=", "type": "operator" },
+            { "text": " " },
+            { "text": "false", "type": "keyword" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "  final TextEditingController _searchController = TextEditingController();",
+          "tokens": [
+            { "text": "  " },
+            { "text": "final", "type": "keyword" },
+            { "text": " " },
+            { "text": "TextEditingController", "type": "class" },
+            { "text": " " },
+            { "text": "_searchController", "type": "variable" },
+            { "text": " " },
+            { "text": "=", "type": "operator" },
+            { "text": " " },
+            { "text": "TextEditingController", "type": "class" },
+            { "text": "()" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "  List<RecordItem> _filteredItems = [];",
+          "tokens": [
+            { "text": "  " },
+            { "text": "List", "type": "class" },
+            { "text": "<" },
+            { "text": "RecordItem", "type": "class" },
+            { "text": ">" },
+            { "text": " " },
+            { "text": "_filteredItems", "type": "variable" },
+            { "text": " " },
+            { "text": "=", "type": "operator" },
+            { "text": " " },
+            { "text": "[]" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "  final Set<String> _selectedItems = {};",
+          "tokens": [
+            { "text": "  " },
+            { "text": "final", "type": "keyword" },
+            { "text": " " },
+            { "text": "Set", "type": "class" },
+            { "text": "<" },
+            { "text": "String", "type": "type" },
+            { "text": ">" },
+            { "text": " " },
+            { "text": "_selectedItems", "type": "variable" },
+            { "text": " " },
+            { "text": "=", "type": "operator" },
+            { "text": " " },
+            { "text": "{}" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  void initState() {",
+          "tokens": [
+            { "text": "  " },
+            { "text": "void", "type": "type" },
+            { "text": " " },
+            { "text": "initState", "type": "method" },
+            { "text": "()" },
+            { "text": " " },
+            { "text": "{" }
+          ]
+        },
+        {
+          "content": "    super.initState();",
+          "tokens": [
+            { "text": "    " },
+            { "text": "super", "type": "keyword" },
+            { "text": "." },
+            { "text": "initState", "type": "method" },
+            { "text": "()" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "    _controller = AnimationController(",
+          "tokens": [
+            { "text": "    " },
+            { "text": "_controller", "type": "variable" },
+            { "text": " " },
+            { "text": "=", "type": "operator" },
+            { "text": " " },
+            { "text": "AnimationController", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      duration: const Duration(milliseconds: 300),",
+          "tokens": [
+            { "text": "      " },
+            { "text": "duration", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Duration", "type": "class" },
+            { "text": "(" },
+            { "text": "milliseconds", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "300", "type": "number" },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      vsync: this,",
+          "tokens": [
+            { "text": "      " },
+            { "text": "vsync", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "this", "type": "keyword" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "    );",
+          "tokens": [{ "text": "    " }, { "text": ")" }, { "text": ";" }]
+        },
+        {
+          "content": "    _animation = CurvedAnimation(",
+          "tokens": [
+            { "text": "    " },
+            { "text": "_animation", "type": "variable" },
+            { "text": " " },
+            { "text": "=", "type": "operator" },
+            { "text": " " },
+            { "text": "CurvedAnimation", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      parent: _controller,",
+          "tokens": [
+            { "text": "      " },
+            { "text": "parent", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "_controller", "type": "variable" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      curve: Curves.easeInOut,",
+          "tokens": [
+            { "text": "      " },
+            { "text": "curve", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "Curves", "type": "class" },
+            { "text": "." },
+            { "text": "easeInOut", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "    );",
+          "tokens": [{ "text": "    " }, { "text": ")" }, { "text": ";" }]
+        },
+        {
+          "content": "    _filteredItems = _allRecordItems;",
+          "tokens": [
+            { "text": "    " },
+            { "text": "_filteredItems", "type": "variable" },
+            { "text": " " },
+            { "text": "=", "type": "operator" },
+            { "text": " " },
+            { "text": "_allRecordItems", "type": "variable" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  " }, { "text": "}" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  void dispose() {",
+          "tokens": [
+            { "text": "  " },
+            { "text": "void", "type": "type" },
+            { "text": " " },
+            { "text": "dispose", "type": "method" },
+            { "text": "()" },
+            { "text": " " },
+            { "text": "{" }
+          ]
+        },
+        {
+          "content": "    _controller.dispose();",
+          "tokens": [
+            { "text": "    " },
+            { "text": "_controller", "type": "variable" },
+            { "text": "." },
+            { "text": "dispose", "type": "method" },
+            { "text": "()" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "    _searchController.dispose();",
+          "tokens": [
+            { "text": "    " },
+            { "text": "_searchController", "type": "variable" },
+            { "text": "." },
+            { "text": "dispose", "type": "method" },
+            { "text": "()" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "    super.dispose();",
+          "tokens": [
+            { "text": "    " },
+            { "text": "super", "type": "keyword" },
+            { "text": "." },
+            { "text": "dispose", "type": "method" },
+            { "text": "()" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  " }, { "text": "}" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  Widget build(BuildContext context) {",
+          "tokens": [
+            { "text": "  " },
+            { "text": "Widget", "type": "class" },
+            { "text": " " },
+            { "text": "build", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "class" },
+            { "text": " " },
+            { "text": "context", "type": "parameter" },
+            { "text": ")" },
+            { "text": " " },
+            { "text": "{" }
+          ]
+        },
+        {
+          "content": "    return Scaffold(",
+          "tokens": [
+            { "text": "    " },
+            { "text": "return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Scaffold", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      backgroundColor: KConstantColors.whiteColor,",
+          "tokens": [
+            { "text": "      " },
+            { "text": "backgroundColor", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "whiteColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      appBar: _buildAppBar(context),",
+          "tokens": [
+            { "text": "      " },
+            { "text": "appBar", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "_buildAppBar", "type": "method" },
+            { "text": "(" },
+            { "text": "context", "type": "parameter" },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      body: Column(",
+          "tokens": [
+            { "text": "      " },
+            { "text": "body", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "Column", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        crossAxisAlignment: CrossAxisAlignment.start,",
+          "tokens": [
+            { "text": "        " },
+            { "text": "crossAxisAlignment", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "CrossAxisAlignment", "type": "class" },
+            { "text": "." },
+            { "text": "start", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        children: [",
+          "tokens": [
+            { "text": "        " },
+            { "text": "children", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "[" }
+          ]
+        },
+        {
+          "content": "          const LinearProgressIndicator(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "LinearProgressIndicator", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            value: 0.33,",
+          "tokens": [
+            { "text": "            " },
+            { "text": "value", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "0.33", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            backgroundColor: Colors.grey,",
+          "tokens": [
+            { "text": "            " },
+            { "text": "backgroundColor", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "Colors", "type": "class" },
+            { "text": "." },
+            { "text": "grey", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            valueColor: AlwaysStoppedAnimation<Color>(Colors.green),",
+          "tokens": [
+            { "text": "            " },
+            { "text": "valueColor", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "AlwaysStoppedAnimation", "type": "class" },
+            { "text": "<" },
+            { "text": "Color", "type": "class" },
+            { "text": ">" },
+            { "text": "(" },
+            { "text": "Colors", "type": "class" },
+            { "text": "." },
+            { "text": "green", "type": "property" },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          " }, { "text": ")" }, { "text": "," }]
+        },
+        {
+          "content": "          _buildSearchBar(context),",
+          "tokens": [
+            { "text": "          " },
+            { "text": "_buildSearchBar", "type": "method" },
+            { "text": "(" },
+            { "text": "context", "type": "parameter" },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          _buildHeader(context),",
+          "tokens": [
+            { "text": "          " },
+            { "text": "_buildHeader", "type": "method" },
+            { "text": "(" },
+            { "text": "context", "type": "parameter" },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          Expanded(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "Expanded", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            child: _buildRecordList(context),",
+          "tokens": [
+            { "text": "            " },
+            { "text": "child", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "_buildRecordList", "type": "method" },
+            { "text": "(" },
+            { "text": "context", "type": "parameter" },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          " }, { "text": ")" }, { "text": "," }]
+        },
+        {
+          "content": "          _buildFooter(context),",
+          "tokens": [
+            { "text": "          " },
+            { "text": "_buildFooter", "type": "method" },
+            { "text": "(" },
+            { "text": "context", "type": "parameter" },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        ],",
+          "tokens": [{ "text": "        " }, { "text": "]," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      " }, { "text": ")" }, { "text": "," }]
+        },
+        {
+          "content": "    );",
+          "tokens": [{ "text": "    " }, { "text": ")" }, { "text": ";" }]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  " }, { "text": "}" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  AppBar _buildAppBar(BuildContext context) {",
+          "tokens": [
+            { "text": "  " },
+            { "text": "AppBar", "type": "class" },
+            { "text": " " },
+            { "text": "_buildAppBar", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "class" },
+            { "text": " " },
+            { "text": "context", "type": "parameter" },
+            { "text": ")" },
+            { "text": " " },
+            { "text": "{" }
+          ]
+        },
+        {
+          "content": "    return AppBar(",
+          "tokens": [
+            { "text": "    " },
+            { "text": "return", "type": "keyword" },
+            { "text": " " },
+            { "text": "AppBar", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      backgroundColor: KConstantColors.whiteColor,",
+          "tokens": [
+            { "text": "      " },
+            { "text": "backgroundColor", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "whiteColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      actions: [",
+          "tokens": [
+            { "text": "      " },
+            { "text": "actions", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "[" }
+          ]
+        },
+        {
+          "content": "        IconButton(",
+          "tokens": [
+            { "text": "        " },
+            { "text": "IconButton", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          icon: Icon(_isSearchVisible ? Icons.close : Icons.search,",
+          "tokens": [
+            { "text": "          " },
+            { "text": "icon", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "Icon", "type": "class" },
+            { "text": "(" },
+            { "text": "_isSearchVisible", "type": "variable" },
+            { "text": " " },
+            { "text": "?", "type": "operator" },
+            { "text": " " },
+            { "text": "Icons", "type": "class" },
+            { "text": "." },
+            { "text": "close", "type": "property" },
+            { "text": " " },
+            { "text": ":", "type": "operator" },
+            { "text": " " },
+            { "text": "Icons", "type": "class" },
+            { "text": "." },
+            { "text": "search", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              color: Colors.black),",
+          "tokens": [
+            { "text": "              " },
+            { "text": "color", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "Colors", "type": "class" },
+            { "text": "." },
+            { "text": "black", "type": "property" },
+            { "text": ")" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          onPressed: () {",
+          "tokens": [
+            { "text": "          " },
+            { "text": "onPressed", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "()" },
+            { "text": " " },
+            { "text": "{" }
+          ]
+        },
+        {
+          "content": "            setState(() {",
+          "tokens": [
+            { "text": "            " },
+            { "text": "setState", "type": "method" },
+            { "text": "(" },
+            { "text": "()" },
+            { "text": " " },
+            { "text": "{" }
+          ]
+        },
+        {
+          "content": "              _isSearchVisible = !_isSearchVisible;",
+          "tokens": [
+            { "text": "              " },
+            { "text": "_isSearchVisible", "type": "variable" },
+            { "text": " " },
+            { "text": "=", "type": "operator" },
+            { "text": " " },
+            { "text": "!", "type": "operator" },
+            { "text": "_isSearchVisible", "type": "variable" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "              if (_isSearchVisible) {",
+          "tokens": [
+            { "text": "              " },
+            { "text": "if", "type": "keyword" },
+            { "text": " " },
+            { "text": "(" },
+            { "text": "_isSearchVisible", "type": "variable" },
+            { "text": ")" },
+            { "text": " " },
+            { "text": "{" }
+          ]
+        },
+        {
+          "content": "                _controller.forward();",
+          "tokens": [
+            { "text": "                " },
+            { "text": "_controller", "type": "variable" },
+            { "text": "." },
+            { "text": "forward", "type": "method" },
+            { "text": "()" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "              } else {",
+          "tokens": [
+            { "text": "              " },
+            { "text": "}", "type": "brace" },
+            { "text": " " },
+            { "text": "else", "type": "keyword" },
+            { "text": " " },
+            { "text": "{" }
+          ]
+        },
+        {
+          "content": "                _controller.reverse();",
+          "tokens": [
+            { "text": "                " },
+            { "text": "_controller", "type": "variable" },
+            { "text": "." },
+            { "text": "reverse", "type": "method" },
+            { "text": "()" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "                _searchController.clear();",
+          "tokens": [
+            { "text": "                " },
+            { "text": "_searchController", "type": "variable" },
+            { "text": "." },
+            { "text": "clear", "type": "method" },
+            { "text": "()" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "                _filteredItems = _allRecordItems;",
+          "tokens": [
+            { "text": "                " },
+            { "text": "_filteredItems", "type": "variable" },
+            { "text": " " },
+            { "text": "=", "type": "operator" },
+            { "text": " " },
+            { "text": "_allRecordItems", "type": "variable" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "              }",
+          "tokens": [{ "text": "              " }, { "text": "}" }]
+        },
+        {
+          "content": "            });",
+          "tokens": [
+            { "text": "            " },
+            { "text": "}" },
+            { "text": ")" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "          },",
+          "tokens": [{ "text": "          " }, { "text": "}," }]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        " }, { "text": ")" }, { "text": "," }]
+        },
+        {
+          "content": "      ],",
+          "tokens": [{ "text": "      " }, { "text": "]," }]
+        },
+        {
+          "content": "    );",
+          "tokens": [{ "text": "    " }, { "text": ")" }, { "text": ";" }]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  " }, { "text": "}" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  // Additional methods would continue in similar pattern...",
+          "tokens": [
+            { "text": "  " },
+            {
+              "text": "// Additional methods would continue in similar pattern...",
+              "type": "comment"
+            }
+          ]
+        },
+        {
+          "content": "}",
+          "tokens": [{ "text": "}" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "class RecordItem {",
+          "tokens": [
+            { "text": "class", "type": "keyword" },
+            { "text": " " },
+            { "text": "RecordItem", "type": "class" },
+            { "text": " " },
+            { "text": "{" }
+          ]
+        },
+        {
+          "content": "  final String title;",
+          "tokens": [
+            { "text": "  " },
+            { "text": "final", "type": "keyword" },
+            { "text": " " },
+            { "text": "String", "type": "type" },
+            { "text": " " },
+            { "text": "title", "type": "variable" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "  final String description;",
+          "tokens": [
+            { "text": "  " },
+            { "text": "final", "type": "keyword" },
+            { "text": " " },
+            { "text": "String", "type": "type" },
+            { "text": " " },
+            { "text": "description", "type": "variable" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "  final IconData icon;",
+          "tokens": [
+            { "text": "  " },
+            { "text": "final", "type": "keyword" },
+            { "text": " " },
+            { "text": "IconData", "type": "class" },
+            { "text": " " },
+            { "text": "icon", "type": "variable" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  RecordItem({",
+          "tokens": [
+            { "text": "  " },
+            { "text": "RecordItem", "type": "class" },
+            { "text": "(" },
+            { "text": "{" }
+          ]
+        },
+        {
+          "content": "    required this.title,",
+          "tokens": [
+            { "text": "    " },
+            { "text": "required", "type": "keyword" },
+            { "text": " " },
+            { "text": "this", "type": "keyword" },
+            { "text": "." },
+            { "text": "title", "type": "variable" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "    required this.description,",
+          "tokens": [
+            { "text": "    " },
+            { "text": "required", "type": "keyword" },
+            { "text": " " },
+            { "text": "this", "type": "keyword" },
+            { "text": "." },
+            { "text": "description", "type": "variable" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "    required this.icon,",
+          "tokens": [
+            { "text": "    " },
+            { "text": "required", "type": "keyword" },
+            { "text": " " },
+            { "text": "this", "type": "keyword" },
+            { "text": "." },
+            { "text": "icon", "type": "variable" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "  });",
+          "tokens": [
+            { "text": "  " },
+            { "text": "}" },
+            { "text": ")" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "}",
+          "tokens": [{ "text": "}" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "final List<RecordItem> _allRecordItems = [",
+          "tokens": [
+            { "text": "final", "type": "keyword" },
+            { "text": " " },
+            { "text": "List", "type": "class" },
+            { "text": "<" },
+            { "text": "RecordItem", "type": "class" },
+            { "text": ">" },
+            { "text": " " },
+            { "text": "_allRecordItems", "type": "variable" },
+            { "text": " " },
+            { "text": "=", "type": "operator" },
+            { "text": " " },
+            { "text": "[" }
+          ]
+        },
+        {
+          "content": "  RecordItem(",
+          "tokens": [
+            { "text": "  " },
+            { "text": "RecordItem", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "    title: 'Emotion',",
+          "tokens": [
+            { "text": "    " },
+            { "text": "title", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "'Emotion'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "    description: 'happy, proud, gloomy, sad, etc.',",
+          "tokens": [
+            { "text": "    " },
+            { "text": "description", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "'happy, proud, gloomy, sad, etc.'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "    icon: Icons.emoji_emotions_outlined,",
+          "tokens": [
+            { "text": "    " },
+            { "text": "icon", "type": "parameter" },
+            { "text": ":" },
+            { "text": " " },
+            { "text": "Icons", "type": "class" },
+            { "text": "." },
+            { "text": "emoji_emotions_outlined", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "  ),",
+          "tokens": [{ "text": "  " }, { "text": ")" }, { "text": "," }]
+        },
+        {
+          "content": "  // Additional RecordItem entries would follow the same pattern...",
+          "tokens": [
+            { "text": "  " },
+            {
+              "text": "// Additional RecordItem entries would follow the same pattern...",
+              "type": "comment"
+            }
+          ]
+        },
+        {
+          "content": "];",
+          "tokens": [{ "text": "];" }]
+        }
+      ]
+    }
+  }
+}

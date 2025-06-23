@@ -1,0 +1,1377 @@
+{
+  "flutter": {
+    "nike_reviews_view.dart": {
+      "lines": [
+        {
+          "content": "import 'package:superwrapper_material/shared/exports/export_boiler_plate.dart';",
+          "tokens": [
+            { "text": "import", "type": "keyword" },
+            { "text": " " },
+            { "text": "'package:superwrapper_material/shared/exports/export_boiler_plate.dart'", "type": "string" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "import '../../app/shared/fonts.dart';",
+          "tokens": [
+            { "text": "import", "type": "keyword" },
+            { "text": " " },
+            { "text": "'../../app/shared/fonts.dart'", "type": "string" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "class NikeReviewsView extends StatelessWidget {",
+          "tokens": [
+            { "text": "class", "type": "keyword" },
+            { "text": " " },
+            { "text": "NikeReviewsView", "type": "class" },
+            { "text": " " },
+            { "text": "extends", "type": "keyword" },
+            { "text": " " },
+            { "text": "StatelessWidget", "type": "widget" },
+            { "text": " {" }
+          ]
+        },
+        {
+          "content": "  final List<Review> reviews = [",
+          "tokens": [
+            { "text": "  final", "type": "keyword" },
+            { "text": " " },
+            { "text": "List", "type": "class" },
+            { "text": "<" },
+            { "text": "Review", "type": "class" },
+            { "text": "> " },
+            { "text": "reviews", "type": "property" },
+            { "text": " = [" }
+          ]
+        },
+        {
+          "content": "    Review(",
+          "tokens": [
+            { "text": "    " },
+            { "text": "Review", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      title: 'True Classic, Impressive QC',",
+          "tokens": [
+            { "text": "      title: 'True Classic, Impressive QC'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      rating: 5,",
+          "tokens": [
+            { "text": "      rating: " },
+            { "text": "5", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      id: 'b873cdeb-8429-4db5-8393-0dd788d214d...',",
+          "tokens": [
+            { "text": "      id: 'b873cdeb-8429-4db5-8393-0dd788d214d...'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      content:",
+          "tokens": [
+            { "text": "      content:" }
+          ]
+        },
+        {
+          "content": "          'Just as I expected. Reliable comfort, and still cool. I was very impressed by the quality, all seams and overlays are stitched nicely and...',",
+          "tokens": [
+            { "text": "          'Just as I expected. Reliable comfort, and still cool. I was very impressed by the quality, all seams and overlays are stitched nicely and...'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "    ),",
+          "tokens": [{ "text": "    )," }]
+        },
+        {
+          "content": "    Review(",
+          "tokens": [
+            { "text": "    " },
+            { "text": "Review", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      title: 'disappointing',",
+          "tokens": [
+            { "text": "      title: 'disappointing'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      rating: 2,",
+          "tokens": [
+            { "text": "      rating: " },
+            { "text": "2", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      id: '97558b52-2592-4a99-bdbd-55a21fc3ceb5...',",
+          "tokens": [
+            { "text": "      id: '97558b52-2592-4a99-bdbd-55a21fc3ceb5...'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      content:",
+          "tokens": [
+            { "text": "      content:" }
+          ]
+        },
+        {
+          "content": "          'a bit of a narrow toebox not wide by any stretch, half size up if you are wide the quality of the made in india marked boxes have be...',",
+          "tokens": [
+            { "text": "          'a bit of a narrow toebox not wide by any stretch, half size up if you are wide the quality of the made in india marked boxes have be...'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "    ),",
+          "tokens": [{ "text": "    )," }]
+        },
+        {
+          "content": "    Review(",
+          "tokens": [
+            { "text": "    " },
+            { "text": "Review", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      title: 'Great shoes',",
+          "tokens": [
+            { "text": "      title: 'Great shoes'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      rating: 5,",
+          "tokens": [
+            { "text": "      rating: " },
+            { "text": "5", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      id: 'e223a639-1f6a-4f52-b1c3-d2debb57e5ba...',",
+          "tokens": [
+            { "text": "      id: 'e223a639-1f6a-4f52-b1c3-d2debb57e5ba...'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      content:",
+          "tokens": [
+            { "text": "      content:" }
+          ]
+        },
+        {
+          "content": "          'One of the best shoes. Honestly you can wear these things with about any outfit/ any color. Happy to have been purchasing Air f...',",
+          "tokens": [
+            { "text": "          'One of the best shoes. Honestly you can wear these things with about any outfit/ any color. Happy to have been purchasing Air f...'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "    ),",
+          "tokens": [{ "text": "    )," }]
+        },
+        {
+          "content": "    Review(",
+          "tokens": [
+            { "text": "    " },
+            { "text": "Review", "type": "class" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        title: 'Love the colors',",
+          "tokens": [
+            { "text": "        title: 'Love the colors'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        rating: 4,",
+          "tokens": [
+            { "text": "        rating: " },
+            { "text": "4", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        id: 'e223a639-1f6a-4f52-b1c3-d2debb57e5ba...',",
+          "tokens": [
+            { "text": "        id: 'e223a639-1f6a-4f52-b1c3-d2debb57e5ba...'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        content:",
+          "tokens": [
+            { "text": "        content:" }
+          ]
+        },
+        {
+          "content": "            \"Happy to purchase these shoes but half size up if you are wide the quality of the...\"),",
+          "tokens": [
+            { "text": "            " },
+            { "text": "\"Happy to purchase these shoes but half size up if you are wide the quality of the...\"", "type": "string" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "  ];",
+          "tokens": [{ "text": "  ];" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  NikeReviewsView({super.key});",
+          "tokens": [
+            { "text": "  " },
+            { "text": "NikeReviewsView", "type": "method" },
+            { "text": "({super.key});" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  Widget build(BuildContext context) {",
+          "tokens": [
+            { "text": "  " },
+            { "text": "Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "build", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    return Scaffold(",
+          "tokens": [
+            { "text": "    " },
+            { "text": "return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Scaffold", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      backgroundColor: KConstantColors.whiteColor,",
+          "tokens": [
+            { "text": "      backgroundColor: " },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "whiteColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      appBar: AppBar(",
+          "tokens": [
+            { "text": "      appBar: " },
+            { "text": "AppBar", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        backgroundColor: KConstantColors.whiteColor,",
+          "tokens": [
+            { "text": "        backgroundColor: " },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "whiteColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        elevation: 0,",
+          "tokens": [
+            { "text": "        elevation: " },
+            { "text": "0", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        leading: IconButton(",
+          "tokens": [
+            { "text": "        leading: " },
+            { "text": "IconButton", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          icon: const Icon(Icons.arrow_back, color: Colors.black),",
+          "tokens": [
+            { "text": "          icon: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Icon", "type": "widget" },
+            { "text": "(" },
+            { "text": "Icons", "type": "widget" },
+            { "text": "." },
+            { "text": "arrow_back", "type": "property" },
+            { "text": ", color: " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "black", "type": "property" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "          onPressed: () => Navigator.pop(context),",
+          "tokens": [
+            { "text": "          onPressed: () => " },
+            { "text": "Navigator", "type": "widget" },
+            { "text": "." },
+            { "text": "pop", "type": "method" },
+            { "text": "(context)," }
+          ]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        )," }]
+        },
+        {
+          "content": "        title: Text(",
+          "tokens": [
+            { "text": "        title: " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          'Nike Air Force 1 \\'07',",
+          "tokens": [
+            { "text": "          'Nike Air Force 1 \\'07'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          style: KCustomTextStyle.kBold(",
+          "tokens": [
+            { "text": "          style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kBold", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            context,",
+          "tokens": [
+            { "text": "            context," }
+          ]
+        },
+        {
+          "content": "            FontSize.kMedium,",
+          "tokens": [
+            { "text": "            " },
+            { "text": "FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            KConstantColors.bgColor,",
+          "tokens": [
+            { "text": "            " },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "bgColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            KConstantFonts.geistBold,",
+          "tokens": [
+            { "text": "            " },
+            { "text": "KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "geistBold", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        )," }]
+        },
+        {
+          "content": "        actions: [",
+          "tokens": [{ "text": "        actions: [" }]
+        },
+        {
+          "content": "          IconButton(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "IconButton", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            icon: const Icon(Icons.search, color: Colors.black),",
+          "tokens": [
+            { "text": "            icon: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Icon", "type": "widget" },
+            { "text": "(" },
+            { "text": "Icons", "type": "widget" },
+            { "text": "." },
+            { "text": "search", "type": "property" },
+            { "text": ", color: " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "black", "type": "property" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "            onPressed: () {},",
+          "tokens": [
+            { "text": "            onPressed: () {}," }
+          ]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "        ],",
+          "tokens": [{ "text": "        ]," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "      body: ListView(",
+          "tokens": [
+            { "text": "      body: " },
+            { "text": "ListView", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        children: [",
+          "tokens": [{ "text": "        children: [" }]
+        },
+        {
+          "content": "          Padding(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "Padding", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            padding: const EdgeInsets.all(16),",
+          "tokens": [
+            { "text": "            padding: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "." },
+            { "text": "all", "type": "method" },
+            { "text": "(" },
+            { "text": "16", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "            child: Column(",
+          "tokens": [
+            { "text": "            child: " },
+            { "text": "Column", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              crossAxisAlignment: CrossAxisAlignment.start,",
+          "tokens": [
+            { "text": "              crossAxisAlignment: " },
+            { "text": "CrossAxisAlignment", "type": "widget" },
+            { "text": "." },
+            { "text": "start", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              children: [",
+          "tokens": [{ "text": "              children: [" }]
+        },
+        {
+          "content": "                Row(",
+          "tokens": [
+            { "text": "                " },
+            { "text": "Row", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  children: [",
+          "tokens": [{ "text": "                  children: [" }]
+        },
+        {
+          "content": "                    Text(",
+          "tokens": [
+            { "text": "                    " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                      'Reviews (2862)',",
+          "tokens": [
+            { "text": "                      'Reviews (2862)'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                      style: KCustomTextStyle.kBold(",
+          "tokens": [
+            { "text": "                      style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kBold", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                        context,",
+          "tokens": [
+            { "text": "                        context," }
+          ]
+        },
+        {
+          "content": "                        FontSize.kMedium,",
+          "tokens": [
+            { "text": "                        " },
+            { "text": "FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                        KConstantColors.bgColor,",
+          "tokens": [
+            { "text": "                        " },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "bgColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                        KConstantFonts.geistBold,",
+          "tokens": [
+            { "text": "                        " },
+            { "text": "KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "geistBold", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                      ),",
+          "tokens": [{ "text": "                      )," }]
+        },
+        {
+          "content": "                    ),",
+          "tokens": [{ "text": "                    )," }]
+        },
+        {
+          "content": "                    const Spacer(),",
+          "tokens": [
+            { "text": "                    " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Spacer", "type": "widget" },
+            { "text": "()," }
+          ]
+        },
+        {
+          "content": "                    Row(",
+          "tokens": [
+            { "text": "                    " },
+            { "text": "Row", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                      children: List.generate(",
+          "tokens": [
+            { "text": "                      children: " },
+            { "text": "List", "type": "class" },
+            { "text": "." },
+            { "text": "generate", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                        4,",
+          "tokens": [
+            { "text": "                        4", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                        (index) => const Icon(Icons.star, size: 24),",
+          "tokens": [
+            { "text": "                        (index) => " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Icon", "type": "widget" },
+            { "text": "(" },
+            { "text": "Icons", "type": "widget" },
+            { "text": "." },
+            { "text": "star", "type": "property" },
+            { "text": ", size: " },
+            { "text": "24", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "                      ),",
+          "tokens": [{ "text": "                      )," }]
+        },
+        {
+          "content": "                    ),",
+          "tokens": [{ "text": "                    )," }]
+        },
+        {
+          "content": "                  ],",
+          "tokens": [{ "text": "                  ]," }]
+        },
+        {
+          "content": "                ),",
+          "tokens": [{ "text": "                )," }]
+        },
+        {
+          "content": "                const SizedBox(height: 24),",
+          "tokens": [
+            { "text": "                " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SizedBox", "type": "widget" },
+            { "text": "(height: " },
+            { "text": "24", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "                ...reviews",
+          "tokens": [
+            { "text": "                ...", "type": "keyword" },
+            { "text": "reviews", "type": "property" }
+          ]
+        },
+        {
+          "content": "                    .map((review) => _buildReviewCard(context, review))",
+          "tokens": [
+            { "text": "                    ." },
+            { "text": "map", "type": "method" },
+            { "text": "((review) => " },
+            { "text": "_buildReviewCard", "type": "method" },
+            { "text": "(context, review))" }
+          ]
+        },
+        {
+          "content": "                    .toList(),",
+          "tokens": [
+            { "text": "                    ." },
+            { "text": "toList", "type": "method" },
+            { "text": "()," }
+          ]
+        },
+        {
+          "content": "              ],",
+          "tokens": [{ "text": "              ]," }]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "        ],",
+          "tokens": [{ "text": "        ]," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "      bottomNavigationBar: BottomNavigationBar(",
+          "tokens": [
+            { "text": "      bottomNavigationBar: " },
+            { "text": "BottomNavigationBar", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        type: BottomNavigationBarType.fixed,",
+          "tokens": [
+            { "text": "        type: " },
+            { "text": "BottomNavigationBarType", "type": "widget" },
+            { "text": "." },
+            { "text": "fixed", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        selectedItemColor: Colors.black,",
+          "tokens": [
+            { "text": "        selectedItemColor: " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "black", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        unselectedItemColor: Colors.grey,",
+          "tokens": [
+            { "text": "        unselectedItemColor: " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "grey", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        backgroundColor: KConstantColors.whiteColor,",
+          "tokens": [
+            { "text": "        backgroundColor: " },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "whiteColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        items: const [",
+          "tokens": [{ "text": "        items: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " [" }
+          ]
+        },
+        {
+          "content": "          BottomNavigationBarItem(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "BottomNavigationBarItem", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            icon: Icon(Iconsax.home),",
+          "tokens": [
+            { "text": "            icon: " },
+            { "text": "Icon", "type": "widget" },
+            { "text": "(" },
+            { "text": "Iconsax", "type": "class" },
+            { "text": "." },
+            { "text": "home", "type": "property" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "            label: 'Home',",
+          "tokens": [
+            { "text": "            label: 'Home'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "          BottomNavigationBarItem(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "BottomNavigationBarItem", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            icon: Icon(Icons.search),",
+          "tokens": [
+            { "text": "            icon: " },
+            { "text": "Icon", "type": "widget" },
+            { "text": "(" },
+            { "text": "Icons", "type": "widget" },
+            { "text": "." },
+            { "text": "search", "type": "property" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "            label: 'Shop',",
+          "tokens": [
+            { "text": "            label: 'Shop'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "          BottomNavigationBarItem(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "BottomNavigationBarItem", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            icon: Icon(Icons.favorite_border),",
+          "tokens": [
+            { "text": "            icon: " },
+            { "text": "Icon", "type": "widget" },
+            { "text": "(" },
+            { "text": "Icons", "type": "widget" },
+            { "text": "." },
+            { "text": "favorite_border", "type": "property" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "            label: 'Favourites',",
+          "tokens": [
+            { "text": "            label: 'Favourites'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "          BottomNavigationBarItem(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "BottomNavigationBarItem", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            icon: Icon(Icons.shopping_bag_outlined),",
+          "tokens": [
+            { "text": "            icon: " },
+            { "text": "Icon", "type": "widget" },
+            { "text": "(" },
+            { "text": "Icons", "type": "widget" },
+            { "text": "." },
+            { "text": "shopping_bag_outlined", "type": "property" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "            label: 'Bag',",
+          "tokens": [
+            { "text": "            label: 'Bag'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "          BottomNavigationBarItem(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "BottomNavigationBarItem", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            icon: Icon(Icons.person_outline),",
+          "tokens": [
+            { "text": "            icon: " },
+            { "text": "Icon", "type": "widget" },
+            { "text": "(" },
+            { "text": "Icons", "type": "widget" },
+            { "text": "." },
+            { "text": "person_outline", "type": "property" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "            label: 'Profile',",
+          "tokens": [
+            { "text": "            label: 'Profile'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "        ],",
+          "tokens": [{ "text": "        ]," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "    );",
+          "tokens": [{ "text": "    );" }]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget _buildReviewCard(BuildContext context, Review review) {",
+          "tokens": [
+            { "text": "  " },
+            { "text": "Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "_buildReviewCard", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context, " },
+            { "text": "Review", "type": "class" },
+            { "text": " review) {" }
+          ]
+        },
+        {
+          "content": "    return Column(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Column", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      crossAxisAlignment: CrossAxisAlignment.start,",
+          "tokens": [
+            { "text": "      crossAxisAlignment: " },
+            { "text": "CrossAxisAlignment", "type": "widget" },
+            { "text": "." },
+            { "text": "start", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      children: [",
+          "tokens": [{ "text": "      children: [" }]
+        },
+        {
+          "content": "        if (review.title.isNotEmpty)",
+          "tokens": [
+            { "text": "        if", "type": "keyword" },
+            { "text": " (review.title." },
+            { "text": "isNotEmpty", "type": "property" },
+            { "text": ")" }
+          ]
+        },
+        {
+          "content": "          Text(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            review.title,",
+          "tokens": [
+            { "text": "            review.title," }
+          ]
+        },
+        {
+          "content": "            style: const TextStyle(",
+          "tokens": [
+            { "text": "            style: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "TextStyle", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              fontSize: 18,",
+          "tokens": [
+            { "text": "              fontSize: " },
+            { "text": "18", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              fontWeight: FontWeight.bold,",
+          "tokens": [
+            { "text": "              fontWeight: " },
+            { "text": "FontWeight", "type": "widget" },
+            { "text": "." },
+            { "text": "bold", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "        const SizedBox(height: 8),",
+          "tokens": [
+            { "text": "        " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SizedBox", "type": "widget" },
+            { "text": "(height: " },
+            { "text": "8", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "        Row(",
+          "tokens": [
+            { "text": "        " },
+            { "text": "Row", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          children: List.generate(",
+          "tokens": [
+            { "text": "          children: " },
+            { "text": "List", "type": "class" },
+            { "text": "." },
+            { "text": "generate", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            5,",
+          "tokens": [
+            { "text": "            5", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            (index) => Icon(",
+          "tokens": [
+            { "text": "            (index) => " },
+            { "text": "Icon", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              index < review.rating ? Icons.star : Icons.star_border,",
+          "tokens": [
+            { "text": "              index < review.rating ? " },
+            { "text": "Icons", "type": "widget" },
+            { "text": "." },
+            { "text": "star", "type": "property" },
+            { "text": " : " },
+            { "text": "Icons", "type": "widget" },
+            { "text": "." },
+            { "text": "star_border", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              size: 20,",
+          "tokens": [
+            { "text": "              size: " },
+            { "text": "20", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        )," }]
+        },
+        {
+          "content": "        const SizedBox(height: 8),",
+          "tokens": [
+            { "text": "        " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SizedBox", "type": "widget" },
+            { "text": "(height: " },
+            { "text": "8", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "        Text(",
+          "tokens": [
+            { "text": "        " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          review.content,",
+          "tokens": [
+            { "text": "          review.content," }
+          ]
+        },
+        {
+          "content": "          style: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "          style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            context,",
+          "tokens": [
+            { "text": "            context," }
+          ]
+        },
+        {
+          "content": "            FontSize.kMedium,",
+          "tokens": [
+            { "text": "            " },
+            { "text": "FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            KConstantColors.faintBgColor,",
+          "tokens": [
+            { "text": "            " },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "faintBgColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            KConstantFonts.geistMedium,",
+          "tokens": [
+            { "text": "            " },
+            { "text": "KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "geistMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        )," }]
+        },
+        {
+          "content": "        const Divider(),",
+          "tokens": [
+            { "text": "        " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Divider", "type": "widget" },
+            { "text": "()," }
+          ]
+        },
+        {
+          "content": "        const SizedBox(height: 16),",
+          "tokens": [
+            { "text": "        " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SizedBox", "type": "widget" },
+            { "text": "(height: " },
+            { "text": "16", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "      ],",
+          "tokens": [{ "text": "      ]," }]
+        },
+        {
+          "content": "    );",
+          "tokens": [{ "text": "    );" }]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "}",
+          "tokens": [{ "text": "}" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "class Review {",
+          "tokens": [
+            { "text": "class", "type": "keyword" },
+            { "text": " " },
+            { "text": "Review", "type": "class" },
+            { "text": " {" }
+          ]
+        },
+        {
+          "content": "  final String title;",
+          "tokens": [
+            { "text": "  final", "type": "keyword" },
+            { "text": " " },
+            { "text": "String", "type": "class" },
+            { "text": " title;" }
+          ]
+        },
+        {
+          "content": "  final int rating;",
+          "tokens": [
+            { "text": "  final", "type": "keyword" },
+            { "text": " int", "type": "keyword" },
+            { "text": " rating;" }
+          ]
+        },
+        {
+          "content": "  final String id;",
+          "tokens": [
+            { "text": "  final", "type": "keyword" },
+            { "text": " " },
+            { "text": "String", "type": "class" },
+            { "text": " id;" }
+          ]
+        },
+        {
+          "content": "  final String content;",
+          "tokens": [
+            { "text": "  final", "type": "keyword" },
+            { "text": " " },
+            { "text": "String", "type": "class" },
+            { "text": " content;" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Review({",
+          "tokens": [
+            { "text": "  " },
+            { "text": "Review", "type": "method" },
+            { "text": "({" }
+          ]
+        },
+        {
+          "content": "    required this.title,",
+          "tokens": [
+            { "text": "    required", "type": "keyword" },
+            { "text": " this.title," }
+          ]
+        },
+        {
+          "content": "    required this.rating,",
+          "tokens": [
+            { "text": "    required", "type": "keyword" },
+            { "text": " this.rating," }
+          ]
+        },
+        {
+          "content": "    required this.id,",
+          "tokens": [
+            { "text": "    required", "type": "keyword" },
+            { "text": " this.id," }
+          ]
+        },
+        {
+          "content": "    required this.content,",
+          "tokens": [
+            { "text": "    required", "type": "keyword" },
+            { "text": " this.content," }
+          ]
+        },
+        {
+          "content": "  });",
+          "tokens": [{ "text": "  });" }]
+        },
+        {
+          "content": "}",
+          "tokens": [{ "text": "}" }]
+        }
+      ]
+    }
+  },
+  "tokenTypes": {
+    "keyword": "text-purple-400",
+    "string": "text-green-400",
+    "widget": "text-blue-400",
+    "class": "text-yellow-400",
+    "method": "text-green-400",
+    "property": "text-yellow-400",
+    "number": "text-orange-400",
+    "annotation": "text-gray-500"
+  }
+}

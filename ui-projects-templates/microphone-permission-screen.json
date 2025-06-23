@@ -1,0 +1,1558 @@
+{
+  "flutter": {
+    "microphone_permission_screen.dart": {
+      "lines": [
+        {
+          "content": "import 'package:flutter_animate/flutter_animate.dart';",
+          "tokens": [
+            { "text": "import", "type": "keyword" },
+            { "text": " " },
+            { "text": "'package:flutter_animate/flutter_animate.dart'", "type": "string" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "import '../../../shared/exports/export_boiler_plate.dart';",
+          "tokens": [
+            { "text": "import", "type": "keyword" },
+            { "text": " " },
+            { "text": "'../../../shared/exports/export_boiler_plate.dart'", "type": "string" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "import '../../app/shared/fonts.dart';",
+          "tokens": [
+            { "text": "import", "type": "keyword" },
+            { "text": " " },
+            { "text": "'../../app/shared/fonts.dart'", "type": "string" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "class MicrophonePermissionScreen extends StatefulWidget {",
+          "tokens": [
+            { "text": "class", "type": "keyword" },
+            { "text": " " },
+            { "text": "MicrophonePermissionScreen", "type": "class" },
+            { "text": " " },
+            { "text": "extends", "type": "keyword" },
+            { "text": " " },
+            { "text": "StatefulWidget", "type": "widget" },
+            { "text": " {" }
+          ]
+        },
+        {
+          "content": "  const MicrophonePermissionScreen({Key? key}) : super(key: key);",
+          "tokens": [
+            { "text": "  " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "MicrophonePermissionScreen", "type": "method" },
+            { "text": "({Key? key}) : " },
+            { "text": "super", "type": "keyword" },
+            { "text": "(key: key);" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  _MicrophonePermissionScreenState createState() =>",
+          "tokens": [
+            { "text": "  " },
+            { "text": "_MicrophonePermissionScreenState", "type": "method" },
+            { "text": " " },
+            { "text": "createState", "type": "method" },
+            { "text": "() =>" }
+          ]
+        },
+        {
+          "content": "      _MicrophonePermissionScreenState();",
+          "tokens": [
+            { "text": "      " },
+            { "text": "_MicrophonePermissionScreenState", "type": "class" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "}",
+          "tokens": [{ "text": "}" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "class _MicrophonePermissionScreenState",
+          "tokens": [
+            { "text": "class", "type": "keyword" },
+            { "text": " " },
+            { "text": "_MicrophonePermissionScreenState", "type": "class" }
+          ]
+        },
+        {
+          "content": "    extends State<MicrophonePermissionScreen> {",
+          "tokens": [
+            { "text": "    extends", "type": "keyword" },
+            { "text": " " },
+            { "text": "State", "type": "widget" },
+            { "text": "<" },
+            { "text": "MicrophonePermissionScreen", "type": "class" },
+            { "text": "> {" }
+          ]
+        },
+        {
+          "content": "  bool _isChecked = false;",
+          "tokens": [
+            { "text": "  bool", "type": "keyword" },
+            { "text": " _isChecked", "type": "property" },
+            { "text": " = " },
+            { "text": "false", "type": "keyword" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  Widget build(BuildContext context) {",
+          "tokens": [
+            { "text": "  " },
+            { "text": "Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "build", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    return Scaffold(",
+          "tokens": [
+            { "text": "    " },
+            { "text": "return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Scaffold", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      backgroundColor: Colors.white,",
+          "tokens": [
+            { "text": "      backgroundColor: " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "white", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      body: SafeArea(",
+          "tokens": [
+            { "text": "      body: " },
+            { "text": "SafeArea", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        child: Padding(",
+          "tokens": [
+            { "text": "        child: " },
+            { "text": "Padding", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          padding: const EdgeInsets.all(24.0),",
+          "tokens": [
+            { "text": "          padding: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "." },
+            { "text": "all", "type": "method" },
+            { "text": "(" },
+            { "text": "24.0", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "          child: Column(",
+          "tokens": [
+            { "text": "          child: " },
+            { "text": "Column", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            crossAxisAlignment: CrossAxisAlignment.start,",
+          "tokens": [
+            { "text": "            crossAxisAlignment: " },
+            { "text": "CrossAxisAlignment", "type": "widget" },
+            { "text": "." },
+            { "text": "start", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            children: [",
+          "tokens": [{ "text": "            children: [" }]
+        },
+        {
+          "content": "              _buildCloseButton(context),",
+          "tokens": [
+            { "text": "              " },
+            { "text": "_buildCloseButton", "type": "method" },
+            { "text": "(context)," }
+          ]
+        },
+        {
+          "content": "              const Spacer(),",
+          "tokens": [
+            { "text": "              " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Spacer", "type": "widget" },
+            { "text": "()," }
+          ]
+        },
+        {
+          "content": "              _buildIllustration(context),",
+          "tokens": [
+            { "text": "              " },
+            { "text": "_buildIllustration", "type": "method" },
+            { "text": "(context)," }
+          ]
+        },
+        {
+          "content": "              const SizedBox(height: 32),",
+          "tokens": [
+            { "text": "              " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SizedBox", "type": "widget" },
+            { "text": "(height: " },
+            { "text": "32", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "              _buildTitle(context),",
+          "tokens": [
+            { "text": "              " },
+            { "text": "_buildTitle", "type": "method" },
+            { "text": "(context)," }
+          ]
+        },
+        {
+          "content": "              const SizedBox(height: 16),",
+          "tokens": [
+            { "text": "              " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SizedBox", "type": "widget" },
+            { "text": "(height: " },
+            { "text": "16", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "              _buildDescription(context),",
+          "tokens": [
+            { "text": "              " },
+            { "text": "_buildDescription", "type": "method" },
+            { "text": "(context)," }
+          ]
+        },
+        {
+          "content": "              const SizedBox(height: 24),",
+          "tokens": [
+            { "text": "              " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SizedBox", "type": "widget" },
+            { "text": "(height: " },
+            { "text": "24", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "              _buildCheckbox(context),",
+          "tokens": [
+            { "text": "              " },
+            { "text": "_buildCheckbox", "type": "method" },
+            { "text": "(context)," }
+          ]
+        },
+        {
+          "content": "              const Spacer(),",
+          "tokens": [
+            { "text": "              " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Spacer", "type": "widget" },
+            { "text": "()," }
+          ]
+        },
+        {
+          "content": "              _buildButtons(context),",
+          "tokens": [
+            { "text": "              " },
+            { "text": "_buildButtons", "type": "method" },
+            { "text": "(context)," }
+          ]
+        },
+        {
+          "content": "            ],",
+          "tokens": [{ "text": "            ]," }]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        )," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "    );",
+          "tokens": [{ "text": "    );" }]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget _buildCloseButton(BuildContext context) {",
+          "tokens": [
+            { "text": "  " },
+            { "text": "Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "_buildCloseButton", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    return IconButton(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "IconButton", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      icon: const Icon(Icons.close),",
+          "tokens": [
+            { "text": "      icon: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Icon", "type": "widget" },
+            { "text": "(" },
+            { "text": "Icons", "type": "widget" },
+            { "text": "." },
+            { "text": "close", "type": "property" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "      onPressed: () => Navigator.pop(context),",
+          "tokens": [
+            { "text": "      onPressed: () => " },
+            { "text": "Navigator", "type": "widget" },
+            { "text": "." },
+            { "text": "pop", "type": "method" },
+            { "text": "(context)," }
+          ]
+        },
+        {
+          "content": "    ).animate().fadeIn(duration: 300.ms).slideX(begin: -0.2, end: 0);",
+          "tokens": [
+            { "text": "    )." },
+            { "text": "animate", "type": "method" },
+            { "text": "()." },
+            { "text": "fadeIn", "type": "method" },
+            { "text": "(duration: " },
+            { "text": "300", "type": "number" },
+            { "text": ".ms)." },
+            { "text": "slideX", "type": "method" },
+            { "text": "(begin: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Offset", "type": "class" },
+            { "text": "(" },
+            { "text": "-0.2", "type": "number" },
+            { "text": ", " },
+            { "text": "0", "type": "number" },
+            { "text": "));" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget _buildIllustration(BuildContext context) {",
+          "tokens": [
+            { "text": "  " },
+            { "text": "Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "_buildIllustration", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    return Center(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Center", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      child: Container(",
+          "tokens": [
+            { "text": "      child: " },
+            { "text": "Container", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        height: 200,",
+          "tokens": [
+            { "text": "        height: " },
+            { "text": "200", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        width: 200,",
+          "tokens": [
+            { "text": "        width: " },
+            { "text": "200", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        decoration: const BoxDecoration(",
+          "tokens": [
+            { "text": "        decoration: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "BoxDecoration", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          image: DecorationImage(",
+          "tokens": [
+            { "text": "          image: " },
+            { "text": "DecorationImage", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            image: NetworkImage(",
+          "tokens": [
+            { "text": "            image: " },
+            { "text": "NetworkImage", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                \"https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-29%20at%209.23.20%E2%80%AFAM-Ue5Ue5Hy5Ue5Ue5Hy5.png\"),",
+          "tokens": [
+            { "text": "                \"https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-29%20at%209.23.20%E2%80%AFAM-Ue5Ue5Hy5Ue5Ue5Hy5.png\"", "type": "string" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "            fit: BoxFit.contain,",
+          "tokens": [
+            { "text": "            fit: " },
+            { "text": "BoxFit", "type": "widget" },
+            { "text": "." },
+            { "text": "contain", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        )," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "    )",
+          "tokens": [{ "text": "    )" }]
+        },
+        {
+          "content": "        .animate()",
+          "tokens": [
+            { "text": "        ." },
+            { "text": "animate", "type": "method" },
+            { "text": "()" }
+          ]
+        },
+        {
+          "content": "        .fadeIn(duration: 600.ms)",
+          "tokens": [
+            { "text": "        ." },
+            { "text": "fadeIn", "type": "method" },
+            { "text": "(duration: " },
+            { "text": "600", "type": "number" },
+            { "text": ".ms)" }
+          ]
+        },
+        {
+          "content": "        .scale(begin: const Offset(0.8, 0.8), end: const Offset(1, 1));",
+          "tokens": [
+            { "text": "        ." },
+            { "text": "scale", "type": "method" },
+            { "text": "(begin: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Offset", "type": "class" },
+            { "text": "(" },
+            { "text": "0.8", "type": "number" },
+            { "text": ", " },
+            { "text": "0.8", "type": "number" },
+            { "text": "), end: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Offset", "type": "class" },
+            { "text": "(" },
+            { "text": "1", "type": "number" },
+            { "text": ", " },
+            { "text": "1", "type": "number" },
+            { "text": "));" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget _buildTitle(BuildContext context) {",
+          "tokens": [
+            { "text": "  " },
+            { "text": "Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "_buildTitle", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    return Text(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      'Enable microphone access',",
+          "tokens": [
+            { "text": "      'Enable microphone access'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      style: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "      style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        context,",
+          "tokens": [
+            { "text": "        context," }
+          ]
+        },
+        {
+          "content": "        FontSize.kLarge,",
+          "tokens": [
+            { "text": "        " },
+            { "text": "FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kLarge", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        KConstantColors.blackColor,",
+          "tokens": [
+            { "text": "        " },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "blackColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        KConstantFonts.geistMedium,",
+          "tokens": [
+            { "text": "        " },
+            { "text": "KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "geistMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "    ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.2, end: 0);",
+          "tokens": [
+            { "text": "    )." },
+            { "text": "animate", "type": "method" },
+            { "text": "()." },
+            { "text": "fadeIn", "type": "method" },
+            { "text": "(duration: " },
+            { "text": "400", "type": "number" },
+            { "text": ".ms)." },
+            { "text": "slideY", "type": "method" },
+            { "text": "(begin: " },
+            { "text": "0.2", "type": "number" },
+            { "text": ", end: " },
+            { "text": "0", "type": "number" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget _buildDescription(BuildContext context) {",
+          "tokens": [
+            { "text": "  " },
+            { "text": "Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "_buildDescription", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    return Text(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      \"We'll use your microphone to enable voice messages, voice calls, and more.",
+          "tokens": [
+            { "text": "      " },
+            { "text": "\"We'll use your microphone to enable voice messages, voice calls, and more.\"", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      style: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "      style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        context,",
+          "tokens": [
+            { "text": "        context," }
+          ]
+        },
+        {
+          "content": "        FontSize.kMedium,",
+          "tokens": [
+            { "text": "        " },
+            { "text": "FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        Colors.grey[600]!,",
+          "tokens": [
+            { "text": "        " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "grey", "type": "property" },
+            { "text": "[" },
+            { "text": "600", "type": "number" },
+            { "text": "]!," }
+          ]
+        },
+        {
+          "content": "        KConstantFonts.geistMedium,",
+          "tokens": [
+            { "text": "        " },
+            { "text": "KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "geistMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "    ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.2, end: 0);",
+          "tokens": [
+            { "text": "    )." },
+            { "text": "animate", "type": "method" },
+            { "text": "()." },
+            { "text": "fadeIn", "type": "method" },
+            { "text": "(duration: " },
+            { "text": "400", "type": "number" },
+            { "text": ".ms)." },
+            { "text": "slideY", "type": "method" },
+            { "text": "(begin: " },
+            { "text": "0.2", "type": "number" },
+            { "text": ", end: " },
+            { "text": "0", "type": "number" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget _buildCheckbox(BuildContext context) {",
+          "tokens": [
+            { "text": "  " },
+            { "text": "Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "_buildCheckbox", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    return Row(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Row", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      children: [",
+          "tokens": [{ "text": "      children: [" }]
+        },
+        {
+          "content": "        Checkbox(",
+          "tokens": [
+            { "text": "        " },
+            { "text": "Checkbox", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          value: _isChecked,",
+          "tokens": [
+            { "text": "          value: _isChecked", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          onChanged: (bool? value) {",
+          "tokens": [
+            { "text": "          onChanged: (bool? value) {" }
+          ]
+        },
+        {
+          "content": "            setState(() {",
+          "tokens": [
+            { "text": "            " },
+            { "text": "setState", "type": "method" },
+            { "text": "(() {" }
+          ]
+        },
+        {
+          "content": "              _isChecked = value ?? false;",
+          "tokens": [
+            { "text": "              _isChecked", "type": "property" },
+            { "text": " = value ?? " },
+            { "text": "false", "type": "keyword" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "            });",
+          "tokens": [{ "text": "            });" }]
+        },
+        {
+          "content": "          },",
+          "tokens": [{ "text": "          }," }]
+        },
+        {
+          "content": "          activeColor: Colors.black,",
+          "tokens": [
+            { "text": "          activeColor: " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "black", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        )," }]
+        },
+        {
+          "content": "        Expanded(",
+          "tokens": [
+            { "text": "        " },
+            { "text": "Expanded", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          child: Text(",
+          "tokens": [
+            { "text": "          child: " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            \"I understand that this app requires microphone access for full functionality",
+          "tokens": [
+            { "text": "            " },
+            { "text": "\"I understand that this app requires microphone access for full functionality\"", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            style: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "            style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              context,",
+          "tokens": [
+            { "text": "              context," }
+          ]
+        },
+        {
+          "content": "              FontSize.kSmall,",
+          "tokens": [
+            { "text": "              " },
+            { "text": "FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kSmall", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              Colors.grey[600]!,",
+          "tokens": [
+            { "text": "              " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "grey", "type": "property" },
+            { "text": "[" },
+            { "text": "600", "type": "number" },
+            { "text": "]!," }
+          ]
+        },
+        {
+          "content": "              KConstantFonts.geistMedium,",
+          "tokens": [
+            { "text": "              " },
+            { "text": "KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "geistMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        )," }]
+        },
+        {
+          "content": "      ],",
+          "tokens": [{ "text": "      ]," }]
+        },
+        {
+          "content": "    ).animate().fadeIn(duration: 400.ms).slideX(begin: 0.2, end: 0);",
+          "tokens": [
+            { "text": "    )." },
+            { "text": "animate", "type": "method" },
+            { "text": "()." },
+            { "text": "fadeIn", "type": "method" },
+            { "text": "(duration: " },
+            { "text": "400", "type": "number" },
+            { "text": ".ms)." },
+            { "text": "slideX", "type": "method" },
+            { "text": "(begin: " },
+            { "text": "0.2", "type": "number" },
+            { "text": ", end: " },
+            { "text": "0", "type": "number" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget _buildButtons(BuildContext context) {",
+          "tokens": [
+            { "text": "  " },
+            { "text": "Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "_buildButtons", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    return Column(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Column", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      children: [",
+          "tokens": [{ "text": "      children: [" }]
+        },
+        {
+          "content": "        SizedBox(",
+          "tokens": [
+            { "text": "        " },
+            { "text": "SizedBox", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          width: double.infinity,",
+          "tokens": [
+            { "text": "          width: " },
+            { "text": "double", "type": "class" },
+            { "text": "." },
+            { "text": "infinity", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          child: ElevatedButton(",
+          "tokens": [
+            { "text": "          child: " },
+            { "text": "ElevatedButton", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            onPressed:",
+          "tokens": [
+            { "text": "            onPressed:" }
+          ]
+        },
+        {
+          "content": "                _isChecked ? () => _handleEnableMicrophone(context) : null,",
+          "tokens": [
+            { "text": "                _isChecked", "type": "property" },
+            { "text": " ? () => " },
+            { "text": "_handleEnableMicrophone", "type": "method" },
+            { "text": "(context) : " },
+            { "text": "null", "type": "keyword" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            style: ElevatedButton.styleFrom(",
+          "tokens": [
+            { "text": "            style: " },
+            { "text": "ElevatedButton", "type": "widget" },
+            { "text": "." },
+            { "text": "styleFrom", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              backgroundColor: _isChecked ? Colors.black : Colors.grey,",
+          "tokens": [
+            { "text": "              backgroundColor: _isChecked ? " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "black", "type": "property" },
+            { "text": " : " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "grey", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              padding: const EdgeInsets.symmetric(vertical: 16),",
+          "tokens": [
+            { "text": "              padding: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "." },
+            { "text": "symmetric", "type": "method" },
+            { "text": "(vertical: " },
+            { "text": "16", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "              shape: RoundedRectangleBorder(",
+          "tokens": [
+            { "text": "              shape: " },
+            { "text": "RoundedRectangleBorder", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                borderRadius: BorderRadius.circular(8),",
+          "tokens": [
+            { "text": "                borderRadius: " },
+            { "text": "BorderRadius", "type": "widget" },
+            { "text": "." },
+            { "text": "circular", "type": "method" },
+            { "text": "(" },
+            { "text": "8", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "              ),",
+          "tokens": [{ "text": "              )," }]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "            child: Text(",
+          "tokens": [
+            { "text": "            child: " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              'Enable microphone access',",
+          "tokens": [
+            { "text": "              'Enable microphone access'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              style: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "              style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                context,",
+          "tokens": [
+            { "text": "                context," }
+          ]
+        },
+        {
+          "content": "                FontSize.kMedium,",
+          "tokens": [
+            { "text": "                " },
+            { "text": "FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                KConstantColors.whiteColor,",
+          "tokens": [
+            { "text": "                " },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "whiteColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                KConstantFonts.geistMedium,",
+          "tokens": [
+            { "text": "                " },
+            { "text": "KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "geistMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              ),",
+          "tokens": [{ "text": "              )," }]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        )," }]
+        },
+        {
+          "content": "        const SizedBox(height: 16),",
+          "tokens": [
+            { "text": "        " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SizedBox", "type": "widget" },
+            { "text": "(height: " },
+            { "text": "16", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "        TextButton(",
+          "tokens": [
+            { "text": "        " },
+            { "text": "TextButton", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          onPressed: () => _handleSkip(context),",
+          "tokens": [
+            { "text": "          onPressed: () => " },
+            { "text": "_handleSkip", "type": "method" },
+            { "text": "(context)," }
+          ]
+        },
+        {
+          "content": "          child: Text(",
+          "tokens": [
+            { "text": "          child: " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            'Not now',",
+          "tokens": [
+            { "text": "            'Not now'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            style: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "            style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              context,",
+          "tokens": [
+            { "text": "              context," }
+          ]
+        },
+        {
+          "content": "              FontSize.kMedium,",
+          "tokens": [
+            { "text": "              " },
+            { "text": "FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              Colors.grey[600]!,",
+          "tokens": [
+            { "text": "              " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "grey", "type": "property" },
+            { "text": "[" },
+            { "text": "600", "type": "number" },
+            { "text": "]!," }
+          ]
+        },
+        {
+          "content": "              KConstantFonts.geistMedium,",
+          "tokens": [
+            { "text": "              " },
+            { "text": "KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "geistMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        )," }]
+        },
+        {
+          "content": "      ],",
+          "tokens": [{ "text": "      ]," }]
+        },
+        {
+          "content": "    ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.2, end: 0);",
+          "tokens": [
+            { "text": "    )." },
+            { "text": "animate", "type": "method" },
+            { "text": "()." },
+            { "text": "fadeIn", "type": "method" },
+            { "text": "(duration: " },
+            { "text": "400", "type": "number" },
+            { "text": ".ms)." },
+            { "text": "slideY", "type": "method" },
+            { "text": "(begin: " },
+            { "text": "0.2", "type": "number" },
+            { "text": ", end: " },
+            { "text": "0", "type": "number" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  void _handleEnableMicrophone(BuildContext context) {",
+          "tokens": [
+            { "text": "  void", "type": "keyword" },
+            { "text": " " },
+            { "text": "_handleEnableMicrophone", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    if (_isChecked) {",
+          "tokens": [
+            { "text": "    if", "type": "keyword" },
+            { "text": " (_isChecked", "type": "property" },
+            { "text": ") {" }
+          ]
+        },
+        {
+          "content": "      // Add microphone permission request logic here",
+          "tokens": [
+            { "text": "      // Add microphone permission request logic here", "type": "comment" }
+          ]
+        },
+        {
+          "content": "      Navigator.of(context).pop(true);",
+          "tokens": [
+            { "text": "      " },
+            { "text": "Navigator", "type": "widget" },
+            { "text": "." },
+            { "text": "of", "type": "method" },
+            { "text": "(context)." },
+            { "text": "pop", "type": "method" },
+            { "text": "(" },
+            { "text": "true", "type": "keyword" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "    } else {",
+          "tokens": [
+            { "text": "    } else {" }
+          ]
+        },
+        {
+          "content": "      // Show an error message or tooltip",
+          "tokens": [
+            { "text": "      // Show an error message or tooltip", "type": "comment" }
+          ]
+        },
+        {
+          "content": "      ScaffoldMessenger.of(context).showSnackBar(",
+          "tokens": [
+            { "text": "      " },
+            { "text": "ScaffoldMessenger", "type": "widget" },
+            { "text": "." },
+            { "text": "of", "type": "method" },
+            { "text": "(context)." },
+            { "text": "showSnackBar", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        SnackBar(",
+          "tokens": [
+            { "text": "        " },
+            { "text": "SnackBar", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          content: Text(",
+          "tokens": [
+            { "text": "          content: " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            'Please acknowledge the required permissions',",
+          "tokens": [
+            { "text": "            'Please acknowledge the required permissions'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            style: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "            style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              context,",
+          "tokens": [
+            { "text": "              context," }
+          ]
+        },
+        {
+          "content": "              FontSize.kSmall,",
+          "tokens": [
+            { "text": "              " },
+            { "text": "FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kSmall", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              Colors.white,",
+          "tokens": [
+            { "text": "              " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "white", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              KConstantFonts.geistMedium,",
+          "tokens": [
+            { "text": "              " },
+            { "text": "KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "geistMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "          backgroundColor: Colors.red,",
+          "tokens": [
+            { "text": "          backgroundColor: " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "red", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        )," }]
+        },
+        {
+          "content": "      );",
+          "tokens": [{ "text": "      );" }]
+        },
+        {
+          "content": "    }",
+          "tokens": [{ "text": "    }" }]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  void _handleSkip(BuildContext context) {",
+          "tokens": [
+            { "text": "  void", "type": "keyword" },
+            { "text": " " },
+            { "text": "_handleSkip", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    Navigator.of(context).pop(false);",
+          "tokens": [
+            { "text": "    " },
+            { "text": "Navigator", "type": "widget" },
+            { "text": "." },
+            { "text": "of", "type": "method" },
+            { "text": "(context)." },
+            { "text": "pop", "type": "method" },
+            { "text": "(" },
+            { "text": "false", "type": "keyword" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "}",
+          "tokens": [{ "text": "}" }]
+        }
+      ]
+    }
+  },
+  "tokenTypes": {
+    "keyword": "text-purple-400",
+    "string": "text-green-400",
+    "widget": "text-blue-400",
+    "class": "text-yellow-400",
+    "method": "text-green-400",
+    "property": "text-yellow-400",
+    "number": "text-orange-400",
+    "annotation": "text-gray-500",
+    "comment": "text-gray-500"
+  }
+}

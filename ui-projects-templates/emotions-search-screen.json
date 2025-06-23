@@ -1,0 +1,4628 @@
+{
+  "flutter": {
+    "emotions_search_screen.dart": {
+      "lines": [
+        {
+          "content": "import '../../../shared/exports/export_boiler_plate.dart';",
+          "tokens": [
+            { "text": "import", "type": "keyword" },
+            { "text": " " },
+            { "text": "'../../../shared/exports/export_boiler_plate.dart'", "type": "string" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "class EmotionsSearchScreen extends StatefulWidget {",
+          "tokens": [
+            { "text": "class", "type": "keyword" },
+            { "text": " " },
+            { "text": "EmotionsSearchScreen", "type": "class" },
+            { "text": " " },
+            { "text": "extends", "type": "keyword" },
+            { "text": " " },
+            { "text": "StatefulWidget", "type": "widget" },
+            { "text": " {" }
+          ]
+        },
+        {
+          "content": "  const EmotionsSearchScreen({Key? key}) : super(key: key);",
+          "tokens": [
+            { "text": "  " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EmotionsSearchScreen", "type": "method" },
+            { "text": "({Key? key}) : " },
+            { "text": "super", "type": "keyword" },
+            { "text": "(key: key);" }
+          ]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  State<EmotionsSearchScreen> createState() => _EmotionsSearchScreenState();",
+          "tokens": [
+            { "text": "  " },
+            { "text": "State", "type": "class" },
+            { "text": "<" },
+            { "text": "EmotionsSearchScreen", "type": "class" },
+            { "text": "> " },
+            { "text": "createState", "type": "method" },
+            { "text": "() => " },
+            { "text": "_EmotionsSearchScreenState", "type": "class" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "}",
+          "tokens": [{ "text": "}" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "class _EmotionsSearchScreenState extends State<EmotionsSearchScreen> {",
+          "tokens": [
+            { "text": "class", "type": "keyword" },
+            { "text": " " },
+            { "text": "_EmotionsSearchScreenState", "type": "class" },
+            { "text": " " },
+            { "text": "extends", "type": "keyword" },
+            { "text": " " },
+            { "text": "State", "type": "widget" },
+            { "text": "<" },
+            { "text": "EmotionsSearchScreen", "type": "class" },
+            { "text": "> {" }
+          ]
+        },
+        {
+          "content": "  final TextEditingController _searchController = TextEditingController();",
+          "tokens": [
+            { "text": "  final", "type": "keyword" },
+            { "text": " " },
+            { "text": "TextEditingController", "type": "widget" },
+            { "text": " " },
+            { "text": "_searchController", "type": "property" },
+            { "text": " = " },
+            { "text": "TextEditingController", "type": "widget" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "  String _selectedColorFilter = '';",
+          "tokens": [
+            { "text": "  String", "type": "class" },
+            { "text": " _selectedColorFilter", "type": "property" },
+            { "text": " = '';" }
+          ]
+        },
+        {
+          "content": "  ",
+          "tokens": [{ "text": "  " }]
+        },
+        {
+          "content": "  final List<String> _colorFilters = ['Yellow', 'Green', 'Blue', 'Red'];",
+          "tokens": [
+            { "text": "  final", "type": "keyword" },
+            { "text": " " },
+            { "text": "List", "type": "class" },
+            { "text": "<" },
+            { "text": "String", "type": "class" },
+            { "text": "> " },
+            { "text": "_colorFilters", "type": "property" },
+            { "text": " = ['Yellow'", "type": "string" },
+            { "text": ", 'Green'", "type": "string" },
+            { "text": ", 'Blue'", "type": "string" },
+            { "text": ", 'Red'", "type": "string" },
+            { "text": "];" }
+          ]
+        },
+        {
+          "content": "  final Map<String, Color> _colorMap = {",
+          "tokens": [
+            { "text": "  final", "type": "keyword" },
+            { "text": " " },
+            { "text": "Map", "type": "class" },
+            { "text": "<" },
+            { "text": "String", "type": "class" },
+            { "text": ", " },
+            { "text": "Color", "type": "widget" },
+            { "text": "> " },
+            { "text": "_colorMap", "type": "property" },
+            { "text": " = {" }
+          ]
+        },
+        {
+          "content": "    'Yellow': const Color(0xFFFFD700),",
+          "tokens": [
+            { "text": "    'Yellow'", "type": "string" },
+            { "text": ": " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Color", "type": "widget" },
+            { "text": "(0xFFFFD700)", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "    'Green': const Color(0xFF4CAF50),",
+          "tokens": [
+            { "text": "    'Green'", "type": "string" },
+            { "text": ": " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Color", "type": "widget" },
+            { "text": "(0xFF4CAF50)", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "    'Blue': const Color(0xFF2196F3),",
+          "tokens": [
+            { "text": "    'Blue'", "type": "string" },
+            { "text": ": " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Color", "type": "widget" },
+            { "text": "(0xFF2196F3)", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "    'Red': const Color(0xFFF44336),",
+          "tokens": [
+            { "text": "    'Red'", "type": "string" },
+            { "text": ": " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Color", "type": "widget" },
+            { "text": "(0xFFF44336)", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "  };",
+          "tokens": [{ "text": "  };" }]
+        },
+        {
+          "content": "  ",
+          "tokens": [{ "text": "  " }]
+        },
+        {
+          "content": "  final List<Map<String, dynamic>> _emotions = [",
+          "tokens": [
+            { "text": "  final", "type": "keyword" },
+            { "text": " " },
+            { "text": "List", "type": "class" },
+            { "text": "<" },
+            { "text": "Map", "type": "class" },
+            { "text": "<" },
+            { "text": "String", "type": "class" },
+            { "text": ", " },
+            { "text": "dynamic", "type": "keyword" },
+            { "text": ">> " },
+            { "text": "_emotions", "type": "property" },
+            { "text": " = [" }
+          ]
+        },
+        {
+          "content": "    {",
+          "tokens": [{ "text": "    {" }]
+        },
+        {
+          "content": "      'name': 'Abused',",
+          "tokens": [
+            { "text": "      'name'", "type": "string" },
+            { "text": ": 'Abused'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'description': 'experiencing cruel or unjust treatment',",
+          "tokens": [
+            { "text": "      'description'", "type": "string" },
+            { "text": ": 'experiencing cruel or unjust treatment'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'color': 'Blue',",
+          "tokens": [
+            { "text": "      'color'", "type": "string" },
+            { "text": ": 'Blue'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'shape': 'custom_blue_1',",
+          "tokens": [
+            { "text": "      'shape'", "type": "string" },
+            { "text": ": 'custom_blue_1'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "    },",
+          "tokens": [{ "text": "    }," }]
+        },
+        {
+          "content": "    {",
+          "tokens": [{ "text": "    {" }]
+        },
+        {
+          "content": "      'name': 'Accepted',",
+          "tokens": [
+            { "text": "      'name'", "type": "string" },
+            { "text": ": 'Accepted'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'description': 'feeling acknowledged and seen',",
+          "tokens": [
+            { "text": "      'description'", "type": "string" },
+            { "text": ": 'feeling acknowledged and seen'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'color': 'Green',",
+          "tokens": [
+            { "text": "      'color'", "type": "string" },
+            { "text": ": 'Green'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'shape': 'rounded_square',",
+          "tokens": [
+            { "text": "      'shape'", "type": "string" },
+            { "text": ": 'rounded_square'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "    },",
+          "tokens": [{ "text": "    }," }]
+        },
+        {
+          "content": "    {",
+          "tokens": [{ "text": "    {" }]
+        },
+        {
+          "content": "      'name': 'Accomplished',",
+          "tokens": [
+            { "text": "      'name'", "type": "string" },
+            { "text": ": 'Accomplished'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'description': 'feeling effective and successful',",
+          "tokens": [
+            { "text": "      'description'", "type": "string" },
+            { "text": ": 'feeling effective and successful'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'color': 'Yellow',",
+          "tokens": [
+            { "text": "      'color'", "type": "string" },
+            { "text": ": 'Yellow'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'shape': 'leaf',",
+          "tokens": [
+            { "text": "      'shape'", "type": "string" },
+            { "text": ": 'leaf'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "    },",
+          "tokens": [{ "text": "    }," }]
+        },
+        {
+          "content": "    {",
+          "tokens": [{ "text": "    {" }]
+        },
+        {
+          "content": "      'name': 'Affectionate',",
+          "tokens": [
+            { "text": "      'name'", "type": "string" },
+            { "text": ": 'Affectionate'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'description': 'feeling or showing fondness',",
+          "tokens": [
+            { "text": "      'description'", "type": "string" },
+            { "text": ": 'feeling or showing fondness'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'color': 'Green',",
+          "tokens": [
+            { "text": "      'color'", "type": "string" },
+            { "text": ": 'Green'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'shape': 'rounded_square_2',",
+          "tokens": [
+            { "text": "      'shape'", "type": "string" },
+            { "text": ": 'rounded_square_2'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "    },",
+          "tokens": [{ "text": "    }," }]
+        },
+        {
+          "content": "    {",
+          "tokens": [{ "text": "    {" }]
+        },
+        {
+          "content": "      'name': 'Afraid',",
+          "tokens": [
+            { "text": "      'name'", "type": "string" },
+            { "text": ": 'Afraid'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'description': 'experiencing fear or threat',",
+          "tokens": [
+            { "text": "      'description'", "type": "string" },
+            { "text": ": 'experiencing fear or threat'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'color': 'Red',",
+          "tokens": [
+            { "text": "      'color'", "type": "string" },
+            { "text": ": 'Red'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'shape': 'custom_red_1',",
+          "tokens": [
+            { "text": "      'shape'", "type": "string" },
+            { "text": ": 'custom_red_1'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "    },",
+          "tokens": [{ "text": "    }," }]
+        },
+        {
+          "content": "    {",
+          "tokens": [{ "text": "    {" }]
+        },
+        {
+          "content": "      'name': 'Agitated',",
+          "tokens": [
+            { "text": "      'name'", "type": "string" },
+            { "text": ": 'Agitated'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'description': 'very troubled and restless',",
+          "tokens": [
+            { "text": "      'description'", "type": "string" },
+            { "text": ": 'very troubled and restless'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'color': 'Red',",
+          "tokens": [
+            { "text": "      'color'", "type": "string" },
+            { "text": ": 'Red'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'shape': 'custom_red_2',",
+          "tokens": [
+            { "text": "      'shape'", "type": "string" },
+            { "text": ": 'custom_red_2'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "    },",
+          "tokens": [{ "text": "    }," }]
+        },
+        {
+          "content": "    {",
+          "tokens": [{ "text": "    {" }]
+        },
+        {
+          "content": "      'name': 'Alarmed',",
+          "tokens": [
+            { "text": "      'name'", "type": "string" },
+            { "text": ": 'Alarmed'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'description': 'a sense of urgent fear or concern',",
+          "tokens": [
+            { "text": "      'description'", "type": "string" },
+            { "text": ": 'a sense of urgent fear or concern'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'color': 'Red',",
+          "tokens": [
+            { "text": "      'color'", "type": "string" },
+            { "text": ": 'Red'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'shape': 'custom_red_3',",
+          "tokens": [
+            { "text": "      'shape'", "type": "string" },
+            { "text": ": 'custom_red_3'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "    },",
+          "tokens": [{ "text": "    }," }]
+        },
+        {
+          "content": "    {",
+          "tokens": [{ "text": "    {" }]
+        },
+        {
+          "content": "      'name': 'Alert',",
+          "tokens": [
+            { "text": "      'name'", "type": "string" },
+            { "text": ": 'Alert'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'description': 'feeling awake and focused',",
+          "tokens": [
+            { "text": "      'description'", "type": "string" },
+            { "text": ": 'feeling awake and focused'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'color': 'Yellow',",
+          "tokens": [
+            { "text": "      'color'", "type": "string" },
+            { "text": ": 'Yellow'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'shape': 'speech_bubble',",
+          "tokens": [
+            { "text": "      'shape'", "type": "string" },
+            { "text": ": 'speech_bubble'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "    },",
+          "tokens": [{ "text": "    }," }]
+        },
+        {
+          "content": "    {",
+          "tokens": [{ "text": "    {" }]
+        },
+        {
+          "content": "      'name': 'Alienated',",
+          "tokens": [
+            { "text": "      'name'", "type": "string" },
+            { "text": ": 'Alienated'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'description': 'feeling like you have been made a stranger to others, like they have no feelings or affection towards you',",
+          "tokens": [
+            { "text": "      'description'", "type": "string" },
+            { "text": ": 'feeling like you have been made a stranger to others, like they have no feelings or affection towards you'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'color': 'Blue',",
+          "tokens": [
+            { "text": "      'color'", "type": "string" },
+            { "text": ": 'Blue'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'shape': 'custom_blue_2',",
+          "tokens": [
+            { "text": "      'shape'", "type": "string" },
+            { "text": ": 'custom_blue_2'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "    },",
+          "tokens": [{ "text": "    }," }]
+        },
+        {
+          "content": "    {",
+          "tokens": [{ "text": "    {" }]
+        },
+        {
+          "content": "      'name': 'Alive',",
+          "tokens": [
+            { "text": "      'name'", "type": "string" },
+            { "text": ": 'Alive'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'description': 'filled with energy and vitality',",
+          "tokens": [
+            { "text": "      'description'", "type": "string" },
+            { "text": ": 'filled with energy and vitality'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'color': 'Yellow',",
+          "tokens": [
+            { "text": "      'color'", "type": "string" },
+            { "text": ": 'Yellow'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      'shape': 'cloud',",
+          "tokens": [
+            { "text": "      'shape'", "type": "string" },
+            { "text": ": 'cloud'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "    },",
+          "tokens": [{ "text": "    }," }]
+        },
+        {
+          "content": "  ];",
+          "tokens": [{ "text": "  ];" }]
+        },
+        {
+          "content": "  ",
+          "tokens": [{ "text": "  " }]
+        },
+        {
+          "content": "  List<Map<String, dynamic>> get filteredEmotions {",
+          "tokens": [
+            { "text": "  " },
+            { "text": "List", "type": "class" },
+            { "text": "<" },
+            { "text": "Map", "type": "class" },
+            { "text": "<" },
+            { "text": "String", "type": "class" },
+            { "text": ", " },
+            { "text": "dynamic", "type": "keyword" },
+            { "text": ">> get" },
+            { "text": " filteredEmotions", "type": "property" },
+            { "text": " {" }
+          ]
+        },
+        {
+          "content": "    if (_searchController.text.isEmpty && _selectedColorFilter.isEmpty) {",
+          "tokens": [
+            { "text": "    if", "type": "keyword" },
+            { "text": " (_searchController.text." },
+            { "text": "isEmpty", "type": "property" },
+            { "text": " && _selectedColorFilter." },
+            { "text": "isEmpty", "type": "property" },
+            { "text": ") {" }
+          ]
+        },
+        {
+          "content": "      return _emotions;",
+          "tokens": [
+            { "text": "      return", "type": "keyword" },
+            { "text": " _emotions", "type": "property" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "    }",
+          "tokens": [{ "text": "    }" }]
+        },
+        {
+          "content": "    ",
+          "tokens": [{ "text": "    " }]
+        },
+        {
+          "content": "    return _emotions.where((emotion) {",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " _emotions." },
+            { "text": "where", "type": "method" },
+            { "text": "((emotion) {" }
+          ]
+        },
+        {
+          "content": "      final matchesSearch = _searchController.text.isEmpty || ",
+          "tokens": [
+            { "text": "      final", "type": "keyword" },
+            { "text": " matchesSearch", "type": "property" },
+            { "text": " = _searchController.text." },
+            { "text": "isEmpty", "type": "property" },
+            { "text": " || " }
+          ]
+        },
+        {
+          "content": "          emotion['name'].toLowerCase().contains(_searchController.text.toLowerCase());",
+          "tokens": [
+            { "text": "          emotion['name']." },
+            { "text": "toLowerCase", "type": "method" },
+            { "text": "()." },
+            { "text": "contains", "type": "method" },
+            { "text": "(_searchController.text." },
+            { "text": "toLowerCase", "type": "method" },
+            { "text": "());" }
+          ]
+        },
+        {
+          "content": "      final matchesColor = _selectedColorFilter.isEmpty || ",
+          "tokens": [
+            { "text": "      final", "type": "keyword" },
+            { "text": " matchesColor", "type": "property" },
+            { "text": " = _selectedColorFilter." },
+            { "text": "isEmpty", "type": "property" },
+            { "text": " || " }
+          ]
+        },
+        {
+          "content": "          emotion['color'] == _selectedColorFilter;",
+          "tokens": [
+            { "text": "          emotion['color'] == _selectedColorFilter", "type": "property" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "      ",
+          "tokens": [{ "text": "      " }]
+        },
+        {
+          "content": "      return matchesSearch && matchesColor;",
+          "tokens": [
+            { "text": "      return", "type": "keyword" },
+            { "text": " matchesSearch && matchesColor;" }
+          ]
+        },
+        {
+          "content": "    }).toList();",
+          "tokens": [
+            { "text": "    })." },
+            { "text": "toList", "type": "method" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  void dispose() {",
+          "tokens": [
+            { "text": "  void", "type": "keyword" },
+            { "text": " " },
+            { "text": "dispose", "type": "method" },
+            { "text": "() {" }
+          ]
+        },
+        {
+          "content": "    _searchController.dispose();",
+          "tokens": [
+            { "text": "    _searchController." },
+            { "text": "dispose", "type": "method" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "    super.dispose();",
+          "tokens": [
+            { "text": "    super", "type": "keyword" },
+            { "text": "." },
+            { "text": "dispose", "type": "method" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  Widget build(BuildContext context) {",
+          "tokens": [
+            { "text": "  " },
+            { "text": "Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "build", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    return Scaffold(",
+          "tokens": [
+            { "text": "    " },
+            { "text": "return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Scaffold", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      backgroundColor: Colors.black,",
+          "tokens": [
+            { "text": "      backgroundColor: " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "black", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      body: SafeArea(",
+          "tokens": [
+            { "text": "      body: " },
+            { "text": "SafeArea", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        child: Column(",
+          "tokens": [
+            { "text": "        child: " },
+            { "text": "Column", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          children: [",
+          "tokens": [{ "text": "          children: [" }]
+        },
+        {
+          "content": "            _buildSearchBar(context),",
+          "tokens": [
+            { "text": "            " },
+            { "text": "_buildSearchBar", "type": "method" },
+            { "text": "(context)," }
+          ]
+        },
+        {
+          "content": "            _buildColorFilters(context),",
+          "tokens": [
+            { "text": "            " },
+            { "text": "_buildColorFilters", "type": "method" },
+            { "text": "(context)," }
+          ]
+        },
+        {
+          "content": "            Expanded(",
+          "tokens": [
+            { "text": "            " },
+            { "text": "Expanded", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              child: _buildEmotionsList(context),",
+          "tokens": [
+            { "text": "              child: " },
+            { "text": "_buildEmotionsList", "type": "method" },
+            { "text": "(context)," }
+          ]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "          ],",
+          "tokens": [{ "text": "          ]," }]
+        },
+        {
+          "content": "        ),",
+          "tokens": [{ "text": "        )," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "    );",
+          "tokens": [{ "text": "    );" }]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget _buildSearchBar(BuildContext context) {",
+          "tokens": [
+            { "text": "  " },
+            { "text": "Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "_buildSearchBar", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    return Container(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Container", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      margin: const EdgeInsets.all(16),",
+          "tokens": [
+            { "text": "      margin: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "." },
+            { "text": "all", "type": "method" },
+            { "text": "(" },
+            { "text": "16", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "      padding: const EdgeInsets.symmetric(horizontal: 16),",
+          "tokens": [
+            { "text": "      padding: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "." },
+            { "text": "symmetric", "type": "method" },
+            { "text": "(horizontal: " },
+            { "text": "16", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "      height: 56,",
+          "tokens": [
+            { "text": "      height: " },
+            { "text": "56", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      decoration: BoxDecoration(",
+          "tokens": [
+            { "text": "      decoration: " },
+            { "text": "BoxDecoration", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        color: Colors.grey.shade900,",
+          "tokens": [
+            { "text": "        color: " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "grey", "type": "property" },
+            { "text": "." },
+            { "text": "shade900", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        borderRadius: BorderRadius.circular(28),",
+          "tokens": [
+            { "text": "        borderRadius: " },
+            { "text": "BorderRadius", "type": "widget" },
+            { "text": "." },
+            { "text": "circular", "type": "method" },
+            { "text": "(" },
+            { "text": "28", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "      child: Row(",
+          "tokens": [
+            { "text": "      child: " },
+            { "text": "Row", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        children: [",
+          "tokens": [{ "text": "        children: [" }]
+        },
+        {
+          "content": "          GestureDetector(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "GestureDetector", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            onTap: () => Navigator.pop(context),",
+          "tokens": [
+            { "text": "            onTap: () => " },
+            { "text": "Navigator", "type": "widget" },
+            { "text": "." },
+            { "text": "pop", "type": "method" },
+            { "text": "(context)," }
+          ]
+        },
+        {
+          "content": "            child: const Icon(",
+          "tokens": [
+            { "text": "            child: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Icon", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              Icons.close,",
+          "tokens": [
+            { "text": "              " },
+            { "text": "Icons", "type": "widget" },
+            { "text": "." },
+            { "text": "close", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              color: Colors.white,",
+          "tokens": [
+            { "text": "              color: " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "white", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              size: 24,",
+          "tokens": [
+            { "text": "              size: " },
+            { "text": "24", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "          const SizedBox(width: 16),",
+          "tokens": [
+            { "text": "          " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SizedBox", "type": "widget" },
+            { "text": "(width: " },
+            { "text": "16", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "          Expanded(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "Expanded", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            child: TextField(",
+          "tokens": [
+            { "text": "            child: " },
+            { "text": "TextField", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              controller: _searchController,",
+          "tokens": [
+            { "text": "              controller: _searchController", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              style: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "              style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                context,",
+          "tokens": [
+            { "text": "                context," }
+          ]
+        },
+        {
+          "content": "                FontSize.kMedium,",
+          "tokens": [
+            { "text": "                " },
+            { "text": "FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                KConstantColors.whiteColor,",
+          "tokens": [
+            { "text": "                " },
+            { "text": "KConstantColors", "type": "class" },
+            { "text": "." },
+            { "text": "whiteColor", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                KConstantFonts.haskoyMedium,",
+          "tokens": [
+            { "text": "                " },
+            { "text": "KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "haskoyMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              ),",
+          "tokens": [{ "text": "              )," }]
+        },
+        {
+          "content": "              decoration: InputDecoration(",
+          "tokens": [
+            { "text": "              decoration: " },
+            { "text": "InputDecoration", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                hintText: 'Search feelings',",
+          "tokens": [
+            { "text": "                hintText: 'Search feelings'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                hintStyle: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "                hintStyle: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  context,",
+          "tokens": [
+            { "text": "                  context," }
+          ]
+        },
+        {
+          "content": "                  FontSize.kMedium,",
+          "tokens": [
+            { "text": "                  " },
+            { "text": "FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  Colors.grey,",
+          "tokens": [
+            { "text": "                  " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "grey", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  KConstantFonts.haskoyMedium,",
+          "tokens": [
+            { "text": "                  " },
+            { "text": "KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "haskoyMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                ),",
+          "tokens": [{ "text": "                )," }]
+        },
+        {
+          "content": "                border: InputBorder.none,",
+          "tokens": [
+            { "text": "                border: " },
+            { "text": "InputBorder", "type": "class" },
+            { "text": "." },
+            { "text": "none", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                contentPadding: const EdgeInsets.symmetric(vertical: 16),",
+          "tokens": [
+            { "text": "                contentPadding: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "." },
+            { "text": "symmetric", "type": "method" },
+            { "text": "(vertical: " },
+            { "text": "16", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "              ),",
+          "tokens": [{ "text": "              )," }]
+        },
+        {
+          "content": "              onChanged: (value) {",
+          "tokens": [
+            { "text": "              onChanged: (value) {" }
+          ]
+        },
+        {
+          "content": "                setState(() {});",
+          "tokens": [
+            { "text": "                " },
+            { "text": "setState", "type": "method" },
+            { "text": "(() {});" }
+          ]
+        },
+        {
+          "content": "              },",
+          "tokens": [{ "text": "              }," }]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "        ],",
+          "tokens": [{ "text": "        ]," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "    );",
+          "tokens": [{ "text": "    );" }]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget _buildColorFilters(BuildContext context) {",
+          "tokens": [
+            { "text": "  " },
+            { "text": "Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "_buildColorFilters", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    return Container(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Container", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      height: 50,",
+          "tokens": [
+            { "text": "      height: " },
+            { "text": "50", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      margin: const EdgeInsets.symmetric(horizontal: 16),",
+          "tokens": [
+            { "text": "      margin: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "." },
+            { "text": "symmetric", "type": "method" },
+            { "text": "(horizontal: " },
+            { "text": "16", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "      child: ListView.builder(",
+          "tokens": [
+            { "text": "      child: " },
+            { "text": "ListView", "type": "widget" },
+            { "text": "." },
+            { "text": "builder", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        scrollDirection: Axis.horizontal,",
+          "tokens": [
+            { "text": "        scrollDirection: " },
+            { "text": "Axis", "type": "widget" },
+            { "text": "." },
+            { "text": "horizontal", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        itemCount: _colorFilters.length,",
+          "tokens": [
+            { "text": "        itemCount: _colorFilters." },
+            { "text": "length", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        itemBuilder: (context, index) {",
+          "tokens": [
+            { "text": "        itemBuilder: (context, index) {" }
+          ]
+        },
+        {
+          "content": "          final color = _colorFilters[index];",
+          "tokens": [
+            { "text": "          final", "type": "keyword" },
+            { "text": " color = _colorFilters[index];" }
+          ]
+        },
+        {
+          "content": "          final isSelected = _selectedColorFilter == color;",
+          "tokens": [
+            { "text": "          final", "type": "keyword" },
+            { "text": " isSelected", "type": "property" },
+            { "text": " = _selectedColorFilter", "type": "property" },
+            { "text": " == color;" }
+          ]
+        },
+        {
+          "content": "          ",
+          "tokens": [{ "text": "          " }]
+        },
+        {
+          "content": "          return GestureDetector(",
+          "tokens": [
+            { "text": "          return", "type": "keyword" },
+            { "text": " " },
+            { "text": "GestureDetector", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            onTap: () {",
+          "tokens": [
+            { "text": "            onTap: () {" }
+          ]
+        },
+        {
+          "content": "              setState(() {",
+          "tokens": [
+            { "text": "              " },
+            { "text": "setState", "type": "method" },
+            { "text": "(() {" }
+          ]
+        },
+        {
+          "content": "                _selectedColorFilter = isSelected ? '' : color;",
+          "tokens": [
+            { "text": "                _selectedColorFilter", "type": "property" },
+            { "text": " = isSelected ? '' : color;" }
+          ]
+        },
+        {
+          "content": "              });",
+          "tokens": [{ "text": "              });" }]
+        },
+        {
+          "content": "            },",
+          "tokens": [{ "text": "            }," }]
+        },
+        {
+          "content": "            child: Container(",
+          "tokens": [
+            { "text": "            child: " },
+            { "text": "Container", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              margin: const EdgeInsets.only(right: 12),",
+          "tokens": [
+            { "text": "              margin: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "." },
+            { "text": "only", "type": "method" },
+            { "text": "(right: " },
+            { "text": "12", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),",
+          "tokens": [
+            { "text": "              padding: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "." },
+            { "text": "symmetric", "type": "method" },
+            { "text": "(horizontal: " },
+            { "text": "24", "type": "number" },
+            { "text": ", vertical: " },
+            { "text": "12", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "              decoration: BoxDecoration(",
+          "tokens": [
+            { "text": "              decoration: " },
+            { "text": "BoxDecoration", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                color: Colors.transparent,",
+          "tokens": [
+            { "text": "                color: " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "transparent", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                borderRadius: BorderRadius.circular(24),",
+          "tokens": [
+            { "text": "                borderRadius: " },
+            { "text": "BorderRadius", "type": "widget" },
+            { "text": "." },
+            { "text": "circular", "type": "method" },
+            { "text": "(" },
+            { "text": "24", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "                border: Border.all(",
+          "tokens": [
+            { "text": "                border: " },
+            { "text": "Border", "type": "class" },
+            { "text": "." },
+            { "text": "all", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  color: _colorMap[color] ?? Colors.grey,",
+          "tokens": [
+            { "text": "                  color: _colorMap[color] ?? " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "grey", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  width: 1,",
+          "tokens": [
+            { "text": "                  width: " },
+            { "text": "1", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                ),",
+          "tokens": [{ "text": "                )," }]
+        },
+        {
+          "content": "              ),",
+          "tokens": [{ "text": "              )," }]
+        },
+        {
+          "content": "              child: Text(",
+          "tokens": [
+            { "text": "              child: " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                color,",
+          "tokens": [
+            { "text": "                color," }
+          ]
+        },
+        {
+          "content": "                style: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "                style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  context,",
+          "tokens": [
+            { "text": "                  context," }
+          ]
+        },
+        {
+          "content": "                  FontSize.kMedium,",
+          "tokens": [
+            { "text": "                  " },
+            { "text": "FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  _colorMap[color] ?? Colors.grey,",
+          "tokens": [
+            { "text": "                  _colorMap[color] ?? " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "grey", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  KConstantFonts.haskoyMedium,",
+          "tokens": [
+            { "text": "                  " },
+            { "text": "KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "haskoyMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                ),",
+          "tokens": [{ "text": "                )," }]
+        },
+        {
+          "content": "              ),",
+          "tokens": [{ "text": "              )," }]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "          );",
+          "tokens": [{ "text": "          );" }]
+        },
+        {
+          "content": "        },",
+          "tokens": [{ "text": "        }," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "    );",
+          "tokens": [{ "text": "    );" }]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget _buildEmotionsList(BuildContext context) {",
+          "tokens": [
+            { "text": "  " },
+            { "text": "Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "_buildEmotionsList", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context) {" }
+          ]
+        },
+        {
+          "content": "    return ListView.builder(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "ListView", "type": "widget" },
+            { "text": "." },
+            { "text": "builder", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      padding: const EdgeInsets.all(16),",
+          "tokens": [
+            { "text": "      padding: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "." },
+            { "text": "all", "type": "method" },
+            { "text": "(" },
+            { "text": "16", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "      itemCount: filteredEmotions.length,",
+          "tokens": [
+            { "text": "      itemCount: filteredEmotions." },
+            { "text": "length", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "      itemBuilder: (context, index) {",
+          "tokens": [
+            { "text": "      itemBuilder: (context, index) {" }
+          ]
+        },
+        {
+          "content": "        final emotion = filteredEmotions[index];",
+          "tokens": [
+            { "text": "        final", "type": "keyword" },
+            { "text": " emotion = filteredEmotions[index];" }
+          ]
+        },
+        {
+          "content": "        return _buildEmotionItem(context, emotion);",
+          "tokens": [
+            { "text": "        return", "type": "keyword" },
+            { "text": " " },
+            { "text": "_buildEmotionItem", "type": "method" },
+            { "text": "(context, emotion);" }
+          ]
+        },
+        {
+          "content": "      },",
+          "tokens": [{ "text": "      }," }]
+        },
+        {
+          "content": "    );",
+          "tokens": [{ "text": "    );" }]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget _buildEmotionItem(BuildContext context, Map<String, dynamic> emotion) {",
+          "tokens": [
+            { "text": "  " },
+            { "text": "Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "_buildEmotionItem", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context, " },
+            { "text": "Map", "type": "class" },
+            { "text": "<" },
+            { "text": "String", "type": "class" },
+            { "text": ", " },
+            { "text": "dynamic", "type": "keyword" },
+            { "text": "> emotion) {" }
+          ]
+        },
+        {
+          "content": "    final Color emotionColor = _getEmotionColor(emotion['color']);",
+          "tokens": [
+            { "text": "    final", "type": "keyword" },
+            { "text": " " },
+            { "text": "Color", "type": "widget" },
+            { "text": " emotionColor = " },
+            { "text": "_getEmotionColor", "type": "method" },
+            { "text": "(emotion['color']);" }
+          ]
+        },
+        {
+          "content": "    ",
+          "tokens": [{ "text": "    " }]
+        },
+        {
+          "content": "    return Padding(",
+          "tokens": [
+            { "text": "    return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Padding", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "      padding: const EdgeInsets.only(bottom: 24),",
+          "tokens": [
+            { "text": "      padding: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "EdgeInsets", "type": "widget" },
+            { "text": "." },
+            { "text": "only", "type": "method" },
+            { "text": "(bottom: " },
+            { "text": "24", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "      child: Row(",
+          "tokens": [
+            { "text": "      child: " },
+            { "text": "Row", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        crossAxisAlignment: CrossAxisAlignment.start,",
+          "tokens": [
+            { "text": "        crossAxisAlignment: " },
+            { "text": "CrossAxisAlignment", "type": "widget" },
+            { "text": "." },
+            { "text": "start", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "        children: [",
+          "tokens": [{ "text": "        children: [" }]
+        },
+        {
+          "content": "          _buildEmotionShape(context, emotion['shape'], emotionColor),",
+          "tokens": [
+            { "text": "          " },
+            { "text": "_buildEmotionShape", "type": "method" },
+            { "text": "(context, emotion['shape'], emotionColor)," }
+          ]
+        },
+        {
+          "content": "          const SizedBox(width: 16),",
+          "tokens": [
+            { "text": "          " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SizedBox", "type": "widget" },
+            { "text": "(width: " },
+            { "text": "16", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "          Expanded(",
+          "tokens": [
+            { "text": "          " },
+            { "text": "Expanded", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            child: Column(",
+          "tokens": [
+            { "text": "            child: " },
+            { "text": "Column", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "              crossAxisAlignment: CrossAxisAlignment.start,",
+          "tokens": [
+            { "text": "              crossAxisAlignment: " },
+            { "text": "CrossAxisAlignment", "type": "widget" },
+            { "text": "." },
+            { "text": "start", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "              children: [",
+          "tokens": [{ "text": "              children: [" }]
+        },
+        {
+          "content": "                Text(",
+          "tokens": [
+            { "text": "                " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  emotion['name'],",
+          "tokens": [
+            { "text": "                  emotion['name']," }
+          ]
+        },
+        {
+          "content": "                  style: const TextStyle(",
+          "tokens": [
+            { "text": "                  style: " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "TextStyle", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                    fontSize: 24,",
+          "tokens": [
+            { "text": "                    fontSize: " },
+            { "text": "24", "type": "number" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    fontWeight: FontWeight.bold,",
+          "tokens": [
+            { "text": "                    fontWeight: " },
+            { "text": "FontWeight", "type": "widget" },
+            { "text": "." },
+            { "text": "bold", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    color: Colors.white,",
+          "tokens": [
+            { "text": "                    color: " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "white", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    fontFamily: 'Times New Roman',",
+          "tokens": [
+            { "text": "                    fontFamily: 'Times New Roman'", "type": "string" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  ),",
+          "tokens": [{ "text": "                  )," }]
+        },
+        {
+          "content": "                ),",
+          "tokens": [{ "text": "                )," }]
+        },
+        {
+          "content": "                const SizedBox(height: 4),",
+          "tokens": [
+            { "text": "                " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "SizedBox", "type": "widget" },
+            { "text": "(height: " },
+            { "text": "4", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "                Text(",
+          "tokens": [
+            { "text": "                " },
+            { "text": "Text", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                  emotion['description'],",
+          "tokens": [
+            { "text": "                  emotion['description']," }
+          ]
+        },
+        {
+          "content": "                  style: KCustomTextStyle.kMedium(",
+          "tokens": [
+            { "text": "                  style: " },
+            { "text": "KCustomTextStyle", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "                    context,",
+          "tokens": [
+            { "text": "                    context," }
+          ]
+        },
+        {
+          "content": "                    FontSize.kMedium,",
+          "tokens": [
+            { "text": "                    " },
+            { "text": "FontSize", "type": "class" },
+            { "text": "." },
+            { "text": "kMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    Colors.grey,",
+          "tokens": [
+            { "text": "                    " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "grey", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                    KConstantFonts.haskoyMedium,",
+          "tokens": [
+            { "text": "                    " },
+            { "text": "KConstantFonts", "type": "class" },
+            { "text": "." },
+            { "text": "haskoyMedium", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "                  ),",
+          "tokens": [{ "text": "                  )," }]
+        },
+        {
+          "content": "                ),",
+          "tokens": [{ "text": "                )," }]
+        },
+        {
+          "content": "              ],",
+          "tokens": [{ "text": "              ]," }]
+        },
+        {
+          "content": "            ),",
+          "tokens": [{ "text": "            )," }]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "        ],",
+          "tokens": [{ "text": "        ]," }]
+        },
+        {
+          "content": "      ),",
+          "tokens": [{ "text": "      )," }]
+        },
+        {
+          "content": "    );",
+          "tokens": [{ "text": "    );" }]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Widget _buildEmotionShape(BuildContext context, String shape, Color color) {",
+          "tokens": [
+            { "text": "  " },
+            { "text": "Widget", "type": "widget" },
+            { "text": " " },
+            { "text": "_buildEmotionShape", "type": "method" },
+            { "text": "(" },
+            { "text": "BuildContext", "type": "widget" },
+            { "text": " context, " },
+            { "text": "String", "type": "class" },
+            { "text": " shape, " },
+            { "text": "Color", "type": "widget" },
+            { "text": " color) {" }
+          ]
+        },
+        {
+          "content": "    final size = 48.0;",
+          "tokens": [
+            { "text": "    final", "type": "keyword" },
+            { "text": " size = " },
+            { "text": "48.0", "type": "number" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "    ",
+          "tokens": [{ "text": "    " }]
+        },
+        {
+          "content": "    switch (shape) {",
+          "tokens": [
+            { "text": "    switch", "type": "keyword" },
+            { "text": " (shape) {" }
+          ]
+        },
+        {
+          "content": "      case 'rounded_square':",
+          "tokens": [
+            { "text": "      case 'rounded_square'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "        return Container(",
+          "tokens": [
+            { "text": "        return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Container", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          width: size,",
+          "tokens": [
+            { "text": "          width: size," }
+          ]
+        },
+        {
+          "content": "          height: size,",
+          "tokens": [
+            { "text": "          height: size," }
+          ]
+        },
+        {
+          "content": "          decoration: BoxDecoration(",
+          "tokens": [
+            { "text": "          decoration: " },
+            { "text": "BoxDecoration", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            color: color,",
+          "tokens": [
+            { "text": "            color: color," }
+          ]
+        },
+        {
+          "content": "            borderRadius: BorderRadius.circular(12),",
+          "tokens": [
+            { "text": "            borderRadius: " },
+            { "text": "BorderRadius", "type": "widget" },
+            { "text": "." },
+            { "text": "circular", "type": "method" },
+            { "text": "(" },
+            { "text": "12", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "        );",
+          "tokens": [{ "text": "        );" }]
+        },
+        {
+          "content": "      case 'rounded_square_2':",
+          "tokens": [
+            { "text": "      case 'rounded_square_2'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "        return Container(",
+          "tokens": [
+            { "text": "        return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Container", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          width: size,",
+          "tokens": [
+            { "text": "          width: size," }
+          ]
+        },
+        {
+          "content": "          height: size,",
+          "tokens": [
+            { "text": "          height: size," }
+          ]
+        },
+        {
+          "content": "          decoration: BoxDecoration(",
+          "tokens": [
+            { "text": "          decoration: " },
+            { "text": "BoxDecoration", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            color: color,",
+          "tokens": [
+            { "text": "            color: color," }
+          ]
+        },
+        {
+          "content": "            borderRadius: BorderRadius.circular(16),",
+          "tokens": [
+            { "text": "            borderRadius: " },
+            { "text": "BorderRadius", "type": "widget" },
+            { "text": "." },
+            { "text": "circular", "type": "method" },
+            { "text": "(" },
+            { "text": "16", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "        );",
+          "tokens": [{ "text": "        );" }]
+        },
+        {
+          "content": "      case 'leaf':",
+          "tokens": [
+            { "text": "      case 'leaf'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "        return CustomPaint(",
+          "tokens": [
+            { "text": "        return", "type": "keyword" },
+            { "text": " " },
+            { "text": "CustomPaint", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          size: Size(size, size),",
+          "tokens": [
+            { "text": "          size: " },
+            { "text": "Size", "type": "widget" },
+            { "text": "(size, size)," }
+          ]
+        },
+        {
+          "content": "          painter: LeafPainter(color),",
+          "tokens": [
+            { "text": "          painter: " },
+            { "text": "LeafPainter", "type": "class" },
+            { "text": "(color)," }
+          ]
+        },
+        {
+          "content": "        );",
+          "tokens": [{ "text": "        );" }]
+        },
+        {
+          "content": "      case 'speech_bubble':",
+          "tokens": [
+            { "text": "      case 'speech_bubble'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "        return CustomPaint(",
+          "tokens": [
+            { "text": "        return", "type": "keyword" },
+            { "text": " " },
+            { "text": "CustomPaint", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          size: Size(size, size),",
+          "tokens": [
+            { "text": "          size: " },
+            { "text": "Size", "type": "widget" },
+            { "text": "(size, size)," }
+          ]
+        },
+        {
+          "content": "          painter: SpeechBubblePainter(color),",
+          "tokens": [
+            { "text": "          painter: " },
+            { "text": "SpeechBubblePainter", "type": "class" },
+            { "text": "(color)," }
+          ]
+        },
+        {
+          "content": "        );",
+          "tokens": [{ "text": "        );" }]
+        },
+        {
+          "content": "      case 'cloud':",
+          "tokens": [
+            { "text": "      case 'cloud'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "        return CustomPaint(",
+          "tokens": [
+            { "text": "        return", "type": "keyword" },
+            { "text": " " },
+            { "text": "CustomPaint", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          size: Size(size, size),",
+          "tokens": [
+            { "text": "          size: " },
+            { "text": "Size", "type": "widget" },
+            { "text": "(size, size)," }
+          ]
+        },
+        {
+          "content": "          painter: CloudPainter(color),",
+          "tokens": [
+            { "text": "          painter: " },
+            { "text": "CloudPainter", "type": "class" },
+            { "text": "(color)," }
+          ]
+        },
+        {
+          "content": "        );",
+          "tokens": [{ "text": "        );" }]
+        },
+        {
+          "content": "      case 'custom_blue_1':",
+          "tokens": [
+            { "text": "      case 'custom_blue_1'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "        return CustomPaint(",
+          "tokens": [
+            { "text": "        return", "type": "keyword" },
+            { "text": " " },
+            { "text": "CustomPaint", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          size: Size(size, size),",
+          "tokens": [
+            { "text": "          size: " },
+            { "text": "Size", "type": "widget" },
+            { "text": "(size, size)," }
+          ]
+        },
+        {
+          "content": "          painter: CustomBluePainter1(color),",
+          "tokens": [
+            { "text": "          painter: " },
+            { "text": "CustomBluePainter1", "type": "class" },
+            { "text": "(color)," }
+          ]
+        },
+        {
+          "content": "        );",
+          "tokens": [{ "text": "        );" }]
+        },
+        {
+          "content": "      case 'custom_blue_2':",
+          "tokens": [
+            { "text": "      case 'custom_blue_2'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "        return CustomPaint(",
+          "tokens": [
+            { "text": "        return", "type": "keyword" },
+            { "text": " " },
+            { "text": "CustomPaint", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          size: Size(size, size),",
+          "tokens": [
+            { "text": "          size: " },
+            { "text": "Size", "type": "widget" },
+            { "text": "(size, size)," }
+          ]
+        },
+        {
+          "content": "          painter: CustomBluePainter2(color),",
+          "tokens": [
+            { "text": "          painter: " },
+            { "text": "CustomBluePainter2", "type": "class" },
+            { "text": "(color)," }
+          ]
+        },
+        {
+          "content": "        );",
+          "tokens": [{ "text": "        );" }]
+        },
+        {
+          "content": "      case 'custom_red_1':",
+          "tokens": [
+            { "text": "      case 'custom_red_1'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "        return CustomPaint(",
+          "tokens": [
+            { "text": "        return", "type": "keyword" },
+            { "text": " " },
+            { "text": "CustomPaint", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          size: Size(size, size),",
+          "tokens": [
+            { "text": "          size: " },
+            { "text": "Size", "type": "widget" },
+            { "text": "(size, size)," }
+          ]
+        },
+        {
+          "content": "          painter: CustomRedPainter1(color),",
+          "tokens": [
+            { "text": "          painter: " },
+            { "text": "CustomRedPainter1", "type": "class" },
+            { "text": "(color)," }
+          ]
+        },
+        {
+          "content": "        );",
+          "tokens": [{ "text": "        );" }]
+        },
+        {
+          "content": "      case 'custom_red_2':",
+          "tokens": [
+            { "text": "      case 'custom_red_2'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "        return CustomPaint(",
+          "tokens": [
+            { "text": "        return", "type": "keyword" },
+            { "text": " " },
+            { "text": "CustomPaint", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          size: Size(size, size),",
+          "tokens": [
+            { "text": "          size: " },
+            { "text": "Size", "type": "widget" },
+            { "text": "(size, size)," }
+          ]
+        },
+        {
+          "content": "          painter: CustomRedPainter2(color),",
+          "tokens": [
+            { "text": "          painter: " },
+            { "text": "CustomRedPainter2", "type": "class" },
+            { "text": "(color)," }
+          ]
+        },
+        {
+          "content": "        );",
+          "tokens": [{ "text": "        );" }]
+        },
+        {
+          "content": "      case 'custom_red_3':",
+          "tokens": [
+            { "text": "      case 'custom_red_3'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "        return CustomPaint(",
+          "tokens": [
+            { "text": "        return", "type": "keyword" },
+            { "text": " " },
+            { "text": "CustomPaint", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          size: Size(size, size),",
+          "tokens": [
+            { "text": "          size: " },
+            { "text": "Size", "type": "widget" },
+            { "text": "(size, size)," }
+          ]
+        },
+        {
+          "content": "          painter: CustomRedPainter3(color),",
+          "tokens": [
+            { "text": "          painter: " },
+            { "text": "CustomRedPainter3", "type": "class" },
+            { "text": "(color)," }
+          ]
+        },
+        {
+          "content": "        );",
+          "tokens": [{ "text": "        );" }]
+        },
+        {
+          "content": "      default:",
+          "tokens": [
+            { "text": "      default:", "type": "keyword" }
+          ]
+        },
+        {
+          "content": "        return Container(",
+          "tokens": [
+            { "text": "        return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Container", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "          width: size,",
+          "tokens": [
+            { "text": "          width: size," }
+          ]
+        },
+        {
+          "content": "          height: size,",
+          "tokens": [
+            { "text": "          height: size," }
+          ]
+        },
+        {
+          "content": "          decoration: BoxDecoration(",
+          "tokens": [
+            { "text": "          decoration: " },
+            { "text": "BoxDecoration", "type": "widget" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "            color: color,",
+          "tokens": [
+            { "text": "            color: color," }
+          ]
+        },
+        {
+          "content": "            shape: BoxShape.circle,",
+          "tokens": [
+            { "text": "            shape: " },
+            { "text": "BoxShape", "type": "widget" },
+            { "text": "." },
+            { "text": "circle", "type": "property" },
+            { "text": "," }
+          ]
+        },
+        {
+          "content": "          ),",
+          "tokens": [{ "text": "          )," }]
+        },
+        {
+          "content": "        );",
+          "tokens": [{ "text": "        );" }]
+        },
+        {
+          "content": "    }",
+          "tokens": [{ "text": "    }" }]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "  Color _getEmotionColor(String colorName) {",
+          "tokens": [
+            { "text": "  " },
+            { "text": "Color", "type": "widget" },
+            { "text": " " },
+            { "text": "_getEmotionColor", "type": "method" },
+            { "text": "(" },
+            { "text": "String", "type": "class" },
+            { "text": " colorName) {" }
+          ]
+        },
+        {
+          "content": "    switch (colorName) {",
+          "tokens": [
+            { "text": "    switch", "type": "keyword" },
+            { "text": " (colorName) {" }
+          ]
+        },
+        {
+          "content": "      case 'Yellow':",
+          "tokens": [
+            { "text": "      case 'Yellow'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "        return const Color(0xFFFFD700);",
+          "tokens": [
+            { "text": "        return", "type": "keyword" },
+            { "text": " " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Color", "type": "widget" },
+            { "text": "(0xFFFFD700)", "type": "number" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "      case 'Green':",
+          "tokens": [
+            { "text": "      case 'Green'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "        return const Color(0xFF4CAF50);",
+          "tokens": [
+            { "text": "        return", "type": "keyword" },
+            { "text": " " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Color", "type": "widget" },
+            { "text": "(0xFF4CAF50)", "type": "number" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "      case 'Blue':",
+          "tokens": [
+            { "text": "      case 'Blue'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "        return const Color(0xFF2196F3);",
+          "tokens": [
+            { "text": "        return", "type": "keyword" },
+            { "text": " " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Color", "type": "widget" },
+            { "text": "(0xFF2196F3)", "type": "number" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "      case 'Red':",
+          "tokens": [
+            { "text": "      case 'Red'", "type": "string" },
+            { "text": ":" }
+          ]
+        },
+        {
+          "content": "        return const Color(0xFFF44336);",
+          "tokens": [
+            { "text": "        return", "type": "keyword" },
+            { "text": " " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Color", "type": "widget" },
+            { "text": "(0xFFF44336)", "type": "number" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "      default:",
+          "tokens": [
+            { "text": "      default:", "type": "keyword" }
+          ]
+        },
+        {
+          "content": "        return Colors.grey;",
+          "tokens": [
+            { "text": "        return", "type": "keyword" },
+            { "text": " " },
+            { "text": "Colors", "type": "widget" },
+            { "text": "." },
+            { "text": "grey", "type": "property" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "    }",
+          "tokens": [{ "text": "    }" }]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "}",
+          "tokens": [{ "text": "}" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "// Custom Painters for emotion shapes",
+          "tokens": [
+            { "text": "// Custom Painters for emotion shapes", "type": "comment" }
+          ]
+        },
+        {
+          "content": "class LeafPainter extends CustomPainter {",
+          "tokens": [
+            { "text": "class", "type": "keyword" },
+            { "text": " " },
+            { "text": "LeafPainter", "type": "class" },
+            { "text": " " },
+            { "text": "extends", "type": "keyword" },
+            { "text": " " },
+            { "text": "CustomPainter", "type": "widget" },
+            { "text": " {" }
+          ]
+        },
+        {
+          "content": "  final Color color;",
+          "tokens": [
+            { "text": "  final", "type": "keyword" },
+            { "text": " " },
+            { "text": "Color", "type": "widget" },
+            { "text": " color;" }
+          ]
+        },
+        {
+          "content": "  ",
+          "tokens": [{ "text": "  " }]
+        },
+        {
+          "content": "  LeafPainter(this.color);",
+          "tokens": [
+            { "text": "  " },
+            { "text": "LeafPainter", "type": "method" },
+            { "text": "(this.color);" }
+          ]
+        },
+        {
+          "content": "  ",
+          "tokens": [{ "text": "  " }]
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  void paint(Canvas canvas, Size size) {",
+          "tokens": [
+            { "text": "  void", "type": "keyword" },
+            { "text": " " },
+            { "text": "paint", "type": "method" },
+            { "text": "(" },
+            { "text": "Canvas", "type": "class" },
+            { "text": " canvas, " },
+            { "text": "Size", "type": "widget" },
+            { "text": " size) {" }
+          ]
+        },
+        {
+          "content": "    final paint = Paint()",
+          "tokens": [
+            { "text": "    final", "type": "keyword" },
+            { "text": " paint = " },
+            { "text": "Paint", "type": "class" },
+            { "text": "()" }
+          ]
+        },
+        {
+          "content": "      ..color = color",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "color", "type": "property" },
+            { "text": " = color" }
+          ]
+        },
+        {
+          "content": "      ..style = PaintingStyle.fill;",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "style", "type": "property" },
+            { "text": " = " },
+            { "text": "PaintingStyle", "type": "widget" },
+            { "text": "." },
+            { "text": "fill", "type": "property" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "    ",
+          "tokens": [{ "text": "    " }]
+        },
+        {
+          "content": "    final path = Path()",
+          "tokens": [
+            { "text": "    final", "type": "keyword" },
+            { "text": " path = " },
+            { "text": "Path", "type": "class" },
+            { "text": "()" }
+          ]
+        },
+        {
+          "content": "      ..moveTo(size.width * 0.5, 0)",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "moveTo", "type": "method" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.5", "type": "number" },
+            { "text": ", " },
+            { "text": "0", "type": "number" },
+            { "text": ")" }
+          ]
+        },
+        {
+          "content": "      ..quadraticBezierTo(0, size.height * 0.5, size.width * 0.5, size.height)",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "quadraticBezierTo", "type": "method" },
+            { "text": "(" },
+            { "text": "0", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.5", "type": "number" },
+            { "text": ", size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.5", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": ")" }
+          ]
+        },
+        {
+          "content": "      ..quadraticBezierTo(size.width, size.height * 0.5, size.width * 0.5, 0)",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "quadraticBezierTo", "type": "method" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.5", "type": "number" },
+            { "text": ", size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.5", "type": "number" },
+            { "text": ", " },
+            { "text": "0", "type": "number" },
+            { "text": ")" }
+          ]
+        },
+        {
+          "content": "      ..close();",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "close", "type": "method" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "    ",
+          "tokens": [{ "text": "    " }]
+        },
+        {
+          "content": "    canvas.drawPath(path, paint);",
+          "tokens": [
+            { "text": "    canvas." },
+            { "text": "drawPath", "type": "method" },
+            { "text": "(path, paint);" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "  ",
+          "tokens": [{ "text": "  " }]
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;",
+          "tokens": [
+            { "text": "  bool", "type": "keyword" },
+            { "text": " " },
+            { "text": "shouldRepaint", "type": "method" },
+            { "text": "(covariant CustomPainter oldDelegate) => " },
+            { "text": "false", "type": "keyword" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "}",
+          "tokens": [{ "text": "}" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "class SpeechBubblePainter extends CustomPainter {",
+          "tokens": [
+            { "text": "class", "type": "keyword" },
+            { "text": " " },
+            { "text": "SpeechBubblePainter", "type": "class" },
+            { "text": " " },
+            { "text": "extends", "type": "keyword" },
+            { "text": " " },
+            { "text": "CustomPainter", "type": "widget" },
+            { "text": " {" }
+          ]
+        },
+        {
+          "content": "  final Color color;",
+          "tokens": [
+            { "text": "  final", "type": "keyword" },
+            { "text": " " },
+            { "text": "Color", "type": "widget" },
+            { "text": " color;" }
+          ]
+        },
+        {
+          "content": "  ",
+          "tokens": [{ "text": "  " }]
+        },
+        {
+          "content": "  SpeechBubblePainter(this.color);",
+          "tokens": [
+            { "text": "  " },
+            { "text": "SpeechBubblePainter", "type": "method" },
+            { "text": "(this.color);" }
+          ]
+        },
+        {
+          "content": "  ",
+          "tokens": [{ "text": "  " }]
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  void paint(Canvas canvas, Size size) {",
+          "tokens": [
+            { "text": "  void", "type": "keyword" },
+            { "text": " " },
+            { "text": "paint", "type": "method" },
+            { "text": "(" },
+            { "text": "Canvas", "type": "class" },
+            { "text": " canvas, " },
+            { "text": "Size", "type": "widget" },
+            { "text": " size) {" }
+          ]
+        },
+        {
+          "content": "    final paint = Paint()",
+          "tokens": [
+            { "text": "    final", "type": "keyword" },
+            { "text": " paint = " },
+            { "text": "Paint", "type": "class" },
+            { "text": "()" }
+          ]
+        },
+        {
+          "content": "      ..color = color",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "color", "type": "property" },
+            { "text": " = color" }
+          ]
+        },
+        {
+          "content": "      ..style = PaintingStyle.fill;",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "style", "type": "property" },
+            { "text": " = " },
+            { "text": "PaintingStyle", "type": "widget" },
+            { "text": "." },
+            { "text": "fill", "type": "property" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "    ",
+          "tokens": [{ "text": "    " }]
+        },
+        {
+          "content": "    final path = Path()",
+          "tokens": [
+            { "text": "    final", "type": "keyword" },
+            { "text": " path = " },
+            { "text": "Path", "type": "class" },
+            { "text": "()" }
+          ]
+        },
+        {
+          "content": "      ..addRRect(RRect.fromRectAndRadius(",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "addRRect", "type": "method" },
+            { "text": "(" },
+            { "text": "RRect", "type": "class" },
+            { "text": "." },
+            { "text": "fromRectAndRadius", "type": "method" },
+            { "text": "(" }
+          ]
+        },
+        {
+          "content": "        Rect.fromLTWH(0, 0, size.width * 0.8, size.height * 0.8),",
+          "tokens": [
+            { "text": "        " },
+            { "text": "Rect", "type": "class" },
+            { "text": "." },
+            { "text": "fromLTWH", "type": "method" },
+            { "text": "(" },
+            { "text": "0", "type": "number" },
+            { "text": ", " },
+            { "text": "0", "type": "number" },
+            { "text": ", size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.8", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.8", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "        const Radius.circular(12),",
+          "tokens": [
+            { "text": "        " },
+            { "text": "const", "type": "keyword" },
+            { "text": " " },
+            { "text": "Radius", "type": "widget" },
+            { "text": "." },
+            { "text": "circular", "type": "method" },
+            { "text": "(" },
+            { "text": "12", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "      ))",
+          "tokens": [{ "text": "      ))" }]
+        },
+        {
+          "content": "      ..moveTo(size.width * 0.4, size.height * 0.8)",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "moveTo", "type": "method" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.4", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.8", "type": "number" },
+            { "text": ")" }
+          ]
+        },
+        {
+          "content": "      ..lineTo(size.width * 0.3, size.height)",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "lineTo", "type": "method" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.3", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": ")" }
+          ]
+        },
+        {
+          "content": "      ..lineTo(size.width * 0.5, size.height * 0.8)",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "lineTo", "type": "method" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.5", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.8", "type": "number" },
+            { "text": ")" }
+          ]
+        },
+        {
+          "content": "      ..close();",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "close", "type": "method" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "    ",
+          "tokens": [{ "text": "    " }]
+        },
+        {
+          "content": "    canvas.drawPath(path, paint);",
+          "tokens": [
+            { "text": "    canvas." },
+            { "text": "drawPath", "type": "method" },
+            { "text": "(path, paint);" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "  ",
+          "tokens": [{ "text": "  " }]
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;",
+          "tokens": [
+            { "text": "  bool", "type": "keyword" },
+            { "text": " " },
+            { "text": "shouldRepaint", "type": "method" },
+            { "text": "(covariant CustomPainter oldDelegate) => " },
+            { "text": "false", "type": "keyword" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "}",
+          "tokens": [{ "text": "}" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "class CloudPainter extends CustomPainter {",
+          "tokens": [
+            { "text": "class", "type": "keyword" },
+            { "text": " " },
+            { "text": "CloudPainter", "type": "class" },
+            { "text": " " },
+            { "text": "extends", "type": "keyword" },
+            { "text": " " },
+            { "text": "CustomPainter", "type": "widget" },
+            { "text": " {" }
+          ]
+        },
+        {
+          "content": "  final Color color;",
+          "tokens": [
+            { "text": "  final", "type": "keyword" },
+            { "text": " " },
+            { "text": "Color", "type": "widget" },
+            { "text": " color;" }
+          ]
+        },
+        {
+          "content": "  ",
+          "tokens": [{ "text": "  " }]
+        },
+        {
+          "content": "  CloudPainter(this.color);",
+          "tokens": [
+            { "text": "  " },
+            { "text": "CloudPainter", "type": "method" },
+            { "text": "(this.color);" }
+          ]
+        },
+        {
+          "content": "  ",
+          "tokens": [{ "text": "  " }]
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  void paint(Canvas canvas, Size size) {",
+          "tokens": [
+            { "text": "  void", "type": "keyword" },
+            { "text": " " },
+            { "text": "paint", "type": "method" },
+            { "text": "(" },
+            { "text": "Canvas", "type": "class" },
+            { "text": " canvas, " },
+            { "text": "Size", "type": "widget" },
+            { "text": " size) {" }
+          ]
+        },
+        {
+          "content": "    final paint = Paint()",
+          "tokens": [
+            { "text": "    final", "type": "keyword" },
+            { "text": " paint = " },
+            { "text": "Paint", "type": "class" },
+            { "text": "()" }
+          ]
+        },
+        {
+          "content": "      ..color = color",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "color", "type": "property" },
+            { "text": " = color" }
+          ]
+        },
+        {
+          "content": "      ..style = PaintingStyle.fill;",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "style", "type": "property" },
+            { "text": " = " },
+            { "text": "PaintingStyle", "type": "widget" },
+            { "text": "." },
+            { "text": "fill", "type": "property" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "    ",
+          "tokens": [{ "text": "    " }]
+        },
+        {
+          "content": "    final path = Path();",
+          "tokens": [
+            { "text": "    final", "type": "keyword" },
+            { "text": " path = " },
+            { "text": "Path", "type": "class" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "    ",
+          "tokens": [{ "text": "    " }]
+        },
+        {
+          "content": "    // Draw multiple circles to form a cloud shape",
+          "tokens": [
+            { "text": "    // Draw multiple circles to form a cloud shape", "type": "comment" }
+          ]
+        },
+        {
+          "content": "    canvas.drawCircle(Offset(size.width * 0.3, size.height * 0.5), size.width * 0.25, paint);",
+          "tokens": [
+            { "text": "    canvas." },
+            { "text": "drawCircle", "type": "method" },
+            { "text": "(" },
+            { "text": "Offset", "type": "class" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.3", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.5", "type": "number" },
+            { "text": "), size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.25", "type": "number" },
+            { "text": ", paint);" }
+          ]
+        },
+        {
+          "content": "    canvas.drawCircle(Offset(size.width * 0.5, size.height * 0.3), size.width * 0.2, paint);",
+          "tokens": [
+            { "text": "    canvas." },
+            { "text": "drawCircle", "type": "method" },
+            { "text": "(" },
+            { "text": "Offset", "type": "class" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.5", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.3", "type": "number" },
+            { "text": "), size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.2", "type": "number" },
+            { "text": ", paint);" }
+          ]
+        },
+        {
+          "content": "    canvas.drawCircle(Offset(size.width * 0.7, size.height * 0.5), size.width * 0.25, paint);",
+          "tokens": [
+            { "text": "    canvas." },
+            { "text": "drawCircle", "type": "method" },
+            { "text": "(" },
+            { "text": "Offset", "type": "class" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.7", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.5", "type": "number" },
+            { "text": "), size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.25", "type": "number" },
+            { "text": ", paint);" }
+          ]
+        },
+        {
+          "content": "    canvas.drawCircle(Offset(size.width * 0.5, size.height * 0.6), size.width * 0.3, paint);",
+          "tokens": [
+            { "text": "    canvas." },
+            { "text": "drawCircle", "type": "method" },
+            { "text": "(" },
+            { "text": "Offset", "type": "class" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.5", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.6", "type": "number" },
+            { "text": "), size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.3", "type": "number" },
+            { "text": ", paint);" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "  ",
+          "tokens": [{ "text": "  " }]
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;",
+          "tokens": [
+            { "text": "  bool", "type": "keyword" },
+            { "text": " " },
+            { "text": "shouldRepaint", "type": "method" },
+            { "text": "(covariant CustomPainter oldDelegate) => " },
+            { "text": "false", "type": "keyword" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "}",
+          "tokens": [{ "text": "}" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "class CustomBluePainter1 extends CustomPainter {",
+          "tokens": [
+            { "text": "class", "type": "keyword" },
+            { "text": " " },
+            { "text": "CustomBluePainter1", "type": "class" },
+            { "text": " " },
+            { "text": "extends", "type": "keyword" },
+            { "text": " " },
+            { "text": "CustomPainter", "type": "widget" },
+            { "text": " {" }
+          ]
+        },
+        {
+          "content": "  final Color color;",
+          "tokens": [
+            { "text": "  final", "type": "keyword" },
+            { "text": " " },
+            { "text": "Color", "type": "widget" },
+            { "text": " color;" }
+          ]
+        },
+        {
+          "content": "  ",
+          "tokens": [{ "text": "  " }]
+        },
+        {
+          "content": "  CustomBluePainter1(this.color);",
+          "tokens": [
+            { "text": "  " },
+            { "text": "CustomBluePainter1", "type": "method" },
+            { "text": "(this.color);" }
+          ]
+        },
+        {
+          "content": "  ",
+          "tokens": [{ "text": "  " }]
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  void paint(Canvas canvas, Size size) {",
+          "tokens": [
+            { "text": "  void", "type": "keyword" },
+            { "text": " " },
+            { "text": "paint", "type": "method" },
+            { "text": "(" },
+            { "text": "Canvas", "type": "class" },
+            { "text": " canvas, " },
+            { "text": "Size", "type": "widget" },
+            { "text": " size) {" }
+          ]
+        },
+        {
+          "content": "    final paint = Paint()",
+          "tokens": [
+            { "text": "    final", "type": "keyword" },
+            { "text": " paint = " },
+            { "text": "Paint", "type": "class" },
+            { "text": "()" }
+          ]
+        },
+        {
+          "content": "      ..color = color",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "color", "type": "property" },
+            { "text": " = color" }
+          ]
+        },
+        {
+          "content": "      ..style = PaintingStyle.fill;",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "style", "type": "property" },
+            { "text": " = " },
+            { "text": "PaintingStyle", "type": "widget" },
+            { "text": "." },
+            { "text": "fill", "type": "property" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "    ",
+          "tokens": [{ "text": "    " }]
+        },
+        {
+          "content": "    final path = Path()",
+          "tokens": [
+            { "text": "    final", "type": "keyword" },
+            { "text": " path = " },
+            { "text": "Path", "type": "class" },
+            { "text": "()" }
+          ]
+        },
+        {
+          "content": "      ..moveTo(size.width * 0.2, size.height * 0.2)",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "moveTo", "type": "method" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.2", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.2", "type": "number" },
+            { "text": ")" }
+          ]
+        },
+        {
+          "content": "      ..lineTo(size.width * 0.8, size.height * 0.2)",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "lineTo", "type": "method" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.8", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.2", "type": "number" },
+            { "text": ")" }
+          ]
+        },
+        {
+          "content": "      ..lineTo(size.width * 0.8, size.height * 0.8)",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "lineTo", "type": "method" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.8", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.8", "type": "number" },
+            { "text": ")" }
+          ]
+        },
+        {
+          "content": "      ..lineTo(size.width * 0.2, size.height * 0.8)",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "lineTo", "type": "method" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.2", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.8", "type": "number" },
+            { "text": ")" }
+          ]
+        },
+        {
+          "content": "      ..close();",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "close", "type": "method" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "    ",
+          "tokens": [{ "text": "    " }]
+        },
+        {
+          "content": "    // Add notches to create a puzzle piece look",
+          "tokens": [
+            { "text": "    // Add notches to create a puzzle piece look", "type": "comment" }
+          ]
+        },
+        {
+          "content": "    path.addRect(Rect.fromLTWH(size.width * 0.4, 0, size.width * 0.2, size.height * 0.2));",
+          "tokens": [
+            { "text": "    path." },
+            { "text": "addRect", "type": "method" },
+            { "text": "(" },
+            { "text": "Rect", "type": "class" },
+            { "text": "." },
+            { "text": "fromLTWH", "type": "method" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.4", "type": "number" },
+            { "text": ", " },
+            { "text": "0", "type": "number" },
+            { "text": ", size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.2", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.2", "type": "number" },
+            { "text": "));" }
+          ]
+        },
+        {
+          "content": "    path.addRect(Rect.fromLTWH(size.width * 0.4, size.height * 0.8, size.width * 0.2, size.height * 0.2));",
+          "tokens": [
+            { "text": "    path." },
+            { "text": "addRect", "type": "method" },
+            { "text": "(" },
+            { "text": "Rect", "type": "class" },
+            { "text": "." },
+            { "text": "fromLTWH", "type": "method" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.4", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.8", "type": "number" },
+            { "text": ", size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.2", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.2", "type": "number" },
+            { "text": "));" }
+          ]
+        },
+        {
+          "content": "    ",
+          "tokens": [{ "text": "    " }]
+        },
+        {
+          "content": "    canvas.drawPath(path, paint);",
+          "tokens": [
+            { "text": "    canvas." },
+            { "text": "drawPath", "type": "method" },
+            { "text": "(path, paint);" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "  ",
+          "tokens": [{ "text": "  " }]
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;",
+          "tokens": [
+            { "text": "  bool", "type": "keyword" },
+            { "text": " " },
+            { "text": "shouldRepaint", "type": "method" },
+            { "text": "(covariant CustomPainter oldDelegate) => " },
+            { "text": "false", "type": "keyword" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "}",
+          "tokens": [{ "text": "}" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "class CustomBluePainter2 extends CustomPainter {",
+          "tokens": [
+            { "text": "class", "type": "keyword" },
+            { "text": " " },
+            { "text": "CustomBluePainter2", "type": "class" },
+            { "text": " " },
+            { "text": "extends", "type": "keyword" },
+            { "text": " " },
+            { "text": "CustomPainter", "type": "widget" },
+            { "text": " {" }
+          ]
+        },
+        {
+          "content": "  final Color color;",
+          "tokens": [
+            { "text": "  final", "type": "keyword" },
+            { "text": " " },
+            { "text": "Color", "type": "widget" },
+            { "text": " color;" }
+          ]
+        },
+        {
+          "content": "  ",
+          "tokens": [{ "text": "  " }]
+        },
+        {
+          "content": "  CustomBluePainter2(this.color);",
+          "tokens": [
+            { "text": "  " },
+            { "text": "CustomBluePainter2", "type": "method" },
+            { "text": "(this.color);" }
+          ]
+        },
+        {
+          "content": "  ",
+          "tokens": [{ "text": "  " }]
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  void paint(Canvas canvas, Size size) {",
+          "tokens": [
+            { "text": "  void", "type": "keyword" },
+            { "text": " " },
+            { "text": "paint", "type": "method" },
+            { "text": "(" },
+            { "text": "Canvas", "type": "class" },
+            { "text": " canvas, " },
+            { "text": "Size", "type": "widget" },
+            { "text": " size) {" }
+          ]
+        },
+        {
+          "content": "    final paint = Paint()",
+          "tokens": [
+            { "text": "    final", "type": "keyword" },
+            { "text": " paint = " },
+            { "text": "Paint", "type": "class" },
+            { "text": "()" }
+          ]
+        },
+        {
+          "content": "      ..color = color",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "color", "type": "property" },
+            { "text": " = color" }
+          ]
+        },
+        {
+          "content": "      ..style = PaintingStyle.fill;",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "style", "type": "property" },
+            { "text": " = " },
+            { "text": "PaintingStyle", "type": "widget" },
+            { "text": "." },
+            { "text": "fill", "type": "property" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "    ",
+          "tokens": [{ "text": "    " }]
+        },
+        {
+          "content": "    final path = Path()",
+          "tokens": [
+            { "text": "    final", "type": "keyword" },
+            { "text": " path = " },
+            { "text": "Path", "type": "class" },
+            { "text": "()" }
+          ]
+        },
+        {
+          "content": "      ..addOval(Rect.fromLTWH(size.width * 0.2, size.height * 0.2, size.width * 0.6, size.height * 0.6))",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "addOval", "type": "method" },
+            { "text": "(" },
+            { "text": "Rect", "type": "class" },
+            { "text": "." },
+            { "text": "fromLTWH", "type": "method" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.2", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.2", "type": "number" },
+            { "text": ", size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.6", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.6", "type": "number" },
+            { "text": "))" }
+          ]
+        },
+        {
+          "content": "      ..addPolygon([",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "addPolygon", "type": "method" },
+            { "text": "([" }
+          ]
+        },
+        {
+          "content": "        Offset(size.width * 0.5, 0),",
+          "tokens": [
+            { "text": "        " },
+            { "text": "Offset", "type": "class" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.5", "type": "number" },
+            { "text": ", " },
+            { "text": "0", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "        Offset(size.width * 0.3, size.height * 0.3),",
+          "tokens": [
+            { "text": "        " },
+            { "text": "Offset", "type": "class" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.3", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.3", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "        Offset(size.width * 0.7, size.height * 0.3),",
+          "tokens": [
+            { "text": "        " },
+            { "text": "Offset", "type": "class" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.7", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.3", "type": "number" },
+            { "text": ")," }
+          ]
+        },
+        {
+          "content": "      ], true);",
+          "tokens": [
+            { "text": "      ], " },
+            { "text": "true", "type": "keyword" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "    ",
+          "tokens": [{ "text": "    " }]
+        },
+        {
+          "content": "    canvas.drawPath(path, paint);",
+          "tokens": [
+            { "text": "    canvas." },
+            { "text": "drawPath", "type": "method" },
+            { "text": "(path, paint);" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "  ",
+          "tokens": [{ "text": "  " }]
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;",
+          "tokens": [
+            { "text": "  bool", "type": "keyword" },
+            { "text": " " },
+            { "text": "shouldRepaint", "type": "method" },
+            { "text": "(covariant CustomPainter oldDelegate) => " },
+            { "text": "false", "type": "keyword" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "}",
+          "tokens": [{ "text": "}" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "class CustomRedPainter1 extends CustomPainter {",
+          "tokens": [
+            { "text": "class", "type": "keyword" },
+            { "text": " " },
+            { "text": "CustomRedPainter1", "type": "class" },
+            { "text": " " },
+            { "text": "extends", "type": "keyword" },
+            { "text": " " },
+            { "text": "CustomPainter", "type": "widget" },
+            { "text": " {" }
+          ]
+        },
+        {
+          "content": "  final Color color;",
+          "tokens": [
+            { "text": "  final", "type": "keyword" },
+            { "text": " " },
+            { "text": "Color", "type": "widget" },
+            { "text": " color;" }
+          ]
+        },
+        {
+          "content": "  ",
+          "tokens": [{ "text": "  " }]
+        },
+        {
+          "content": "  CustomRedPainter1(this.color);",
+          "tokens": [
+            { "text": "  " },
+            { "text": "CustomRedPainter1", "type": "method" },
+            { "text": "(this.color);" }
+          ]
+        },
+        {
+          "content": "  ",
+          "tokens": [{ "text": "  " }]
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  void paint(Canvas canvas, Size size) {",
+          "tokens": [
+            { "text": "  void", "type": "keyword" },
+            { "text": " " },
+            { "text": "paint", "type": "method" },
+            { "text": "(" },
+            { "text": "Canvas", "type": "class" },
+            { "text": " canvas, " },
+            { "text": "Size", "type": "widget" },
+            { "text": " size) {" }
+          ]
+        },
+        {
+          "content": "    final paint = Paint()",
+          "tokens": [
+            { "text": "    final", "type": "keyword" },
+            { "text": " paint = " },
+            { "text": "Paint", "type": "class" },
+            { "text": "()" }
+          ]
+        },
+        {
+          "content": "      ..color = color",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "color", "type": "property" },
+            { "text": " = color" }
+          ]
+        },
+        {
+          "content": "      ..style = PaintingStyle.fill;",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "style", "type": "property" },
+            { "text": " = " },
+            { "text": "PaintingStyle", "type": "widget" },
+            { "text": "." },
+            { "text": "fill", "type": "property" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "    ",
+          "tokens": [{ "text": "    " }]
+        },
+        {
+          "content": "    final path = Path();",
+          "tokens": [
+            { "text": "    final", "type": "keyword" },
+            { "text": " path = " },
+            { "text": "Path", "type": "class" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "    ",
+          "tokens": [{ "text": "    " }]
+        },
+        {
+          "content": "    // Draw an M-like shape",
+          "tokens": [
+            { "text": "    // Draw an M-like shape", "type": "comment" }
+          ]
+        },
+        {
+          "content": "    path.moveTo(0, size.height * 0.3);",
+          "tokens": [
+            { "text": "    path." },
+            { "text": "moveTo", "type": "method" },
+            { "text": "(" },
+            { "text": "0", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.3", "type": "number" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "    path.lineTo(size.width * 0.25, size.height * 0.7);",
+          "tokens": [
+            { "text": "    path." },
+            { "text": "lineTo", "type": "method" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.25", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.7", "type": "number" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "    path.lineTo(size.width * 0.5, size.height * 0.3);",
+          "tokens": [
+            { "text": "    path." },
+            { "text": "lineTo", "type": "method" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.5", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.3", "type": "number" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "    path.lineTo(size.width * 0.75, size.height * 0.7);",
+          "tokens": [
+            { "text": "    path." },
+            { "text": "lineTo", "type": "method" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.75", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.7", "type": "number" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "    path.lineTo(size.width, size.height * 0.3);",
+          "tokens": [
+            { "text": "    path." },
+            { "text": "lineTo", "type": "method" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.3", "type": "number" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "    path.lineTo(size.width, size.height);",
+          "tokens": [
+            { "text": "    path." },
+            { "text": "lineTo", "type": "method" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "    path.lineTo(0, size.height);",
+          "tokens": [
+            { "text": "    path." },
+            { "text": "lineTo", "type": "method" },
+            { "text":"(0, size." },
+            { "text": "height", "type": "property" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "    path.close();",
+          "tokens": [
+            { "text": "    path." },
+            { "text": "close", "type": "method" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "    ",
+          "tokens": [{ "text": "    " }]
+        },
+        {
+          "content": "    canvas.drawPath(path, paint);",
+          "tokens": [
+            { "text": "    canvas." },
+            { "text": "drawPath", "type": "method" },
+            { "text": "(path, paint);" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "  ",
+          "tokens": [{ "text": "  " }]
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;",
+          "tokens": [
+            { "text": "  bool", "type": "keyword" },
+            { "text": " " },
+            { "text": "shouldRepaint", "type": "method" },
+            { "text": "(covariant CustomPainter oldDelegate) => " },
+            { "text": "false", "type": "keyword" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "}",
+          "tokens": [{ "text": "}" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "class CustomRedPainter2 extends CustomPainter {",
+          "tokens": [
+            { "text": "class", "type": "keyword" },
+            { "text": " " },
+            { "text": "CustomRedPainter2", "type": "class" },
+            { "text": " " },
+            { "text": "extends", "type": "keyword" },
+            { "text": " " },
+            { "text": "CustomPainter", "type": "widget" },
+            { "text": " {" }
+          ]
+        },
+        {
+          "content": "  final Color color;",
+          "tokens": [
+            { "text": "  final", "type": "keyword" },
+            { "text": " " },
+            { "text": "Color", "type": "widget" },
+            { "text": " color;" }
+          ]
+        },
+        {
+          "content": "  ",
+          "tokens": [{ "text": "  " }]
+        },
+        {
+          "content": "  CustomRedPainter2(this.color);",
+          "tokens": [
+            { "text": "  " },
+            { "text": "CustomRedPainter2", "type": "method" },
+            { "text": "(this.color);" }
+          ]
+        },
+        {
+          "content": "  ",
+          "tokens": [{ "text": "  " }]
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  void paint(Canvas canvas, Size size) {",
+          "tokens": [
+            { "text": "  void", "type": "keyword" },
+            { "text": " " },
+            { "text": "paint", "type": "method" },
+            { "text": "(" },
+            { "text": "Canvas", "type": "class" },
+            { "text": " canvas, " },
+            { "text": "Size", "type": "widget" },
+            { "text": " size) {" }
+          ]
+        },
+        {
+          "content": "    final paint = Paint()",
+          "tokens": [
+            { "text": "    final", "type": "keyword" },
+            { "text": " paint = " },
+            { "text": "Paint", "type": "class" },
+            { "text": "()" }
+          ]
+        },
+        {
+          "content": "      ..color = color",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "color", "type": "property" },
+            { "text": " = color" }
+          ]
+        },
+        {
+          "content": "      ..style = PaintingStyle.fill;",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "style", "type": "property" },
+            { "text": " = " },
+            { "text": "PaintingStyle", "type": "widget" },
+            { "text": "." },
+            { "text": "fill", "type": "property" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "    ",
+          "tokens": [{ "text": "    " }]
+        },
+        {
+          "content": "    final path = Path();",
+          "tokens": [
+            { "text": "    final", "type": "keyword" },
+            { "text": " path = " },
+            { "text": "Path", "type": "class" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "    ",
+          "tokens": [{ "text": "    " }]
+        },
+        {
+          "content": "    // Draw an X-like shape",
+          "tokens": [
+            { "text": "    // Draw an X-like shape", "type": "comment" }
+          ]
+        },
+        {
+          "content": "    path.moveTo(0, 0);",
+          "tokens": [
+            { "text": "    path." },
+            { "text": "moveTo", "type": "method" },
+            { "text":"(0, 0);" }
+          ]
+        },
+        {
+          "content": "    path.lineTo(size.width * 0.3, 0);",
+          "tokens": [
+            { "text": "    path." },
+            { "text": "lineTo", "type": "method" },
+            { "text":"(size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.3", "type": "number" },
+            { "text": ", " },
+            { "text": "0", "type": "number" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "    path.lineTo(size.width, size.height * 0.7);",
+          "tokens": [
+            { "text": "    path." },
+            { "text": "lineTo", "type": "method" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.7", "type": "number" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "    path.lineTo(size.width * 0.7, size.height);",
+          "tokens": [
+            { "text": "    path." },
+            { "text": "lineTo", "type": "method" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.7", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "    path.lineTo(size.width * 0.4, size.height * 0.3);",
+          "tokens": [
+            { "text": "    path." },
+            { "text": "lineTo", "type": "method" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.4", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.3", "type": "number" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "    path.lineTo(0, size.height);",
+          "tokens": [
+            { "text": "    path." },
+            { "text": "lineTo", "type": "method" },
+            { "text":"(0, size." },
+            { "text": "height", "type": "property" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "    path.close();",
+          "tokens": [
+            { "text": "    path." },
+            { "text": "close", "type": "method" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "    ",
+          "tokens": [{ "text": "    " }]
+        },
+        {
+          "content": "    canvas.drawPath(path, paint);",
+          "tokens": [
+            { "text": "    canvas." },
+            { "text": "drawPath", "type": "method" },
+            { "text": "(path, paint);" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "  ",
+          "tokens": [{ "text": "  " }]
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;",
+          "tokens": [
+            { "text": "  bool", "type": "keyword" },
+            { "text": " " },
+            { "text": "shouldRepaint", "type": "method" },
+            { "text": "(covariant CustomPainter oldDelegate) => " },
+            { "text": "false", "type": "keyword" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "}",
+          "tokens": [{ "text": "}" }]
+        },
+        {
+          "content": "",
+          "tokens": []
+        },
+        {
+          "content": "class CustomRedPainter3 extends CustomPainter {",
+          "tokens": [
+            { "text": "class", "type": "keyword" },
+            { "text": " " },
+            { "text": "CustomRedPainter3", "type": "class" },
+            { "text": " " },
+            { "text": "extends", "type": "keyword" },
+            { "text": " " },
+            { "text": "CustomPainter", "type": "widget" },
+            { "text": " {" }
+          ]
+        },
+        {
+          "content": "  final Color color;",
+          "tokens": [
+            { "text": "  final", "type": "keyword" },
+            { "text": " " },
+            { "text": "Color", "type": "widget" },
+            { "text": " color;" }
+          ]
+        },
+        {
+          "content": "  ",
+          "tokens": [{ "text": "  " }]
+        },
+        {
+          "content": "  CustomRedPainter3(this.color);",
+          "tokens": [
+            { "text": "  " },
+            { "text": "CustomRedPainter3", "type": "method" },
+            { "text": "(this.color);" }
+          ]
+        },
+        {
+          "content": "  ",
+          "tokens": [{ "text": "  " }]
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  void paint(Canvas canvas, Size size) {",
+          "tokens": [
+            { "text": "  void", "type": "keyword" },
+            { "text": " " },
+            { "text": "paint", "type": "method" },
+            { "text": "(" },
+            { "text": "Canvas", "type": "class" },
+            { "text": " canvas, " },
+            { "text": "Size", "type": "widget" },
+            { "text": " size) {" }
+          ]
+        },
+        {
+          "content": "    final paint = Paint()",
+          "tokens": [
+            { "text": "    final", "type": "keyword" },
+            { "text": " paint = " },
+            { "text": "Paint", "type": "class" },
+            { "text": "()" }
+          ]
+        },
+        {
+          "content": "      ..color = color",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "color", "type": "property" },
+            { "text": " = color" }
+          ]
+        },
+        {
+          "content": "      ..style = PaintingStyle.fill;",
+          "tokens": [
+            { "text": "      .." },
+            { "text": "style", "type": "property" },
+            { "text": " = " },
+            { "text": "PaintingStyle", "type": "widget" },
+            { "text": "." },
+            { "text": "fill", "type": "property" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "    ",
+          "tokens": [{ "text": "    " }]
+        },
+        {
+          "content": "    final path = Path();",
+          "tokens": [
+            { "text": "    final", "type": "keyword" },
+            { "text": " path = " },
+            { "text": "Path", "type": "class" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "    ",
+          "tokens": [{ "text": "    " }]
+        },
+        {
+          "content": "    // Draw a shield-like shape",
+          "tokens": [
+            { "text": "    // Draw a shield-like shape", "type": "comment" }
+          ]
+        },
+        {
+          "content": "    path.moveTo(size.width * 0.5, 0);",
+          "tokens": [
+            { "text": "    path." },
+            { "text": "moveTo", "type": "method" },
+            { "text":"(size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.5", "type": "number" },
+            { "text": ", " },
+            { "text": "0", "type": "number" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "    path.lineTo(size.width, size.height * 0.3);",
+          "tokens": [
+            { "text": "    path." },
+            { "text": "lineTo", "type": "method" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.3", "type": "number" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "    path.lineTo(size.width * 0.8, size.height);",
+          "tokens": [
+            { "text": "    path." },
+            { "text": "lineTo", "type": "method" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.8", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "    path.lineTo(size.width * 0.2, size.height);",
+          "tokens": [
+            { "text": "    path." },
+            { "text": "lineTo", "type": "method" },
+            { "text": "(size." },
+            { "text": "width", "type": "property" },
+            { "text": " * " },
+            { "text": "0.2", "type": "number" },
+            { "text": ", size." },
+            { "text": "height", "type": "property" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "    path.lineTo(0, size.height * 0.3);",
+          "tokens": [
+            { "text": "    path." },
+            { "text": "lineTo", "type": "method" },
+            { "text":"(0, size." },
+            { "text": "height", "type": "property" },
+            { "text": " * " },
+            { "text": "0.3", "type": "number" },
+            { "text": ");" }
+          ]
+        },
+        {
+          "content": "    path.close();",
+          "tokens": [
+            { "text": "    path." },
+            { "text": "close", "type": "method" },
+            { "text": "();" }
+          ]
+        },
+        {
+          "content": "    ",
+          "tokens": [{ "text": "    " }]
+        },
+        {
+          "content": "    canvas.drawPath(path, paint);",
+          "tokens": [
+            { "text": "    canvas." },
+            { "text": "drawPath", "type": "method" },
+            { "text": "(path, paint);" }
+          ]
+        },
+        {
+          "content": "  }",
+          "tokens": [{ "text": "  }" }]
+        },
+        {
+          "content": "  ",
+          "tokens": [{ "text": "  " }]
+        },
+        {
+          "content": "  @override",
+          "tokens": [
+            { "text": "  " },
+            { "text": "@override", "type": "annotation" }
+          ]
+        },
+        {
+          "content": "  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;",
+          "tokens": [
+            { "text": "  bool", "type": "keyword" },
+            { "text": " " },
+            { "text": "shouldRepaint", "type": "method" },
+            { "text": "(covariant CustomPainter oldDelegate) => " },
+            { "text": "false", "type": "keyword" },
+            { "text": ";" }
+          ]
+        },
+        {
+          "content": "}",
+          "tokens": [{ "text": "}" }]
+        }
+      ]
+    }
+  },
+  "tokenTypes": {
+    "keyword": "text-purple-400",
+    "string": "text-green-400",
+    "widget": "text-blue-400",
+    "class": "text-yellow-400",
+    "method": "text-green-400",
+    "property": "text-yellow-400",
+    "number": "text-orange-400",
+    "annotation": "text-gray-500",
+    "comment": "text-gray-500"
+  }
+}

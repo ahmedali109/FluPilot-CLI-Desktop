@@ -1,0 +1,73 @@
+#!/bin/bash
+
+# Get the absolute path to the real script location, resolving symlinks
+# If SCRIPT_DIR is already set (from parent script), use that instead
+if [ -z "$SCRIPT_DIR" ]; then
+  SOURCE="${BASH_SOURCE[0]}"
+  while [ -h "$SOURCE" ]; do
+    DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
+    SOURCE="$(readlink "$SOURCE")"
+    [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+  done
+  SCRIPT_DIR="$(cd -P "$(dirname "$SOURCE")/../../.." && pwd)"
+fi
+
+# # Only pick directory once
+# if [ -z "${FLUTTER_PROJECT_DIR:-}" ]; then
+#   source "scripts/pickers/pick_directory.sh"
+#   FLUTTER_PROJECT_DIR="$(pick_dir)"
+# fi
+
+# export FLUTTER_PROJECT_DIR
+
+source "scripts/pickers/pick_image.sh"
+
+function assets_function(){
+  DEST_DIR="${FLUTTER_PROJECT_DIR}"
+  echo "📂 Creating assets directory at ${DEST_DIR}..."
+  mkdir -p "${DEST_DIR}/assets/images"
+  mkdir -p "${DEST_DIR}/assets/icons"
+
+  image_paths="$(pick_img)"
+
+  # Convert image_paths (semicolon-separated) to array
+  IFS=';' read -ra FILE_ARRAY <<< "$image_paths"
+
+  # Exit if no files selected
+  if [[ -z "$image_paths" ]]; then
+    echo "No images selected. Exiting."
+    exit 1
+  fi
+
+  # Copy selected images to the destination directory
+  for img in "${FILE_ARRAY[@]}"; do
+    if [[ "$img" == *.svg ]]; then
+      cp "$img" "${DEST_DIR}/assets/icons/"
+    else
+      cp "$img" "${DEST_DIR}/assets/images/"
+    fi
+  done
+
+  echo "✅ Successfully copied images to ${DEST_DIR}/images/"
+  echo "✅ Successfully copied images to ${DEST_DIR}/icons/"
+  echo "📝 Updating pubspec.yaml to include assets..."
+
+  source "scripts/templates/helper/add_assets_yaml.sh"
+
+  if [[ $? -ne 0 ]]; then
+    echo "❌ Failed to update pubspec.yaml"
+    exit 1
+  fi
+
+  echo "✅ pubspec.yaml updated successfully."
+  echo "📦 Running flutter pub get to update dependencies..."
+  (cd "$DEST_DIR" && flutter pub get)
+  echo "✅ Dependencies updated successfully."
+  echo "🎉 Assets setup completed successfully!"
+  echo "You can now use the assets in your Flutter project."
+  echo
+  echo
+}
+
+# Function to generate the app icon
+export -f assets_function
