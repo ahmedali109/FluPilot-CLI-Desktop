@@ -289,8 +289,10 @@ case "${1:-}" in
     exit 0
     ;;
   *)
-    echo "❌ Unknown command: $1"
-    echo "Use --help or -h to see available commands."
-    exit 1
+    if [[ -n "${1:-}" ]]; then
+      echo "❌ Unknown command: ${1:-}"
+      echo "Use --help or -h to see available commands."
+      exit 1
+    fi
     ;;
 esac
