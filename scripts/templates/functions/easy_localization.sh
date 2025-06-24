@@ -14,9 +14,8 @@ fi
 
 source "scripts/templates/helper/create_easy_localization_structure.sh"
 source "scripts/templates/permission/ios/easy_localization_permission.sh"
-source "scripts/pickers/pick_directory.sh"
 function easy_localization(){
-  DEST_DIR="${FLUTTER_PROJECT_DIR-$(pick_dir)}"
+  DEST_DIR="${FLUTTER_PROJECT_DIR}"
 
   if [ -z "$DEST_DIR" ]; then
     echo "❌ FLUTTER_PROJECT_DIR is not set. Please set it to your Flutter project directory."

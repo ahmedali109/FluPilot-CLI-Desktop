@@ -13,9 +13,8 @@ if [ -z "$SCRIPT_DIR" ]; then
 fi
 
 source "scripts/templates/helper/create_default_splash_yaml.sh"
-source "scripts/pickers/pick_directory.sh"
 function splash_function(){
-  DEST_DIR="${FLUTTER_PROJECT_DIR-$(pick_dir)}"
+  DEST_DIR="${FLUTTER_PROJECT_DIR}"
   cd "$DEST_DIR" || exit 1
   echo "🛠️ Generating splash screen using flutter_native_splash..."
   echo "✅ flutter_native_splash found in pubspec.yaml."

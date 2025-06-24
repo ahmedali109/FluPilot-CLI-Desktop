@@ -14,9 +14,11 @@ fi
 
 
 source "scripts/pickers/pick_directory.sh"
-source "scripts/pickers/pick_directory.sh"
 function flutterBloc(){
-  DEST_DIR="${FLUTTER_PROJECT_DIR-$(pick_dir)}"
+
+  echo "🔍 Choose a directory to add cubit files in your project."
+  PICKED_DIR=$(pick_dir)
+
   NAME_CUBIT=$(gum input --placeholder "Enter cubit name ")
   # make first lettter of NAME_CUBIT uppercase
   NAME_CUBIT_CLASS=$(echo "$NAME_CUBIT" | awk '{print toupper(substr($0,1,1)) tolower(substr($0,2))}')
@@ -26,13 +28,6 @@ function flutterBloc(){
     exit 1
   fi
 
-  if [ -z "$DEST_DIR" ]; then
-    echo "❌ FLUTTER_PROJECT_DIR is not set. Please set it to your Flutter project directory."
-    exit 1
-  fi
-
-  echo "🔍 Choose a directory to add cubit files in your project."
-  PICKED_DIR=$(pick_dir "$DEST_DIR/lib")
 
   if [ -z "$PICKED_DIR" ]; then
     echo "❌ No directory selected. Please select a valid Flutter project directory."

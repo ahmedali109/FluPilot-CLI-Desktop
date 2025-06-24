@@ -109,10 +109,3 @@ source "scripts/templates/features/auth/ui/forgot_password.sh"
 
 # Print success message
 echo "✅ Auth module structure created successfully!"
-
-# Return to the original directory
-echo "🔙 Returning to the original directory..."
-echo
-echo
-cd - >/dev/null || exit 1
-cd - >/dev/null || exit 1

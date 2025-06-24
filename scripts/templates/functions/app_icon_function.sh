@@ -12,11 +12,10 @@ if [ -z "$SCRIPT_DIR" ]; then
   SCRIPT_DIR="$(cd -P "$(dirname "$SOURCE")/../../.." && pwd)"
 fi
 
-source "scripts/pickers/pick_directory.sh"
 source "scripts/templates/helper/create_default_icons_yaml.sh"
 
 function app_icon_function(){
-  DEST_DIR="${FLUTTER_PROJECT_DIR-$(pick_dir)}"
+  DEST_DIR="${FLUTTER_PROJECT_DIR}"
   cd "$DEST_DIR" || exit 1
   echo "🛠️ Generating app icon using flutter_launcher_icons..."
   echo "📂 Creating flutter_launcher_icons.yaml in $DEST_DIR..."

@@ -13,9 +13,8 @@ if [ -z "$SCRIPT_DIR" ]; then
 fi
 
 source "scripts/templates/helper/create_custom_pull_to_refresh.sh"
-source "scripts/pickers/pick_directory.sh"
 function pullToRefresh(){
-  DEST_DIR="${FLUTTER_PROJECT_DIR-$(pick_dir)}"
+  DEST_DIR="${FLUTTER_PROJECT_DIR}"
   if [ -z "$DEST_DIR" ]; then
     echo "❌ FLUTTER_PROJECT_DIR is not set. Please set it to your Flutter project directory."
     exit 1

@@ -14,9 +14,8 @@ fi
 
 
 source "scripts/templates/helper/create_onboarding_screen.sh"
-source "scripts/pickers/pick_directory.sh"
 function onBoarding_function(){
-  DEST_DIR="${FLUTTER_PROJECT_DIR-$(pick_dir)}"
+  DEST_DIR="${FLUTTER_PROJECT_DIR}"
   if [ -z "$DEST_DIR" ]; then
     echo "❌ FLUTTER_PROJECT_DIR is not set. Please set it to your Flutter project directory."
     exit 1

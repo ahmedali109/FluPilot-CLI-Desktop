@@ -15,9 +15,8 @@ fi
 
 source "scripts/templates/helper/create_notifications_service.sh"
 source "scripts/templates/permission/android/notifications_permission.sh"
-source "scripts/pickers/pick_directory.sh"
 function flutter_local_notifications(){
-  DEST_DIR="${FLUTTER_PROJECT_DIR-$(pick_dir)}"
+  DEST_DIR="${FLUTTER_PROJECT_DIR}"
 
   if [ -z "$DEST_DIR" ]; then
     echo "❌ FLUTTER_PROJECT_DIR is not set. Please set it to your Flutter project directory."

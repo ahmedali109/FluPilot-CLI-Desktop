@@ -16,9 +16,8 @@ fi
 source "scripts/templates/helper/create_local_auth_service.sh"
 source "scripts/templates/permission/android/local_auth_permission.sh"
 source "scripts/templates/permission/ios/local_auth_permission.sh"
-source "scripts/pickers/pick_directory.sh"
 function local_auth(){
-  DEST_DIR="${FLUTTER_PROJECT_DIR-$(pick_dir)}"
+  DEST_DIR="${FLUTTER_PROJECT_DIR}"
 
   if [ -z "$DEST_DIR" ]; then
     echo "❌ FLUTTER_PROJECT_DIR is not set. Please set it to your Flutter project directory."
