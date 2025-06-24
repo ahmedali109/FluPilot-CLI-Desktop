@@ -246,45 +246,26 @@
               </button>
 
               <div class="flupilot-dropdown" id="flupilot-dropdown">
-                <div class="dropdown-section">
-                  <h4> 🛠️ FluPilot CLI</h4>
-
-                  <button
-                    class="dropdown-item"
-                    data-cmd="./scripts/setup/init_flutter.sh"
-                    title="Initialize a new Flutter project with removing uncessary platforms"
-                  >
-                    create flutter project
-                  </button>
-
-                  <button
-                    class="dropdown-item"
-                    data-cmd="./scripts/setup/add_selected_packages_yaml.sh"
-                    title="Add preferred selected packages into pubspec.yaml"
-                  >
-                    Add Packages
-                  </button>
-                </div>
                 <!-- App Setup & Branding -->
                 <div class="dropdown-section">
                   <h4>📱 App Setup & Branding</h4>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh flutter_launcher_icons"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --app-icon"
                     title="Create your app icon instead of default one"
                   >
                     Create app icon
                   </button>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh flutter_native_splash"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --splash"
                     title="Create your splash screen instead of default one"
                   >
                     Create splash screen
                   </button>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh introduction_screen"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --onboarding"
                     title="Create your introduction screen"
                   >
                     Create introduction screen
@@ -296,61 +277,60 @@
                   <h4>🎨 UI Components & Widgets</h4>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh flutter_slidable"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --slidable"
                     title="Create slidable widget"
                   >
                     Create slidable widget
                   </button>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh liquid_pull_to_refresh"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --pull-to-refresh"
                     title="Create liquid pull to refresh widget"
                   >
                     Create liquid pull to refresh widget
                   </button>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh action_slider"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --action-slider"
                     title="Create action slider widget"
                   >
                     Create action slider widget
                   </button>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh google_nav_bar"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --google-navbar"
                     title="Create Google Bottom Navigation Bar"
                   >
                     Create Google Bottom Navigation Bar
                   </button>
                 </div>
-
                 <!-- Media & Assets -->
                 <div class="dropdown-section">
                   <h4>📸 Media & Assets</h4>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh image_picker"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --image-picker"
                     title="Picker your images and videos assets"
                   >
                     Pick Images/Videos
                   </button>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh audioplayers"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --audio-player"
                     title="Picker your audio files assets"
                   >
                     Pick Audio Files
                   </button>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh video_player"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --video-player"
                     title="Play videos from your assets/network"
                   >
                     Play Video Files
                   </button>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh cached_network_image"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --cached-network-image"
                     title="Cache and display network images efficiently"
                   >
                     Cached Network Image
@@ -362,21 +342,21 @@
                   <h4>🧭 Navigation & State Management</h4>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh go_router"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --go-router"
                     title="Navigate between screens with Go Router"
                   >
                     Navigate with Go Router
                   </button>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh flutter_bloc"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --cubit"
                     title="State Management with Flutter Bloc"
                   >
-                    State Management with Flutter Bloc
+                    State Management with Flutter Bloc (Create Cubit)
                   </button>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh get_it"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --get-it"
                     title="Simple service locator for dependency injection"
                   >
                     Get It (Dependency Injection)
@@ -388,45 +368,31 @@
                   <h4>🌐 Networking & API</h4>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh http"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --http"
                     title="request an api call with http"
                   >
                     network request with http
                   </button>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh dio"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --dio"
                     title="request an api call with dio"
                   >
                     network request with dio
                   </button>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh retrofit"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --retrofit"
                     title="Add Retrofit package for type-safe HTTP networking"
                   >
                     Retrofit (HTTP networking)
                   </button>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh connectivity_plus"
-                    title="Check network connectivity status"
-                  >
-                    Connectivity Plus
-                  </button>
-                  <button
-                    class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh internet_connection_checker"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --internet-connection"
                     title="Check internet connection availability"
                   >
-                    Internet Connection Checker
-                  </button>
-                  <button
-                    class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh internet_connection_checker_plus"
-                    title="Enhanced internet connection monitoring"
-                  >
-                    Internet Connection Checker Plus
+                    Internet Connection
                   </button>
                 </div>
 
@@ -435,14 +401,14 @@
                   <h4>⚙️ Code Generation & Serialization</h4>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh json_serializable"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --json-serializable"
                     title="Generate JSON serialization code"
                   >
                     JSON Serializable
                   </button>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh freezed"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --freezed"
                     title="Generate immutable data classes"
                   >
                     Freezed (Immutable Classes)
@@ -454,7 +420,7 @@
                   <h4>💾 Storage & Data</h4>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh shared_preferences"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --shared-preferences"
                     title="Store simple data in local storage"
                   >
                     Shared Preferences
@@ -466,21 +432,21 @@
                   <h4>🔥 Firebase Services</h4>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh firebase_core"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --firebase"
                     title="Initialize Firebase services"
                   >
                     Firebase Core
                   </button>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh firebase_auth"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --firebase-auth"
                     title="Firebase authentication services"
                   >
                     Firebase Auth
                   </button>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh cloud_firestore"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --cloud-firestore"
                     title="Firebase Cloud Firestore database"
                   >
                     Cloud Firestore
@@ -492,14 +458,14 @@
                   <h4>🔐 Authentication</h4>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh google_sign_in"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --google-sign-in"
                     title="Google Sign-In authentication"
                   >
                     Google Sign In
                   </button>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh local_auth"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --local-auth"
                     title="Local biometric and pin authentication"
                   >
                     Local Auth (Biometric)
@@ -511,10 +477,17 @@
                   <h4>☁️ Backend Services</h4>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh supabase_flutter"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --supabase-auth"
+                    title="Supabase backend authentication services"
+                  >
+                    Supabase Auth
+                  </button>
+                  <button
+                    class="dropdown-item"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --supabase-service"
                     title="Supabase backend services"
                   >
-                    Supabase Flutter
+                    Supabase Service (CRUD/Storage)
                   </button>
                 </div>
 
@@ -523,14 +496,14 @@
                   <h4>🌍 Localization & Notifications</h4>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh easy_localization"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --easy-localization"
                     title="Easy app localization and internationalization"
                   >
                     Easy Localization
                   </button>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/main_template.sh flutter_local_notifications"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --local-notifications"
                     title="Local push notifications"
                   >
                     Flutter Local Notifications
@@ -541,7 +514,7 @@
                   <h4>Generated Assistant Files</h4>
                   <button
                     class="dropdown-item"
-                    data-cmd="./scripts/templates/create_helpers.sh"
+                    data-cmd="./scripts/helper/check_and_install_deps.sh --assistants-files"
                     title="Generate assistant files for your project (e.g., app_regex, extensions , spacing , app_strings , theme )"
                   >
                     Assistant Files

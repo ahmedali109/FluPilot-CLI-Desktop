@@ -806,7 +806,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Handle dropdown command clicks
   const dropdownItems = document.querySelectorAll('.dropdown-item');
   dropdownItems.forEach(item => {
-    item.addEventListener('click', e => {
+    item.addEventListener('click', async e => {
       const command = e.target.getAttribute('data-cmd');
       const prompt = e.target.getAttribute('data-prompt');
 
@@ -814,11 +814,45 @@ document.addEventListener('DOMContentLoaded', () => {
         // Check if this command needs user input
         if (prompt && command.endsWith(' ')) {
           // Show modal to get user input
-          modalHandler.showModal('Git Command', prompt, userInput => {
+          modalHandler.showModal('Git Command', prompt, async userInput => {
             const fullCommand = command + userInput;
 
+            // Ensure we have an active terminal
+            if (!currentTerminalId) {
+              console.log('No active terminal, creating one...');
+              try {
+                const result =
+                  await window.electronAPI.createTerminalWithOptions();
+                currentTerminalId = result.id;
+                // Wait a bit for terminal to be ready
+                await new Promise(resolve => setTimeout(resolve, 200));
+              } catch (error) {
+                console.error('Failed to create terminal for command:', error);
+                return;
+              }
+            }
+
             // Send complete command to terminal
-            if (window.electronAPI && window.electronAPI.sendCommand) {
+            if (
+              window.electronAPI &&
+              window.electronAPI.sendCommandToTerminal &&
+              currentTerminalId
+            ) {
+              console.log(
+                'Sending prompted command to terminal:',
+                fullCommand,
+                'terminalId:',
+                currentTerminalId
+              );
+              window.electronAPI.sendCommandToTerminal(
+                currentTerminalId,
+                fullCommand
+              );
+            } else if (window.electronAPI && window.electronAPI.sendCommand) {
+              console.log(
+                'Using legacy sendCommand for prompted command:',
+                fullCommand
+              );
               window.electronAPI.sendCommand(fullCommand);
             } else {
               // Fallback: write to terminal directly
@@ -826,8 +860,39 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           });
         } else {
+          // Ensure we have an active terminal
+          if (!currentTerminalId) {
+            console.log('No active terminal, creating one...');
+            try {
+              const result =
+                await window.electronAPI.createTerminalWithOptions();
+              currentTerminalId = result.id;
+              // Wait a bit for terminal to be ready
+              await new Promise(resolve => setTimeout(resolve, 200));
+            } catch (error) {
+              console.error('Failed to create terminal for command:', error);
+              return;
+            }
+          }
+
           // Send command directly to terminal
-          if (window.electronAPI && window.electronAPI.sendCommand) {
+          if (
+            window.electronAPI &&
+            window.electronAPI.sendCommandToTerminal &&
+            currentTerminalId
+          ) {
+            console.log(
+              'Sending dropdown command to terminal:',
+              command,
+              'terminalId:',
+              currentTerminalId
+            );
+            window.electronAPI.sendCommandToTerminal(
+              currentTerminalId,
+              command
+            );
+          } else if (window.electronAPI && window.electronAPI.sendCommand) {
+            console.log('Using legacy sendCommand for dropdown:', command);
             window.electronAPI.sendCommand(command);
           } else {
             // Fallback: write to terminal directly
@@ -851,16 +916,40 @@ document.addEventListener('DOMContentLoaded', () => {
   // Handle quick command buttons
   const quickCmds = document.querySelectorAll('.quick-cmd');
   quickCmds.forEach(btn => {
-    btn.addEventListener('click', e => {
+    btn.addEventListener('click', async e => {
       const command = e.target.getAttribute('data-cmd');
       if (command && command.trim()) {
+        // Ensure we're on the terminal page and terminal is ready
+        if (!currentTerminalId) {
+          console.log('No active terminal, creating one...');
+          try {
+            const result = await window.electronAPI.createTerminalWithOptions();
+            currentTerminalId = result.id;
+            // Wait a bit for terminal to be ready
+            await new Promise(resolve => setTimeout(resolve, 200));
+          } catch (error) {
+            console.error('Failed to create terminal for command:', error);
+            return;
+          }
+        }
+
         // Send command to terminal with terminalId
         if (
           window.electronAPI &&
           window.electronAPI.sendCommandToTerminal &&
           currentTerminalId
         ) {
+          console.log(
+            'Sending command to terminal:',
+            command,
+            'terminalId:',
+            currentTerminalId
+          );
           window.electronAPI.sendCommandToTerminal(currentTerminalId, command);
+        } else if (window.electronAPI && window.electronAPI.sendCommand) {
+          // Fallback to legacy method
+          console.log('Using legacy sendCommand for:', command);
+          window.electronAPI.sendCommand(command);
         } else if (window.electronAPI && window.electronAPI.writeToTerminal) {
           // Fallback: write to terminal directly
           window.electronAPI.writeToTerminal(command + '\r');

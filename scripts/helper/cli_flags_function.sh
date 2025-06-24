@@ -288,6 +288,12 @@ case "${1:-}" in
     flutter_local_notifications
     exit 0
     ;;
+  --assistants-files)
+    source "scripts/setup/project_directory_setup.sh"
+    execute_flag_commands "scripts/templates/create_helpers.sh"
+    create_helpers
+    exit 0
+    ;;
   *)
     if [[ -n "${1:-}" ]]; then
       echo "❌ Unknown command: ${1:-}"
