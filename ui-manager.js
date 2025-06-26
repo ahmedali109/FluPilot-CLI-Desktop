@@ -10,8 +10,6 @@ let searchQuery = ''; // Add search state
 // Initialize the application
 async function initializeApp() {
   try {
-    console.log('Initializing Flutter Explorer...');
-
     // Initialize project manager
     projectManager = new ProjectManager();
 
@@ -28,7 +26,6 @@ async function initializeApp() {
     renderProjectsList();
     renderCurrentProject();
 
-    console.log('Flutter Explorer initialized successfully');
   } catch (error) {
     console.error('Error initializing app:', error);
   }
@@ -70,7 +67,6 @@ function filterProjects(projects) {
 // Load the initial project from code-content.json
 async function loadInitialProject() {
   try {
-    console.log('Loading initial project...');
     const response = await fetch(
       './ui-projects-templates/record-selection-screen.json'
     );
@@ -79,7 +75,6 @@ async function loadInitialProject() {
     }
 
     const jsonData = await response.json();
-    console.log('JSON data loaded:', jsonData);
 
     // Create the initial project
     const project = projectManager.loadProjectFromJSON(
@@ -97,7 +92,6 @@ async function loadInitialProject() {
       project.setActiveFile(allFiles[0].fullName);
     }
 
-    console.log('Initial project loaded:', project);
     return project;
   } catch (error) {
     console.error('Error loading initial project:', error);
@@ -370,9 +364,8 @@ async function loadSampleProjects() {
       }
     }
 
-    console.log('Sample projects loading completed');
   } catch (error) {
-    console.log('Error in loadSampleProjects:', error);
+    console.error('Error loading sample projects:', error);
   }
 }
 
@@ -557,27 +550,14 @@ function getFrameworkIcon(framework) {
 
 // Select a project
 function selectProject(projectId) {
-  console.log('Selecting project:', projectId);
   const project = projectManager.setActiveProject(projectId);
   if (project) {
-    console.log('Project selected:', project.name);
     currentProject = project;
-
     // Set the first file as active if no file is currently active
     const allFiles = project.rootFolder.getAllFiles();
-    console.log(
-      'Project files:',
-      allFiles.map(f => f.fullName)
-    );
-
     if (allFiles.length > 0) {
       const activeFile = project.setActiveFile(allFiles[0].fullName);
-      console.log(
-        'Active file set:',
-        activeFile ? activeFile.fullName : 'none'
-      );
     }
-
     renderCurrentProject();
     renderProjectsList(); // Refresh to show current selection
 
@@ -767,8 +747,6 @@ function updatePreviewImage() {
 
 // Render code from file model
 function renderCodeFromFile(fileModel) {
-  console.log('Rendering code from file model:', fileModel);
-
   const codeContainer = document.querySelector('#flutter-code .line-numbers');
   if (!codeContainer) return;
 
@@ -879,8 +857,6 @@ function copyCode(event) {
 
 // Show notification helper function
 function showWorkspaceNotification(message, type = 'info') {
-  console.log(`[${type.toUpperCase()}] ${message}`);
-
   // Try to use existing notification system if available
   if (typeof showNotification === 'function') {
     showNotification(message, type);
@@ -958,7 +934,6 @@ async function selectProjectDirectory() {
 
     throw new Error('No directory selected');
   } catch (error) {
-    console.error('Failed to select project directory:', error);
     showWorkspaceNotification('Failed to select directory', 'error');
     return null;
   }
@@ -1026,8 +1001,6 @@ async function createNewFile(projectDir, content) {
         `File would be created at: ${filePath}`,
         'info'
       );
-      console.log('File content:', content);
-
       return {
         path: filePath,
         name: filename,
@@ -1039,7 +1012,6 @@ async function createNewFile(projectDir, content) {
       };
     }
   } catch (error) {
-    console.error('Failed to create file:', error);
     showWorkspaceNotification(
       `Failed to create file: ${error.message}`,
       'error'
@@ -1060,18 +1032,12 @@ async function AddCodeToWorkSpaceIDE(event) {
         'No code available to export. Please select a project file first.'
       );
     }
-
-    console.log('Code copied successfully, length:', copiedCode.length);
-
     // Step 2: Select a project directory
     showWorkspaceNotification('Please select project directory...', 'info');
     const projectDir = await selectProjectDirectory();
     if (!projectDir) {
       throw new Error('No project directory selected');
     }
-
-    console.log('Project directory selected:', projectDir);
-
     // Step 3: Create a new .dart file
     showWorkspaceNotification('Creating Dart file...', 'info');
     const newFile = await createNewFile(projectDir, copiedCode);
@@ -1095,19 +1061,10 @@ async function AddCodeToWorkSpaceIDE(event) {
         `✅ Successfully exported code file ${newFile.name}!`,
         'success'
       );
-
-      // Show success details in console
-      console.log('File export completed successfully:', {
-        path: newFile.path,
-        name: newFile.name,
-        codeLength: copiedCode.length,
-        projectDirectory: projectDir,
-      });
     } else {
       throw new Error('Failed to create the file');
     }
   } catch (error) {
-    console.error('AddCodeToWorkSpaceIDE failed:', error);
     showWorkspaceNotification(`❌ Export failed: ${error.message}`, 'error');
   }
 }

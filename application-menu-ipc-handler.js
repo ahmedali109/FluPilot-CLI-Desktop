@@ -1,17 +1,14 @@
-
 // Application Menu IPC Handlers
 if (window.electronAPI) {
   // Settings handler
   window.electronAPI.onOpenSettings(() => {
     if (settingsManager && settingsManager.openModal) {
       settingsManager.openModal();
-      console.log('Settings opened from menu');
     }
   });
 
   // File operation handlers
   window.electronAPI.onFileOpened(data => {
-    console.log('File opened from menu:', data.path);
     showNotification(`File opened: ${data.path}`, 'success');
 
     // Add to recent files if the function exists
@@ -25,7 +22,6 @@ if (window.electronAPI) {
   });
 
   window.electronAPI.onFolderOpened(data => {
-    console.log('Folder opened from menu:', data.path);
     showNotification(`Working directory changed to: ${data.path}`, 'info');
 
     // Update the current working directory display if you have one
@@ -36,7 +32,6 @@ if (window.electronAPI) {
   window.electronAPI.onClearTerminal(() => {
     if (terminal) {
       terminal.clear();
-      console.log('Terminal cleared from menu');
       showNotification('Terminal cleared', 'info');
     }
   });
@@ -54,12 +49,8 @@ if (window.electronAPI) {
       if (terminal && terminal.focus) {
         terminal.focus();
       }
-
-      console.log('New terminal created from menu and status updated to connected');
       showNotification('New terminal created', 'success');
     } catch (error) {
-      console.error('Failed to create new terminal from menu:', error);
-
       // Update status to disconnected on failure
       if (typeof updateStatus === 'function') {
         updateStatus(false);
@@ -72,7 +63,6 @@ if (window.electronAPI) {
   window.electronAPI.onKillTerminal(() => {
     if (window.electronAPI && window.electronAPI.killTerminal) {
       window.electronAPI.killTerminal();
-      console.log('Terminal killed from menu');
       showNotification('Terminal process terminated', 'warning');
     }
   });
@@ -84,14 +74,12 @@ if (window.electronAPI) {
         navigator.clipboard
           .writeText(selection)
           .then(() => {
-            console.log('Terminal selection copied to clipboard');
             showNotification(
               'Terminal selection copied to clipboard',
               'success'
             );
           })
           .catch(err => {
-            console.error('Failed to copy selection:', err);
             showNotification('Failed to copy selection', 'error');
           });
       } else {
@@ -106,11 +94,9 @@ if (window.electronAPI) {
             }
           }
           navigator.clipboard.writeText(content).then(() => {
-            console.log('Terminal content copied to clipboard');
             showNotification('Terminal content copied to clipboard', 'success');
           });
         } catch (err) {
-          console.error('Failed to copy terminal content:', err);
           showNotification('Failed to copy terminal content', 'error');
         }
       }
@@ -124,12 +110,10 @@ if (window.electronAPI) {
         .then(text => {
           if (window.electronAPI && window.electronAPI.writeToTerminal) {
             window.electronAPI.writeToTerminal(text);
-            console.log('Text pasted to terminal');
             showNotification('Text pasted to terminal', 'success');
           }
         })
         .catch(err => {
-          console.error('Failed to paste text:', err);
           showNotification('Failed to paste text', 'error');
         });
     }
@@ -137,16 +121,24 @@ if (window.electronAPI) {
 
   // Navigation handlers
   window.electronAPI.onNavigateToTerminal(() => {
-    if (window.electronAPI && window.electronAPI.navigateToPage) {
+    // Use shared navigation logic if available
+    if (typeof window.navigateToTerminal === 'function') {
+      window.navigateToTerminal();
+    } else if (window.electronAPI && window.electronAPI.navigateToPage) {
       window.electronAPI.navigateToPage('Terminal');
-      console.log('Navigating to Terminal view');
+    } else {
+      window.location.href = './index.html';
     }
   });
 
   window.electronAPI.onNavigateToUIkit(() => {
-    if (window.electronAPI && window.electronAPI.navigateToPage) {
+    // Use shared navigation logic if available
+    if (typeof window.navigateToflutterCode === 'function') {
+      window.navigateToflutterCode();
+    } else if (window.electronAPI && window.electronAPI.navigateToPage) {
       window.electronAPI.navigateToPage('Flutter Code Explorer');
-      console.log('Navigating to UI Kit view');
+    } else {
+      window.location.href = './flutter_explorer.html';
     }
   });
 
@@ -154,7 +146,6 @@ if (window.electronAPI) {
   window.electronAPI.onRunGitCommand(command => {
     if (window.electronAPI && window.electronAPI.sendCommand) {
       window.electronAPI.sendCommand(command);
-      console.log('Executing git command from menu:', command);
       showNotification(`Executing: ${command}`, 'info');
     }
   });
@@ -162,7 +153,6 @@ if (window.electronAPI) {
   window.electronAPI.onRunFlutterCommand(command => {
     if (window.electronAPI && window.electronAPI.sendCommand) {
       window.electronAPI.sendCommand(command);
-      console.log('Executing flutter command from menu:', command);
       showNotification(`Executing: ${command}`, 'info');
     }
   });

@@ -3,17 +3,33 @@ import { AppStrings } from './appStrings.js';
 let terminalNav = null;
 let flutterCode = null;
 
-function navigateToTerminal() {
+async function navigateToTerminal() {
   if (window.electronAPI && window.electronAPI.navigateToPage) {
-    window.electronAPI.navigateToPage(AppStrings.navigation.terminal.name);
-    updateNavigationState(AppStrings.navigation.terminal.name);
+    try {
+      await window.electronAPI.navigateToPage(
+        AppStrings.navigation.terminal.name
+      );
+      updateNavigationState(AppStrings.navigation.terminal.name);
+    } catch (e) {
+      window.location.href = AppStrings.navigation.terminal.path;
+    }
+  } else {
+    window.location.href = AppStrings.navigation.terminal.path;
   }
 }
 
-function navigateToflutterCode() {
+async function navigateToflutterCode() {
   if (window.electronAPI && window.electronAPI.navigateToPage) {
-    window.electronAPI.navigateToPage(AppStrings.navigation.flutterCode.name);
-    updateNavigationState(AppStrings.navigation.flutterCode.name);
+    try {
+      await window.electronAPI.navigateToPage(
+        AppStrings.navigation.flutterCode.name
+      );
+      updateNavigationState(AppStrings.navigation.flutterCode.name);
+    } catch (e) {
+      window.location.href = AppStrings.navigation.flutterCode.path;
+    }
+  } else {
+    window.location.href = AppStrings.navigation.flutterCode.path;
   }
 }
 

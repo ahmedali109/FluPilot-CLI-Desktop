@@ -1,10 +1,5 @@
 // Global keyboard shortcuts for the Electron Terminal
 document.addEventListener('keydown', function (event) {
-  console.log(
-    `Key pressed: ${event.key}, Modifier: ${event.ctrlKey ? 'Ctrl' : ''}${
-      event.metaKey ? 'Cmd' : ''
-    }${event.shiftKey ? 'Shift' : ''}`
-  );
   // Use Cmd on Mac, Ctrl on Windows/Linux
   const modifier = navigator.platform.includes('Mac')
     ? event.metaKey
@@ -142,13 +137,11 @@ document.addEventListener('keydown', function (event) {
   // Update Check Shortcut
   if (modifier && event.shiftKey && event.key === 'U') {
     event.preventDefault();
-    console.log('Update shortcut triggered: Cmd/Ctrl+Shift+U');
     // Check for updates
     if (window.electronAPI && window.electronAPI.checkForUpdates) {
-      console.log('Calling checkForUpdates...');
       window.electronAPI.checkForUpdates(true);
     } else {
-      console.log('checkForUpdates not available in electronAPI');
+      console.warn('Update check not supported in this environment.');
     }
     return;
   }
@@ -346,8 +339,6 @@ Escape             Close modals/dropdowns
       'info'
     );
   }
-  console.log(shortcuts);
-
   // Also try to show in an alert as fallback
   alert(shortcuts.trim());
 }

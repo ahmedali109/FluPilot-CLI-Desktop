@@ -1,5 +1,3 @@
-// Enhanced Terminal Manager for Renderer Process
-// Note: xterm.js and addons are loaded via script tags in HTML
 class RendererTerminalManager {
   constructor() {
     this.terminals = new Map();
@@ -17,9 +15,9 @@ class RendererTerminalManager {
       await this.applySettings();
 
       this.isInitialized = true;
-      console.log('RendererTerminalManager initialized');
     } catch (error) {
-      console.error('Failed to initialize RendererTerminalManager:', error);
+      this.isInitialized = false;
+      throw error;
     }
   }
 
@@ -78,13 +76,11 @@ class RendererTerminalManager {
 
   createTerminal(containerId, options = {}) {
     if (!this.isInitialized) {
-      console.error('RendererTerminalManager not initialized');
       return null;
     }
 
     // Check if xterm globals are available
     if (typeof Terminal === 'undefined') {
-      console.error('Terminal not available - ensure xterm.js is loaded');
       return null;
     }
 
@@ -120,7 +116,6 @@ class RendererTerminalManager {
       );
       return result;
     } catch (error) {
-      console.error('Failed to create backend terminal:', error);
       throw error;
     }
   }
@@ -144,19 +139,12 @@ async function initializeTerminal() {
   try {
     // Check if required globals are available
     if (typeof Terminal === 'undefined') {
-      console.error('Terminal is not available. Make sure xterm.js is loaded.');
       return;
     }
     if (typeof FitAddon === 'undefined') {
-      console.error(
-        'FitAddon is not available. Make sure xterm-addon-fit is loaded.'
-      );
       return;
     }
     if (typeof WebLinksAddon === 'undefined') {
-      console.error(
-        'WebLinksAddon is not available. Make sure xterm-addon-web-links is loaded.'
-      );
       return;
     }
 
@@ -173,15 +161,11 @@ async function initializeTerminal() {
         const backendResult =
           await window.electronAPI.createTerminalWithOptions();
         currentTerminalId = backendResult.id;
-        console.log('Backend terminal created:', currentTerminalId);
       } catch (error) {
-        console.error('Failed to create backend terminal:', error);
-        // Fall back to old API
         try {
           await window.electronAPI.createTerminal();
-          console.log('Fallback terminal created');
         } catch (fallbackError) {
-          console.error('Failed to create fallback terminal:', fallbackError);
+          throw fallbackError;
         }
       }
 
@@ -192,8 +176,6 @@ async function initializeTerminal() {
       updateStatus(true);
     }
   } catch (error) {
-    console.error('Failed to initialize terminal:', error);
-    // Show error to user
     const statusElement = document.getElementById('connection-status');
     if (statusElement) {
       statusElement.textContent = 'Error';
@@ -211,156 +193,6 @@ if (document.readyState === 'loading') {
 
 // Status element
 let statusElement;
-
-// GitHub CLI handler class
-class GitHubCLIHandler {
-  constructor() {
-    // Since process.cwd() is not available in renderer, we'll use the home directory or let the main process handle it
-    this.currentDirectory = null; // Will be handled by main process
-  }
-
-  // Helper method to append output to terminal
-  appendToOutput(message, className = 'command-output') {
-    const colorMap = {
-      'command-output': '\x1b[36m', // Cyan
-      'error-output': '\x1b[31m', // Red
-      'success-output': '\x1b[32m', // Green
-    };
-
-    const color = colorMap[className] || '\x1b[37m'; // Default white
-    const resetColor = '\x1b[0m';
-
-    terminal.writeln(`${color}${message}${resetColor}`);
-  }
-
-  // Helper method to scroll to bottom
-  scrollToBottom() {
-    terminal.scrollToBottom();
-  }
-
-  // Get user info after successful authentication
-  async getUserInfo() {
-    try {
-      const userResult = await window.electronAPI.executeCommand(
-        'gh api user',
-        this.currentDirectory
-      );
-
-      if (!userResult.error) {
-        const user = JSON.parse(userResult.output);
-        this.appendToOutput(
-          `👤 Logged in as: ${user.login} (${user.name || 'No name set'})`,
-          'success-output'
-        );
-        if (user.email) {
-          this.appendToOutput(`📧 Email: ${user.email}`, 'command-output');
-        }
-      } else {
-        this.appendToOutput(
-          '⚠️ Could not fetch user info, but authentication appears successful',
-          'command-output'
-        );
-      }
-    } catch (error) {
-      this.appendToOutput(
-        '⚠️ Could not fetch user info: ' + error.message,
-        'command-output'
-      );
-    }
-  }
-
-  // Main GitHub authentication handler
-  async handleGitHubSignIn() {
-    this.appendToOutput(
-      '🔐 Checking GitHub CLI installation...',
-      'command-output'
-    );
-
-    try {
-      // First check if gh is installed
-      const checkResult = await window.electronAPI.executeCommand(
-        'gh --version',
-        this.currentDirectory
-      );
-
-      if (checkResult.error) {
-        this.appendToOutput(
-          '❌ GitHub CLI (gh) is not installed.',
-          'error-output'
-        );
-        this.appendToOutput(
-          '📥 Please install GitHub CLI first: https://cli.github.com/',
-          'command-output'
-        );
-        this.appendToOutput(
-          '💡 Or run: brew install gh (on macOS)',
-          'command-output'
-        );
-        this.scrollToBottom();
-        return;
-      }
-
-      this.appendToOutput(
-        '✅ GitHub CLI found: ' + checkResult.output.split('\n')[0],
-        'command-output'
-      );
-
-      // Check current auth status
-      this.appendToOutput(
-        '🔍 Checking authentication status...',
-        'command-output'
-      );
-
-      const authResult = await window.electronAPI.executeCommand(
-        'gh auth status',
-        this.currentDirectory
-      );
-
-      if (authResult.error && authResult.error.includes('not logged into')) {
-        this.appendToOutput(
-          '🔐 Not authenticated. Starting login process...',
-          'command-output'
-        );
-        this.appendToOutput(
-          '🌐 Opening browser for GitHub authentication...',
-          'command-output'
-        );
-
-        // Start the login process
-        const loginResult = await window.electronAPI.executeCommand(
-          'gh auth login --web',
-          this.currentDirectory
-        );
-
-        if (loginResult.error) {
-          this.appendToOutput(
-            '❌ Authentication failed: ' + loginResult.error,
-            'error-output'
-          );
-        } else {
-          this.appendToOutput(
-            '✅ GitHub authentication successful!',
-            'command-output'
-          );
-          this.getUserInfo();
-        }
-      } else {
-        this.appendToOutput(
-          '✅ Already authenticated with GitHub!',
-          'command-output'
-        );
-        this.getUserInfo();
-      }
-    } catch (error) {
-      this.appendToOutput(
-        '❌ Error during GitHub authentication: ' + error.message,
-        'error-output'
-      );
-    }
-
-    this.scrollToBottom();
-  }
-}
 
 // Modal Input Handler
 class ModalInputHandler {
@@ -449,9 +281,6 @@ class ModalInputHandler {
   }
 }
 
-// Create GitHub CLI handler instance
-const githubHandler = new GitHubCLIHandler();
-
 // Create Modal Input Handler instance
 const modalHandler = new ModalInputHandler();
 
@@ -481,7 +310,6 @@ function updateStatus(connected) {
 // Initialize terminal event handlers after terminal is created
 async function setupTerminalHandlers() {
   if (!terminal) {
-    console.error('Terminal not initialized');
     return;
   }
 
@@ -531,16 +359,8 @@ window.electronAPI.onTerminalData(data => {
 
 // Listen for terminal exit
 window.electronAPI.onTerminalExit(data => {
-  // Comprehensive debugging
-  console.log('Terminal exit - typeof data:', typeof data);
-  console.log('Terminal exit - data:', data);
-  console.log('Terminal exit - JSON.stringify(data):', JSON.stringify(data));
-
   // Handle both old and new format
   const code = data?.code || (data?.terminalId ? data.code : data);
-  console.log('Terminal exit - extracted code:', code);
-  console.log('Terminal exit - data.signal:', data?.signal);
-
   // More robust handling of exit data
   let exitCode = 'unknown';
   let signal = null;
@@ -570,12 +390,10 @@ window.electronAPI.onTerminalExit(data => {
 // Listen for terminal page ready signal
 if (window.electronAPI.onTerminalPageReady) {
   window.electronAPI.onTerminalPageReady(() => {
-    console.log('Terminal page ready signal received');
     // Verify terminal connection status
     setTimeout(() => {
       // If we have a terminal process, make sure status reflects it
       if (terminal && terminal.element) {
-        console.log('Terminal element exists, updating status to connected');
         updateStatus(true);
       }
     }, 100);
@@ -588,10 +406,8 @@ document.addEventListener('DOMContentLoaded', function () {
   if (typeof settingsManager !== 'undefined' && settingsManager) {
     // Apply saved theme on startup with a slight delay to ensure everything is ready
     setTimeout(async () => {
-      console.log('Applying startup themes...');
       await settingsManager.applyTheme();
       await settingsManager.applyTerminalSettings();
-      console.log('Startup themes applied');
     }, 100);
   }
 
@@ -635,7 +451,6 @@ window.addEventListener('resize', function () {
 window.addEventListener('DOMContentLoaded', async () => {
   // Initialize status element reference
   statusElement = document.getElementById('connection-status');
-  console.log('Status element found:', !!statusElement);
 
   // Set initial status to connecting
   updateStatus(false);
@@ -646,14 +461,11 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     // Check if terminal already exists
     const terminalStatus = await window.electronAPI.checkTerminalStatus();
-    console.log('Terminal status check:', terminalStatus);
 
     if (terminalStatus.exists && terminalStatus.isAlive) {
-      console.log('Existing terminal found, reconnecting...');
       updateStatus(true);
       terminal.focus();
     } else {
-      console.log('Creating new terminal...');
       await window.electronAPI.createTerminal();
       updateStatus(true);
       terminal.focus();
@@ -663,12 +475,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     setTimeout(() => {
       fitAddon.fit();
     }, 100);
-
-    console.log(
-      'Terminal successfully initialized and status set to connected'
-    );
   } catch (error) {
-    console.error('Failed to create initial terminal:', error);
     updateStatus(false);
     terminal.writeln(
       '\x1b[31mFailed to create terminal. Click "New Terminal" to try again.\x1b[0m'
@@ -705,18 +512,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update status to connected after successful creation
         updateStatus(true);
         terminal.focus();
-
-        console.log('New terminal created:', currentTerminalId);
       } catch (error) {
-        console.error('Failed to create new terminal:', error);
         // Try fallback
         try {
           await window.electronAPI.createTerminal();
           updateStatus(true);
           terminal.focus();
-          console.log('Fallback terminal created');
         } catch (fallbackError) {
-          console.error('Fallback also failed:', fallbackError);
           updateStatus(false);
         }
       }
@@ -734,9 +536,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateStatus(false);
         terminal.writeln('\x1b[31mTerminal process killed\x1b[0m');
         currentTerminalId = null;
-      } catch (error) {
-        console.error('Failed to kill terminal:', error);
-      }
+      } catch (error) {}
     });
   }
 
@@ -819,7 +619,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Ensure we have an active terminal
             if (!currentTerminalId) {
-              console.log('No active terminal, creating one...');
               try {
                 const result =
                   await window.electronAPI.createTerminalWithOptions();
@@ -827,7 +626,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Wait a bit for terminal to be ready
                 await new Promise(resolve => setTimeout(resolve, 200));
               } catch (error) {
-                console.error('Failed to create terminal for command:', error);
                 return;
               }
             }
@@ -838,21 +636,11 @@ document.addEventListener('DOMContentLoaded', () => {
               window.electronAPI.sendCommandToTerminal &&
               currentTerminalId
             ) {
-              console.log(
-                'Sending prompted command to terminal:',
-                fullCommand,
-                'terminalId:',
-                currentTerminalId
-              );
               window.electronAPI.sendCommandToTerminal(
                 currentTerminalId,
                 fullCommand
               );
             } else if (window.electronAPI && window.electronAPI.sendCommand) {
-              console.log(
-                'Using legacy sendCommand for prompted command:',
-                fullCommand
-              );
               window.electronAPI.sendCommand(fullCommand);
             } else {
               // Fallback: write to terminal directly
@@ -862,7 +650,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
           // Ensure we have an active terminal
           if (!currentTerminalId) {
-            console.log('No active terminal, creating one...');
             try {
               const result =
                 await window.electronAPI.createTerminalWithOptions();
@@ -870,7 +657,6 @@ document.addEventListener('DOMContentLoaded', () => {
               // Wait a bit for terminal to be ready
               await new Promise(resolve => setTimeout(resolve, 200));
             } catch (error) {
-              console.error('Failed to create terminal for command:', error);
               return;
             }
           }
@@ -881,18 +667,11 @@ document.addEventListener('DOMContentLoaded', () => {
             window.electronAPI.sendCommandToTerminal &&
             currentTerminalId
           ) {
-            console.log(
-              'Sending dropdown command to terminal:',
-              command,
-              'terminalId:',
-              currentTerminalId
-            );
             window.electronAPI.sendCommandToTerminal(
               currentTerminalId,
               command
             );
           } else if (window.electronAPI && window.electronAPI.sendCommand) {
-            console.log('Using legacy sendCommand for dropdown:', command);
             window.electronAPI.sendCommand(command);
           } else {
             // Fallback: write to terminal directly
@@ -921,14 +700,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (command && command.trim()) {
         // Ensure we're on the terminal page and terminal is ready
         if (!currentTerminalId) {
-          console.log('No active terminal, creating one...');
           try {
             const result = await window.electronAPI.createTerminalWithOptions();
             currentTerminalId = result.id;
             // Wait a bit for terminal to be ready
             await new Promise(resolve => setTimeout(resolve, 200));
           } catch (error) {
-            console.error('Failed to create terminal for command:', error);
             return;
           }
         }
@@ -939,16 +716,9 @@ document.addEventListener('DOMContentLoaded', () => {
           window.electronAPI.sendCommandToTerminal &&
           currentTerminalId
         ) {
-          console.log(
-            'Sending command to terminal:',
-            command,
-            'terminalId:',
-            currentTerminalId
-          );
           window.electronAPI.sendCommandToTerminal(currentTerminalId, command);
         } else if (window.electronAPI && window.electronAPI.sendCommand) {
           // Fallback to legacy method
-          console.log('Using legacy sendCommand for:', command);
           window.electronAPI.sendCommand(command);
         } else if (window.electronAPI && window.electronAPI.writeToTerminal) {
           // Fallback: write to terminal directly
@@ -960,14 +730,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
-  // GitHub signin functionality
-  const githubSigninBtn = document.getElementById('github-signin');
-  if (githubSigninBtn) {
-    githubSigninBtn.addEventListener('click', () => {
-      githubHandler.handleGitHubSignIn();
-    });
-  }
 
   // Settings button functionality
   const sidebarSettingsBtn = document.getElementById('sidebar-settings-btn');
@@ -1074,7 +836,7 @@ class SettingsManager {
         return { ...this.defaultSettings, ...parsed };
       }
     } catch (error) {
-      console.warn('Failed to load settings:', error);
+      throw error;
     }
     return { ...this.defaultSettings };
   }
@@ -1087,7 +849,7 @@ class SettingsManager {
       );
       return true;
     } catch (error) {
-      console.error('Failed to save settings:', error);
+      throw error;
       return false;
     }
   }
@@ -1434,7 +1196,6 @@ class SettingsManager {
           );
         }
       } catch (error) {
-        console.error('Theme parsing error:', error);
         this.showNotification(
           'Failed to parse theme file! Please check that your JSON is valid.',
           'error'
@@ -1654,8 +1415,6 @@ class SettingsManager {
 
   async applyTheme() {
     const theme = await this.getActiveTheme();
-    console.log('Applying theme:', this.currentSettings.theme, theme);
-
     // Apply CSS custom properties
     const root = document.documentElement;
     Object.entries(theme.appTheme).forEach(([key, value]) => {
@@ -1665,13 +1424,11 @@ class SettingsManager {
 
     // Apply theme class
     document.body.className = `theme-${this.currentSettings.theme}`;
-    console.log('Applied theme class:', document.body.className);
   }
 
   async applyTerminalSettings() {
     if (typeof terminal !== 'undefined' && terminal) {
       const theme = await this.getActiveTheme();
-      console.log('Applying terminal theme:', theme.terminalTheme);
 
       // Update terminal options
       terminal.options.fontFamily = this.currentSettings.fontFamily;
@@ -1706,7 +1463,10 @@ class SettingsManager {
           }
         }, 50);
       } catch (error) {
-        console.warn('Terminal refresh failed:', error);
+        this.showNotification(
+          'Failed to apply terminal settings. Please check console for details.',
+          'error'
+        );
       }
 
       // Refresh terminal layout
@@ -1742,7 +1502,6 @@ class SettingsManager {
 
       return themeData;
     } catch (error) {
-      console.error(`Failed to load built-in theme ${themeName}:`, error);
       this.showNotification(
         `Failed to load ${themeName} theme. Using default.`,
         'error'
@@ -1860,10 +1619,8 @@ const settingsManager = new SettingsManager();
 
 // Ensure themes are applied immediately after initialization
 setTimeout(async () => {
-  console.log('Force applying themes on initialization...');
   await settingsManager.applyTheme();
   await settingsManager.applyTerminalSettings();
-  console.log('Themes applied successfully');
 }, 200);
 
 // Development mode detection and initialization
@@ -1874,31 +1631,12 @@ document.addEventListener('DOMContentLoaded', async function () {
       const appInfo = await window.electronAPI.getAppInfo();
 
       if (appInfo.isDevelopment) {
-        console.log('🛠️ DEVELOPMENT MODE ACTIVE');
-        console.log('📋 Available Development Shortcuts:');
-        console.log('  • Cmd/Ctrl + Shift + I  → Toggle DevTools');
-        console.log('  • Cmd/Ctrl + R          → Reload App');
-        console.log('  • F1 or Cmd/Ctrl + ?    → Show All Shortcuts');
-        console.log('  • Cmd/Ctrl + ,          → Open Settings');
-        console.log('  • Cmd/Ctrl + Shift + T  → Cycle Themes');
-
         // Add development indicator to the title bar
         const titleElement = document.querySelector('.titlebar-title');
         if (titleElement) {
           titleElement.innerHTML = `${titleElement.textContent} <span style="color: #ff6b6b; font-size: 0.8em;">[DEV]</span>`;
         }
-
-        // Add development info to console
-        console.log(`📊 App Info:`, {
-          version: appInfo.version,
-          electron: appInfo.electronVersion,
-          node: appInfo.nodeVersion,
-          platform: appInfo.platform,
-          arch: appInfo.arch,
-        });
       }
-    } catch (error) {
-      console.warn('Could not get app info:', error);
-    }
+    } catch (error) {}
   }
 });

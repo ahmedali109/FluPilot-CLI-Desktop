@@ -437,14 +437,14 @@ async function handleCheckForUpdates(mainWindow, updateManager) {
   }
 
   try {
-    // Show checking dialog
-    const checkingDialog = dialog.showMessageBox(mainWindow, {
-      type: 'info',
-      title: 'Checking for Updates',
-      message: 'Checking for updates...',
-      detail: 'Please wait while we check for the latest version.',
-      buttons: ['Cancel'],
-    });
+    // // Show checking dialog
+    // const checkingDialog = dialog.showMessageBox(mainWindow, {
+    //   type: 'info',
+    //   title: 'Checking for Updates',
+    //   message: 'Checking for updates...',
+    //   detail: 'Please wait while we check for the latest version.',
+    //   buttons: ['Cancel'],
+    // });
 
     // Get current update status
     const updateStatus = updateManager.getUpdateStatus();
@@ -466,10 +466,7 @@ async function handleCheckForUpdates(mainWindow, updateManager) {
     // Get the updated status after check
     const finalStatus = updateManager.getUpdateStatus();
 
-    console.log('Update check completed. Status:', finalStatus);
   } catch (error) {
-    console.error('Error checking for updates:', error);
-
     // Show error dialog
     dialog.showMessageBox(mainWindow, {
       type: 'error',

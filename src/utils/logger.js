@@ -2,10 +2,12 @@
  * Logger utility for the application
  */
 
+const { APP_CONFIG } = require('../config/constants');
+
 class Logger {
   constructor(context = 'App') {
     this.context = context;
-    this.isDevelopment = process.env.NODE_ENV === 'development';
+    this.isDevelopment = APP_CONFIG.IS_DEVELOPMENT;
   }
 
   _formatMessage(level, message, data = null) {
