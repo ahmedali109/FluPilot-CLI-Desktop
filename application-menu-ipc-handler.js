@@ -143,15 +143,54 @@ if (window.electronAPI) {
   });
 
   // Git and Flutter command handlers
-  window.electronAPI.onRunGitCommand(command => {
-    if (window.electronAPI && window.electronAPI.sendCommand) {
+  // Ensure we use the same currentTerminalId as the renderer
+  // This assumes currentTerminalId is declared in the global scope of renderer.js
+  window.electronAPI.onRunGitCommand(async command => {
+    // Ensure a terminal exists and is ready
+    if (typeof currentTerminalId === 'undefined' || !currentTerminalId) {
+      try {
+        const result = await window.electronAPI.createTerminalWithOptions();
+        currentTerminalId = result.id;
+        // Wait a bit for terminal to be ready
+        await new Promise(resolve => setTimeout(resolve, 200));
+      } catch (error) {
+        showNotification('Failed to create terminal for command', 'error');
+        return;
+      }
+    }
+    if (
+      window.electronAPI &&
+      window.electronAPI.sendCommandToTerminal &&
+      currentTerminalId
+    ) {
+      window.electronAPI.sendCommandToTerminal(currentTerminalId, command);
+      showNotification(`Executing: ${command}`, 'info');
+    } else if (window.electronAPI && window.electronAPI.sendCommand) {
       window.electronAPI.sendCommand(command);
       showNotification(`Executing: ${command}`, 'info');
     }
   });
 
-  window.electronAPI.onRunFlutterCommand(command => {
-    if (window.electronAPI && window.electronAPI.sendCommand) {
+  window.electronAPI.onRunFlutterCommand(async command => {
+    // Ensure a terminal exists and is ready
+    if (typeof currentTerminalId === 'undefined' || !currentTerminalId) {
+      try {
+        const result = await window.electronAPI.createTerminalWithOptions();
+        currentTerminalId = result.id;
+        await new Promise(resolve => setTimeout(resolve, 200));
+      } catch (error) {
+        showNotification('Failed to create terminal for command', 'error');
+        return;
+      }
+    }
+    if (
+      window.electronAPI &&
+      window.electronAPI.sendCommandToTerminal &&
+      currentTerminalId
+    ) {
+      window.electronAPI.sendCommandToTerminal(currentTerminalId, command);
+      showNotification(`Executing: ${command}`, 'info');
+    } else if (window.electronAPI && window.electronAPI.sendCommand) {
       window.electronAPI.sendCommand(command);
       showNotification(`Executing: ${command}`, 'info');
     }
