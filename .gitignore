@@ -56,3 +56,5 @@ release/
 # Temporary files
 tmp/
 temp/
+
+create-release.sh
