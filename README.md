@@ -13,7 +13,20 @@ A powerful terminal application built with Electron, node-pty, and xterm.js that
 
 ## Screenshots
 
-![FluPilot-CLI Desktop](assets/Icon.png)
+<img src="assets/Icon.png" alt="FluPilot-CLI Desktop" width="200" />
+
+<img src="assets/screenshots/screenshot1.png" alt="FluPilot CLI Terminal" width="400" />
+<img src="assets/screenshots/screenshot2.png" alt="FluPilot CLI App Menu" width="400" />
+<img src="assets/screenshots/screenshot3.png" alt="FluPilot CLI About Dialog" width="400" />
+<img src="assets/screenshots/screenshot4.png" alt="FluPilot CLI Update Dialog" width="400" />
+<img src="assets/screenshots/screenshot5.png" alt="FluPilot CLI Git Commands" width="400" />
+<img src="assets/screenshots/screenshot6.png" alt="FluPilot CLI UI Kit Commands" width="400" />
+<img src="assets/screenshots/screenshot7.png" alt="FluPilot CLI Theme Settings" width="400" />
+<img src="assets/screenshots/screenshot8.png" alt="FluPilot CLI Terminal Font Settings" width="400" />
+<img src="assets/screenshots/screenshot9.png" alt="FluPilot CLI Terminal Behavior Settings" width="400" />
+<img src="assets/screenshots/screenshot10.png" alt="FluPilot CLI UI Kit Preview" width="400" />
+<img src="assets/screenshots/screenshot11.png" alt="FluPilot CLI UI Kit Library" width="400" />
+<img src="assets/screenshots/screenshot12.png" alt="FluPilot CLI UI Kit Library" width="400" />
 
 ## Installation
 
