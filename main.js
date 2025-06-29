@@ -181,3 +181,12 @@ app.on('before-quit', async event => {
 if (process.cwd() === '/') {
   process.chdir(os.homedir());
 }
+
+ipcMain.handle('show-open-dialog', async (event, options) => {
+  const result = await dialog.showOpenDialog(options);
+  return result;
+});
+
+ipcMain.handle('add-recent-file', async (event, filePath) => {
+  app.addRecentDocument(filePath);
+});
