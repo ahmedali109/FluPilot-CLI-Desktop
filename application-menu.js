@@ -304,7 +304,7 @@ function createApplicationMenu(mainWindow, updateManager = null) {
           label: 'Report Issue',
           click: () => {
             shell.openExternal(
-              'https://github.com/yourusername/flupilot-cli/issues'
+              'https://github.com/ahmedali109/FluPilot-CLI-Desktop/issues'
             );
           },
         },

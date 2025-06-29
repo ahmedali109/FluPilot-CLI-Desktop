@@ -12,10 +12,10 @@ if [ -z "$SCRIPT_DIR" ]; then
   SCRIPT_DIR="$(cd -P "$(dirname "$SOURCE")/.." && pwd)"
 fi
 
-source "scripts/utils/styles/gum_select_style.sh"
-source "scripts/utils/constant/gum_options_strings.sh"
-source "scripts/utils/gum_options/available_categories.sh"
-source "scripts/utils/gum_options/available_packages.sh"
+source "$SCRIPT_DIR/utils/styles/gum_select_style.sh"
+source "$SCRIPT_DIR/utils/constant/gum_options_strings.sh"
+source "$SCRIPT_DIR/utils/gum_options/available_categories.sh"
+source "$SCRIPT_DIR/utils/gum_options/available_packages.sh"
 
 trap 'echo "\n❌ Selection cancelled by user."; exit 1' SIGINT
 

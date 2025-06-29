@@ -12,10 +12,11 @@ if [ -z "$SCRIPT_DIR" ]; then
   SCRIPT_DIR="$(cd -P "$(dirname "$SOURCE")/../../.." && pwd)"
 fi
 
-source "scripts/templates/helper/create_video_player_service.sh"
-source "scripts/templates/permission/android/video_player_permission.sh"
+source "$SCRIPT_DIR/templates/helper/create_video_player_service.sh"
+source "$SCRIPT_DIR/templates/permission/android/video_player_permission.sh"
+
 function videoPlayers(){
-  DEST_DIR="${FLUTTER_PROJECT_DIR}"
+   DEST_DIR="${FLUTTER_PROJECT_DIR}"
   if [ -z "$DEST_DIR" ]; then
     echo "❌ FLUTTER_PROJECT_DIR is not set. Please set it to your Flutter project directory."
     exit 1

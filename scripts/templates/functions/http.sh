@@ -13,7 +13,8 @@ if [ -z "$SCRIPT_DIR" ]; then
 fi
 
 
-source "scripts/templates/helper/create_http_service.sh"
+source "$SCRIPT_DIR/templates/helper/create_http_service.sh"
+
 function http(){
   DEST_DIR="${FLUTTER_PROJECT_DIR}"
   if [ -z "$DEST_DIR" ]; then

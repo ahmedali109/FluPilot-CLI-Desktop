@@ -13,9 +13,10 @@ if [ -z "$SCRIPT_DIR" ]; then
 fi
 
 
-source "scripts/templates/helper/create_local_auth_service.sh"
-source "scripts/templates/permission/android/local_auth_permission.sh"
-source "scripts/templates/permission/ios/local_auth_permission.sh"
+source "$SCRIPT_DIR/templates/helper/create_local_auth_service.sh"
+source "$SCRIPT_DIR/templates/permission/android/local_auth_permission.sh"
+source "$SCRIPT_DIR/templates/permission/ios/local_auth_permission.sh"
+
 function local_auth(){
   DEST_DIR="${FLUTTER_PROJECT_DIR}"
 

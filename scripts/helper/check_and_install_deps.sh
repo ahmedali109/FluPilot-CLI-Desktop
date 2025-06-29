@@ -6,7 +6,7 @@ function print_and_run_if_deps_installed() {
     echo "✅ $dep is already installed."
   done
   echo "Running main script..."
-  source "scripts/main.sh"
+  source "$SCRIPT_DIR/main.sh"
   exit 0
 }
 
@@ -20,7 +20,7 @@ done
 SCRIPT_DIR="$(cd -P "$(dirname "$SOURCE")/.." && pwd)"
 
 #Available flags
-source "scripts/helper/cli_flags_function.sh"
+source "$SCRIPT_DIR/helper/cli_flags_function.sh"
 
 missing_deps=()
 
@@ -56,7 +56,7 @@ if [ ${#missing_deps[@]} -ne 0 ]; then
   read -p "Would you like to install them now? [Y/N]: " answer
   if [[ "$answer" =~ ^[Yy]$ ]]; then
     for dep in "${missing_deps[@]}"; do
-      source "scripts/setup/install_dependency.sh" "$dep"
+      source "$SCRIPT_DIR/setup/install_dependency.sh" "$dep"
     done
     echo "All missing dependencies have been installed."
     print_and_run_if_deps_installed

@@ -11,10 +11,11 @@ if [ -z "$SCRIPT_DIR" ]; then
   done
   SCRIPT_DIR="$(cd -P "$(dirname "$SOURCE")/../../.." && pwd)"
 fi
-source "scripts/templates/helper/create_cloud_firestore.sh"
+
+source "$SCRIPT_DIR/templates/helper/create_cloud_firestore.sh"
 
 function cloud_firestore(){
-  DEST_DIR="${FLUTTER_PROJECT_DIR}"
+ DEST_DIR="${FLUTTER_PROJECT_DIR}"
 
   if [ -z "$DEST_DIR" ]; then
     echo "❌ FLUTTER_PROJECT_DIR is not set. Please set it to your Flutter project directory."

@@ -13,7 +13,8 @@ if [ -z "$SCRIPT_DIR" ]; then
 fi
 
 
-source "scripts/templates/helper/create_google_nav_bar.sh"
+source "$SCRIPT_DIR/templates/helper/create_google_nav_bar.sh"
+
 function googleNavBar(){
   DEST_DIR="${FLUTTER_PROJECT_DIR}"
   if [ -z "$DEST_DIR" ]; then

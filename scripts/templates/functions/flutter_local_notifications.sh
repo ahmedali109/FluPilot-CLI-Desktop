@@ -13,8 +13,9 @@ if [ -z "$SCRIPT_DIR" ]; then
 fi
 
 
-source "scripts/templates/helper/create_notifications_service.sh"
-source "scripts/templates/permission/android/notifications_permission.sh"
+source "$SCRIPT_DIR/templates/helper/create_notifications_service.sh"
+source "$SCRIPT_DIR/templates/permission/android/notifications_permission.sh"
+
 function flutter_local_notifications(){
   DEST_DIR="${FLUTTER_PROJECT_DIR}"
 

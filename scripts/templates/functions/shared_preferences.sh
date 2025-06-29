@@ -13,9 +13,10 @@ if [ -z "$SCRIPT_DIR" ]; then
 fi
 
 
-source "scripts/templates/helper/create_shared_preferences.sh"
+source "$SCRIPT_DIR/templates/helper/create_shared_preferences.sh"
+
 function shared_preferences(){
-  DEST_DIR="${FLUTTER_PROJECT_DIR}"
+ DEST_DIR="${FLUTTER_PROJECT_DIR}"
 
   if [ -z "$DEST_DIR" ]; then
     echo "❌ FLUTTER_PROJECT_DIR is not set. Please set it to your Flutter project directory."

@@ -13,7 +13,8 @@ if [ -z "$SCRIPT_DIR" ]; then
 fi
 
 
-source "scripts/templates/helper/create_go_router.sh"
+source "$SCRIPT_DIR/templates/helper/create_go_router.sh"
+
 function goRouter(){
   DEST_DIR="${FLUTTER_PROJECT_DIR}"
   if [ -z "$DEST_DIR" ]; then

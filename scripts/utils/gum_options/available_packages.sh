@@ -12,7 +12,7 @@ if [ -z "$SCRIPT_DIR" ]; then
   SCRIPT_DIR="$(cd -P "$(dirname "$SOURCE")/../.." && pwd)"
 fi
 
-source "scripts/utils/constant/gum_options_strings.sh"
+source "$SCRIPT_DIR/utils/constant/gum_options_strings.sh"
 
 # App setup tools
 PKG_App_Icon=(

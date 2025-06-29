@@ -13,9 +13,10 @@ if [ -z "$SCRIPT_DIR" ]; then
 fi
 
 
-source "scripts/templates/helper/create_api_constants.sh"
-source "scripts/templates/helper/create_dio_factory.sh"
-source "scripts/templates/helper/create_api_error_handler.sh"
+source "$SCRIPT_DIR/templates/helper/create_api_constants.sh"
+source "$SCRIPT_DIR/templates/helper/create_dio_factory.sh"
+source "$SCRIPT_DIR/templates/helper/create_api_error_handler.sh"
+
 function dio(){
   DEST_DIR="${FLUTTER_PROJECT_DIR}"
 

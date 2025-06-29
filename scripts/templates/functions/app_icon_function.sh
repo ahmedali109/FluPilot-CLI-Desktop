@@ -12,7 +12,8 @@ if [ -z "$SCRIPT_DIR" ]; then
   SCRIPT_DIR="$(cd -P "$(dirname "$SOURCE")/../../.." && pwd)"
 fi
 
-source "scripts/templates/helper/create_default_icons_yaml.sh"
+
+source "$SCRIPT_DIR/templates/helper/create_default_icons_yaml.sh"
 
 function app_icon_function(){
   DEST_DIR="${FLUTTER_PROJECT_DIR}"

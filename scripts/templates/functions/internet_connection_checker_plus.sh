@@ -1,4 +1,5 @@
 #!/bin/bash
+
 function internet_connection_checker_plus(){
    DEST_DIR="${FLUTTER_PROJECT_DIR}"
 
@@ -32,7 +33,8 @@ function internet_connection_checker_plus(){
   else
     echo "internet_connection_checker_plus dependency already exists in pubspec.yaml."
   fi
-  
+
+
   create_internet_connection_checker_plus_service_content() {
     cat <<EOF > "$DEST_DIR/lib/core/helpers/internet_connection_checker_plus_service.dart"
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';

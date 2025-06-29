@@ -13,12 +13,10 @@ if [ -z "$SCRIPT_DIR" ]; then
 fi
 
 
-source "scripts/pickers/pick_directory.sh"
+source "$SCRIPT_DIR/pickers/pick_directory.sh"
+
 function flutterBloc(){
-
-  echo "🔍 Choose a directory to add cubit files in your project."
-  PICKED_DIR=$(pick_dir)
-
+  DEST_DIR="${FLUTTER_PROJECT_DIR}"
   NAME_CUBIT=$(gum input --placeholder "Enter cubit name ")
   # make first lettter of NAME_CUBIT uppercase
   NAME_CUBIT_CLASS=$(echo "$NAME_CUBIT" | awk '{print toupper(substr($0,1,1)) tolower(substr($0,2))}')
@@ -28,6 +26,13 @@ function flutterBloc(){
     exit 1
   fi
 
+  if [ -z "$DEST_DIR" ]; then
+    echo "❌ FLUTTER_PROJECT_DIR is not set. Please set it to your Flutter project directory."
+    exit 1
+  fi
+
+  echo "🔍 Choose a directory to add cubit files in your project."
+  PICKED_DIR=$(pick_dir "$DEST_DIR/lib")
 
   if [ -z "$PICKED_DIR" ]; then
     echo "❌ No directory selected. Please select a valid Flutter project directory."
@@ -42,7 +47,15 @@ function flutterBloc(){
     echo "❌ Failed to create directory $PICKED_DIR/cubit/$NAME_CUBIT"
     exit 1
   fi
-
+  # check if flutter_bloc dependency is in pubspec.yaml
+  PUBSPEC_FILE="${FLUTTER_PROJECT_DIR}/pubspec.yaml"
+  if ! grep -q "flutter_bloc:" "$PUBSPEC_FILE"; then
+    echo "Adding flutter_bloc dependency to pubspec.yaml..."
+    (cd "$FLUTTER_PROJECT_DIR" && flutter pub add flutter_bloc && flutter pub get)
+    echo "✅ flutter_bloc dependency added to pubspec.yaml."
+  else
+    echo "flutter_bloc dependency already exists in pubspec.yaml."
+  fi
   echo "📂 Created directory $PICKED_DIR/cubit/$NAME_CUBIT"
   cat <<EOF > "$PICKED_DIR/cubit/$NAME_CUBIT/${NAME_CUBIT}_state.dart"
 part of '${NAME_CUBIT}_cubit.dart';

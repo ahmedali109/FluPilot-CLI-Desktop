@@ -12,7 +12,8 @@ if [ -z "$SCRIPT_DIR" ]; then
   SCRIPT_DIR="$(cd -P "$(dirname "$SOURCE")/../../.." && pwd)"
 fi
 
-source "scripts/templates/helper/create_supabase_service.sh"
+source "$SCRIPT_DIR/templates/helper/create_supabase_service.sh"
+
 function supabase_service(){
   DEST_DIR="${FLUTTER_PROJECT_DIR}"
 

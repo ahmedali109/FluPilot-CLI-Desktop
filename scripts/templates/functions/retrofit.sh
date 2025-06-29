@@ -13,7 +13,8 @@ if [ -z "$SCRIPT_DIR" ]; then
 fi
 
 
-source "scripts/templates/helper/create_api_service.sh"
+source "$SCRIPT_DIR/templates/helper/create_api_service.sh"
+
 function retrofit() {
   DEST_DIR="${FLUTTER_PROJECT_DIR}"
 

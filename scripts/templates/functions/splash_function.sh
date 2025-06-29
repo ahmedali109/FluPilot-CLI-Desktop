@@ -12,8 +12,10 @@ if [ -z "$SCRIPT_DIR" ]; then
   SCRIPT_DIR="$(cd -P "$(dirname "$SOURCE")/../../.." && pwd)"
 fi
 
-source "scripts/templates/helper/create_default_splash_yaml.sh"
+source "$SCRIPT_DIR/templates/helper/create_default_splash_yaml.sh"
+
 function splash_function(){
+
   DEST_DIR="${FLUTTER_PROJECT_DIR}"
   cd "$DEST_DIR" || exit 1
   echo "🛠️ Generating splash screen using flutter_native_splash..."

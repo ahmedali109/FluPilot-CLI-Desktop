@@ -13,7 +13,8 @@ if [ -z "$SCRIPT_DIR" ]; then
 fi
 
 
-source "scripts/templates/helper/custom_slidable.sh"
+source "$SCRIPT_DIR/templates/helper/custom_slidable.sh"
+
 function SlidableFunction(){
   DEST_DIR="${FLUTTER_PROJECT_DIR}"
   if [ -z "$DEST_DIR" ]; then

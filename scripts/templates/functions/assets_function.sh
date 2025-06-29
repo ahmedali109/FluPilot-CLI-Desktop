@@ -12,21 +12,15 @@ if [ -z "$SCRIPT_DIR" ]; then
   SCRIPT_DIR="$(cd -P "$(dirname "$SOURCE")/../../.." && pwd)"
 fi
 
-# # Only pick directory once
-# if [ -z "${FLUTTER_PROJECT_DIR:-}" ]; then
-#   source "scripts/pickers/pick_directory.sh"
-#   FLUTTER_PROJECT_DIR="$(pick_dir)"
-# fi
 
-# export FLUTTER_PROJECT_DIR
-
-source "scripts/pickers/pick_image.sh"
+source "$SCRIPT_DIR/pickers/pick_image.sh"
 
 function assets_function(){
-  DEST_DIR="${FLUTTER_PROJECT_DIR}"
+
+  DEST_DIR="${FLUTTER_PROJECT_DIR}/assets"
   echo "📂 Creating assets directory at ${DEST_DIR}..."
-  mkdir -p "${DEST_DIR}/assets/images"
-  mkdir -p "${DEST_DIR}/assets/icons"
+  mkdir -p "${DEST_DIR}/images"
+  mkdir -p "${DEST_DIR}/icons"
 
   image_paths="$(pick_img)"
 
@@ -42,9 +36,9 @@ function assets_function(){
   # Copy selected images to the destination directory
   for img in "${FILE_ARRAY[@]}"; do
     if [[ "$img" == *.svg ]]; then
-      cp "$img" "${DEST_DIR}/assets/icons/"
+      cp "$img" "${DEST_DIR}/icons/"
     else
-      cp "$img" "${DEST_DIR}/assets/images/"
+      cp "$img" "${DEST_DIR}/images/"
     fi
   done
 
@@ -52,7 +46,7 @@ function assets_function(){
   echo "✅ Successfully copied images to ${DEST_DIR}/icons/"
   echo "📝 Updating pubspec.yaml to include assets..."
 
-  source "scripts/templates/helper/add_assets_yaml.sh"
+  source "$SCRIPT_DIR/templates/helper/add_assets_yaml.sh"
 
   if [[ $? -ne 0 ]]; then
     echo "❌ Failed to update pubspec.yaml"
@@ -61,7 +55,7 @@ function assets_function(){
 
   echo "✅ pubspec.yaml updated successfully."
   echo "📦 Running flutter pub get to update dependencies..."
-  (cd "$DEST_DIR" && flutter pub get)
+  (cd "$FLUTTER_PROJECT_DIR" && flutter pub get)
   echo "✅ Dependencies updated successfully."
   echo "🎉 Assets setup completed successfully!"
   echo "You can now use the assets in your Flutter project."

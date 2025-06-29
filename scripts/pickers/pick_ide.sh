@@ -12,7 +12,7 @@ if [ -z "$SCRIPT_DIR" ]; then
   SCRIPT_DIR="$(cd -P "$(dirname "$SOURCE")/.." && pwd)"
 fi
 
-source "scripts/utils/styles/gum_select_style.sh"
+source "$SCRIPT_DIR/utils/styles/gum_select_style.sh"
 
 IDE_CHOICE_OPEN=$(gum choose "${GUM_SELECTED_STYLE[@]}" "vscode" "Android Studio" --header="🛠️ Choose an editor to open your Flutter project:")
 

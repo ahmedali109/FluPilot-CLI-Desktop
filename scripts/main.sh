@@ -13,19 +13,19 @@ if [ -z "$SCRIPT_DIR" ]; then
 fi
 
 #Show ASCII BANNER
-source "scripts/setup/ascii_banner.sh"
+source "$SCRIPT_DIR/setup/ascii_banner.sh"
 
 #Create Flutter project
-source "scripts/setup/init_flutter_project.sh"
+source "$SCRIPT_DIR/setup/init_flutter_project.sh"
 
 #Choose form package manager
-source "scripts/setup/select_packages.sh"
+source "$SCRIPT_DIR/setup/select_packages.sh"
 
 #Add packages and dependencies
-source "scripts/setup/add_packages.sh"
+source "$SCRIPT_DIR/setup/add_packages.sh"
 
 #Generate templates
-source "scripts/templates/main_template.sh"
+source "$SCRIPT_DIR/templates/main_template.sh"
 
 #Choose IDE to open
-source "scripts/pickers/pick_ide.sh"
+source "$SCRIPT_DIR/pickers/pick_ide.sh"

@@ -13,7 +13,8 @@ if [ -z "$SCRIPT_DIR" ]; then
 fi
 
 
-source "scripts/templates/helper/create_onboarding_screen.sh"
+source "$SCRIPT_DIR/templates/helper/create_onboarding_screen.sh"
+
 function onBoarding_function(){
   DEST_DIR="${FLUTTER_PROJECT_DIR}"
   if [ -z "$DEST_DIR" ]; then

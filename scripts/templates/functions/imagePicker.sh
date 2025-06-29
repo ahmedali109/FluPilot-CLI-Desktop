@@ -12,8 +12,9 @@ if [ -z "$SCRIPT_DIR" ]; then
   SCRIPT_DIR="$(cd -P "$(dirname "$SOURCE")/../../.." && pwd)"
 fi
 
-source "scripts/templates/helper/create_image_picker.sh"
-source "scripts/templates/permission/ios/image_picker_permission.sh"
+source "$SCRIPT_DIR/templates/helper/create_image_picker.sh"
+source "$SCRIPT_DIR/templates/permission/ios/image_picker_permission.sh"
+
 function imagePicker(){
   DEST_DIR="${FLUTTER_PROJECT_DIR}"
   if [ -z "$DEST_DIR" ]; then

@@ -6,7 +6,7 @@ if [ -z "$SCRIPT_DIR" ]; then
 fi
 
 # Source pick_dir function from pick_directory.sh
-source "scripts/pickers/pick_directory.sh"
+source "$SCRIPT_DIR/pickers/pick_directory.sh"
 
 # --- Main Flow ---
 echo "📁 Select project location:"

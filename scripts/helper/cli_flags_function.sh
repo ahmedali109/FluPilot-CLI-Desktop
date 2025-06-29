@@ -77,8 +77,22 @@ function show_help() {
   echo "  --easy-localization             Add multi-language support"
   echo "  --local-notifications           Add local notifications"
   echo ""
+  echo "Development Tools:"
+  echo "  --assistants-files              Create assistant files"
 }
 
+# If SCRIPT_DIR is already set (from parent script), use that instead
+if [ -z "$SCRIPT_DIR" ]; then
+  SOURCE="${BASH_SOURCE[0]}"
+  while [ -h "$SOURCE" ]; do
+    DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
+    SOURCE="$(readlink "$SOURCE")"
+    [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+  done
+  SCRIPT_DIR="$(cd -P "$(dirname "$SOURCE")/../.." && pwd)"
+fi
+
+echo "Using script directory: $SCRIPT_DIR"
 
 case "${1:-}" in
   --version|-v)
@@ -93,7 +107,7 @@ case "${1:-}" in
     ;;
   --change-directory)
     CACHE_FILE="$(pwd)/.flupilot_last_directory"
-    source "scripts/pickers/pick_directory.sh"
+    source "$SCRIPT_DIR/pickers/pick_directory.sh"
     NEW_DIR=$(pick_dir)
     echo "$NEW_DIR" > "$CACHE_FILE"
     echo "✅ Directory changed to: $NEW_DIR"
@@ -106,185 +120,186 @@ case "${1:-}" in
     exit 0
     ;;
   --assets)
-    source "scripts/setup/project_directory_setup.sh"
-    execute_flag_commands "scripts/templates/functions/assets_function.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/functions/assets_function.sh"
     assets_function
     exit 0
     ;;
   --app-icon)
-    source "scripts/setup/project_directory_setup.sh"
-    execute_flag_commands "scripts/templates/functions/app_icon_function.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/functions/app_icon_function.sh"
     app_icon_function
     exit 0
     ;;
   --splash)
-    source "scripts/setup/project_directory_setup.sh"
-    execute_flag_commands "scripts/templates/functions/splash_function.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/functions/splash_function.sh"
     splash_function
     exit 0
     ;;
   --onboarding)
-    source "scripts/setup/project_directory_setup.sh"
-    execute_flag_commands "scripts/templates/functions/onBoarding_function.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/functions/onBoarding_function.sh"
     onBoarding_function
     exit 0
     ;;
   --slidable)
-    source "scripts/setup/project_directory_setup.sh"
-    execute_flag_commands "scripts/templates/functions/slidable_function.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/functions/slidable_function.sh"
     SlidableFunction
     exit 0
     ;;
   --pull-to-refresh)
-    source "scripts/setup/project_directory_setup.sh"
-    execute_flag_commands "scripts/templates/functions/pull_to_refresh.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/functions/pull_to_refresh.sh"
     pullToRefresh
     exit 0
     ;;
   --action-slider)
-    source "scripts/setup/project_directory_setup.sh"
-    execute_flag_commands "scripts/templates/functions/actionSlider.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/functions/actionSlider.sh"
     actionSlider
     exit 0
     ;;
   --google-navbar)
-    source "scripts/setup/project_directory_setup.sh"
-    execute_flag_commands "scripts/templates/functions/googleNavBar.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/functions/googleNavBar.sh"
     googleNavBar
     exit 0
     ;;
   --image-picker)
-    source "scripts/setup/project_directory_setup.sh"
-    execute_flag_commands "scripts/templates/functions/imagePicker.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/functions/imagePicker.sh"
     imagePicker
     exit 0
     ;;
   --audio-player)
-    source "scripts/setup/project_directory_setup.sh"
-    execute_flag_commands "scripts/templates/functions/audioPlayers.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/functions/audioPlayers.sh"
     audioPlayers
     exit 0
     ;;
   --video-player)
-    source "scripts/setup/project_directory_setup.sh"
-    execute_flag_commands "scripts/templates/functions/videoPlayers.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/functions/videoPlayers.sh"
     videoPlayers
     exit 0
     ;;
   --go-router)
-    source "scripts/setup/project_directory_setup.sh"
-    execute_flag_commands "scripts/templates/functions/goRouter.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/functions/goRouter.sh"
     goRouter
     exit 0
     ;;
   --cubit)
-    execute_flag_commands "scripts/templates/functions/flutterBloc.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/functions/flutterBloc.sh"
     flutterBloc
     exit 0
     ;;
   --http)
-    source "scripts/setup/project_directory_setup.sh"
-    execute_flag_commands "scripts/templates/functions/http.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/functions/http.sh"
     http
     exit 0
     ;;
   --dio)
-    source "scripts/setup/project_directory_setup.sh"
-    execute_flag_commands "scripts/templates/functions/dio.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/functions/dio.sh"
     dio
     exit 0
     ;;
   --retrofit)
-    source "scripts/setup/project_directory_setup.sh"
-    execute_flag_commands "scripts/templates/functions/retrofit.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/functions/retrofit.sh"
     retrofit
     exit 0
     ;;
   --cached-network-image)
-    source "scripts/setup/project_directory_setup.sh"
-    execute_flag_commands "scripts/templates/functions/cached_network_image.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/functions/cached_network_image.sh"
     cached_network_image
     exit 0
     ;;
   --internet-connection)
-    source "scripts/setup/project_directory_setup.sh"
-    execute_flag_commands "scripts/templates/functions/internet_connection.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/functions/internet_connection.sh"
     internet_connection
     exit 0
     ;;
   --json-serializable)
-    source "scripts/setup/project_directory_setup.sh"
-    execute_flag_commands "scripts/templates/functions/json_serializable.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/functions/json_serializable.sh"
     json_serializable
     exit 0
     ;;
   --freezed)
-    source "scripts/setup/project_directory_setup.sh"
-    execute_flag_commands "scripts/templates/functions/freezed.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/functions/freezed.sh"
     freezed
     exit 0
     ;;
   --get-it)
-    source "scripts/setup/project_directory_setup.sh"
-    execute_flag_commands "scripts/templates/functions/get_it.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/functions/get_it.sh"
     get_it
     exit 0
     ;;
   --shared-preferences)
-    source "scripts/setup/project_directory_setup.sh"
-    execute_flag_commands "scripts/templates/functions/shared_preferences.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/functions/shared_preferences.sh"
     shared_preferences
     exit 0
     ;;
   --firebase)
-    source "scripts/setup/project_directory_setup.sh"
-    source "scripts/setup/setup_firebase.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    source "$SCRIPT_DIR/setup/setup_firebase.sh"
     exit 0
     ;;
   --firebase-auth)
-    source "scripts/setup/project_directory_setup.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
     (cd "$FLUTTER_PROJECT_DIR" && echo "🔄 Adding firebase_auth dependency..." && flutter pub add firebase_auth && flutter pub get && echo "✅ firebase_auth added to pubspec.yaml" && echo "🔄 Running Firebase authentication setup...")
-    source "scripts/templates/features/auth/create_auth_structure.sh"
+    source "$SCRIPT_DIR/templates/features/auth/create_auth_structure.sh"
     exit 0
     ;;
   --cloud-firestore)
-    source "scripts/setup/project_directory_setup.sh"
-    execute_flag_commands "scripts/templates/functions/cloud_firestore.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/functions/cloud_firestore.sh"
     cloud_firestore
     exit 0
     ;;
   --supabase-auth)
-    source "scripts/setup/project_directory_setup.sh"
-    source "scripts/templates/features/auth/create_auth_structure.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    source "$SCRIPT_DIR/templates/features/auth/create_auth_structure.sh"
     exit 0
     ;;
   --supabase-service)
-    source "scripts/setup/project_directory_setup.sh"
-    execute_flag_commands "scripts/templates/functions/supabase_service.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/functions/supabase_service.sh"
     supabase_service
     exit 0
     ;;
   --google-sign-in)
-    source "scripts/setup/project_directory_setup.sh"
-    execute_flag_commands "scripts/templates/permission/ios/google_sign_in_permission.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/permission/ios/google_sign_in_permission.sh"
     add_google_signin_ios_config
     exit 0
     ;;
   --local-auth)
-    source "scripts/setup/project_directory_setup.sh"
-    execute_flag_commands "scripts/templates/functions/local_auth.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/functions/local_auth.sh"
     local_auth
     exit 0
     ;;
   --easy-localization)
-    source "scripts/setup/project_directory_setup.sh"
-    execute_flag_commands "scripts/templates/functions/easy_localization.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/functions/easy_localization.sh"
     easy_localization
     exit 0
     ;;
   --local-notifications)
-    source "scripts/setup/project_directory_setup.sh"
-    execute_flag_commands "scripts/templates/functions/flutter_local_notifications.sh"
+    source "$SCRIPT_DIR/setup/project_directory_setup.sh"
+    execute_flag_commands "$SCRIPT_DIR/templates/functions/flutter_local_notifications.sh"
     flutter_local_notifications
     exit 0
     ;;

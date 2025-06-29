@@ -13,7 +13,8 @@ if [ -z "$SCRIPT_DIR" ]; then
 fi
 
 
-source "scripts/templates/helper/create_api_error_model.sh"
+source "$SCRIPT_DIR/templates/helper/create_api_error_model.sh"
+
 function json_serializable(){
   DEST_DIR="${FLUTTER_PROJECT_DIR}"
 

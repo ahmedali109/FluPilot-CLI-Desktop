@@ -579,7 +579,7 @@ EOL
     SCRIPT_DIR="$(cd -P "$(dirname "$SOURCE")/../../.." && pwd)"
   fi
 
-  source "scripts/templates/helper/add_assets_yaml.sh"
+  source "$SCRIPT_DIR/templates/helper/add_assets_yaml.sh"
 
   echo "✅ Localization structure created successfully at $DEST_DIR"
   echo "You can now use these localization files in your Flutter project"

@@ -12,8 +12,9 @@ if [ -z "$SCRIPT_DIR" ]; then
   SCRIPT_DIR="$(cd -P "$(dirname "$SOURCE")/../../.." && pwd)"
 fi
 
-source "scripts/templates/helper/create_easy_localization_structure.sh"
-source "scripts/templates/permission/ios/easy_localization_permission.sh"
+source "$SCRIPT_DIR/templates/helper/create_easy_localization_structure.sh"
+source "$SCRIPT_DIR/templates/permission/ios/easy_localization_permission.sh"
+
 function easy_localization(){
   DEST_DIR="${FLUTTER_PROJECT_DIR}"
 
