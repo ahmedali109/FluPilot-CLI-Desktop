@@ -1,4 +1,6 @@
 const { app, ipcMain, dialog } = require('electron');
+// Fix PATH so npm/node are available in packaged Electron apps on macOS
+require('fix-path');
 const path = require('path');
 const fs = require('fs');
 const { exec } = require('child_process');
@@ -7,6 +9,7 @@ const {
   createApplicationMenu,
   setupContextMenus,
 } = require('./application-menu.js');
+const os = require('os');
 const { AppStrings } = require('./appStrings.cjs');
 const { APP_CONFIG } = require('./src/config/constants.js');
 
@@ -31,6 +34,7 @@ const setupFileIpcHandlers = require('./src/main/ipc-handlers/files.js');
 const setupAppIpcHandlers = require('./src/main/ipc-handlers/app.js');
 const setupCommandsIpcHandlers = require('./src/main/ipc-handlers/commands.js');
 
+
 // Initialize services
 const logger = new Logger('Main');
 const terminalManager = new TerminalManager();
@@ -41,17 +45,15 @@ const performanceMonitor = new PerformanceMonitor();
 let updateManagerRef = { instance: null };
 let mainWindowRef = { instance: null };
 
-// Configure security and performance switches
-if (!APP_CONFIG.IS_DEVELOPMENT) {
-  app.commandLine.appendSwitch('disable-gpu-sandbox');
-  app.commandLine.appendSwitch('disable-software-rasterizer');
-  app.commandLine.appendSwitch('disable-background-timer-throttling');
-  app.commandLine.appendSwitch('disable-backgrounding-occluded-windows');
-  app.commandLine.appendSwitch('disable-renderer-backgrounding');
-  app.commandLine.appendSwitch('disable-features', 'VizDisplayCompositor');
-  app.commandLine.appendSwitch('disable-logging');
-  app.commandLine.appendSwitch('no-sandbox');
-}
+app.commandLine.appendSwitch('disable-gpu-sandbox');
+app.commandLine.appendSwitch('disable-software-rasterizer');
+app.commandLine.appendSwitch('disable-background-timer-throttling');
+app.commandLine.appendSwitch('disable-backgrounding-occluded-windows');
+app.commandLine.appendSwitch('disable-renderer-backgrounding');
+app.commandLine.appendSwitch('disable-features', 'VizDisplayCompositor');
+app.commandLine.appendSwitch('disable-gpu');
+app.commandLine.appendSwitch('disable-gpu-compositing');
+app.commandLine.appendSwitch('disable-logging');
 
 // Setup IPC handlers
 setupTerminalIpcHandlers({
@@ -175,3 +177,7 @@ app.on('before-quit', async event => {
     logger.error('Error during shutdown', error);
   }
 });
+// Set working directory to user's home directory if running from root
+if (process.cwd() === '/') {
+  process.chdir(os.homedir());
+}
